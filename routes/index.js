@@ -12,7 +12,7 @@ router.post('/pic_storage', function(req, res, next) {
 	var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
 	var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 	var options = {
-  	scope: "simplepicstor", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
+  		scope: "simplepicstor" + ":" + req.body.name + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
 	};
 	var putPolicy = new qiniu.rs.PutPolicy(options);
 	var uploadToken=putPolicy.uploadToken(mac);
