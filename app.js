@@ -5,9 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
 
 // 连接MongoDB
@@ -16,10 +13,14 @@ mongoose.connect('mongodb://localhost:27017', {auto_reconnect: true});
 mongoose.Promise = global.Promise;  // 使用ES6 Promise
 
 // museum
-mongoose.sevens_conn = mongoose.createConnection('localhost', 'museum');
-mongoose.sevens_conn.once('open', function() {
+mongoose.museum_conn = mongoose.createConnection('localhost', 'museum');
+console.log("11111111"+mongoose.museum_conn);
+mongoose.museum_conn.once('open', function() {
     console.log("Successfully connect to database museum!");
 });
+
+var index = require('./routes/index');
+var users = require('./routes/users');
 
 
 // view engine setup
