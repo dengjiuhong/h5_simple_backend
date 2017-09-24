@@ -25,10 +25,10 @@ module.exports = function (db) {
 		var collection = db.collection("museum");
 		var doc = {
 			name: req.body.name,
-			phone: req.body.phone
+			phone: "123"
 		};
 		console.log("1");
-		collection.findOne({name: req.body.name}, function(err, user) {
+		/*collection.findOne({name: req.body.name}, function(err, user) {
 			console.log("2");
             if(err) {
 				console.log("寻找用户出错：" + err);
@@ -63,6 +63,17 @@ module.exports = function (db) {
 				});
 				console.log("创建用户成功！");
 			}
+		});*/
+		collection.insertOne(doc, function(err) {
+			if(err) {
+				console.log("创建用户出错：" + err);
+				res.send({
+					ok: false,
+					mes: "服务器出错"
+				});
+				return;
+			}
+			console.log("创建用户成功！");
 		});
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 		var options = {
