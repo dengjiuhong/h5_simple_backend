@@ -28,12 +28,38 @@ module.exports = function (db) {
 			name: req.body.name,
 			phone: req.body.phone
 		}
-		collection.insertOne(doc, function(err, data) {
+		collection.findOne({name: req.body.name}, function(err, user) {
             if(err) {
-                console.error("insert err:", err);
-                return 1;
+				console.log("寻找用户出错：" + err);
+				res.send({
+					ok: false,
+					mes: "服务器出错"
+				});
+				return;
+			}
+			if(user){
+				collection.findOneAndUpdate({name: req.body.name}, doc, function(err) {
+					if(err) {
+						console.log("更新用户出错：" + err);
+						res.send({
+							ok: false,
+							mes: "服务器出错"
+						});
+						return;
+					} else console.log("更新成功");
+				});
 			} else {
-				console.log("插入成功！");
+				collection.insertOne(doc, function(err) {
+					if(err) {
+						console.log("创建用户出错：" + err);
+						res.send({
+							ok: false,
+							mes: "服务器出错"
+						});
+						return;
+					} 
+				});
+				console.log("创建用户成功！");
 			}
 		});
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
