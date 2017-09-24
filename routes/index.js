@@ -10,7 +10,6 @@ module.exports = function (db) {
 	  });
 	  
 	router.post('/pic_storage', function(req, res, next) {
-		console.log("进来了");
 		var accessKey = 'Hm1G1QAOH_6H-5qlnJAaXkKY9_qbvVseCJEvfjsz';
 		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
 		var username = "root";
@@ -27,8 +26,10 @@ module.exports = function (db) {
 		var doc = {
 			name: req.body.name,
 			phone: req.body.phone
-		}
+		};
+		console.log("1");
 		collection.findOne({name: req.body.name}, function(err, user) {
+			console.log("2");
             if(err) {
 				console.log("寻找用户出错：" + err);
 				res.send({
@@ -38,6 +39,7 @@ module.exports = function (db) {
 				return;
 			}
 			if(user){
+				console.log("findone!");
 				collection.findOneAndUpdate({name: req.body.name}, doc, function(err) {
 					if(err) {
 						console.log("更新用户出错：" + err);
@@ -69,7 +71,6 @@ module.exports = function (db) {
 	  	var putPolicy = new qiniu.rs.PutPolicy(options);
 	  	var uploadToken=putPolicy.uploadToken(mac);
 	  	console.log("token:" + uploadToken);
-	  	console.log(req.body);
 	  	res.send({
 		  	token : uploadToken
 	 	 });
