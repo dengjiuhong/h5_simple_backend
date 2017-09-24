@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 
 // 连接MongoDB
+var app = express();
 var uuid = require('node-uuid');
 var sprintf = require("sprintf-js").sprintf;
 var mongoClient = require('mongodb').MongoClient;
@@ -18,7 +19,6 @@ mongoClient.connect(url, function(err, db) {
         return 1;
     }
     console.log("connect!");
-    var app = express();
     var index = require('./routes/index')(db);
     var users = require('./routes/users');
     
