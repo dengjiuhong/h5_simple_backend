@@ -62,5 +62,5 @@ mongoClient.connect(url, function(err, db) {
       res.render('error');
     });
     
-    module.exports = app;
 });
+module.exports = app;
