@@ -28,7 +28,7 @@ module.exports = function (db) {
 			phone: "123"
 		};
 		console.log("1");
-		collection.findOne({name: req.body.name}).then(function(user) {
+		collection.find({name: req.body.name}).then(function(user) {
 			if(user) {
 				console.log("findone!");
 			}
