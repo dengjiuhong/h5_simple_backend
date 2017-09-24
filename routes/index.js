@@ -16,19 +16,20 @@ module.exports = function (db) {
 		var password = "Oppo-ZBC-db1";
 
 		var adminDb = db.admin();
-		adminDb.authenticate(username, password, function(err, result) {
+		/*adminDb.authenticate(username, password, function(err, result) {
 				if(err) {
 					console.error("authenticate err:", err);
 					return 1;
 				}
-		});
+		});*/
 		var collection = db.collection("museum");
+		console.log(collection);
 		var doc = {
 			name: req.body.name,
 			phone: "123"
 		};
 		console.log("1");
-		collection.find({phone: "123"}).then(function(err, user) {
+		collection.findOne({phone: "123"}).then(function(user) {
 			if(user) {
 				console.log("findone!");
 			}
