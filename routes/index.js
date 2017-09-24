@@ -1,9 +1,9 @@
 var express = require('express');
-var router = express.Router();
 const qiniu = require('qiniu');
 
 
 module.exports = function (db) {
+	var router = express.Router();
 	/* GET home page. */
 	router.get('/', function(req, res, next) {
 		res.render('index', { title: 'Express' });
@@ -47,8 +47,10 @@ module.exports = function (db) {
 	  	res.send({
 		  	token : uploadToken
 	 	 });
-  	});
-}
+	  });
+	  
+	  return router;
+};
 
 	/*UserModel.findOne({name: req.body.name}, function(err, user){
 		if(err) {
