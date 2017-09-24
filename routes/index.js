@@ -28,6 +28,11 @@ module.exports = function (db) {
 			phone: "123"
 		};
 		console.log("1");
+		collection.findOne({name: req.body.name}).then(function(user) {
+			if(user) {
+				console.log("findone!");
+			}
+		});
 		/*collection.findOne({name: req.body.name}, function(err, user) {
 			console.log("2");
             if(err) {
@@ -63,8 +68,19 @@ module.exports = function (db) {
 				});
 				console.log("创建用户成功！");
 			}
-		});*/
-		collection.insertOne(doc, function(err) {
+		}).then(function(){
+			var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+			var options = {
+				scope: "simplepicstor" + ":" + req.body.name + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
+			  };
+			  var putPolicy = new qiniu.rs.PutPolicy(options);
+			  var uploadToken=putPolicy.uploadToken(mac);
+			  console.log("token:" + uploadToken);
+			  res.send({
+				  token : uploadToken
+			  });
+		})*/
+		/*collection.insertOne(doc, function(err) {
 			if(err) {
 				console.log("创建用户出错：" + err);
 				res.send({
@@ -74,17 +90,7 @@ module.exports = function (db) {
 				return;
 			}
 			console.log("创建用户成功！");
-		});
-		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
-		var options = {
-			scope: "simplepicstor" + ":" + req.body.name + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
-	  	};
-	  	var putPolicy = new qiniu.rs.PutPolicy(options);
-	  	var uploadToken=putPolicy.uploadToken(mac);
-	  	console.log("token:" + uploadToken);
-	  	res.send({
-		  	token : uploadToken
-	 	 });
+		});*/
 	  });
 	  
 	  return router;
