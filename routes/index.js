@@ -2,11 +2,6 @@ var express = require('express');
 var router = express.Router();
 const qiniu = require('qiniu');
 
-//database
-const mongoose = require('mongoose');
-const conn = mongoose.museum_conn;
-const UserSchema = require('../model/user');
-const UserModel = conn.model('users', UserSchema);
 
 
 /* GET home page. */
@@ -20,7 +15,7 @@ router.post('/pic_storage', function(req, res, next) {
 	var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
 	var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 
-	UserModel.findOne({name: req.body.name}, function(err, user){
+	/*UserModel.findOne({name: req.body.name}, function(err, user){
 		if(err) {
 			console.log("寻找用户出错：" + err);
 			res.send({
@@ -62,7 +57,7 @@ router.post('/pic_storage', function(req, res, next) {
 			});
 			console.log("用户信息上传成功!");
 		}
-	});
+	});*/
 
 
 	var options = {

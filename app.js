@@ -8,16 +8,56 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // 连接MongoDB
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017', {auto_reconnect: true});
-mongoose.Promise = global.Promise;  // 使用ES6 Promise
+var uuid = require('node-uuid');
+var sprintf = require("sprintf-js").sprintf;
+var mongoClient = require('mongodb').MongoClient;
+var username = "root";
+var password = "Oppo-ZBC-db1";
+var demoDb = "test";
+var demoColl = "testColl";
+var url = "mongodb://dds-uf6a1325246e89e41.mongodb.rds.aliyuncs.com:3717,dds-uf6a1325246e89e42.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4528113";
+console.log("ready to connect!");
+mongoClient.connect(url, function(err, db) {
+    if(err) {
+        console.error("connect err:", err);
+        return 1;
+    }
+    console.log("connect!");
 
-// museum
-mongoose.museum_conn = mongoose.createConnection('localhost', 'museum');
-console.log("11111111"+mongoose.museum_conn);
-mongoose.museum_conn.once('open', function() {
-    console.log("Successfully connect to database museum!");
+    //授权. 这里的username基于admin数据库授权
+var adminDb = db.admin();
+adminDb.authenticate(username, password, function(err, result) {
+        if(err) {
+            console.error("authenticate err:", err);
+            return 1;
+        }
+//取得Collecton句柄
+var collection = db.collection(demoColl);
+var demoName = "NODE:" + uuid.v1();
+var doc = {"DEMO": demoName, "MESG": "Hello AliCoudDB For MongoDB"};
+console.info("ready insert document: ", doc);
+// 插入数据
+ collection.insertOne(doc, function(err, data) {
+            if(err) {
+                console.error("insert err:", err);
+                return 1;
+            }
+            console.info("insert result:", data["result"]);
+ // 读取数据
+ var filter = {"DEMO": demoName};
+ collection.find(filter).toArray(function(err, items) {
+                if(err) {
+                    console.error("find err:", err);
+                    return 1;
+                }
+                console.info("find document: ", items);
+//关闭Client，释放资源
+                db.close();
+            });
+        });
+    });
 });
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
