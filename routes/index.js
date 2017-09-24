@@ -16,26 +16,13 @@ module.exports = function (db) {
 		var password = "Oppo-ZBC-db1";
 
 		var adminDb = db.admin();
-		/*adminDb.authenticate(username, password, function(err, result) {
-				if(err) {
-					console.error("authenticate err:", err);
-					return 1;
-				}
-		});*/
 		var collection = db.collection("museum");
 		console.log(collection);
 		var doc = {
 			name: req.body.name,
 			phone: "123"
 		};
-		console.log("1");
-		collection.findOne({phone: "123"}).then(function(user) {
-			if(user) {
-				console.log("findone!");
-			}
-			console.log(err);
-		});
-		/*collection.findOne({name: req.body.name}, function(err, user) {
+		collection.findOne({name: req.body.name}, function(err, user) {
 			console.log("2");
             if(err) {
 				console.log("寻找用户出错：" + err);
@@ -81,7 +68,7 @@ module.exports = function (db) {
 			  res.send({
 				  token : uploadToken
 			  });
-		})*/
+		})
 		/*collection.insertOne(doc, function(err) {
 			if(err) {
 				console.log("创建用户出错：" + err);
