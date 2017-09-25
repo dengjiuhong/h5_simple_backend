@@ -10,20 +10,52 @@ html(lang='en')
   body
     script(src='./js/jquery-3.1.0.min.js')
     script(src='./js/swiper-3.4.2.jquery.min.js')
+    script(src='./js/uploadIdoctype html')
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(rel='stylesheet', href='./css/reset.min.css')
+    link(rel='stylesheet', href='./css/index.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    title 博物馆
+  body
+    script(src='./js/jquery-3.1.0.min.js')
+    script(src='./js/swiper-3.4.2.jquery.min.js')
     script(src='./js/uploadImage.js')
     script(src='./js/exif.js')
     script(src='./js/index.js')
     .wrap
       .page.p1
-        input#test(type='text', value='Submit')
         .btn_upload
           input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
           img(src='./image/btn_upload.png')
-        //.btn_chuan(onclick='upload_click()')
-        //  img(src='./image/btn_write.png')
-        button#in 进入博物馆
-        
-          <div class="wxTips" style="font-size: 10px;color:#584029;display: none;">如果无法上传照片，请发送到微信尝试</div>
+        label(for='name') 姓名：
+        input#input_name(type='text', name='name')
+        label(for='phone') 手机：
+        input#input_phone(type='text', name='phone')
+        // <div class="btn_chuan" onclick="upload_click()"><img src="./image/btn_write.png"></div>
+        button#in(onclick='upload_click()') 进入博物馆
+      .page.p2
+        #view
+          #bigCube
+            #cube
+              .stage
+                .container
+mage.js')
+    script(src='./js/exif.js')
+    script(src='./js/index.js')
+    .wrap
+      .page.p1
+        .btn_upload
+          input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
+          img(src='./image/btn_upload.png')
+        label(for='name') 姓名：
+        input#input_name(type='text', name='name')
+        label(for='phone') 手机：
+        input#input_phone(type='text', name='phone')
+        // <div class="btn_chuan" onclick="upload_click()"><img src="./image/btn_write.png"></div>
+        button#in(onclick='upload_click()') 进入博物馆
       .page.p2
         #view
           #bigCube

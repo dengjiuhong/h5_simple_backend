@@ -130,11 +130,11 @@ function page2(){
     .css({
       "position": "absolute",
       "width": BG_WIDTH / 3,
-      "height": BG_HEIGHT / 4,
+      "height": BG_HEIGHT / 3.8,
       "left": BG_WIDTH / 3,
-      "top": BG_HEIGHT / 4,
+      "top": BG_HEIGHT / 2.7,
     })
-    .appendTo("#panorama_3");
+    .appendTo("#panorama_5");
 
 
     bgItem = container.find('div');
