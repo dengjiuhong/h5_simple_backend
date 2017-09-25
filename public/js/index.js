@@ -26,8 +26,7 @@ function requestPic() {
     }
     else {
         $.ajax({
-            url: 'http://45.32.44.110:3000/pic_storage', 
-            //url: 'http://localhost:3000/pic_storage', 
+            url: 'http://localhost:3000/pic_storage', 
             type: 'POST',
             timeout: 15000,
             data: {
