@@ -1,6 +1,6 @@
 var express = require('express');
 const qiniu = require('qiniu');
-
+var fetch = require('node-fetch');
 
 module.exports = function (db) {
 	var router = express.Router();
@@ -70,7 +70,30 @@ module.exports = function (db) {
 		  });
 	  });
 
+	  router.get('/wx', function(req, res, next) {
+	  	var con = 
+		var app_id = "wx9741a9cc9dd1f2dc";
+		var app_secret = "b815b49903dd9ef43e5267c70ca44342";
+		var url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + appid + "&secret=" + app_secret;
+		var currentTime = new Date().getTime();
+		var config = require('./config');
+		if(config.access_token === "" || config.expires_time < currentTime){ //过期了
+        	fetch(tokenurl).then(function(res){
+            	return res.json();
+        	}).then(function(json){
+        		config.access_token = json.access_token;
+        		config.expires_time = new Date().getTime() + (parseInt(json.expires_in) - 200) * 1000;
+        		fs.writeFile('routes/config.json',JSON.stringify(config), function(err) {
+        			if(err) console.log(err);
+        			console.log("access_token change!");
+        		});
+        	})
+        }
+	  })
+
 	
 	  
 	  return router;
-};
+
+
+	};
