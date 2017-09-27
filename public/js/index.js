@@ -2,7 +2,7 @@
   var wx_data = {};
     console.log("ready");
     $.ajax({
-      url: 'http://localhost:3000/wx',
+      url: 'http://101.132.91.4:80/wx',
       type: 'GET',
       success: function(data){
         console.log(JSON.stringify(data));
