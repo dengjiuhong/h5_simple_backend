@@ -1,15 +1,5 @@
 (function(){
-  var wx_data = {};
     console.log("ready");
-    $.ajax({
-      url: 'http://101.132.91.4:80/wx',
-      type: 'GET',
-      success: function(data){
-        console.log(JSON.stringify(data));
-        wx_data = data;
-        wx(wx_data);
-      }
-    });
 })();
 var clickTimes = 1;
 var requestTimes = 0;
@@ -26,9 +16,19 @@ $(document).ready(function(){
         panorama = Math.floor(Math.random()*3);
         page2();        
     });
+    var wx_data = {};
+    $.ajax({
+      url: 'http://101.132.91.4:80/wx',
+      type: 'GET',
+      success: function(data){
+        console.log(JSON.stringify(data));
+        wx_data = data;
+        wx_process(wx_data);
+      }
+    });
 });
 
-function wx(data) {
+function wx_process(data) {
   wx.config({
             debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
             appId: data.appid, // 必填，公众号的唯一标识
