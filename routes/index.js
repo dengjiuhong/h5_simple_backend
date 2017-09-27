@@ -2,6 +2,7 @@ var express = require('express');
 const qiniu = require('qiniu');
 var fetch = require('node-fetch');
 var fs = require('fs');
+var sha1 = require('sha1');
 
 module.exports = function (db) {
 	var router = express.Router();
@@ -80,8 +81,8 @@ module.exports = function (db) {
 		var config = require('./config');
 		console.log("config:" + config);
 		console.log("wx debug-------------------------");
-		if(config.access_token === "" || config.expires_time < currentTime){ //过期了
-			console.log("no find");
+		if(config.access_token === "" || config.expires_time < currentTime){ //过期了,取新的access_token与jsticket并保存
+			console.log("过期");
         	fetch(url).then(function(res){
             	return res.json();
         	}).then(function(json){
@@ -89,20 +90,32 @@ module.exports = function (db) {
         		config.access_token = json.access_token;
         		config.expires_time = new Date().getTime() + (parseInt(json.expires_in) - 200) * 1000;
         		var ticketurl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ config.access_token +'&type=jsapi';
-        		var timestamp = Date().getSeconds();
-        		var str= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        		var random_str = ""; 
-        		for (var i = 0; i < 16; i++) {  
-                 	random_str += str.substr(Math.round((Math.random() * 10)), 1);  
-             	}  
-        		fs.writeFile('routes/config.json',JSON.stringify(config), function(err) {
-        			if(err) console.log(err);
-        			console.log("access_token change!");
+        		fetch(ticketurl).then(function(res){
+            		return res.json();
+        		}).then(function(json){
+        			config.jsticket = json.ticket;
+        			console.log("jsticket = " + config.jsticket)
+        			fs.writeFile('routes/config.json',JSON.stringify(config), function(err) {
+        				if(err) console.log(err);
+        				console.log("新的token存储完毕!");
+        			});
         		});
         	})
         }
+        var config = require('./config');
+        //时间戳
+        var timestamp = Date().getSeconds();
+        //随机字符串
+        var str= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        var random_str = ""; 
+        for (var i = 0; i < 16; i++) {  
+            random_str += str.substr(Math.round((Math.random() * 10)), 1);  
+        }
+        var signature = "";
+        var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net';
+        signature = sha1(string1);
+        console.log("signature = " + signature);
         result.appid = app_id;
-
 	  })
 
 	

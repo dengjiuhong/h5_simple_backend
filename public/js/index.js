@@ -87,7 +87,7 @@ function page2(){
     var border_r = -52,
         border_l = 12,
         border_u = 1.5,
-        border_d = -1.5;
+        border_d = -5;
 
 
     var BG_WIDTH = 1000,
