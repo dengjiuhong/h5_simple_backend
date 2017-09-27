@@ -4,7 +4,6 @@
     $.ajax({
       url: 'http://localhost:3000/wx',
       type: 'GET',
-      timeout: 15000,
       success: function(data){
         console.log(JSON.stringify(data));
         wx_data = data;
