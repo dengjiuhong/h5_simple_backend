@@ -116,6 +116,10 @@ module.exports = function (db) {
         signature = sha1(string1);
         console.log("signature = " + signature);
         result.appid = app_id;
+        result.signature = signature;
+        result.timestamp = timestamp;
+        result.random_str = random_str;
+        res.send(result);
 	  })
 
 	
