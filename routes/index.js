@@ -72,6 +72,7 @@ module.exports = function (db) {
 	  });
 
 	router.get('/wx', function(req, res, next) {
+		var result = {};
 		var app_id = "wx9741a9cc9dd1f2dc";
 		var app_secret = "b815b49903dd9ef43e5267c70ca44342";
 		var url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + app_id + "&secret=" + app_secret;
@@ -87,12 +88,21 @@ module.exports = function (db) {
         		console.log("data:" + JSON.stringify(json));
         		config.access_token = json.access_token;
         		config.expires_time = new Date().getTime() + (parseInt(json.expires_in) - 200) * 1000;
+        		var ticketurl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ config.access_token +'&type=jsapi';
+        		var timestamp = Date().getSeconds();
+        		var str= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        		var random_str = ""; 
+        		for (var i = 0; i < 16; i++) {  
+                 	random_str += str.substr(Math.round((Math.random() * 10)), 1);  
+             	}  
         		fs.writeFile('routes/config.json',JSON.stringify(config), function(err) {
         			if(err) console.log(err);
         			console.log("access_token change!");
         		});
         	})
         }
+        result.appid = app_id;
+
 	  })
 
 	
