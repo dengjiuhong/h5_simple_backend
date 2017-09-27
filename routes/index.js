@@ -104,7 +104,7 @@ module.exports = function (db) {
         }
         var config = require('./config');
         //时间戳
-        var timestamp = Date().getSeconds();
+        var timestamp = new Date().getSeconds();
         //随机字符串
         var str= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         var random_str = ""; 
