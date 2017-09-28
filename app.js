@@ -60,6 +60,6 @@ mongoClient.connect(url, function(err, db) {
       res.status(err.status || 500);
       res.render('error');
     });
-    
+    console.log("end!");
 });
 module.exports = app;
