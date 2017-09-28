@@ -9,12 +9,36 @@ var panorama = 0;//0~3
 
 
 $(document).ready(function(){
+  $(".p0").fadeIn("fast");
+  var v = $("#my_video_1");
+  var v2 = $("#my_video_2");
+  v.fadeIn("fast");
+  v.get(0).play();
+  v.get(0).addEventListener("timeupdate",function(){
+    if(v.get(0).ended){
+        v.css("display", "none");
+       $(".p0").css("display", "none");
+       $(".p1").css("display", "block");
+    }
+  });
+
     $("#in").click(function(){
-        $(".p1").fadeOut("fast");
-        $(".p2").fadeIn("fast");
-        console.log(ImageFile[0]);
-        panorama = Math.floor(Math.random()*3);
-        page2();        
+      $(".upload_wrap").animate({top: "-470px"}, 3000, function(){
+          $(".p1").css("display", "none");
+           $(".p0").css("display", "block");
+          v2.css("display", "block");
+          v2.get(0).play();
+          v2.get(0).addEventListener("timeupdate",function(){
+            if(v2.get(0).ended){
+              v2.css("display", "none");
+              $(".p0").css("display", "none");
+              $(".p2").fadeIn("fast");
+              panorama = Math.floor(Math.random()*3);
+              page2(); 
+            }
+          });
+        });
+        console.log(ImageFile[0]);       
     });
     var wx_data = {};
     $.ajax({
