@@ -25,17 +25,15 @@ $(document).ready(function(){
     }
   });
     $("#in").click(function(){
-      $(".p0").css("display", "block");
-      v2.css("display", "block");
       v2.play();
       v2.pause();
-      $(".p0").css("display", "none");
-      v2.css("display", "none");
-      $(".upload_wrap").animate({top: "-470px"}, 3000, function(){
-          $(".p1").css("display", "none");
+      setTimeout(function(){
+            $(".p1").css("display", "none");
             $(".p0").css("display", "block");
             v2.css("display", "block");
             v2.play();
+        },3000);
+      $(".upload_wrap").animate({top: "-470px"}, 3000, function(){
         });
       v2.get(0).addEventListener("timeupdate",function(){
         if(v2.get(0).ended){
