@@ -25,7 +25,8 @@ $(document).ready(function(){
     }
   });
     $("#in").click(function(){
-
+      v2.play();
+      v2.pause();
       $(".upload_wrap").animate({top: "-470px"}, 3000, function(){
           $(".p1").css("display", "none");
             $(".p0").css("display", "block");
