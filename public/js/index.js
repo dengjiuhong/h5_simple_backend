@@ -107,7 +107,7 @@ function requestPic() {
                 phone : $("#phone").val()
             },
             success: function (data) {
-                Qiniu_upload(picfile, data.token, name + ".jpg");
+                Qiniu_upload(picfile, data.token, $("#name").val() + ".jpg");
             },
             error: function(xhr, errorType, error) {
                 console.log("出错！" + error);
@@ -130,6 +130,9 @@ function upload_click() {
 }
 
 function Qiniu_upload(f, token, key) {
+            console.log(key);
+            console.log(token);
+            console.log(f);
             var xhr = new XMLHttpRequest();
             xhr.open('POST', Qiniu_UploadUrl, true);
             var formData, startDate;

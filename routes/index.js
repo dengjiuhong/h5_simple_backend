@@ -19,7 +19,6 @@ module.exports = function (db) {
 
 		var adminDb = db.admin();
 		var collection = db.collection("museum");
-		console.log(collection);
 		var doc = {
 			name: req.body.name,
 			phone: req.body.phone
