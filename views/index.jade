@@ -15,22 +15,15 @@ html(lang='en')
     script(src='./js/exif.js')
     script(src='./js/index.js')
     .wrap
-      .page.p0
-        video#my_video_1(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='')
-          source(src='./image/01-near.mp4', type='video/mp4')
-        video#my_video_2(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='display:none')
-          source(src='./image/02-openin.mp4', type='video/mp4')
       .page.p1
-        .upload_wrap
-          .upload_wrap_small
-            input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
-            .name 馆长
-            .phone 手机
-            .input_name
-              input#name(type='text', name='name')
-            .input_phone
-              input#phone(type='text', name='phone')
-  // <div class="btn_chuan" onclick="upload_click()"><img src="./image/btn_write.png"></div>
+        .btn_upload
+          input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
+          img(src='./image/btn_upload.png')
+        label(for='name') 姓名：
+        input#input_name(type='text', name='name')
+        label(for='phone') 手机：
+        input#input_phone(type='text', name='phone')
+        // <div class="btn_chuan" onclick="upload_click()"><img src="./image/btn_write.png"></div>
         button#in(onclick='upload_click()') 进入博物馆
       .page.p2
         #view

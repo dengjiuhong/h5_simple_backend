@@ -35,79 +35,25 @@ html, body {
     display: none;
 }
 .p1{
-    display: none;
-    background: url("./image/close.png");
+	display: block;
+    background-image:url('../image/p1_bg.jpg');
     background-size: 100% auto;
 }
-.upload_wrap{
-    animation: myfirst 3s;
--moz-animation: myfirst 3s; /* Firefox */
--webkit-animation: myfirst 3s;  /* Safari 和 Chrome */
--o-animation: myfirst 3s;   /* Opera */
+.btn_upload {
     margin: 0 auto;
-    margin-top: 0px;
-    width: 350px;
-    height: 453px;
+    margin-top: 35px;
+    width: 119px;
+    height: 142px;
     position: relative;
     overflow: hidden;
-    background: url("./image/brand.png");
-    background-size: 100% auto;
-}
-.upload_wrap_small{
-    position: relative;
-    margin: 0 auto;
-    margin-top: 186px;
-    height: 217px;
-    width: 165px;
-    margin-bottom: 10px;
 }
 #btn_upload {
-    margin: 0 auto;
-    width: 140px;
-    height: 140px;
+    width: 100%;
+    height: 100%;
     opacity: 0;
-}
-.name{
     position: absolute;
-    color: white;
-    width: 50px;
-    height: 19px;
-    margin-top: 19px;
-    margin-left: 5px;
-}
-.phone{
-    position: absolute;
-    color: white;
-    width: 50px;
-    height: 19px;
-    margin-top: 57px;
-    margin-left: 5px;
-}
-#name{
-    color: white;
-    appearance:none;  /*下拉框去掉右侧图标*/  
-    -moz-appearance:none;  
-    -webkit-appearance:none;
-    background-color:transparent; 
-    position: absolute;
-    width: 78px;
-    height: 19px;
-    margin-top: 19px;
-    margin-left: -16px;
-    border:0px;
-}
-#phone{
-    border:0px;
-    color: white;
-    appearance:none;  /*下拉框去掉右侧图标*/  
-    -moz-appearance:none;  
-    -webkit-appearance:none;
-    background-color:transparent; 
-    position: absolute;
-    width: 78px;
-    height: 19px;
-    margin-top: 54px;
-    margin-left: -16px;
+    top: 0;
+    left: 0;
 }
 .btn_upload>img {
     width: 100%;
@@ -161,45 +107,3 @@ html, body {
     
     background-size: 100% auto;
   }
-
-  #my_video_1 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    /*display: none;*/
-}
- #my_video_2 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    /*display: none;*/
-}
-@keyframes myfirst
-{
-from {margin-top: -470px;}
-to {margin-top: 0px;}
-}
-
-@-moz-keyframes myfirst /* Firefox */
-{
-from {margin-top: -470px;}
-to {margin-top: 0px;}
-}
-
-@-webkit-keyframes myfirst /* Safari and Chrome */
-{
-from {margin-top: -470px;}
-to {margin-top: 0px;}
-}
-
-@-o-keyframes myfirst /* Opera */
-{
-from {margin-top: -470px;}
-to {margin-top: 0px;}
-}
