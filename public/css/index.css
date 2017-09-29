@@ -61,11 +61,23 @@ html, body {
     width: 165px;
     margin-bottom: 10px;
 }
-#btn_upload {
+.upload {
     margin: 0 auto;
     width: 140px;
     height: 140px;
     opacity: 0;
+    overflow: hidden;
+    position: relative;
+}
+#btn_upload{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+#pic {
+    width: 100%;
+    height: 100%;
 }
 .name{
     position: absolute;

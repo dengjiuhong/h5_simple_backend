@@ -21,7 +21,9 @@ html(lang='en')
       .page.p1
         .upload_wrap
           .upload_wrap_small
-            input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
+            .upload
+              input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
+              img#pic
             .name 馆长
             .phone 手机
             .input_name

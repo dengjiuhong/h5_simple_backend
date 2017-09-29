@@ -6,6 +6,7 @@ var requestTimes = 0;
 var name = "test";
 var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = 0;//0~3
+var lock = 0;
 
 
 $(document).ready(function(){
@@ -37,7 +38,7 @@ $(document).ready(function(){
           $(".p0").css("display", "none");
           $(".p2").fadeIn("fast");
           panorama = Math.floor(Math.random()*3);
-        page2();
+          if(!lock) {page2(); lock++;}
         }
       })
         console.log(ImageFile[0]);      

@@ -133,7 +133,9 @@ function FileImageControl(file){
 				//执行操作
 				ImageFile[0]=base64;
 				//$("#picImg").attr("src",ImageFile[0]);
-				$(".btn_upload>img").attr("src",ImageFile[0]);
+				$(".upload").css({"opacity":"100"})
+				$("#pic").css({"width": "100%", "height":"100%"});
+				$("#pic").attr("src",ImageFile[0]);
 
 				// $(".control_btn .btn1 img").attr('src',ImageFile[0]);
 				// $(".control_btn .btn2 img").attr('src',ImageFile[1]);
