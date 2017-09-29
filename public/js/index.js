@@ -25,11 +25,12 @@ $(document).ready(function(){
     }
   });
     $("#in").click(function(){
+
       $(".upload_wrap").animate({top: "-470px"}, 3000, function(){
           $(".p1").css("display", "none");
-           $(".p0").css("display", "block");
+            $(".p0").css("display", "block");
             v2.css("display", "block");
-            v2.get(0).play();
+            v2.play();
         });
       v2.get(0).addEventListener("timeupdate",function(){
         if(v2.get(0).ended){
