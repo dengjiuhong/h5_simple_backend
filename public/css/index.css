@@ -36,7 +36,7 @@ html, body {
 }
 .p1{
 	display: block;
-    background-image:url('../image/close.jpg');
+    background-image:url('../image/close.png');
     background-size: 100% auto;
 }
 .upload_wrap{
