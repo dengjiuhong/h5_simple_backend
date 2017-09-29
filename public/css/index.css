@@ -36,7 +36,7 @@ html, body {
 }
 .p1{
 	display: block;
-    background-image:url('../image/close.jpg');
+    background-image:url('./image/close.jpg');
     background-size: 100% auto;
 }
 .upload_wrap{
@@ -50,7 +50,7 @@ html, body {
     height: 453px;
     position: relative;
     overflow: hidden;
-    background: url("../image/brand.png");
+    background: url("./image/brand.png");
     background-size: 100% auto;
 }
 .upload_wrap_small{
