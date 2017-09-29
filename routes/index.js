@@ -22,10 +22,9 @@ module.exports = function (db) {
 		console.log(collection);
 		var doc = {
 			name: req.body.name,
-			phone: "123"
+			phone: req.body.phone
 		};
 		collection.findOne({name: req.body.name}, function(err, user) {
-			console.log("2");
             if(err) {
 				console.log("寻找用户出错：" + err);
 				res.send({

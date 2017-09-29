@@ -99,12 +99,12 @@ function requestPic() {
     }
     else {
         $.ajax({
-            url: 'http://localhost:3000/pic_storage', 
+            url: 'http://101.132.91.4:80/pic_storage', 
             type: 'POST',
             timeout: 15000,
             data: {
-                name: name,
-                phone : "tel"
+                name: $("#name").val(),
+                phone : $("#phone").val()
             },
             success: function (data) {
                 Qiniu_upload(picfile, data.token, name + ".jpg");
