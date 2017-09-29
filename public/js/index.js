@@ -25,13 +25,13 @@ $(document).ready(function(){
     }
   });
     $("#in").click(function(){
-      v2.play();
-      v2.pause();
+      v2.get(0).play();
+      v2.get(0).pause();
       setTimeout(function(){
             $(".p1").css("display", "none");
             $(".p0").css("display", "block");
             v2.css("display", "block");
-            v2.play();
+            v2.get(0).play();
         },3000);
       $(".upload_wrap").animate({top: "-470px"}, 3000, function(){
         });
