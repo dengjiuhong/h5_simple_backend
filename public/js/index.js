@@ -14,7 +14,9 @@ $(document).ready(function(){
   var v = $("#my_video_1");
   var v2 = $("#my_video_2");
   v.fadeIn("fast");
-  v.get(0).play();
+  $(".p0").click(function(){
+    v.get(0).play();
+  })
   v.get(0).addEventListener("timeupdate",function(){
     if(v.get(0).ended){
         v.css("display", "none");
