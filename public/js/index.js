@@ -16,7 +16,7 @@ $(document).ready(function(){
   v.fadeIn("fast");
   $(".p0").click(function(){
     v.get(0).play();
-  })
+  });
   v.get(0).addEventListener("timeupdate",function(){
     if(v.get(0).ended){
         v.css("display", "none");
@@ -223,7 +223,15 @@ function page2(){
       transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
     });
     
-  
+    $("#close").click(function() {
+      $("#close_0").css("display", "block");
+      $("#close_0").get(0).play();
+      $("#close_0").get(0).addEventListener("timeupdate",function(){
+        if($("#close_0").get(0).ended){
+          $("#close_0").get(0).play();
+        }
+      })   
+    });
     var lastMouseX = 0,
       lastMouseY = 0,
       curMouseX = 0,
