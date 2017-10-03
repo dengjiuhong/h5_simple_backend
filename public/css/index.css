@@ -302,12 +302,9 @@ to {margin-top: 0px;}
 from {margin-top: -470px;}
 to {margin-top: 0px;}
 }
-.share_in, .share_in_2, #close{
+#share_in, #close{
     position: absolute;
 }
-.share_in{
+#share_in{
     margin-top: 30px;
-}
-.share_in_2{
-    margin-top: 50px;
 }
