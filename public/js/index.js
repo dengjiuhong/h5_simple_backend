@@ -238,6 +238,12 @@ function page2(){
         }
       })   
     });
+
+    $(".change_my").click(function() {
+      $(".p3").css("display", "none");
+      $(".p1").css("display", "block");
+
+    })
     var lastMouseX = 0,
       lastMouseY = 0,
       curMouseX = 0,
