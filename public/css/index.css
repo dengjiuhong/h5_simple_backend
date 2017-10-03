@@ -4,7 +4,14 @@
 }
 @font-face {  
     font-family: 'my_font';  
-    src:url('../my.otf') format('truetype')，  
+    src:url('../my.otf');
+    src:url('../my.otf')format('embedded-opentype'),/* IE6-IE8 */
+
+    url('../my.otf')format('woff'),/* Modern Browsers */
+
+    url('../my.otf')format('truetype'),/* Safari, Android, iOS */
+
+    url('../my.otf')format('svg');/* Legacy iOS */ 
     font-weight: normal;  
     font-style: normal;  
 }
