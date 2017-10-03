@@ -222,7 +222,6 @@ function page2(){
     $("#cube").css({
       transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
     });
-    $(".share_in").css("display", "none");
     $("#close").click(function() {
       $("#close").css("display", "none");
       $("#close_0").css("display", "block");
