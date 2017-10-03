@@ -31,9 +31,6 @@ video {
     position: absolute;
     left: 0;
     top: 0;
-
-    -o-object-fit: cover;
-       object-fit: cover;
 }
 .wrap {
     width: 100%;

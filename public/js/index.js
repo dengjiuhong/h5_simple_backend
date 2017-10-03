@@ -224,7 +224,6 @@ function page2(){
     });
     $("#share_in").css("display", "none");
     $("#close").click(function() {
-      $("#close").css("display", "none");
       $("#close_0").css("display", "block");
       $("#share_in").css("display", "block");
       $("#close_0").get(0).play();
