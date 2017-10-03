@@ -222,10 +222,20 @@ function page2(){
     $("#cube").css({
       transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
     });
+    $(".share_in").click(function() {
+      $("#close_0").get(0).stop();
+        $(".p2").css("display", "none");
+        $(".p3").css("display", "block");
+    });
     $("#close").click(function() {
       $("#close").css("display", "none");
       $("#close_0").css("display", "block");
       $(".share_in").css("display", "block");
+      $(".share_in").click(function() {
+      $("#close_0").get(0).stop();
+        $(".p2").css("display", "none");
+        $(".p3").css("display", "block");
+    });
       $("#close_0").get(0).play();
       $("#close_0").get(0).addEventListener("timeupdate",function(){
         if($("#close_0").get(0).ended){
@@ -233,11 +243,6 @@ function page2(){
         }
       })   
     });
-    $(".share_in").click(function() {
-      $("#close_0").get(0).stop();
-      $(".p2").css("display", "none");
-      $(".p3").css("display", "block");
-    })
     var lastMouseX = 0,
       lastMouseY = 0,
       curMouseX = 0,
