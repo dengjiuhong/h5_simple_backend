@@ -14,9 +14,9 @@ html(lang='en')
     script(src='./js/index.js')
     .wrap
       .page.p0
-        video#my_video_1(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='')
+        video#my_video_1(preload='preload', webkit-playsinline playsinline, x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='')
           source(src='./v/01-near.mp4', type='video/mp4')
-        video#my_video_2(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='display:none')
+        video#my_video_2(preload='preload', webkit-playsinline playsinline, x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='display:none')
           source(src='./v/02-openin.mp4', type='video/mp4')
       .page.p1
         .upload_wrap
@@ -38,3 +38,14 @@ html(lang='en')
             #cube
               .stage
                 .container
+      .page.p3
+        .share_wrap
+          .share_wrap_small
+            .share_name test
+            .share_id 0001
+            .share_pic
+        .buttons
+          .share_my
+            img(src='./image/share_my.png')
+          .change_my
+            img(src='./image/change_my.png')

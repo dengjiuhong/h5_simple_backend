@@ -44,8 +44,7 @@ $(document).ready(function(){
           panorama = Math.floor(Math.random()*3);
           if(!lock) {page2(); lock++;}
         }
-      })
-        console.log(ImageFile[0]);      
+      })     
     });
     var wx_data = {};
     $.ajax({

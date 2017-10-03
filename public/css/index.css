@@ -39,7 +39,12 @@ html, body {
     background-image:url('../image/close.png');
     background-size: 100% auto;
 }
-.upload_wrap{
+.p3{
+    display: none;
+    background: url("../image/close.png");
+    background-size: 100% auto;
+}
+.upload_wrap, .share_wrap{
     animation: myfirst 3s;
 -moz-animation: myfirst 3s; /* Firefox */
 -webkit-animation: myfirst 3s;  /* Safari 和 Chrome */
@@ -53,6 +58,12 @@ html, body {
     background: url("../image/brand.png");
     background-size: 100% auto;
 }
+.share_wrap{
+    width: 318px;
+    height: 437px;
+    background: url("../image/brand_.png");
+    background-size: 100% auto;
+}
 .upload_wrap_small{
     position: relative;
     margin: 0 auto;
@@ -60,6 +71,13 @@ html, body {
     height: 217px;
     width: 165px;
     margin-bottom: 10px;
+}
+.share_wrap_small{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 117px;
+    height: 321px;
+    width: 198px;
 }
 .upload {
     margin: 0 auto;
@@ -95,6 +113,29 @@ html, body {
     margin-top: 57px;
     margin-left: 5px;
 }
+.share_name, .share_id, .share_pic{
+    position: absolute;
+    color: white;
+}
+.share_id{
+    width: 35px;
+    height: 13px;
+    margin-top: 36px;
+    margin-left: 47px;
+}
+.share_name{
+    font-size: 30px;
+    width: 62px;
+    height: 32px;
+    margin-top: 137px;
+    margin-left: 20px;
+}
+.share_pic{
+    width: 77px;
+    height: 114px;
+    margin-top: 41px;
+    margin-left: 93px;
+}
 #name{
     color: white;
     appearance:none;  /*下拉框去掉右侧图标*/  
@@ -120,6 +161,27 @@ html, body {
     height: 19px;
     margin-top: 54px;
     margin-left: -16px;
+}
+.buttons{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    display: inline-flex;
+}
+.share_my{
+    height: 50px;
+    width: 100px;
+    margin-left: 50px;
+}
+.change_my{
+    height: 50px;
+    width: 100px;
+    margin-right: 50px;
+}
+.share_my>img, .change_my>img{
+    width: 100%;
+    height: 100%;
 }
 .btn_chuan {
     margin-top: 33px;
