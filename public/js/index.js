@@ -224,6 +224,7 @@ function page2(){
     });
     
     $("#close").click(function() {
+      $("#close").css("display", "none");
       $("#close_0").css("display", "block");
       $("#close_0").get(0).play();
       $("#close_0").get(0).addEventListener("timeupdate",function(){
