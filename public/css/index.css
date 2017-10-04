@@ -76,7 +76,7 @@ video {
     background: url("../image/close.png");
     background-size: 100% auto;
 }
-img.upload_wrap_background {
+/* img.upload_wrap_background {
     position: absolute;
     top: 0;
     left: 0;
@@ -84,7 +84,7 @@ img.upload_wrap_background {
     height: auto;
     -o-object-fit: fill;
        object-fit: fill;
-}
+} */
 .p3{
     display: none;
     background: url("../image/close.png");
