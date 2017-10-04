@@ -192,6 +192,7 @@ function page2(){
       event.preventDefault();
     });
     $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
+    $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
     var border_r = -52,
         border_l = 12,
         border_u = 5,
@@ -253,17 +254,24 @@ function page2(){
     document.getElementById("share_in").addEventListener("click", function() {
         console.log(user_name);
         $("#close_0").get(0).pause();
-        $(".p2").css("display", "none");
-        $(".p3").css("display", "block");
-        $(".share_pic").empty();
-        $(".share_name").html(user_name);
-        $(".share_id").innerHTML = "00002";
-        $("<img></img>").attr("src", ImageFile[0])
-        .css({
-          "width" : "100%",
-          "height" : "100%"
-        }).appendTo(".share_pic");
+        $("#exit_0").css("display", "block");
+        $("#exit_0").get(0).play();
+        $("#exit_0").get(0).addEventListener("timeupdate",function(){
+        if($("#exit_0").get(0).ended){
+            $(".p2").css("display", "none");
+            $(".p3").css("display", "block");
+            $(".share_pic").empty();
+            $(".share_name").html(user_name);
+            $(".share_id").innerHTML = "00002";
+            $("<img></img>").attr("src", ImageFile[0])
+            .css({
+              "width" : "100%",
+              "height" : "100%"
+            }).appendTo(".share_pic");
+          }
+        })  
     }, true);
+    
     $("#close").click(function() {
       $("#close").css("display", "none");
       $("#close_0").css("display", "block");
