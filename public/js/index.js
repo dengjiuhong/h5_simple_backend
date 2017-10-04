@@ -284,6 +284,8 @@ function page2(){
       $(".p1").css("display", "block");
       $("#close_0").get(0).pause();
       $("#close_0").css("display", "none");
+      $("#share_in").css("display", "none");
+      $("#close").css("display", "block");
     })
     var lastMouseX = 0,
       lastMouseY = 0,
