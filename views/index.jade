@@ -15,12 +15,10 @@ html(lang='en')
     .wrap
       .page.p0
         img(src='./image/close.png', style='display:none')
-        video#my_video_1(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x-webkit-airplay="allow", x5-video-orientation='landscape|portrait', style='', poster="/image/first_poster.png")
+        video#my_video_1(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x-webkit-airplay="allow", x5-video-orientation='landscape|portrait', style='')
           source(src='./v/01-near.mp4', type='video/mp4')
         video#my_video_2(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='display:none')
           source(src='./v/02-openin.mp4', type='video/mp4')
-        #first_enter_box
-          #first_enter
       .page.p1
         .upload_wrap_background
         .upload_wrap
@@ -39,13 +37,13 @@ html(lang='en')
         #welcome
       .page.p2
         #view
+          #bigCube
             button#close 关灯
             button#share_in 分享
             video#close_0(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='display:none')
               source(src='./v/close_0.mp4', type='video/mp4')
             video#exit_0(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='display:none')
               source(src='./v/exit_0.mp4', type='video/mp4')
-          #bigCube
             #cube
               .stage
                 .container
