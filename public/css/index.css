@@ -56,6 +56,21 @@ video {
     overflow: hidden;
     display: none;
 }
+
+#first_enter_box {
+    width: 100vw;
+    background-color: inherit;
+    position: fixed;
+    bottom: 30px;
+    z-index: 3;
+}
+#first_enter {
+    width: 165px;
+    height: 50.7px;
+    background-image: url('/image/first_enter.png');
+    background-size: 100% 100%;
+    background-color: inherit;
+}
 .p1{
 	display: none;
 }
