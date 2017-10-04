@@ -29,6 +29,7 @@ $(document).ready(function(){
        $(".p0").css("display", "none");
        $(".p1").css("display", "block");
        $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000);
+       $(".upload_wrap_background").css("margin-top", "" + topHeight + "px");
        //v2.get(0).play();
     }
   });
