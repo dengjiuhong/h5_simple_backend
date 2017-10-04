@@ -49,6 +49,12 @@ video {
     position: relative;
     background-color: #fff;
 }
+/* 防止闪屏 */
+.wrap.p1-fake {
+    background: url("../image/close.png");
+    background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
 
 .page{
     width: 100%;
