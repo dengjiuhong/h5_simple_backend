@@ -276,13 +276,13 @@ video {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
+    z-index: 8;
   }
   #cube{
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    z-index: 8;
   }
   .stage{
     width: 100%;

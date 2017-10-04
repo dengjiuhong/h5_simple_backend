@@ -269,9 +269,7 @@ function page2() {
 
     $("#close").click(function() {
       $("#close").css("display", "none");
-      $("#panorama_4").animate({"opacity": "0"}, 1500);
-      $("#panorama_5").animate({"opacity": "0"}, 1500);
-      $("#panorama_6").animate({"opacity": "0"}, 1500);
+      $("#cube").animate({"opacity": "0"}, 1500);
       $(".mask").css("display", "block");
       $(".mask").animate({"opacity": "1"}, 1500);
       setTimeout(function() {
