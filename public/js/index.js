@@ -267,8 +267,7 @@ function page2() {
       setTimeout(function() {
         $(".mask").animate({"opacity": "0"}, 1500, function() {
           $(".mask").css("display", "none");
-        });
-        $("#close_0").css("opacity", "0");
+            $("#close_0").css("opacity", "0.5");
         $("#close_0").css("display", "block");
         $("#close_0").animate({"opacity": "1"}, 1500, function() {
           $("#share_in").css("display", "block");
@@ -278,6 +277,7 @@ function page2() {
               $("#close_0").get(0).play();
             }
           })
+        });
         });
       }, 1500);  
     });
