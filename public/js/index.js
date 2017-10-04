@@ -7,12 +7,11 @@ var user_name = "test";
 var user_phone = "test";
 var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = 0;//0~3
-panorama = Math.floor(Math.random()*3);
 var lock = 0;
 
 
 $(document).ready(function(){
-
+  panorama = Math.floor(Math.random()*3);
   var close_p = new new Image();
   close_p.src = "../image/close.png";
   var panorama_4 = new new Image();
