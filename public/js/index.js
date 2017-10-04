@@ -40,12 +40,15 @@ $(document).ready(function(){
       v2.get(0).pause();
       setTimeout(function(){
             $(".p1").css("display", "none");
+            $(".p3").css("display", "none");
             $(".p0").css("display", "block");
             $("#first_enter_box").fadeIn();
             v2.css("display", "block");
             v2.get(0).play();
         },3000);
-      $(".upload_wrap").animate({"margin-top": "-470px"}, 3000, function(){});
+      $(".upload_wrap").animate({"margin-top": "-470px"}, 3000, function(){
+        $(".upload_wrap").css("display", "none");
+      });
       v2.get(0).addEventListener("timeupdate",function(){
         if(v2.get(0).ended){
           v2.css("display", "none");
@@ -272,11 +275,11 @@ function page2() {
       $(".mask").css("display", "block");
       $(".mask").animate({"opacity": "1"}, 1500);
       setTimeout(function() {
-        $(".mask").animate({"opacity": "0.5"}, 1500, function() {
+        $(".mask").animate({"opacity": "0.5"}, 750, function() {
           $(".mask").css("display", "none");
           $("#close_0").css("opacity", "0.5");
           $("#close_0").css("display", "block");
-          $("#close_0").animate({"opacity": "1"}, 1500, function() {
+          $("#close_0").animate({"opacity": "1"}, 750, function() {
             $("#share_in").css("display", "block");
             $("#close_0").get(0).play();
             $("#close_0").get(0).addEventListener("timeupdate",function(){
