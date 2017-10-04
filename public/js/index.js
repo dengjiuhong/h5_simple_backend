@@ -266,7 +266,7 @@ function page2(){
     }, true);
     $("#close").click(function() {
       $("#close").css("display", "none");
-      $("#close_0").css("display", "block");
+      c
       $("#share_in").css("display", "block");
       $("#close_0").get(0).play();
       $("#close_0").get(0).addEventListener("timeupdate",function(){
@@ -281,7 +281,8 @@ function page2(){
         });
       $(".p3").css("display", "none");
       $(".p1").css("display", "block");
-
+      $("#close_0").get(0).pause();
+      $("#close_0").css("display", "none");
     })
     var lastMouseX = 0,
       lastMouseY = 0,
