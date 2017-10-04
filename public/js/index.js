@@ -255,7 +255,7 @@ function page2(){
         $("#close_0").get(0).pause();
         $(".p2").css("display", "none");
         $(".p3").css("display", "block");
-
+        $(".share_pic").empty();
         $(".share_name").html(user_name);
         $(".share_id").innerHTML = "00002";
         $("<img></img>").attr("src", ImageFile[0])
