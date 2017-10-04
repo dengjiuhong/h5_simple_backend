@@ -259,11 +259,11 @@ function page2() {
 
     $("#close").click(function() {
       $("#close").css("display", "none");
-      $("#cube").animate({"opacity": "0"}, 2000, function() {
+      $("#cube").animate({"opacity": "0"}, 1500, function() {
         $("#cube").css("display", "none");
         $("#close_0").css("opacity", "0");
         $("#close_0").css("display", "block");
-        $("#close_0").animate({"opacity": "1"}, 2000, function() {
+        $("#close_0").animate({"opacity": "1"}, 1500, function() {
           $("#share_in").css("display", "block");
           $("#close_0").get(0).play();
           $("#close_0").get(0).addEventListener("timeupdate",function(){
