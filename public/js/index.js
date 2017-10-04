@@ -6,6 +6,9 @@ var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = 0;//0~3
 var lock = 0;
 
+// 顶栏高度
+var topHeight = window.screen.height - window.innerHeight;
+
 
 $(document).ready(function(){
   panorama = Math.floor(Math.random()*3);
@@ -270,7 +273,7 @@ function page2() {
     $(".change_my").click(function() {
       clickTimes = 1;
       lock = 0;
-      $(".upload_wrap").animate({top: "0px"}, 3000, function(){
+      $(".upload_wrap").animate({top: (0-topHeight) + "px"}, 3000, function(){
         });
       $(".p3").css("display", "none");
       $(".p1").css("display", "block");
