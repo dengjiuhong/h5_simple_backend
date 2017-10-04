@@ -45,7 +45,6 @@ $(document).ready(function(){
             $(".p1").css("display", "none");
             $(".p3").css("display", "none");
             $(".p0").css("display", "block");
-            $("#first_enter_box").fadeIn();
             v2.css("display", "block");
             v2.get(0).play();
         },3000);
@@ -263,6 +262,7 @@ function page2() {
                 audio.play();
                 $(".p2").css("display", "none");
                 $(".p3").css("display", "block");
+                $(".share_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000, function(){});
                 $(".share_pic").empty();
                 $(".share_name").html(user_name);
                 $(".share_id").innerHTML = "00002";
@@ -301,7 +301,7 @@ function page2() {
     $(".change_my").click(function() {
       clickTimes = 1;
       lock = 0;
-      $(".share_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000, function(){});
+      $(".share_wrap").animate({"margin-top": "-470px"}, 3000, function(){});
       $(".p3").css("display", "none");
       $(".p1").css("display", "block");
       $("#close_0").get(0).pause();
