@@ -350,6 +350,7 @@ function page2() {
       clearTimeout(timeoutTimer)
 
       $(document).on("mousemove touchmove", mouseMoveHandler);
+      window.cancelAnimationFrame(frameTimer);
       frameTimer = requestAnimationFrame(go);
     }
 
