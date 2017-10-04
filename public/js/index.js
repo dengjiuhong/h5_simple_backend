@@ -20,11 +20,17 @@ $(document).ready(function(){
   v.fadeIn("fast");
   $(".p0").click(function(){
     v.get(0).play();
+    $(".wrap").addClass("p1-fake");
+    $("#first_enter_box").fadeOut();
   });
   v.get(0).addEventListener("timeupdate",function(){
     if(v.get(0).ended){
-      $(".p0").css("display", "none");
       $(".p1").css("display", "block");
+      $(".p0").css("display", "none");
+      // 移除防止闪频的东西
+      setTimeout(function() {
+        $(".wrap").removeClass("p1-fake");
+      }, 1000);
       $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000);
       //v2.get(0).play();
     }
@@ -35,6 +41,7 @@ $(document).ready(function(){
       setTimeout(function(){
             $(".p1").css("display", "none");
             $(".p0").css("display", "block");
+            $("#first_enter_box").fadeIn();
             v2.css("display", "block");
             v2.get(0).play();
         },3000);
