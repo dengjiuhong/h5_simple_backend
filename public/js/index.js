@@ -247,7 +247,7 @@ function page2() {
     $("#share_in").css("display", "none");
     document.getElementById("share_in").addEventListener("click", function() {
         console.log(user_name);
-        $("#close_0").get(0).ddEventListener("timeupdate",function(){
+        $("#close_0").get(0).addEventListener("timeupdate",function(){
           if($("#close_0").get(0).ended){
             $("#close_0").get(0).pause();
             $("#close_0").css("display", "none");
