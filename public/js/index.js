@@ -289,6 +289,7 @@ function page2(){
       $("#close").css("display", "block");
       $(".share_pic").empty();
       $("#panorama_5").empty();
+      $(".container").empty();
     })
     var lastMouseX = 0,
       lastMouseY = 0,
