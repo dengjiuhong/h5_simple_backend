@@ -251,7 +251,7 @@ function page2() {
         $("#close_0").removeAttr("loop");
         $("#exit_0").get(0).play();
         $("#exit_0").get(0).pause();
-        $("#close_0").play();
+        $("#close_0").get(0).play();
         console.log(user_name);
         $("#close_0").get(0).addEventListener("timeupdate",function(){
           if($("#close_0").get(0).ended){
