@@ -8,6 +8,7 @@ var lock = 0;
 
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
+alert(topHeight);
 
 
 $(document).ready(function(){
@@ -27,6 +28,7 @@ $(document).ready(function(){
        //v2.fadeIn("fast");
        $(".p0").css("display", "none");
        $(".p1").css("display", "block");
+       $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000);
        //v2.get(0).play();
     }
   });
@@ -39,8 +41,7 @@ $(document).ready(function(){
             v2.css("display", "block");
             v2.get(0).play();
         },3000);
-      $(".upload_wrap").animate({top: "-470px"}, 3000, function(){
-        });
+      $(".upload_wrap").animate({"margin-top": "-470px"}, 3000, function(){});
       v2.get(0).addEventListener("timeupdate",function(){
         if(v2.get(0).ended){
           v2.css("display", "none");
@@ -273,8 +274,7 @@ function page2() {
     $(".change_my").click(function() {
       clickTimes = 1;
       lock = 0;
-      $(".upload_wrap").animate({top: (0-topHeight) + "px"}, 3000, function(){
-        });
+      $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000, function(){});
       $(".p3").css("display", "none");
       $(".p1").css("display", "block");
       $("#close_0").get(0).pause();
