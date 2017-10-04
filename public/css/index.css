@@ -60,6 +60,7 @@ video {
 	display: none;
     background-image:url('../image/close.png');
     background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 .p3{
     display: none;
