@@ -75,6 +75,7 @@ video {
 	display: none;
     background: url("../image/close.png");
     background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0);
 }
 /* img.upload_wrap_background {
     position: absolute;

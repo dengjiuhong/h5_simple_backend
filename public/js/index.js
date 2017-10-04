@@ -23,12 +23,9 @@ $(document).ready(function(){
   });
   v.get(0).addEventListener("timeupdate",function(){
     if(v.get(0).ended){
-      // $(".p0").css("display", "none");
-      // $(".p1").css("display", "block");
-      $(".p0").fadeOut("slow");
-      $(".p1").show();
+      $(".p0").css("display", "none");
+      $(".p1").css("display", "block");
       $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000);
-      //  $(".upload_wrap_background").css("margin-top", "-" + topHeight + "px");
       //v2.get(0).play();
     }
   });
