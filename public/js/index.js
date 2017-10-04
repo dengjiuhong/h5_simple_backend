@@ -294,6 +294,7 @@ function page2(){
       $(".p1").css("display", "block");
       $("#close_0").get(0).pause();
       $("#close_0").css("display", "none");
+      $("#exit_0").css("display", "none");
       $("#share_in").css("display", "none");
       $("#close").css("display", "block");
       $(".share_pic").empty();
