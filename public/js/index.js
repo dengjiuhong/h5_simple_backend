@@ -278,11 +278,11 @@ function page2() {
           $("#close_0").animate({"opacity": "1"}, 750, function() {
             $("#share_in").css("display", "block");
             $("#close_0").get(0).play();
-            $("#close_0").get(0).addEventListener("timeupdate",function(){
+            /*$("#close_0").get(0).addEventListener("timeupdate",function(){
               if($("#close_0").get(0).ended){
                 $("#close_0").get(0).play();
               }
-            })
+            })*/
         });
       }, 1500);  
     });
