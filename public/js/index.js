@@ -227,7 +227,7 @@ function page2(){
     });
     $("#share_in").css("display", "none");
     document.getElementById("share_in").addEventListener("click", function() {
-      console.log("share!");
+        console.log(user_name);
         $("#close_0").get(0).pause();
         $(".p2").css("display", "none");
         $(".p3").css("display", "block");
