@@ -255,6 +255,9 @@ video {
     user-select: none;
     overflow: hidden;
 }
+.p3{
+    display: none;
+}
   #view{
     width: 100%;
     height: 100%;
