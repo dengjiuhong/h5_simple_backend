@@ -8,7 +8,6 @@ var lock = 0;
 
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
-alert(topHeight);
 
 
 $(document).ready(function(){

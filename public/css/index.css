@@ -75,10 +75,6 @@ video {
     background-size: 100% auto;
 }
 .upload_wrap, .share_wrap{
-     animation: myfirst 3s;
-    -moz-animation: myfirst 3s;
-    -webkit-animation: myfirst 3s;
-    -o-animation: myfirst 3s; 
     margin: 0 auto;
     margin-top: -500px;
     width: 350px;
