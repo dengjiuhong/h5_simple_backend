@@ -11,6 +11,8 @@ var lock = 0;
 
 
 $(document).ready(function(){
+  var close_p = new new Image();
+  close_p.src = "../image/close.png";
   $(".p0").fadeIn("fast");
   var v = $("#my_video_1");
   var v2 = $("#my_video_2");
