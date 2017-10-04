@@ -47,7 +47,7 @@ video {
     height: 100%;
     overflow: hidden;
     position: relative;
-    background-color: #fff;
+    background-color: #000000;
 }
 /* 防止闪屏 */
 .wrap.p1-fake {
