@@ -269,12 +269,10 @@ function page2() {
 
     $("#close").click(function() {
       $("#close").css("display", "none");
-      $("#cube").animate({"opacity": "0"}, 1500);
-      $(".mask").css("display", "block");
-      $(".mask").animate({"opacity": "1"}, 1500);
+      $("#panorama_4").animate({"opacity": "0"}, 1500);
+      $("#panorama_5").animate({"opacity": "0"}, 1500);
+      $("#panorama_6").animate({"opacity": "0"}, 1500);
       setTimeout(function() {
-        $(".mask").animate({"opacity": "0.5"}, 750, function() {
-          $(".mask").css("display", "none");
           $("#close_0").css("opacity", "0.5");
           $("#close_0").css("display", "block");
           $("#close_0").animate({"opacity": "1"}, 750, function() {
@@ -285,7 +283,6 @@ function page2() {
                 $("#close_0").get(0).play();
               }
             })
-        });
         });
       }, 1500);  
     });
