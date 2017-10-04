@@ -68,12 +68,12 @@ video {
     background-size: 100% auto;
 }
 .upload_wrap, .share_wrap{
-    animation: myfirst 3s;
--moz-animation: myfirst 3s; /* Firefox */
--webkit-animation: myfirst 3s;  /* Safari 和 Chrome */
--o-animation: myfirst 3s;   /* Opera */
+     animation: myfirst 3s;
+    -moz-animation: myfirst 3s;
+    -webkit-animation: myfirst 3s;
+    -o-animation: myfirst 3s; 
     margin: 0 auto;
-    margin-top: 0px;
+    margin-top: -500px;
     width: 350px;
     height: 453px;
     position: relative;
@@ -184,6 +184,22 @@ video {
     height: 19px;
     margin-top: 54px;
     margin-left: -16px;
+}
+#in {
+    width: 111.9px;
+    height: 50.7px;
+    margin-top: 10px;
+    background-image: url('/image/enter_mu.png');
+    background-size: 100% 100%;
+    background-color: inherit;
+}
+#welcome {
+    width: 147.6px;
+    height: 18.3px;
+    margin-top: 5px;
+    background-image: url('/image/welcome.png');
+    background-size: 100% 100%;
+    background-color: inherit;
 }
 .buttons{
     margin-top: 10px;
