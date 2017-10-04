@@ -306,6 +306,7 @@ to {margin-top: 0px;}
     position: absolute;
 }
 #share_in{
+    z-index: 3;
     margin-top: 30px;
 }
 #share_in_2{
