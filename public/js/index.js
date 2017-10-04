@@ -17,9 +17,9 @@ $(document).ready(function(){
   var panorama_4 = new Image();
   var panorama_5 = new Image();
   var panorama_6 = new Image();
-  panorama_4.src = "../image/panorama/" + panorama + "/4.png";
-  panorama_5.src = "../image/panorama/" + panorama + "/5.png";
-  panorama_6.src = "../image/panorama/" + panorama + "/6.png";
+  panorama_4.src = "./image/panorama/" + panorama + "/4.png";
+  panorama_5.src = "./image/panorama/" + panorama + "/5.png";
+  panorama_6.src = "./image/panorama/" + panorama + "/6.png";
   $(".p0").fadeIn("fast");
   var v = $("#my_video_1");
   var v2 = $("#my_video_2");
