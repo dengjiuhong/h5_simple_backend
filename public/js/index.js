@@ -248,7 +248,7 @@ function page2() {
     });
     $("#share_in").css("display", "none");
     document.getElementById("share_in").addEventListener("click", function() {
-        $("#close_0").removeAttr("loop");
+        //$("#close_0").removeAttr("loop");
         $("#close_0").get(0).addEventListener("timeupdate",function(){
           if($("#close_0").get(0).ended){
             $("#close_0").get(0).pause();
