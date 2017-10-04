@@ -73,6 +73,8 @@ video {
 }
 .p1{
 	display: none;
+    background: url("../image/close.png");
+    background-size: 100% auto;
 }
 img.upload_wrap_background {
     position: absolute;
