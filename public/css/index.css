@@ -74,7 +74,7 @@ video {
 .p1{
 	display: none;
     background: url("../image/close.png");
-    background-size: 100% auto;
+    background-size: 100% 100%;
 }
 /* img.upload_wrap_background {
     position: absolute;
@@ -88,7 +88,7 @@ video {
 .p3{
     display: none;
     background: url("../image/close.png");
-    background-size: 100% auto;
+    background-size: 100% 100%;
 }
 .upload_wrap, .share_wrap{
     margin: 0 auto;
