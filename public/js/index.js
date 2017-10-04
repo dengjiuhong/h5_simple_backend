@@ -254,6 +254,7 @@ function page2(){
     document.getElementById("share_in").addEventListener("click", function() {
         console.log(user_name);
         $("#close_0").get(0).pause();
+        $("#close_0").css("display", "none");
         $("#exit_0").css("display", "block");
         $("#exit_0").get(0).play();
         $("#exit_0").get(0).addEventListener("timeupdate",function(){
@@ -271,7 +272,7 @@ function page2(){
           }
         })  
     }, true);
-    
+
     $("#close").click(function() {
       $("#close").css("display", "none");
       $("#close_0").css("display", "block");
