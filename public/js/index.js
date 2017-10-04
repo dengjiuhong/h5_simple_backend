@@ -277,6 +277,7 @@ function page2(){
     });
 
     $(".change_my").click(function() {
+      clickTimes = 1;
       $(".upload_wrap").animate({top: "0px"}, 3000, function(){
         });
       $(".p3").css("display", "none");
