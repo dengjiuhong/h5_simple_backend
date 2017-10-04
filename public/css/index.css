@@ -272,6 +272,7 @@ img.upload_wrap_background {
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
+    z-index: 8;
   }
   .stage{
     width: 100%;
@@ -315,7 +316,7 @@ img.upload_wrap_background {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 9;
 }
 @keyframes myfirst
 {
@@ -344,9 +345,19 @@ to {margin-top: 0px;}
     position: absolute;
 }
 #share_in{
-    z-index: 3;
+    z-index: 10;
     margin-top: 30px;
 }
 #share_in_2{
     margin-top: 50px;
+}
+.mask{
+    opacity: 0;
+    display: none;
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 8;
 }

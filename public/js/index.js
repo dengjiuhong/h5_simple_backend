@@ -265,6 +265,8 @@ function page2() {
       $("#panorama_4").animate({"opacity": "0"}, 1500);
       $("#panorama_5").animate({"opacity": "0"}, 1500);
       $("#panorama_6").animate({"opacity": "0"}, 1500);
+      $(".mask").css("display", "block");
+      $(".mask").animate({"opacity": "1"}, 1500);
       setTimeout(function() {
         $("#close_0").css("opacity", "0");
         $("#close_0").css("display", "block");
@@ -277,7 +279,7 @@ function page2() {
             }
           })
         });
-      }, 1100);  
+      }, 1500);  
     });
 
     $(".change_my").click(function() {
