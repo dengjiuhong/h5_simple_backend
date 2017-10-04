@@ -262,8 +262,10 @@ function page2() {
 
     $("#close").click(function() {
       $("#close").css("display", "none");
-      $("#cube").animate({"opacity": "0"}, 1500, function() {
-        $("#cube").css("display", "none");
+      $("#panorama_4").animate({"opacity": "0"}, 1500);
+      $("#panorama_5").animate({"opacity": "0"}, 1500);
+      $("#panorama_6").animate({"opacity": "0"}, 1500);
+      setTimeout(function() {
         $("#close_0").css("opacity", "0");
         $("#close_0").css("display", "block");
         $("#close_0").animate({"opacity": "1"}, 1500, function() {
@@ -275,7 +277,7 @@ function page2() {
             }
           })
         });
-      });   
+      }, 1500);  
     });
 
     $(".change_my").click(function() {
