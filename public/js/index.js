@@ -258,8 +258,9 @@ function page2() {
     }, true);
 
     $("#close").click(function() {
-      $("#close").animate({"opacity": "0"}, 2000, function() {
-        $("#close").css("display", "none");
+      $("#close").css("display", "none");
+      $("#cube").animate({"opacity": "0"}, 2000, function() {
+        $("#cube").css("display", "none");
         $("#close_0").css("opacity", "0");
         $("#close_0").css("display", "block");
         $("#close_0").animate({"opacity": "1"}, 2000, function() {
