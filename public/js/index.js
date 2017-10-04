@@ -301,19 +301,21 @@ function page2() {
     $(".change_my").click(function() {
       clickTimes = 1;
       lock = 0;
-      $(".share_wrap").animate({"margin-top": "-470px"}, 3000, function(){});
-      $(".p3").css("display", "none");
-      $(".p1").css("display", "block");
-      $("#close_0").get(0).pause();
-      $("#close_0").css("display", "none");
-      $("#exit_0").css("display", "none");
-      $("#share_in").css("display", "none");
-      $("#close").css("display", "block");
-      $(".share_pic").empty();
-      $("#panorama_5").empty();
-      $(".container").empty();
-      panorama = Math.floor(Math.random()*3);
-      preload(panorama);
+      $(".share_wrap").animate({"margin-top": "-470px"}, 3000, function(){
+        $(".p3").css("display", "none");
+        $(".p1").css("display", "block");
+        $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000);
+        $("#close_0").get(0).pause();
+        $("#close_0").css("display", "none");
+        $("#exit_0").css("display", "none");
+        $("#share_in").css("display", "none");
+        $("#close").css("display", "block");
+        $(".share_pic").empty();
+        $("#panorama_5").empty();
+        $(".container").empty();
+        panorama = Math.floor(Math.random()*3);
+        preload(panorama);
+      });
     })
     var lastMouseX = 0,
       lastMouseY = 0,
