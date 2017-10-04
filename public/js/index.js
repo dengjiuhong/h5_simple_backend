@@ -259,6 +259,7 @@ function page2() {
             $("#exit_0").get(0).play();
             $("#exit_0").get(0).addEventListener("timeupdate",function(){
             if($("#exit_0").get(0).ended){
+                audio.currentTime = 0;
                 audio.play();
                 $(".p2").css("display", "none");
                 $(".p3").css("display", "block");
@@ -300,7 +301,7 @@ function page2() {
     $(".change_my").click(function() {
       clickTimes = 1;
       lock = 0;
-      $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000, function(){});
+      $(".share_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000, function(){});
       $(".p3").css("display", "none");
       $(".p1").css("display", "block");
       $("#close_0").get(0).pause();
