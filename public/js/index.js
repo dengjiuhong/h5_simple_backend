@@ -278,6 +278,8 @@ function page2() {
     }, true);
 
     $("#close").click(function() {
+      $("#close_0").get(0).play();
+      $("#close_0").get(0).pause();
       $("#close").css("display", "none");
       $("#panorama_4").animate({"opacity": "0"}, 1500);
       $("#panorama_5").animate({"opacity": "0"}, 1500);
