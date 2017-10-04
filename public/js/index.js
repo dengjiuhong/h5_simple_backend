@@ -223,6 +223,7 @@ function page2(){
       transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
     });
     document.getElementById("share_in").addEventListener("click", function() {
+      console.log("share!");
         $("#close_0").get(0).pause();
         $(".p2").css("display", "none");
         $(".p3").css("display", "block");
