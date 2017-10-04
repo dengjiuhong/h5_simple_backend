@@ -333,3 +333,4 @@ function page2() {
       frameTimer = requestAnimationFrame(go);
     }
   }
+}
