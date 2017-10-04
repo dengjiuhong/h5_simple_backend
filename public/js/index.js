@@ -258,10 +258,10 @@ function page2() {
     }, true);
 
     $("#close").click(function() {
-      $("#close").animate({"opacity": "0"}, 1000, function() {
+      $("#close").animate({"opacity": "0"}, 2000, function() {
         $("#close_0").css("opacity", "0");
         $("#close_0").css("display", "block");
-        $("#close_0").animate({"opacity": "100"}, 1000, function() {
+        $("#close_0").animate({"opacity": "1"}, 2000, function() {
           $("#share_in").css("display", "block");
           $("#close_0").get(0).play();
           $("#close_0").get(0).addEventListener("timeupdate",function(){
