@@ -265,7 +265,7 @@ function page2() {
       $(".mask").css("display", "block");
       $(".mask").animate({"opacity": "1"}, 1500);
       setTimeout(function() {
-        $(".mask").animate({"opacity": "1"}, 1500, function() {
+        $(".mask").animate({"opacity": "0"}, 1500, function() {
           $(".mask").css("display", "none");
         });
         $("#close_0").css("opacity", "0");
