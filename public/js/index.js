@@ -68,6 +68,7 @@ $(document).ready(function(){
 function preload(panorama) {
   for(var i = 4; i < 7; i++) {
     $("<img></img>").attr("src", "./image/panorama/" + panorama + "/"+ i +".png")
+    .css("display", "none").appendTo(".p0");
 
   };
 
