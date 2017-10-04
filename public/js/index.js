@@ -209,6 +209,7 @@ function page2() {
         "background": "url(./image/panorama/" + panorama + "/"+ i +".png) no-repeat",
         "background-size": "100% auto",
         "position": "absolute",
+        "opacity": "0",
         "width": BG_WIDTH,
         "height": BG_HEIGHT,
         "left": (viewW - BG_WIDTH) / 2,
@@ -217,7 +218,9 @@ function page2() {
         // "backface-visibility": "hidden"
       }).attr('id',"panorama_" + i).appendTo(".container");
     }
-
+    $("#panorama_4").css("opacity", "1");
+    $("#panorama_5").css("opacity", "1");
+    $("#panorama_6").css("opacity", "1");
     //放置图片
     $("<img></img>").attr("src", ImageFile[0])
     .css({
