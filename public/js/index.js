@@ -277,7 +277,7 @@ function page2() {
             }
           })
         });
-      }, 1500);  
+      }, 1100);  
     });
 
     $(".change_my").click(function() {
