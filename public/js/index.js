@@ -9,24 +9,7 @@ var lock = 0;
 
 $(document).ready(function(){
   panorama = Math.floor(Math.random()*3);
-  var imgSrcArr = [
-        '../image/panorama/' + panorama + '/4.png',
-        '../image/panorama/' + panorama + '/5.png',
-        '../image/panorama/' + panorama + '/6.png'
-    ];
-
-    var imgWrap = [];
-
-    function preloadImg(arr) {
-        for(var i =0; i< arr.length ;i++) {
-            imgWrap[i] = new Image();
-            imgWrap[i].src = arr[i];
-        }
-    }
-
-  preloadImg(imgSrcArr);
-  var close_p = new Image();
-  close_p.src = "./image/close.png";
+  preload(panorama);
 
   $(".p0").fadeIn("fast");
   var v = $("#my_video_1");
@@ -76,6 +59,13 @@ $(document).ready(function(){
       }
     });
 });
+
+function preload(panorama) {
+  for(var i = 4; i < 7; i++) {
+    $("<img></img>").attr("src", "./image/panorama/" + panorama + "/"+ i +".png")
+    .css("display", "none").appendTo(".p0");
+  }
+}
 
 function wx_process(data) {
   wx.config({
@@ -187,8 +177,8 @@ function page2() {
     $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
     var border_r = -52,
         border_l = 12,
-        border_u = 5,
-        border_d = -3;
+        border_u = 3,
+        border_d = -1.5;
 
 
     var BG_WIDTH = 1000,
@@ -293,22 +283,7 @@ function page2() {
       $("#panorama_5").empty();
       $(".container").empty();
       panorama = Math.floor(Math.random()*3);
-      var imgSrcArr = [
-        '../image/panorama/' + panorama + '/4.png',
-        '../image/panorama/' + panorama + '/5.png',
-        '../image/panorama/' + panorama + '/6.png'
-    ];
-
-    var imgWrap = [];
-
-    function preloadImg(arr) {
-        for(var i =0; i< arr.length ;i++) {
-            imgWrap[i] = new Image();
-            imgWrap[i].src = arr[i];
-        }
-    }
-
-    preloadImg(imgSrcArr);
+      preload(panorama);
     })
     var lastMouseX = 0,
       lastMouseY = 0,
@@ -446,8 +421,8 @@ function page2() {
         beyond_2 = false;
         beyond_3 = false;
         beyond_4 = false;
-        curBgAngleX += (aimAngleX - curBgAngleX) * 0.5;
-        curBgAngleY += (aimAngleY - curBgAngleY) * 0.5;
+        curBgAngleX += (aimAngleX - curBgAngleX) * 0.8;
+        curBgAngleY += (aimAngleY - curBgAngleY) * 0.8;
         $("#cube").css({
         transform: "rotateX(" + (curBgAngleY) + "deg) rotateY(" + -curBgAngleX + "deg) rotateZ(0)"
         //transform: "rotateX(-1.56685deg) rotateY(55.9531deg) rotateZ(0deg)"
