@@ -222,11 +222,11 @@ function page2(){
     $("#cube").css({
       transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
     });
-    $("#share_in").click(function() {
-      $("#close_0").get(0).pause();
+    $("#share_in").addEventListener("click", function() {
+        $("#close_0").get(0).pause();
         $(".p2").css("display", "none");
         $(".p3").css("display", "block");
-    });
+    }, true);
     $("#close").click(function() {
       $("#close").css("display", "none");
       $("#close_0").css("display", "block");
