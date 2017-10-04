@@ -39,8 +39,8 @@ video {
     -ms-user-select: none;
     user-select: none;
     outline: 0;
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: fill;
+       object-fit: fill;
 }
 .wrap {
     width: 100%;
@@ -67,8 +67,7 @@ video {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100%;
-    z-index: 0;
+    height: 120vh;
 }
 .p3{
     display: none;
