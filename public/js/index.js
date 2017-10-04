@@ -41,12 +41,7 @@ $(document).ready(function(){
             v2.css("display", "block");
             v2.get(0).play();
         },3000);
-<<<<<<< HEAD
-      $(".upload_wrap").animate({top: "-470px"}, 2000, function(){
-        });
-=======
       $(".upload_wrap").animate({"margin-top": "-470px"}, 3000, function(){});
->>>>>>> 3fb1f4475aa0519986d9422a6aad69b6e55ba098
       v2.get(0).addEventListener("timeupdate",function(){
         if(v2.get(0).ended){
           v2.css("display", "none");
