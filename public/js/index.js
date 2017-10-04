@@ -7,12 +7,20 @@ var user_name = "test";
 var user_phone = "test";
 var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = 0;//0~3
+panorama = Math.floor(Math.random()*3);
 var lock = 0;
 
 
 $(document).ready(function(){
+
   var close_p = new new Image();
   close_p.src = "../image/close.png";
+  var panorama_4 = new new Image();
+  var panorama_5 = new new Image();
+  var panorama_6 = new new Image();
+  panorama_4.src = "./image/panorama/" + panorama + "/4.png";
+  panorama_5.src = "./image/panorama/" + panorama + "/5.png";
+  panorama_6.src = "./image/panorama/" + panorama + "/6.png";
   $(".p0").fadeIn("fast");
   var v = $("#my_video_1");
   var v2 = $("#my_video_2");
@@ -46,7 +54,6 @@ $(document).ready(function(){
            //v2.fadeIn("fast");
           $(".p0").css("display", "none");
           $(".p2").fadeIn("fast");
-          panorama = Math.floor(Math.random()*3);
           if(!lock) {page2(); lock++;}
         }
       })     
