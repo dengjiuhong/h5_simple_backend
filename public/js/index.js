@@ -304,6 +304,7 @@ function page2() {
       $(".share_wrap").animate({"margin-top": "-470px"}, 3000, function(){
         $(".p3").css("display", "none");
         $(".p1").css("display", "block");
+        $(".upload_wrap").css("display", "block");
         $(".upload_wrap").animate({"margin-top": "0px"}, 3000);
         $("#close_0").get(0).pause();
         $("#close_0").css("display", "none");
