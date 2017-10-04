@@ -75,14 +75,11 @@ video {
 	display: none;
 }
 img.upload_wrap_background {
-    background-image:url('../image/close.png');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
-    width: 508px;
-    height: 898px;
+    width: 100%;
+    height: auto;
     -o-object-fit: fill;
        object-fit: fill;
 }
