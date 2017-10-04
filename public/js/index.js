@@ -6,6 +6,10 @@ var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = 0;//0~3
 var lock = 0;
 
+// 顶栏高度
+var topHeight = window.screen.height - window.innerHeight;
+alert(topHeight);
+
 
 $(document).ready(function(){
   panorama = Math.floor(Math.random()*3);
@@ -24,6 +28,7 @@ $(document).ready(function(){
        //v2.fadeIn("fast");
        $(".p0").css("display", "none");
        $(".p1").css("display", "block");
+       $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000);
        //v2.get(0).play();
     }
   });
@@ -36,8 +41,12 @@ $(document).ready(function(){
             v2.css("display", "block");
             v2.get(0).play();
         },3000);
-      $(".upload_wrap").animate({top: "-470px"}, 3000, function(){
+<<<<<<< HEAD
+      $(".upload_wrap").animate({top: "-470px"}, 2000, function(){
         });
+=======
+      $(".upload_wrap").animate({"margin-top": "-470px"}, 3000, function(){});
+>>>>>>> 3fb1f4475aa0519986d9422a6aad69b6e55ba098
       v2.get(0).addEventListener("timeupdate",function(){
         if(v2.get(0).ended){
           v2.css("display", "none");
@@ -63,111 +72,8 @@ $(document).ready(function(){
 function preload(panorama) {
   for(var i = 4; i < 7; i++) {
     $("<img></img>").attr("src", "./image/panorama/" + panorama + "/"+ i +".png")
-    .css("display", "none").appendTo(".p0");
-  }
-}
 
-function wx_process(data) {
-  wx.config({
-            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-            appId: data.appid, // 必填，公众号的唯一标识
-            timestamp: data.timestamp, // 必填，生成签名的时间戳
-            nonceStr: data.random_str, // 必填，生成签名的随机串
-            signature: data.signature,// 必填，签名，见附录1
-            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        });
-  wx.ready(function(){
-            wx.onMenuShareTimeline({
-                title: 'test', // 分享标题
-                link: 'www.google.com', // 分享链接
-                imgUrl: '', // 分享图标
-                success: function () { 
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () { 
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-            wx.onMenuShareAppMessage({
-                title: 'JasonFF', // 分享标题
-                desc: 'JasonFF的主页', // 分享描述
-                link: 'www.google.com', // 分享链接
-                imgUrl: '', // 分享图标
-                type: 'link', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () { 
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () { 
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-          });
-}
-function requestPic() {
-  user_phone = $("#phone").val();
-  user_name = $("#name").val();
-    console.log("file = " + picfile);
-    if(picfile == null) {
-        console.log("文件为空");
-    }
-    else {
-        $.ajax({
-            url: 'http://101.132.91.4:80/pic_storage', 
-            type: 'POST',
-            timeout: 15000,
-            data: {
-                name: $("#name").val(),
-                phone : $("#phone").val()
-            },
-            success: function (data) {
-                Qiniu_upload(picfile, data.token, $("#name").val() + ".jpg");
-            },
-            error: function(xhr, errorType, error) {
-                console.log("出错！" + error);
-                clickTimes = 1;
-            },
-        });
-    }
-
-}
-function upload_click() {
-    console.log("click");
-    console.log($("#test").val());
-    console.log("clickTimes" + clickTimes);
-        if(clickTimes == 1) {
-            clickTimes++;
-            requestTimes++;
-            console.log("clickTimes" + clickTimes);
-            requestPic();
-        }
-}
-
-function Qiniu_upload(f, token, key) {
-            console.log(key);
-            console.log(token);
-            console.log(f);
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', Qiniu_UploadUrl, true);
-            var formData, startDate;
-            formData = new FormData();
-            if (key !== null && key !== undefined) formData.append('key', key);
-            formData.append('token', token);
-            formData.append('file', f);
-            
-            
-
-            xhr.onreadystatechange = function(response) {
-                if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText != "") {
-                    var blkRet = JSON.parse(xhr.responseText);
-                    console && console.log("blkRet" + blkRet);
-                } else if (xhr.status != 200 && xhr.responseText) {
-
-                }
-            };
-            startDate = new Date().getTime();
-            xhr.send(formData);
-        };
+  };
 
 function page2() {
     $('body').on('touchmove', function(event) {
@@ -270,8 +176,7 @@ function page2() {
     $(".change_my").click(function() {
       clickTimes = 1;
       lock = 0;
-      $(".upload_wrap").animate({top: "0px"}, 3000, function(){
-        });
+      $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000, function(){});
       $(".p3").css("display", "none");
       $(".p1").css("display", "block");
       $("#close_0").get(0).pause();
