@@ -300,6 +300,23 @@ function page2(){
       $(".share_pic").empty();
       $("#panorama_5").empty();
       $(".container").empty();
+      panorama = Math.floor(Math.random()*3);
+      var imgSrcArr = [
+        '../image/panorama/' + panorama + '/4.png',
+        '../image/panorama/' + panorama + '/5.png',
+        '../image/panorama/' + panorama + '/6.png'
+    ];
+
+    var imgWrap = [];
+
+    function preloadImg(arr) {
+        for(var i =0; i< arr.length ;i++) {
+            imgWrap[i] = new Image();
+            imgWrap[i].src = arr[i];
+        }
+    }
+
+    preloadImg(imgSrcArr);
     })
     var lastMouseX = 0,
       lastMouseY = 0,
