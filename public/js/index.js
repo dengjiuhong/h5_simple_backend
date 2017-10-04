@@ -1,6 +1,3 @@
-(function(){
-    console.log("ready");
-})();
 var clickTimes = 1;
 var requestTimes = 0;
 var user_name = "test";
@@ -29,13 +26,8 @@ $(document).ready(function(){
 
   preloadImg(imgSrcArr);
   var close_p = new Image();
-  close_p.src = "../image/close.png";
-  /*var panorama_4 = new Image();
-  var panorama_5 = new Image();
-  var panorama_6 = new Image();
-  panorama_4.src = "./image/panorama/" + panorama + "/4.png";
-  panorama_5.src = "./image/panorama/" + panorama + "/5.png";
-  panorama_6.src = "./image/panorama/" + panorama + "/6.png";*/
+  close_p.src = "./image/close.png";
+
   $(".p0").fadeIn("fast");
   var v = $("#my_video_1");
   var v2 = $("#my_video_2");
@@ -187,7 +179,7 @@ function Qiniu_upload(f, token, key) {
             xhr.send(formData);
         };
 
-function page2(){
+function page2() {
     $('body').on('touchmove', function(event) {
       event.preventDefault();
     });
