@@ -266,7 +266,6 @@ function page2(){
     }, true);
     $("#close").click(function() {
       $("#close").css("display", "none");
-      c
       $("#share_in").css("display", "block");
       $("#close_0").get(0).play();
       $("#close_0").get(0).addEventListener("timeupdate",function(){
