@@ -191,7 +191,7 @@ function page2(){
     $('body').on('touchmove', function(event) {
       event.preventDefault();
     });
-
+    $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
     var border_r = -52,
         border_l = 12,
         border_u = 5,
