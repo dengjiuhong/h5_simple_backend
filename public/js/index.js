@@ -3,7 +3,8 @@
 })();
 var clickTimes = 1;
 var requestTimes = 0;
-var name = "test";
+var user_name = "test";
+var user_phone = "test";
 var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = 0;//0~3
 var lock = 0;
@@ -98,6 +99,8 @@ function wx_process(data) {
           });
 }
 function requestPic() {
+  user_phone = $("#phone").val();
+  user_name = $("#name").val();
     console.log("file = " + picfile);
     if(picfile == null) {
         console.log("文件为空");
@@ -228,6 +231,14 @@ function page2(){
         $("#close_0").get(0).pause();
         $(".p2").css("display", "none");
         $(".p3").css("display", "block");
+
+        $(".share_name").innerHTML = user_name;
+        $(".share_id").innerHTML = "00002";
+        $("<img></img>").attr("src", ImageFile[0])
+        .css({
+          "width" : "100%",
+          "height" : "100%"
+        }).appendTo(".share_pic");
     }, true);
     $("#close").click(function() {
       $("#close").css("display", "none");
