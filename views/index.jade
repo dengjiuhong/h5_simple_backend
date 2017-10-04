@@ -13,6 +13,8 @@ html(lang='en')
     script(src='./js/exif.js')
     script(src='./js/index.js')
     .wrap
+      audio#audio-bg(style="width:0;height:0")
+        source(src='./v/audio.mp3', type="audio/mpeg")
       .page.p0
         img(src='./image/close.png', style='display:none')
         video#my_video_1(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x-webkit-airplay="allow", x5-video-orientation='landscape|portrait', style='', poster="/image/first_poster.png")

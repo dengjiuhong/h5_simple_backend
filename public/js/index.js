@@ -5,6 +5,7 @@ var user_phone = "test";
 var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = 0;//0~3
 var lock = 0;
+var audio;
 
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
@@ -13,7 +14,9 @@ var topHeight = window.screen.height - window.innerHeight;
 $(document).ready(function(){
   panorama = Math.floor(Math.random()*3);
   preload(panorama);
-
+  audio = document.getElementById("audio-bg");
+  audio.load();
+  audio.play();
   $(".p0").fadeIn("fast");
   var v = $("#my_video_1");
   var v2 = $("#my_video_2");
@@ -256,6 +259,7 @@ function page2() {
             $("#exit_0").get(0).play();
             $("#exit_0").get(0).addEventListener("timeupdate",function(){
             if($("#exit_0").get(0).ended){
+                audio.play();
                 $(".p2").css("display", "none");
                 $(".p3").css("display", "block");
                 $(".share_pic").empty();
@@ -282,6 +286,7 @@ function page2() {
           $("#close_0").css("display", "block");
           $("#close_0").animate({"opacity": "1"}, 750, function() {
             $("#share_in").css("display", "block");
+            audio.pause();
             $("#close_0").get(0).play();
             /*$("#close_0").get(0).addEventListener("timeupdate",function(){
               if($("#close_0").get(0).ended){
