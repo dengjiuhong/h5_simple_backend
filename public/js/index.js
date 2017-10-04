@@ -249,10 +249,7 @@ function page2() {
     $("#share_in").css("display", "none");
     document.getElementById("share_in").addEventListener("click", function() {
         $("#close_0").removeAttr("loop");
-        $("#exit_0").get(0).play();
-        $("#exit_0").get(0).pause();
         $("#close_0").get(0).play();
-        console.log(user_name);
         $("#close_0").get(0).addEventListener("timeupdate",function(){
           if($("#close_0").get(0).ended){
             $("#close_0").get(0).pause();
@@ -283,6 +280,8 @@ function page2() {
     $("#close").click(function() {
       $("#close_0").get(0).play();
       $("#close_0").get(0).pause();
+              $("#exit_0").get(0).play();
+        $("#exit_0").get(0).pause();
       $("#close").css("display", "none");
       $("#panorama_4").animate({"opacity": "0"}, 1500);
       $("#panorama_5").animate({"opacity": "0"}, 1500);
