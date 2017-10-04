@@ -14,12 +14,13 @@ $(document).ready(function(){
   panorama = Math.floor(Math.random()*3);
   var close_p = new Image();
   close_p.src = "../image/close.png";
-  var panorama_4 = new Image();
+  /*var panorama_4 = new Image();
   var panorama_5 = new Image();
   var panorama_6 = new Image();
   panorama_4.src = "./image/panorama/" + panorama + "/4.png";
   panorama_5.src = "./image/panorama/" + panorama + "/5.png";
-  panorama_6.src = "./image/panorama/" + panorama + "/6.png";
+  panorama_6.src = "./image/panorama/" + panorama + "/6.png";*/
+  if(!lock) {page2(); lock++;}
   $(".p0").fadeIn("fast");
   var v = $("#my_video_1");
   var v2 = $("#my_video_2");
@@ -53,7 +54,6 @@ $(document).ready(function(){
            //v2.fadeIn("fast");
           $(".p0").css("display", "none");
           $(".p2").fadeIn("fast");
-          if(!lock) {page2(); lock++;}
         }
       })     
     });
