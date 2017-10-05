@@ -470,6 +470,7 @@ function page2() {
       });
     });
     $(".share_my").click(function() {
+      $("#shareit").show();
       $("#share_gif").css("display", "block");
       document.getElementsByClassName("p3")[0].addEventListener("click", function(e){
         var e = e || window.event;
