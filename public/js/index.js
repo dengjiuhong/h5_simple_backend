@@ -413,8 +413,6 @@ function page2() {
         $(".upload_wrap").animate({"margin-top": "0px"}, 3000);
         $("#in").fadeIn();
         $("#welcome").fadeIn();
-        $("#close").css("opacity", "1");
-        $("#light_word").css("opacity", "1");
         $("#close").css("display", "block");
         $("#light_word").css("display", "block");
         $("#close_0").get(0).removeEventListener("timeupdate",temp_func_2);//关灯视频不再循环
@@ -429,6 +427,12 @@ function page2() {
         $(".p2").css("opacity","0");
         close_lock = 0;
         loop_twice = 0;
+        right_lock = 0;
+        left_lock = 0;
+        try_lock = 1;
+        $("#close").css("display", "none");
+        $("#light_word").css("display", "none");
+        $("#try").css("display", "block");
         panorama = Math.floor(Math.random()*3);
       });
     });
