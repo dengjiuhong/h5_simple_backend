@@ -182,8 +182,8 @@ video {
 .share_wrap{
     margin: 0 auto;
     margin-top: -500px;
-    width: 318px;
-    height: 437px;
+    width: 70vw;
+    height: calc(812 / 480 * 70vw);
     position: relative;
     overflow: hidden;
     background: url("../image/brand_.png");
