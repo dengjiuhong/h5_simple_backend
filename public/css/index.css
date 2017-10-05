@@ -361,8 +361,8 @@ video {
     display: inline-flex;
 }
 .share_my{
-    height: 0.675rem;
-    width: 2.015rem;
+    height: 0.47rem;
+    width: 1.34rem;
     left: 0.475rem;
     bottom: 0.545rem;
     background-image: url('/image/share_my.png');
@@ -371,8 +371,8 @@ video {
     position: fixed;
 }
 .change_my{
-    height: 0.675rem;
-    width: 2.015rem;
+    height: 0.47rem;
+    width: 1.34rem;
     right: 0.475rem;
     bottom: 0.545rem;
     background-image: url('/image/change_my.png');
