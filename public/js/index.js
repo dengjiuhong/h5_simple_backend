@@ -14,14 +14,13 @@ var topHeight = window.screen.height - window.innerHeight;
 $(document).ready(function(){
   panorama = Math.floor(Math.random()*3);
   preload(panorama);
-  audio = document.getElementById("audio-bg");
-  audio.load();
-  audio.play();
   $(".p0").fadeIn("fast");
   var v = $("#my_video_1");
   var v2 = $("#my_video_2");
   v.fadeIn("fast");
-  $(".p0").click(function(){
+  $("#first_enter_box").click(function(){
+    audio = document.getElementById("audio-bg");
+    audio.play();
     v.get(0).play();
     $(".wrap").addClass("p1-fake");
     $("#first_enter_box").fadeOut();
