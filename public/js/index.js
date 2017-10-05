@@ -9,6 +9,9 @@ var audio;
 var upload_lock;
 var close_lock = 0;
 var loop_twice = 0;//循环两次后出现离开博物馆
+var try_lock = 0;
+var left_lock = 0;
+var right_lock = 0;
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
 $(document).ready(function() {
@@ -563,6 +566,19 @@ function page2() {
         beyond_3 = false;
         beyond_4 = false;
         curBgAngleX += (aimAngleX - curBgAngleX) * 0.8;
+        if((-curBgAngleX) >= 30) right_lock = 1;
+        if((-curBgAngleX) <= 10) left_lock = 1;
+        if(left_lock && right_lock) {
+          $("#try").css("opacity", "1");
+          $("#try").animate({"opacity": "0"}, 1000, function() {
+            $("#close").css("opacity", "0");
+            $("#light_word").css("opacity", "0");
+            $("#close").css("display", "block");
+            $("#light_word").css("display", "block");
+            $("#close").animate({"opacity": "1"}, 1000);
+            $("#light_word").animate({"opacity": "1"}, 1000);
+          });
+        }
         //curBgAngleY += (aimAngleY - curBgAngleY) * 0.8;
         $("#cube").css({
         transform: "rotateX(" + (curBgAngleY) + "deg) rotateY(" + -curBgAngleX + "deg) rotateZ(0)"
