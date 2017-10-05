@@ -141,6 +141,8 @@ video {
     position: fixed;
     bottom: 0.18rem;
     background-image: url('/image/first_enter.png');
+    background-size: 100% 100%;
+    background-color: inherit;
     left: 27vw;
     z-index: 3;
 }
