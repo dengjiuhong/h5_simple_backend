@@ -319,8 +319,6 @@ function page2() {
     var temp_func_2 = function() {
           if($("#close_0").get(0).ended){
             $("#close_0").get(0).pause();
-            $("#close").css("display", "none");
-            $("#light_word").css("display", "none");
             $("#close_0").css("display", "none");//关灯视频消失，退出视频出来
             $("#exit_0").css("display", "block");
             $("#exit_0").get(0).play();
@@ -330,7 +328,7 @@ function page2() {
                 audio.play();
                 $(".p2").css("display", "none");
                 $(".p3").css("display", "block");//p3出来，渲染
-                $(".share_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000, function(){});
+                $(".share_wrap").animate({"margin-top": "0px"}, 3000, function(){});
                 $(".share_pic").empty();
                 $(".share_name").html(user_name);
                 $(".share_id").innerHTML = "00002";
@@ -359,6 +357,8 @@ function page2() {
       $("#exit_0").get(0).play();
       $("#exit_0").get(0).pause();
       //全景消失
+      $("#close").css("display", "none");
+      $("#light_word").css("display", "none");
       $("#panorama_4").animate({"opacity": "0"}, 1500);
       $("#panorama_5").animate({"opacity": "0"}, 1500);
       $("#panorama_6").animate({"opacity": "0"}, 1500);
