@@ -433,6 +433,7 @@ function page2() {
         $("#close").css("display", "none");
         $("#light_word").css("display", "none");
         $("#try").css("display", "block");
+        $("#try").css("opacity", "1");
         panorama = Math.floor(Math.random()*3);
       });
     });
