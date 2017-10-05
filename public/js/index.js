@@ -373,7 +373,7 @@ function page2() {
         $(".share_pic").empty();
         $("#panorama_5").empty();
         $(".container").empty();
-        $(".p2").css("opacity"，"0");
+        $(".p2").css("opacity","0");
         panorama = Math.floor(Math.random()*3);
         preload(panorama);
       });
