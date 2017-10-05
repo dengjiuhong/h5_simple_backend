@@ -249,7 +249,6 @@ function page2() {
         border_u = 1.5,
         border_d = -1.5;
 
-
     if($("#bigCube").height() >= 650) {
       var BG_WIDTH = 1000,
       BG_HEIGHT = 1750;
@@ -300,7 +299,7 @@ function page2() {
     .css({
       "position": "absolute",
       "width": BG_WIDTH / 3,
-      "height": BG_HEIGHT / 4,
+      "height": BG_HEIGHT / 3.9,
       "left": BG_WIDTH / 3,
       "top": BG_HEIGHT / 2.8,
     })

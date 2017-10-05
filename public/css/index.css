@@ -362,6 +362,7 @@ video {
     display: inline-flex;
 }
 .share_my{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
     height: 0.47rem;
     width: 1.345rem;
     left: 0.475rem;
@@ -372,6 +373,7 @@ video {
     position: fixed;
 }
 .change_my{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
     height: 0.47rem;
     width: 1.345rem;
     right: 0.475rem;
