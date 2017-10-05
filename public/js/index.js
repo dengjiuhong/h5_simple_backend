@@ -324,6 +324,7 @@ function page2() {
                   $("#share_in").css("opacity", "0");
                   $("#share_in").animate({"opacity": "1"}, 1500);
                 } else {
+                  loop_twice++;
                   $("#close_0").get(0).play();
                 }
               }
