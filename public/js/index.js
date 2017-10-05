@@ -409,6 +409,8 @@ function page2() {
         $(".upload_wrap").animate({"margin-top": "0px"}, 3000);
         $("#in").fadeIn();
         $("#welcome").fadeIn();
+        $("#close").css("opacity", "1");
+        $("#light_word").css("opacity", "1");
         $("#close").css("display", "block");
         $("#light_word").css("display", "block");
         $("#close_0").get(0).removeEventListener("timeupdate",temp_func_2);//关灯视频不再循环
