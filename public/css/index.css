@@ -474,7 +474,7 @@ video {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     height: 0.505rem;
     width: 1.43rem;
-    right: 0.475rem;
+    left: 29vw;
     bottom: 0.65rem;
     background-image: url('/image/leave.png');
     background-size: 100% 100%;
