@@ -9,7 +9,7 @@ var audio;
 var upload_lock;
 var close_lock = 0;
 var loop_twice = 0;//循环两次后出现离开博物馆
-var try_lock = 0;
+var try_lock = 1;
 var left_lock = 0;
 var right_lock = 0;
 // 顶栏高度
@@ -568,7 +568,8 @@ function page2() {
         curBgAngleX += (aimAngleX - curBgAngleX) * 0.8;
         if((-curBgAngleX) >= 30) right_lock = 1;
         if((-curBgAngleX) <= 10) left_lock = 1;
-        if(left_lock && right_lock) {
+        if(left_lock && right_lock && try_lock) {
+          try_lock = 0;
           $("#try").css("opacity", "1");
           $("#try").animate({"opacity": "0"}, 1000, function() {
             $("#close").css("opacity", "0");
