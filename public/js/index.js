@@ -25,7 +25,7 @@ $(document).ready(function() {
       '/image/close.png',
       '/image/brand.png',
       '/image/brand_.png',
-      '/image/brand_.png',
+      '/image/close_.png',
       '/image/panorama/0/4.png',
       '/image/panorama/0/5.png',
       '/image/panorama/0/6.png',
@@ -304,7 +304,7 @@ function page2() {
     .css({
       "position": "absolute",
       "width": BG_WIDTH / 3,
-      "height": BG_HEIGHT / 4,
+      "height": BG_HEIGHT / 3.97,
       "left": BG_WIDTH / 3,
       "top": BG_HEIGHT / 2.75,
       "object-fit": "cover",
@@ -321,7 +321,6 @@ function page2() {
     var temp_func = function() {
           if($("#close_0").get(0).ended){
                 if(loop_twice == 2) {
-                  loop_twice = 0;
                   $("#share_in").css("display", "block");
                   $("#share_in").css("opacity", "0");
                   $("#share_in").animate({"opacity": "1"}, 1500);
@@ -373,7 +372,7 @@ function page2() {
     $("#close").click(function() {
       if(close_lock != 0) return;
       close_lock++;
-      $("#close").css("background-image", "url('/image/close_light.png')")
+      $("#close").css("background-image", "url('/image/close_light.png')");
       //全景消失
       $("#close").css("display", "none");
       $("#light_word").css("display", "none");
@@ -413,8 +412,10 @@ function page2() {
         $(".share_pic").empty();
         $("#panorama_5").empty();
         $(".container").empty();
+        $("#close").css("background-image", "url('/image/turn_light.png')");
         $(".p2").css("opacity","0");
         close_lock = 0;
+        loop_twice = 0;
         panorama = Math.floor(Math.random()*3);
       });
     });
