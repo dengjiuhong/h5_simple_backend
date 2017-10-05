@@ -67,18 +67,17 @@ video {
 }
 
 #first_enter_box {
-    width: 100vw;
-    background-color: inherit;
+    width: 50vw;
+    height: 60px;
+    margin-right: 25vw;
+    margin-left: 25vw;
     position: fixed;
     bottom: 30px;
     z-index: 3;
 }
-#first_enter {
-    width: 165px;
-    height: 50.7px;
-    background-image: url('/image/first_enter.png');
-    background-size: 100% 100%;
-    background-color: inherit;
+#first_enter_box>img{
+    width: 100%;
+    height: 100%;
 }
 .p1, .p3{
 	display: none;
