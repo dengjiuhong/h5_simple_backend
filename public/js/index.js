@@ -6,7 +6,7 @@ var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = 0;//0~3
 var lock = 0;
 var audio;
-
+var upload_lock;
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
 $(document).ready(function() {
@@ -44,17 +44,17 @@ $(document).ready(function() {
 function judge() {
   if(picfile == null) {
     $("#welcome").css("background-image", "url('/image/error/err_pic.png')");
-    return false;
+    upload_lock =  false;
   }
   else if($("#name").val() == ""){
     $("#welcome").css("background-image", "url('/image/error/err_name.png')");
-    return false;
+    upload_lock =  false;
   }
   else if($('#phone').val() == "") {
     $("#welcome").css("background-image", "url('/image/error/err_phone.png')");
-    return false;
+    upload_lock =  false;
   }
-  return true;
+  upload_lock =  true;
 }
 function main() {
   panorama = Math.floor(Math.random()*3);
@@ -83,7 +83,13 @@ function main() {
     }
   });
     $("#in").click(function(){
-      if(!judge()) return;
+      if(!upload_lock) return;
+      if(clickTimes == 1 && upload_lock) {
+            clickTimes++;
+            requestTimes++;
+            console.log("clickTimes" + clickTimes);
+            requestPic();
+        }
       v2.get(0).play();
       v2.get(0).pause();
       setTimeout(function(){

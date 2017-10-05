@@ -303,7 +303,7 @@ video {
     height: 0.445rem;
     left: 34.6vw;
     bottom: 0.665rem;
-    background-image: url('/image/close_light.png');
+    background-image: url('/image/turn_light.png');
     background-size: 100% 100%;
     background-color: inherit;
     position: fixed;
