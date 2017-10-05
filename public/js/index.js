@@ -76,6 +76,10 @@ function main() {
   var v2 = $("#my_video_2");
   v.fadeIn("fast");
   $("#first_enter_box").click(function(){
+    $("#close_0").get(0).play();//加载两个视频
+      $("#close_0").get(0).pause();
+      $("#exit_0").get(0).play();
+      $("#exit_0").get(0).pause();
     audio = document.getElementById("audio-bg");
     audio.play();
     v.get(0).play();
@@ -352,10 +356,6 @@ function page2() {
       if(close_lock != 0) return;
       close_lock++;
       $("#close").css("background-image", "url('/image/close_light.png')")
-      $("#close_0").get(0).play();//加载两个视频
-      $("#close_0").get(0).pause();
-      $("#exit_0").get(0).play();
-      $("#exit_0").get(0).pause();
       //全景消失
       $("#close").css("display", "none");
       $("#light_word").css("display", "none");
