@@ -83,6 +83,7 @@ function main() {
     }
   });
     $("#in").click(function(){
+      judge();
       if(!upload_lock) return;
       if(clickTimes == 1 && upload_lock) {
             clickTimes++;
