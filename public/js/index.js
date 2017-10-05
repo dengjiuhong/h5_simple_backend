@@ -304,9 +304,11 @@ function page2() {
     .css({
       "position": "absolute",
       "width": BG_WIDTH / 3,
-      "height": BG_HEIGHT / 3.99,
+      "height": BG_HEIGHT / 4,
       "left": BG_WIDTH / 3,
       "top": BG_HEIGHT / 2.75,
+      "object-fit": "cover",
+      "object-position": "center"
     })
     .appendTo("#panorama_5");
 
