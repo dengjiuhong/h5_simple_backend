@@ -334,6 +334,10 @@ function page2() {
                 $(".p3").css("display", "block");//p3出来，渲染
                 $(".share_wrap").animate({"margin-top": "0px"}, 3000, function(){});
                 $(".share_pic").empty();
+                if(user_name.length > 4) {
+                  user_name = user_name.substr(0, 3);
+                  user_name = user_name + "...";
+                }
                 $(".share_name").html(user_name);
                 $(".share_id").innerHTML = "00002";
                 $("<img></img>").attr("src", ImageFile[0])
