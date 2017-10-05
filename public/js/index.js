@@ -41,14 +41,14 @@ $(document).ready(function(){
       v2.get(0).play();
       v2.get(0).pause();
       setTimeout(function(){
-            $("#in").fadeOut();
-            $("#welcome").fadeOut();
             $(".p1").css("display", "none");
             $(".p3").css("display", "none");
             $(".p0").css("display", "block");
             v2.css("display", "block");
             v2.get(0).play();
         },3000);
+      $("#in").fadeOut();
+      $("#welcome").fadeOut();
       $(".upload_wrap").animate({"margin-top": "-470px"}, 3000, function(){
         $(".upload_wrap").css("display", "none");
       });

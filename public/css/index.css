@@ -75,7 +75,7 @@ video {
     bottom: 30px;
     z-index: 3;
 }
-#first_enter_box>img{
+#first_enter_box>img, #in>img{
     width: 100%;
     height: 100%;
 }
