@@ -310,6 +310,8 @@ function page2() {
         $("#close_0").get(0).addEventListener("timeupdate",function(){
           if($("#close_0").get(0).ended){
             $("#close_0").get(0).pause();
+            $("#close").css("display", "none");
+            $("#light_word").css("display", "none");
             $("#close_0").css("display", "none");//关灯视频消失，退出视频出来
             $("#exit_0").css("display", "block");
             $("#exit_0").get(0).play();
