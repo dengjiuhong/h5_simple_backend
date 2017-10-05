@@ -8,6 +8,7 @@ var lock = 0;
 var audio;
 var upload_lock;
 var close_lock = 0;
+var loop_twice = 0;//循环两次后出现离开博物馆
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
 $(document).ready(function() {
@@ -317,7 +318,14 @@ function page2() {
     $("#share_in").css("display", "none");
     var temp_func = function() {
           if($("#close_0").get(0).ended){
-                $("#close_0").get(0).play();
+                if(loop_twice == 2) {
+                  loop_twice = 0;
+                  $("#share_in").css("display", "block");
+                  $("#share_in").css("opacity", "0");
+                  $("#share_in").animate({"opacity": "1"}, 1500);
+                } else {
+                  $("#close_0").get(0).play();
+                }
               }
         }
     var temp_func_2 = function() {
