@@ -472,18 +472,12 @@ function page2() {
     $(".share_my").click(function() {
       $("#shareit").show();
       $("#share_gif").css("display", "block");
-      document.getElementsByClassName("p3")[0].addEventListener("click", function(e){
-        var e = e || window.event;
-        var elem = e.target || e.srcElement;
-        while (elem) { //循环判断至跟节点，防止点击的是div子元素 
-          if (elem.id=='share_gif' || elem.className=='share_my') { 
-            return; 
-          } 
-          elem = elem.parentNode; 
-        }
-        $('#share_gif').css('display','none');
-      });
+
+
     })
+    $("#shareit").on("click", function(){
+        $("#shareit").hide(); 
+      });
     var lastMouseX = 0,
       lastMouseY = 0,
       curMouseX = 0,
