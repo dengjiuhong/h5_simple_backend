@@ -17,38 +17,41 @@ $(document).ready(function() {
   // $("#in, #welcome").fadeIn();
   // return false;
   // debug //
+
   $(".page.loading").show();
-  var loader = new resLoader({
-    resources : [
-         '/image/close.png',
-         '/image/brand.png',
-         '/image/brand_.png',
-         '/image/brand_.png',
-         '/image/panorama/0/4.png',
-         '/image/panorama/0/5.png',
-         '/image/panorama/0/6.png',
-         '/image/panorama/1/4.png',
-         '/image/panorama/1/5.png',
-         '/image/panorama/1/6.png',
-         '/image/panorama/2/4.png',
-         '/image/panorama/2/5.png',
-         '/image/panorama/2/6.png'
+  var loader = new preload({
+    items : [
+      '/image/close.png',
+      '/image/brand.png',
+      '/image/brand_.png',
+      '/image/brand_.png',
+      '/image/panorama/0/4.png',
+      '/image/panorama/0/5.png',
+      '/image/panorama/0/6.png',
+      '/image/panorama/1/4.png',
+      '/image/panorama/1/5.png',
+      '/image/panorama/1/6.png',
+      '/image/panorama/2/4.png',
+      '/image/panorama/2/5.png',
+      '/image/panorama/2/6.png',
+      '/v/02-openin.mp4'
     ],
+    // prefix: window.location,
     onStart : function(total){
          console.log('start:' + total);
     },
-    onProgress : function(current, total){
-      console.log(current+'/'+total);
-      var percent = current/total*100;
-      $('.loading > .progress > .bar').css('width', percent+'%');
+    process : function(percent){
+      // console.log(percent);
+      if(percent > 5) {
+        $('.loading > .progress > .bar').css('width', percent+'%');
+      }
     },
-    onComplete : function(total){
+    callback : function(total){
       $(".page.loading").fadeOut();
       main();
       // alert("加载完了！");
     }
   });
-  loader.start();
 });
 function judge() {
   if(picfile == null) {
