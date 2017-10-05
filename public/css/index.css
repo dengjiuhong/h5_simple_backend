@@ -183,7 +183,7 @@ video {
     margin: 0 auto;
     margin-top: -500px;
     width: 70vw;
-    height: calc(812 / 480 * 70vw);
+    height: calc(928 / 534 * 70vw);
     position: relative;
     overflow: hidden;
     background: url("../image/brand_.png");
