@@ -375,6 +375,7 @@ function page2() {
       close_lock++;
       $("#close").css("background-image", "url('/image/close_light.png')");
       //全景消失
+      $("#close").css("opacity", "1");
       $("#close").animate({"opacity": "0"}, 1500);
       $("#close").css("display", "none");
       $("#close").css("opacity", "1");
