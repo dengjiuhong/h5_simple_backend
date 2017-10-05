@@ -156,6 +156,9 @@ video {
     background-position: center bottom;
     font-size: 12px;
 }
+.p3{
+    background-image: url('/image/close_.png');
+}
 .upload_wrap{
     margin: 0 auto;
     margin-top: -120vw;
@@ -334,10 +337,10 @@ video {
 }
 #close{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 1.05rem;
-    height: 0.445rem;
+    width: 1.495rem;
+    height: 0.605rem;
     left: 34.6vw;
-    bottom: 0.665rem;
+    bottom: 0.91rem;
     background-image: url('/image/turn_light.png');
     background-size: 100% 100%;
     background-color: inherit;
@@ -362,7 +365,7 @@ video {
 }
 .share_my{
     height: 0.47rem;
-    width: 1.34rem;
+    width: 1.56rem;
     left: 0.475rem;
     bottom: 0.545rem;
     background-image: url('/image/share_my.png');
