@@ -299,7 +299,7 @@ function page2() {
     .css({
       "position": "absolute",
       "width": BG_WIDTH / 3,
-      "height": BG_HEIGHT / 3.9,
+      "height": BG_HEIGHT / 3.95,
       "left": BG_WIDTH / 3,
       "top": BG_HEIGHT / 2.75,
     })
