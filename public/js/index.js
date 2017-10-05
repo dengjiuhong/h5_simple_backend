@@ -85,12 +85,6 @@ function main() {
     $("#in").click(function(){
       judge();
       if(!upload_lock) return;
-      if(clickTimes == 1 && upload_lock) {
-            clickTimes++;
-            requestTimes++;
-            console.log("clickTimes" + clickTimes);
-            requestPic();
-      }
       v2.get(0).play();
       v2.get(0).pause();
       setTimeout(function(){
@@ -113,7 +107,13 @@ function main() {
           $(".p2").fadeIn("fast");
           if(!lock) {page2(); lock++;}
         }
-      })     
+      })
+      if(clickTimes == 1 && upload_lock) {
+            clickTimes++;
+            requestTimes++;
+            console.log("clickTimes" + clickTimes);
+            requestPic();
+      }     
     });
     var wx_data = {};
     $.ajax({
@@ -196,15 +196,6 @@ function requestPic() {
         });
     }
 
-}
-function upload_click() {
-    console.log("clickTimes" + clickTimes);
-        if(clickTimes == 1) {
-            clickTimes++;
-            requestTimes++;
-            console.log("clickTimes" + clickTimes);
-            requestPic();
-        }
 }
 
 function Qiniu_upload(f, token, key) {
