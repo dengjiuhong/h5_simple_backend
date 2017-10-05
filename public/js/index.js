@@ -123,7 +123,7 @@ function main() {
            //v2.fadeIn("fast");
           $(".p0").css("display", "none");
           $(".p2").css("display", "block");
-          $(".p2").animate({"opacity": "1"}, 750);
+          $(".p2").animate({"opacity": "1"}, 1000);
           if(!lock) {page2(); lock++;}
         }
       })
@@ -295,9 +295,6 @@ function page2() {
         // "backface-visibility": "hidden"
       }).attr('id',"panorama_" + i).appendTo(".container");
     }
-    $("#panorama_4").css("opacity", "1");
-    $("#panorama_5").css("opacity", "1");
-    $("#panorama_6").css("opacity", "1");
     //放置图片
     $("<img></img>").attr("src", ImageFile[0])
     .css({
