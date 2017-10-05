@@ -342,6 +342,7 @@ function page2() {
         }
     var temp_func_2 = function() {
           if($("#close_0").get(0).ended){
+            $("#view").css("background-image", "url('/image/close_.png')");
             $("#close_0").css("display", "none");//关灯视频消失，退出视频出来
             $("#exit_0").css("display", "block");
             $("#exit_0").get(0).play();
@@ -362,7 +363,9 @@ function page2() {
                 $("<img></img>").attr("src", ImageFile[0])
                 .css({
                   "width" : "100%",
-                  "height" : "100%"
+                  "height" : "100%",
+                  "object-fit": "cover",
+                  "object-position": "center"
                 }).appendTo(".share_pic");
               }
             }) 
