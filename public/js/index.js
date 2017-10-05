@@ -46,12 +46,12 @@ function judge() {
     $("#welcome").css("background-image", "url('/image/error/err_pic.png')");
     return false;
   }
-  else if($('#phone').val() == "") {
-    $("#welcome").css("background-image", "url('/image/error/err_phone.png')");
-    return false;
-  }
   else if($("#name").val() == ""){
     $("#welcome").css("background-image", "url('/image/error/err_name.png')");
+    return false;
+  }
+  else if($('#phone').val() == "") {
+    $("#welcome").css("background-image", "url('/image/error/err_phone.png')");
     return false;
   }
   return true;
