@@ -303,10 +303,10 @@ function page2() {
     $("<img></img>").attr("src", ImageFile[0])
     .css({
       "position": "absolute",
-      "width": "3.0rem",
-      "height": "4.1rem",
-      "left": "3.05rem",
-      "top": "5.78rem",
+      "width": BG_WIDTH / 3,
+      "height": BG_HEIGHT / 3.95,
+      "left": BG_WIDTH / 3,
+      "top": BG_HEIGHT / 2.75,
     })
     .appendTo("#panorama_5");
 
