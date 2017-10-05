@@ -469,13 +469,19 @@ function page2() {
         panorama = Math.floor(Math.random()*3);
       });
     });
-    var gif_lis = function() {
-      $("#share_gif").css("display", "none");
-      document.getElementsByClassName("p3")[0].removeEventListener("click", gif_lis);
-    }
     $(".share_my").click(function() {
       $("#share_gif").css("display", "block");
-      document.getElementsByClassName("p3")[0].addEventListener("click", gif_lis);
+      document.getElementsByClassName("p3")[0].addEventListener("click", function(e){
+        var e = e || window.event;
+        var elem = e.target || e.srcElement;
+        while (elem) { //循环判断至跟节点，防止点击的是div子元素 
+          if (elem.id && elem.id=='test') { 
+            return; 
+          } 
+          elem = elem.parentNode; 
+        }
+        $('#share_gif').css('display','none');
+      });
     })
     var lastMouseX = 0,
       lastMouseY = 0,
