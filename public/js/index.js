@@ -411,11 +411,11 @@ function page2() {
       clickTimes = 1;
       lock = 0;
       //分享UI向上动
-      $(".share_wrap").animate({"margin-top": "-470px"}, 3000, function(){
+      $(".share_wrap").animate({"margin-top": "-150vw"}, 2000, function(){
         $(".p3").css("display", "none");//p3消失，p1出来
         $(".p1").css("display", "block");
         $(".upload_wrap").css("display", "block");//首页ui动
-        $(".upload_wrap").animate({"margin-top": "0px"}, 3000);
+        $(".upload_wrap").animate({"margin-top": "0px"}, 2000);
         $("#in").fadeIn();
         $("#welcome").fadeIn();
         $("#close").css("display", "block");
