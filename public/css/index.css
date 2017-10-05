@@ -39,8 +39,10 @@ video {
     -ms-user-select: none;
     user-select: none;
     outline: 0;
-    -o-object-fit: fill;
-       object-fit: fill;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center bottom;
+       object-position: center bottom;
 }
 .wrap {
     width: 100%;
@@ -48,6 +50,8 @@ video {
     overflow: hidden;
     position: relative;
     background-color: #000000;
+    background-position: center bottom;
+    background-size: 100% auto;
 }
 /* 防止闪屏 */
 .wrap.p1-fake {
@@ -77,25 +81,12 @@ video {
     background-size: 100% 100%;
     background-color: inherit;
 }
-.p1{
+.p1, .p3{
 	display: none;
     background: url("../image/close.png");
-    background-size: 100% 100%;
+    background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
-}
-/* img.upload_wrap_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    -o-object-fit: fill;
-       object-fit: fill;
-} */
-.p3{
-    display: none;
-    background: url("../image/close.png");
-    background-size: 100% 100%;
+    background-position: center bottom;
 }
 .upload_wrap, .share_wrap{
     margin: 0 auto;
@@ -328,29 +319,6 @@ video {
     top: 0;
     left: 0;
     z-index: 9;
-}
-@keyframes myfirst
-{
-from {margin-top: -470px;}
-to {margin-top: 0px;}
-}
-
-@-moz-keyframes myfirst /* Firefox */
-{
-from {margin-top: -470px;}
-to {margin-top: 0px;}
-}
-
-@-webkit-keyframes myfirst /* Safari and Chrome */
-{
-from {margin-top: -470px;}
-to {margin-top: 0px;}
-}
-
-@-o-keyframes myfirst /* Opera */
-{
-from {margin-top: -470px;}
-to {margin-top: 0px;}
 }
 #share_in, #close{
     position: absolute;
