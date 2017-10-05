@@ -39,6 +39,9 @@ $(document).ready(function() {
       '/image/panorama/2/4.png',
       '/image/panorama/2/5.png',
       '/image/panorama/2/6.png',
+      '/image/bg/close_0.png',
+      '/image/bg/close_1.png',
+      '/image/bg/close_2.png',
       '/v/02-openin.mp4'
     ],
     // prefix: window.location,
@@ -367,6 +370,7 @@ function page2() {
     }
     //点击分享之后
     document.getElementById("share_in").addEventListener("click", function() {
+        $("#view").css("background-image", "url('/image/bg/close_" + panorama + ".png')");
         //$("#close_0").removeAttr("loop");
         $("#close_0").get(0).removeEventListener("timeupdate",temp_func);//关灯视频不再循环
         $("#close_0").get(0).addEventListener("timeupdate", temp_func_2);
