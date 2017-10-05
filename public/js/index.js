@@ -371,6 +371,8 @@ function page2() {
         $(".p1").css("display", "block");
         $(".upload_wrap").css("display", "block");//首页ui动
         $(".upload_wrap").animate({"margin-top": "0px"}, 3000);
+        $("#in").fadeIn();
+        $("#welcome").fadeIn();
         $("#close_0").css("display", "none");
         $("#exit_0").css("display", "none");
         $("#share_in").css("display", "none");
