@@ -290,23 +290,26 @@ video {
     color: white;
 }
 .share_id{
-    width: 35px;
-    height: 13px;
-    margin-top: 36px;
-    margin-left: 47px;
+    font-family: my_font;
+    width: 11.3vw;
+    height: 3.46vw;
+    margin-top: 33.9vw;
+    margin-left: 15vw;
+    font-size: 9px;
 }
 .share_name{
-    font-size: 30px;
-    width: 62px;
-    height: 32px;
-    margin-top: 137px;
-    margin-left: 20px;
+    color: #ddd3ba;
+    font-size: 16px;
+    width: 19vw;
+    height: 15vw;
+    margin-top: 65vw;
+    margin-left: 10vw;
 }
 .share_pic{
     width: 24vw;
-    height: 41.37vw;
+    height: 35.5vw;
     margin-top: 34.63vw;
-    margin-left: 32.5vw;
+    margin-left: 32.4vw;
 }
 #in {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
