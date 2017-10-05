@@ -208,6 +208,7 @@ function page2() {
     var view = $("#bigCube");
     var viewW = view.width();
     var viewH = view.height();
+    alert("W" + viewW + "H" + viewH);
 
     var container = $(".container"),
       bgItem;
