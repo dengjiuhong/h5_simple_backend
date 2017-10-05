@@ -26,6 +26,7 @@ $(document).ready(function() {
       '/image/brand.png',
       '/image/brand_.png',
       '/image/close_.png',
+      '/image/try.png',
       '/image/panorama/0/4.png',
       '/image/panorama/0/5.png',
       '/image/panorama/0/6.png',
@@ -77,7 +78,8 @@ function main() {
   var v2 = $("#my_video_2");
   v.fadeIn("fast");
   $("#first_enter_box").click(function(){
-    $("#close_0").get(0).play();//加载两个视频
+      $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
+      $("#close_0").get(0).play();//加载两个视频
       $("#close_0").get(0).pause();
       $("#exit_0").get(0).play();
       $("#exit_0").get(0).pause();
@@ -320,7 +322,7 @@ function page2() {
     $("#share_in").css("display", "none");
     var temp_func = function() {
           if($("#close_0").get(0).ended){
-                if(loop_twice == 2) {
+                if(loop_twice == 1) {
                   loop_twice++;
                   $("#share_in").css("display", "block");
                   $("#share_in").css("opacity", "0");
@@ -334,7 +336,6 @@ function page2() {
         }
     var temp_func_2 = function() {
           if($("#close_0").get(0).ended){
-            $("#close_0").get(0).pause();
             $("#close_0").css("display", "none");//关灯视频消失，退出视频出来
             $("#exit_0").css("display", "block");
             $("#exit_0").get(0).play();
@@ -344,7 +345,7 @@ function page2() {
                 audio.play();
                 $(".p2").css("display", "none");
                 $(".p3").css("display", "block");//p3出来，渲染
-                $(".share_wrap").animate({"margin-top": "0px"}, 3000, function(){});
+                $(".share_wrap").animate({"margin-top": "0px"}, 2000, function(){});
                 $(".share_pic").empty();
                 if(user_name.length > 4) {
                   user_name = user_name.substr(0, 3);
