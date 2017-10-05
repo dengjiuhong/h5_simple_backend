@@ -28,19 +28,19 @@ html(lang='en')
           source(src='./v/01-near.mp4', type='video/mp4')
         video#my_video_2(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='landscape|portrait', style='display:none')
           source(src='./v/02-openin.mp4', type='video/mp4')
-        #first_enter_box
-            img(src='/image/first_enter.png')
+        img#first_enter_box(src='/image/first_enter.png')
       .page.p1
         //- img.upload_wrap_background(src="/image/close.png")
         .upload_wrap
-          .upload_wrap_small
-            .upload
-              input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
-              img#pic
+          .upload
+            input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
+            img#pic(src="/image/choose_pic.png")
+          .name_block
             .name 馆长
-            .phone 手机
             .input_name
               input#name(type='text', name='name')
+          .phone_block
+            .phone 手机
             .input_phone
               input#phone(type='text', name='phone')
         #in

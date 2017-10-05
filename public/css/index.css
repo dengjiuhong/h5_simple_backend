@@ -133,20 +133,14 @@ video {
     left: calc(50vw - 35vw / 2);
 }
 
-/* .loading > .loading_title > img {
-    width: 265px;
-    height: 17px;
-} */
-
 /* 第一页 */
 #first_enter_box {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 50vw;
-    height: 60px;
-    margin-right: 25vw;
-    margin-left: 25vw;
+    height: 15.364vw;
     position: fixed;
-    bottom: 30px;
+    bottom: 0.15rem;
+    left: calc(50vw - 50vw / 2);
     z-index: 3;
 }
 #first_enter_box>img, #in>img{
@@ -162,29 +156,35 @@ video {
     background-position: center bottom;
     font-size: 12px;
 }
-.upload_wrap, .share_wrap{
+.upload_wrap{
     margin: 0 auto;
-    margin-top: -500px;
-    width: 350px;
-    height: 453px;
+    margin-top: -120vw;
+    width: 70vw;
+    height: calc(812 / 480 * 70vw); /* 118.416667 */
     position: relative;
     overflow: hidden;
-    background: url("../image/brand.png");
+    background: url("../image/new_brand.png");
     background-size: 100% auto;
+}
+.upload_wrap > .upload {
+    border: 1.3vw solid #ddd3ba;
+    border-radius: 2vw;
+    box-sizing: border-box;
+}
+.upload_wrap > .name_block,
+.upload_wrap > .phone_block {
+    border: 0.5vw solid #ddd3ba;
+    border-radius: 2vw;
 }
 .share_wrap{
+    margin: 0 auto;
+    margin-top: -500px;
     width: 318px;
     height: 437px;
+    position: relative;
+    overflow: hidden;
     background: url("../image/brand_.png");
     background-size: 100% auto;
-}
-.upload_wrap_small{
-    position: relative;
-    margin: 0 auto;
-    margin-top: 186px;
-    height: 217px;
-    width: 165px;
-    margin-bottom: 10px;
 }
 .share_wrap_small{
     position: relative;
@@ -193,13 +193,16 @@ video {
     height: 321px;
     width: 198px;
 }
+/* 选择图片框 */
 .upload {
-    margin: 0 auto;
-    width: 140px;
-    height: 140px;
-    opacity: 0;
+    width: 40vw;
+    height: 40vw;
+    opacity: 1;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    top: 30%;
+    left: calc(70vw / 2 - 40vw / 2);
+    margin: 0 auto;
 }
 #btn_upload{
     position: absolute;
@@ -210,22 +213,74 @@ video {
 #pic {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
-.name{
+/* 填名字的框 */
+.upload_wrap > .name_block {
+    width: 40vw;
+    height: 7.2vw;
     position: absolute;
-    color: white;
-    width: 50px;
-    height: 19px;
-    margin-top: 19px;
-    margin-left: 5px;
+    top: 69.5%;
+    left: calc(70vw / 2 - 40vw / 2);
+    background-color:transparent;
+
+    text-align: left;
 }
+/* 填电话的框 */
+.upload_wrap > .phone_block {
+    width: 40vw;
+    height: 7.2vw;
+    position: absolute;
+    top: 79.5%;
+    left: calc(70vw / 2 - 40vw / 2);
+    background-color:transparent;
+
+    text-align: left;
+}
+.name,
 .phone{
-    position: absolute;
-    color: white;
-    width: 50px;
-    height: 19px;
-    margin-top: 57px;
-    margin-left: 5px;
+    color: #ddd3ba;
+    height: 7.2vw;
+    width: 10vw;
+
+    font-size: 4vw;
+    line-height: 7.2vw;
+    font-weight: 200;
+    padding-left: 2vw;
+    float: left;
+}
+#name{
+    color: #ddd3ba;
+    font-size: 4vw;
+    line-height: 7.2vw;
+    font-weight: 400;
+    /* appearance:none;  下拉框去掉右侧图标   */
+    -moz-appearance:none;  
+    -webkit-appearance:none;
+    background-color:transparent;
+    width: 26vw;
+    height: 7.2vw;
+    border:0;
+    float: right;
+    text-align: right;
+    padding-right: 2vw;
+}
+#phone{
+    color: #ddd3ba;
+    font-size: 2.5vw;
+    line-height: 7.2vw;
+    font-weight: 400;
+    /* appearance:none;  下拉框去掉右侧图标   */
+    -moz-appearance:none;  
+    -webkit-appearance:none;
+    background-color:transparent;
+    width: 26vw;
+    height: 7.2vw;
+    border:0;
+    float: right;
+    text-align: right;
+    padding-right: 2vw;
 }
 .share_name, .share_id, .share_pic{
     position: absolute;
@@ -250,52 +305,30 @@ video {
     margin-top: 41px;
     margin-left: 93px;
 }
-#name{
-    color: white;
-    appearance:none;  /*下拉框去掉右侧图标*/  
-    -moz-appearance:none;  
-    -webkit-appearance:none;
-    background-color:transparent; 
-    position: absolute;
-    width: 78px;
-    height: 19px;
-    margin-top: 19px;
-    margin-left: -16px;
-    border:0px;
-}
-#phone{
-    border:0px;
-    color: white;
-    appearance:none;  /*下拉框去掉右侧图标*/  
-    -moz-appearance:none;  
-    -webkit-appearance:none;
-    background-color:transparent; 
-    position: absolute;
-    width: 78px;
-    height: 19px;
-    margin-top: 54px;
-    margin-left: -16px;
-}
 #in {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 1.3rem;
-    height: 0.59rem;
-    bottom: 0.815rem;
-    left: 30.93vw;
+    width: 38vw;
+    height: calc(0.59 / 1.3 * 38vw);
     background-image: url('/image/enter_mu.png');
     background-size: 100% 100%;
+    background-color: transparent;
     overflow: hidden;
     position: fixed;
+    top: calc(120vw);
+    left: calc(50vw - 38vw / 2);
+    display: none;
 }
 #welcome {
-    width: 1.46rem;
-    height: 0.215rem;
-    bottom: 0.26rem;
-    left: 28.58vw;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width: 35vw;
+    height: calc(0.215 / 1.46 * 35vw);
     background-image: url('/image/welcome.png');
     background-size: 100% 100%;
-    background-color: inherit;
+    background-color: transparent;
     position: fixed;
+    top: calc(120vw + 0.59 / 1.3 * 30vw * 1.5);
+    left: calc(50vw - 35vw / 2);
+    display: none;
 }
 #close{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
