@@ -42,6 +42,7 @@ $(document).ready(function() {
       '/image/bg/close_0.png',
       '/image/bg/close_1.png',
       '/image/bg/close_2.png',
+      '/image/share_my.gif',
       '/v/02-openin.mp4'
     ],
     // prefix: window.location,
@@ -468,6 +469,9 @@ function page2() {
         panorama = Math.floor(Math.random()*3);
       });
     });
+    $(".share_my").click(function() {
+
+    })
     var lastMouseX = 0,
       lastMouseY = 0,
       curMouseX = 0,

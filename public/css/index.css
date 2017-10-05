@@ -395,6 +395,16 @@ video {
     background-color: inherit;
     position: fixed;
 }
+#share_gif{
+    height: 1rem;
+    height: 0.445rem;
+    right: 0;
+    top: 1.125rem;
+    background-image: url('/image/share_my.gif');
+    background-size: 100% 100%;
+    background-color: inherit;
+    position: fixed;
+}
 .btn_chuan {
     margin-top: 33px;
 }
