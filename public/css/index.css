@@ -140,7 +140,8 @@ video {
     height: 0.56rem;
     position: fixed;
     bottom: 0.18rem;
-    left: calc(50vw - 50vw / 2);
+    background-image: url('/image/first_enter.png');
+    left: 27vw;
     z-index: 3;
 }
 .p1, .p3{
