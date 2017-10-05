@@ -260,7 +260,6 @@ function page2() {
     var view = $("#bigCube");
     var viewW = view.width();
     var viewH = view.height();
-    alert("W" + viewW + "H" + viewH);
 
     var container = $(".container"),
       bgItem;
@@ -336,11 +335,12 @@ function page2() {
     }, true);
     //点击关灯之后
     $("#close").click(function() {
+      $("#close").css("background-image", "url('/image/close_light.png')")
       $("#close_0").get(0).play();//加载两个视频
       $("#close_0").get(0).pause();
       $("#exit_0").get(0).play();
       $("#exit_0").get(0).pause();
-      $("#close").css("display", "none");//关灯按钮消失，全景消失
+      //全景消失
       $("#panorama_4").animate({"opacity": "0"}, 1500);
       $("#panorama_5").animate({"opacity": "0"}, 1500);
       $("#panorama_6").animate({"opacity": "0"}, 1500);
@@ -369,7 +369,6 @@ function page2() {
         $("#close_0").css("display", "none");
         $("#exit_0").css("display", "none");
         $("#share_in").css("display", "none");
-        $("#close").css("display", "block");
         $(".share_pic").empty();
         $("#panorama_5").empty();
         $(".container").empty();
