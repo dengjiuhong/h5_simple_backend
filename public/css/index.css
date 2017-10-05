@@ -136,17 +136,12 @@ video {
 /* 第一页 */
 #first_enter_box {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 50vw;
-    height: 15.364vw;
+    width: 1.51rem;
+    height: 0.56rem;
     position: fixed;
-    bottom: 0.15rem;
+    bottom: 0.18rem;
     left: calc(50vw - 50vw / 2);
     z-index: 3;
-}
-#first_enter_box>img, #in>img{
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 100%;
-    height: 100%;
 }
 .p1, .p3{
 	display: none;
