@@ -50,13 +50,12 @@ video {
     overflow: hidden;
     position: relative;
     background-color: #000000;
-    background-position: center bottom;
-    background-size: 100% auto;
 }
 /* 防止闪屏 */
 .wrap.p1-fake {
     background: url("../image/close.png");
-    background-size: 100% 100%;
+    background-position: center bottom;
+    background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
 }
 
