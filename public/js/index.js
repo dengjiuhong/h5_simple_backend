@@ -458,7 +458,7 @@ function page2() {
         beyond_3 = false;
         beyond_4 = false;
         curBgAngleX += (aimAngleX - curBgAngleX) * 0.8;
-        curBgAngleY += (aimAngleY - curBgAngleY) * 0.8;
+        //curBgAngleY += (aimAngleY - curBgAngleY) * 0.8;
         $("#cube").css({
         transform: "rotateX(" + (curBgAngleY) + "deg) rotateY(" + -curBgAngleX + "deg) rotateZ(0)"
         //transform: "rotateX(-1.56685deg) rotateY(55.9531deg) rotateZ(0deg)"
