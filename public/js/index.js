@@ -302,7 +302,7 @@ function page2() {
       "width": BG_WIDTH / 3,
       "height": BG_HEIGHT / 4,
       "left": BG_WIDTH / 3,
-      "top": BG_HEIGHT / 2.7,
+      "top": BG_HEIGHT / 2.8,
     })
     .appendTo("#panorama_5");
 
