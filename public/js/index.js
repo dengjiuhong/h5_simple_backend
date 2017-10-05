@@ -377,13 +377,16 @@ function page2() {
       //全景消失
       $("#close").css("opacity", "1");
       $("#close").animate({"opacity": "0"}, 1500);
-      $("#light_word").css("display", "none");
+      $("#light_word").css("opacity", "1");
+      $("#light_word").animate({"opacity": "0"}, 1500);
       $("#panorama_4").animate({"opacity": "0"}, 1500);
       $("#panorama_5").animate({"opacity": "0"}, 1500);
       $("#panorama_6").animate({"opacity": "0"}, 1500);
       setTimeout(function() {
           $("#close").css("display", "none");
           $("#close").css("opacity", "1");
+          $("#light_word").css("display", "none");
+          $("#light_word").css("opacity", "1");
           $("#close_0").css("opacity", "0"); //视频渐亮
           $("#close_0").css("display", "block");
           $("#close_0").animate({"opacity": "1"}, 750, function() {
