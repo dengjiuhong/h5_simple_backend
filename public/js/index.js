@@ -246,26 +246,27 @@ function page2() {
       transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
     });
     $("#share_in").css("display", "none");
-    var v_f = function() {
+    var temp_func = function() {
           if($("#close_0").get(0).ended){
                 $("#close_0").get(0).play();
               }
         }
+    //点击分享之后
     document.getElementById("share_in").addEventListener("click", function() {
         //$("#close_0").removeAttr("loop");
-        $("#close_0").get(0).removeEventListener("timeupdate",v_f);
+        $("#close_0").get(0).removeEventListener("timeupdate",temp_func);//关灯视频不再循环
         $("#close_0").get(0).addEventListener("timeupdate",function(){
           if($("#close_0").get(0).ended){
             $("#close_0").get(0).pause();
-            $("#close_0").css("display", "none");
+            $("#close_0").css("display", "none");//关灯视频消失，退出视频出来
             $("#exit_0").css("display", "block");
             $("#exit_0").get(0).play();
             $("#exit_0").get(0).addEventListener("timeupdate",function(){
             if($("#exit_0").get(0).ended){
-                audio.currentTime = 0;
+                audio.currentTime = 0;//音频重新播放
                 audio.play();
                 $(".p2").css("display", "none");
-                $(".p3").css("display", "block");
+                $(".p3").css("display", "block");//p3出来，渲染
                 $(".share_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000, function(){});
                 $(".share_pic").empty();
                 $(".share_name").html(user_name);
@@ -280,36 +281,38 @@ function page2() {
           }
         }); 
     }, true);
+    //点击关灯之后
     $("#close").click(function() {
-      $("#close_0").get(0).play();
+      $("#close_0").get(0).play();//加载两个视频
       $("#close_0").get(0).pause();
-              $("#exit_0").get(0).play();
-        $("#exit_0").get(0).pause();
-      $("#close").css("display", "none");
+      $("#exit_0").get(0).play();
+      $("#exit_0").get(0).pause();
+      $("#close").css("display", "none");//关灯按钮消失，全景消失
       $("#panorama_4").animate({"opacity": "0"}, 1500);
       $("#panorama_5").animate({"opacity": "0"}, 1500);
       $("#panorama_6").animate({"opacity": "0"}, 1500);
       setTimeout(function() {
-          $("#close_0").css("opacity", "0.5");
+          $("#close_0").css("opacity", "0.5"); //视频渐亮
           $("#close_0").css("display", "block");
           $("#close_0").animate({"opacity": "1"}, 750, function() {
             $("#share_in").css("display", "block");
             audio.pause();
             $("#close_0").get(0).play();
-            $("#close_0").get(0).addEventListener("timeupdate", v_f)
+            $("#close_0").get(0).addEventListener("timeupdate", temp_func)
         });
       }, 1500);  
     });
-
+    //点击换张照片之后
     $(".change_my").click(function() {
+      //解锁p2的渲染与p1的按钮
       clickTimes = 1;
       lock = 0;
+      //分享UI向上动
       $(".share_wrap").animate({"margin-top": "-470px"}, 3000, function(){
-        $(".p3").css("display", "none");
+        $(".p3").css("display", "none");//p3消失，p1出来
         $(".p1").css("display", "block");
-        $(".upload_wrap").css("display", "block");
+        $(".upload_wrap").css("display", "block");//首页ui动
         $(".upload_wrap").animate({"margin-top": "0px"}, 3000);
-        $("#close_0").get(0).pause();
         $("#close_0").css("display", "none");
         $("#exit_0").css("display", "none");
         $("#share_in").css("display", "none");
@@ -320,7 +323,7 @@ function page2() {
         panorama = Math.floor(Math.random()*3);
         preload(panorama);
       });
-    })
+    });
     var lastMouseX = 0,
       lastMouseY = 0,
       curMouseX = 0,
