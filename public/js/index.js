@@ -191,9 +191,16 @@ function page2() {
         border_d = -1.5;
 
 
-    var BG_WIDTH = 670,
-      BG_HEIGHT = 1190,
-      BG_NUMBER = 9,
+    if($("#bigCube").height() >= 650) {
+      var BG_WIDTH = 1000,
+      BG_HEIGHT = 1750;
+      $("#view").css("perspective", "1060px");
+    }else {
+      var BG_WIDTH = 670,
+      BG_HEIGHT = 1190;
+      $("#view").css("perspective", "950px");
+    }
+      var BG_NUMBER = 9,
       PER_ANGLE = 360 / BG_NUMBER;
 
     var translateZ = (function calTranslateZ(opts) {
