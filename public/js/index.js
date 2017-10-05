@@ -115,6 +115,7 @@ function main() {
         $(".wrap").removeClass("p1-fake");
       }, 1000);
       $(".upload_wrap").animate({"margin-top": "0"}, 2000);
+      $("#audio-down").get(0).play();
       $("#in, #welcome").fadeIn();
       //v2.get(0).play();
     }
@@ -131,12 +132,14 @@ function main() {
             $(".p0").css("display", "block");
             v2.css("display", "block");
             v2.get(0).play();
+            $("#audio-open").get(0).play();
         },2000);
       $("#in").fadeOut();
       $("#welcome").fadeOut();
       $(".upload_wrap").animate({"margin-top": "-120vw"}, 2000, function(){
         $(".upload_wrap").css("display", "none");
       });
+      $("#audio-up").get(0).play();
       $("#in, #welcome").fadeOut();
       v2.get(0).addEventListener("timeupdate",function(){
         if(v2.get(0).ended){
@@ -358,6 +361,7 @@ function page2() {
             $("#view").css("background-image", "url('/image/close_.png')");
             $("#close_0").css("display", "none");//关灯视频消失，退出视频出来
             $("#exit_0").css("display", "block");
+            $("#audio-open").get(0).play();
             $("#exit_0").get(0).play();
             $("#exit_0").get(0).addEventListener("timeupdate",function(){
             if($("#exit_0").get(0).ended){
@@ -366,6 +370,7 @@ function page2() {
                 $(".p2").css("display", "none");
                 $(".p3").css("display", "block");//p3出来，渲染
                 $(".share_wrap").animate({"margin-top": "0px"}, 2000, function(){});
+                $("#audio-down").get(0).play();
                 $(".share_pic").empty();
                 if(user_name.length > 4) {
                   user_name = user_name.substr(0, 3);
@@ -397,7 +402,7 @@ function page2() {
     });
     //点击关灯之后
     $("#close").click(function() {
-      $("#audio-btn").get(0).play();
+      $("#audio-close").get(0).play();
       if(close_lock != 0) return;
       close_lock++;
       $("#close").css("background-image", "url('/image/close_light.png')");
@@ -430,10 +435,12 @@ function page2() {
       clickTimes = 1;
       lock = 0;
       //分享UI向上动
+      $("#audio-up").get(0).play();
       $(".share_wrap").animate({"margin-top": "-150vw"}, 2000, function(){
         $(".p3").css("display", "none");//p3消失，p1出来
         $(".p1").css("display", "block");
         $(".upload_wrap").css("display", "block");//首页ui动
+        $("#audio-down").get(0).play();
         $(".upload_wrap").animate({"margin-top": "0px"}, 2000);
         $("#in").fadeIn();
         $("#welcome").fadeIn();
