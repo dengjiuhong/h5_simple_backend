@@ -143,7 +143,7 @@ video {
     background-image: url('/image/first_enter.png');
     background-size: 100% 100%;
     background-color: inherit;
-    left: 27vw;
+    left: 27.8546vw;
     z-index: 3;
 }
 .p1, .p3{
@@ -337,7 +337,7 @@ video {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 1.045rem;
     height: 0.425rem;
-    left: 34.6vw;
+    left: 36.1vw;
     bottom: 0.91rem;
     background-image: url('/image/turn_light.png');
     background-size: 100% 100%;
