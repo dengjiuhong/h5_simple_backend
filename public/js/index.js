@@ -54,7 +54,7 @@ function judge() {
     $("#welcome").css("background-image", "url('/image/error/err_phone.png')");
     upload_lock =  false;
   }
-  upload_lock =  true;
+  else upload_lock =  true;
 }
 function main() {
   panorama = Math.floor(Math.random()*3);
@@ -90,7 +90,7 @@ function main() {
             requestTimes++;
             console.log("clickTimes" + clickTimes);
             requestPic();
-        }
+      }
       v2.get(0).play();
       v2.get(0).pause();
       setTimeout(function(){
