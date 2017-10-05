@@ -475,7 +475,7 @@ function page2() {
         var e = e || window.event;
         var elem = e.target || e.srcElement;
         while (elem) { //循环判断至跟节点，防止点击的是div子元素 
-          if (elem.id && elem.id=='test') { 
+          if (elem.id && (elem.id=='share_gif' || elem.className=='share_my')) { 
             return; 
           } 
           elem = elem.parentNode; 
