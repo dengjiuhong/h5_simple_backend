@@ -85,7 +85,6 @@ function main() {
   v.fadeIn("fast");
   $("#first_enter_box").click(function(){
       $("#audio-btn").get(0).play();
-      $("#audio-btn").get(0).pause();
       $("#audio-up").get(0).play();
       $("#audio-up").get(0).pause();
       $("#audio-down").get(0).play();
