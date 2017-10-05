@@ -41,6 +41,8 @@ $(document).ready(function(){
       v2.get(0).play();
       v2.get(0).pause();
       setTimeout(function(){
+            $("#in").fadeOut();
+            $("#welcome".fadeOut();
             $(".p1").css("display", "none");
             $(".p3").css("display", "none");
             $(".p0").css("display", "block");
