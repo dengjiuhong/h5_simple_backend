@@ -173,6 +173,8 @@ video {
 }
 .upload_wrap > .name_block,
 .upload_wrap > .phone_block {
+    color: white;
+    font-family: my_font;
     border: 0.5vw solid #ddd3ba;
     border-radius: 2vw;
 }
