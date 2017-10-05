@@ -53,7 +53,7 @@ html(lang='en')
           .phone_block
             .phone 手机
             .input_phone
-              input#phone(type='text', name='phone', onkeyup="value=value.replace(/[^\d]/g,'')")
+              input#phone(type='text', name='phone', onkeyup="value=value.replace(/[^\\d]/g,'')")
         #in
         #welcome
       .page.p2
@@ -71,7 +71,6 @@ html(lang='en')
                 .container
       .page.p3
         .share_wrap
-          .share_wrap_small
             .share_name test
             .share_id 0001
             .share_pic
