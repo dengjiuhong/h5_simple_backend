@@ -11,9 +11,16 @@ var close_lock = 0;
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
 $(document).ready(function() {
+  // debug //
+  // $(".page.p1").show();
+  // $(".upload_wrap").animate({"margin-top": "0"}, 1000);
+  // $("#in, #welcome").fadeIn();
+  // return false;
+  // debug //
   $(".page.loading").show();
   var loader = new resLoader({
     resources : [
+<<<<<<< HEAD
          '/image/close.png',
          '/image/brand.png',
          '/image/brand_.png',
@@ -27,6 +34,10 @@ $(document).ready(function() {
          '/image/panorama/2/4.png',
          '/image/panorama/2/5.png',
          '/image/panorama/2/6.png'
+=======
+         'http://p2.qhimg.com/t01ed1438874f940dc0.jpg',
+         'http://p9.qhimg.com/t01b4ff03b72c7dc6c7.jpg'
+>>>>>>> ecd43c16595e1d5295e45d22018974bc8eb621cf
     ],
     onStart : function(total){
          console.log('start:' + total);
@@ -81,7 +92,8 @@ function main() {
       setTimeout(function() {
         $(".wrap").removeClass("p1-fake");
       }, 1000);
-      $(".upload_wrap").animate({"margin-top": "" + (0-topHeight) + "px"}, 3000);
+      $(".upload_wrap").animate({"margin-top": "0"}, 3000);
+      $("#in, #welcome").fadeIn();
       //v2.get(0).play();
     }
   });
@@ -99,9 +111,10 @@ function main() {
         },2000);
       $("#in").fadeOut();
       $("#welcome").fadeOut();
-      $(".upload_wrap").animate({"margin-top": "-470px"}, 2000, function(){
+      $(".upload_wrap").animate({"margin-top": "-120vw"}, 2000, function(){
         $(".upload_wrap").css("display", "none");
       });
+      $("#in, #welcome").fadeOut();
       v2.get(0).addEventListener("timeupdate",function(){
         if(v2.get(0).ended){
           v2.css("display", "none");
