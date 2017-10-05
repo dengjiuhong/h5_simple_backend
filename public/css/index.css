@@ -412,6 +412,8 @@ video {
 }
   #view{
     background-color: #000000;
+    background-position: center bottom;
+    background-size: 100% auto;
     width: 100%;
     height: 100%;
     overflow: hidden;
