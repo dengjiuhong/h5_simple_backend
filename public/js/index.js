@@ -120,6 +120,7 @@ function main() {
     }
   });
     $("#in").click(function(){
+      $("#audio-btn").get(0).play();
       judge();
       if(!upload_lock) return;
       v2.get(0).play();
@@ -385,6 +386,7 @@ function page2() {
     }
     //点击分享之后
     document.getElementById("share_in").addEventListener("click", function() {
+      $("#audio-btn").get(0).play();
         $("#view").css("background-image", "url('/image/bg/close_" + panorama + ".png')");
         //$("#close_0").removeAttr("loop");
         $("#close_0").get(0).removeEventListener("timeupdate",temp_func);//关灯视频不再循环
@@ -395,6 +397,7 @@ function page2() {
     });
     //点击关灯之后
     $("#close").click(function() {
+      $("#audio-btn").get(0).play();
       if(close_lock != 0) return;
       close_lock++;
       $("#close").css("background-image", "url('/image/close_light.png')");
@@ -422,6 +425,7 @@ function page2() {
     });
     //点击换张照片之后
     $(".change_my").click(function() {
+      $("#audio-btn").get(0).play();
       //解锁p2的渲染与p1的按钮
       clickTimes = 1;
       lock = 0;
