@@ -295,6 +295,9 @@ function page2() {
         // "backface-visibility": "hidden"
       }).attr('id',"panorama_" + i).appendTo(".container");
     }
+    $("#panorama_4").css("opacity", "1");
+    $("#panorama_5").css("opacity", "1");
+    $("#panorama_6").css("opacity", "1");
     //放置图片
     $("<img></img>").attr("src", ImageFile[0])
     .css({
