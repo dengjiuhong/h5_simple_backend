@@ -41,7 +41,21 @@ $(document).ready(function() {
   });
   loader.start();
 });
-
+function judge() {
+  if(picfile == null) {
+    $("#welcome").css("background-image", "url('/image/error/err_pic.png')");
+    return false;
+  }
+  else if($('#phone').val() == "") {
+    $("#welcome").css("background-image", "url('/image/error/err_phone.png')");
+    return false;
+  }
+  else if($("#name").val() == ""){
+    $("#welcome").css("background-image", "url('/image/error/err_name.png')");
+    return false;
+  }
+  return true;
+}
 function main() {
   panorama = Math.floor(Math.random()*3);
   preload(panorama);
@@ -69,6 +83,7 @@ function main() {
     }
   });
     $("#in").click(function(){
+      if(!judge()) return;
       v2.get(0).play();
       v2.get(0).pause();
       setTimeout(function(){
@@ -77,10 +92,10 @@ function main() {
             $(".p0").css("display", "block");
             v2.css("display", "block");
             v2.get(0).play();
-        },3000);
+        },2000);
       $("#in").fadeOut();
       $("#welcome").fadeOut();
-      $(".upload_wrap").animate({"margin-top": "-470px"}, 3000, function(){
+      $(".upload_wrap").animate({"margin-top": "-470px"}, 2000, function(){
         $(".upload_wrap").css("display", "none");
       });
       v2.get(0).addEventListener("timeupdate",function(){
@@ -176,8 +191,6 @@ function requestPic() {
 
 }
 function upload_click() {
-    console.log("click");
-    console.log($("#test").val());
     console.log("clickTimes" + clickTimes);
         if(clickTimes == 1) {
             clickTimes++;
