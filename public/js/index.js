@@ -471,11 +471,11 @@ function page2() {
     });
     var gif_lis = function() {
       $("#share_gif").css("display", "none");
-      document.getElementsByClassName("p3").removeEventListener("click", gif_lis);
+      document.getElementsByClassName("p3")[0].removeEventListener("click", gif_lis);
     }
     $(".share_my").click(function() {
       $("#share_gif").css("display", "block");
-      document.getElementsByClassName("p3").addEventListener("click", gif_lis);
+      document.getElementsByClassName("p3")[0].addEventListener("click", gif_lis);
     })
     var lastMouseX = 0,
       lastMouseY = 0,
