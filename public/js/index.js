@@ -397,7 +397,6 @@ function page2() {
         $(".p2").css("opacity","0");
         close_lock = 0;
         panorama = Math.floor(Math.random()*3);
-        preload(panorama);
       });
     });
     var lastMouseX = 0,

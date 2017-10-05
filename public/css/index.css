@@ -361,18 +361,24 @@ video {
     display: inline-flex;
 }
 .share_my{
-    height: 50px;
-    width: 100px;
-    margin-left: 50px;
+    height: 0.675rem;
+    width: 2.015rem;
+    left: 0.475rem;
+    bottom: 0.545rem
+    background-image: url('/image/share_my.png');
+    background-size: 100% 100%;
+    background-color: inherit;
+    position: fixed;
 }
 .change_my{
-    height: 50px;
-    width: 100px;
-    margin-right: 50px;
-}
-.share_my>img, .change_my>img{
-    width: 100%;
-    height: 100%;
+    height: 0.675rem;
+    width: 2.015rem;
+    right: 0.475rem;
+    bottom: 0.545rem
+    background-image: url('/image/change_my.png');
+    background-size: 100% 100%;
+    background-color: inherit;
+    position: fixed;
 }
 .btn_chuan {
     margin-top: 33px;
