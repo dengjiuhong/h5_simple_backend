@@ -380,7 +380,6 @@ function page2() {
           $("#close_0").css("opacity", "0"); //视频渐亮
           $("#close_0").css("display", "block");
           $("#close_0").animate({"opacity": "1"}, 750, function() {
-            $("#share_in").css("display", "block");
             audio.pause();
             $("#close_0").get(0).play();
             $("#close_0").get(0).addEventListener("timeupdate", temp_func)
