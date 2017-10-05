@@ -7,6 +7,7 @@ var panorama = 0;//0~3
 var lock = 0;
 var audio;
 var upload_lock;
+var close_lock = 0;
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
 $(document).ready(function() {
@@ -337,6 +338,8 @@ function page2() {
     }, true);
     //点击关灯之后
     $("#close").click(function() {
+      if(close_lock != 0) return;
+      close_lock++;
       $("#close").css("background-image", "url('/image/close_light.png')")
       $("#close_0").get(0).play();//加载两个视频
       $("#close_0").get(0).pause();
@@ -347,7 +350,7 @@ function page2() {
       $("#panorama_5").animate({"opacity": "0"}, 1500);
       $("#panorama_6").animate({"opacity": "0"}, 1500);
       setTimeout(function() {
-          $("#close_0").css("opacity", "0.5"); //视频渐亮
+          $("#close_0").css("opacity", "0"); //视频渐亮
           $("#close_0").css("display", "block");
           $("#close_0").animate({"opacity": "1"}, 750, function() {
             $("#share_in").css("display", "block");
@@ -375,6 +378,7 @@ function page2() {
         $("#panorama_5").empty();
         $(".container").empty();
         $(".p2").css("opacity","0");
+        close_lock = 0;
         panorama = Math.floor(Math.random()*3);
         preload(panorama);
       });
