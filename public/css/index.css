@@ -203,6 +203,7 @@ video {
     margin-left: -16px;
 }
 #in {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 33.3vw;
     height: 60px;
     margin-right: 33.3vw;
