@@ -104,7 +104,8 @@ function main() {
           v2.css("display", "none");
            //v2.fadeIn("fast");
           $(".p0").css("display", "none");
-          $(".p2").fadeIn("fast");
+          $("#p2").css("display", "block");
+          $("#p2").animate({"opacity": "1"}, 750);
           if(!lock) {page2(); lock++;}
         }
       })
@@ -372,6 +373,7 @@ function page2() {
         $(".share_pic").empty();
         $("#panorama_5").empty();
         $(".container").empty();
+        $(".p2").css("opacity"，"0");
         panorama = Math.floor(Math.random()*3);
         preload(panorama);
       });
