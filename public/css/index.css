@@ -334,6 +334,17 @@ video {
     position: fixed;
     display: none;
 }
+#try{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width: 1.3rem;
+    height: 0.215rem;
+    left: 36.1vw;
+    bottom: 0.185rem;
+    background-image: url('/image/try.png');
+    background-size: 100% 100%;
+    background-color: inherit;
+    position: fixed;
+}
 #close{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 1.045rem;
