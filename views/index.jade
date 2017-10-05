@@ -41,7 +41,7 @@ html(lang='en')
           .phone_block
             .phone 手机
             .input_phone
-              input#phone(type='text', name='phone')
+              input#phone(type='text', name='phone', onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/")
         #in
         #welcome
       .page.p2
