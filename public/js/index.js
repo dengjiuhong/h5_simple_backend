@@ -80,7 +80,7 @@ function preload(panorama) {
 };
 function wx_process(data) {
   wx.config({
-            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
             appId: data.appid, // 必填，公众号的唯一标识
             timestamp: data.timestamp, // 必填，生成签名的时间戳
             nonceStr: data.random_str, // 必填，生成签名的随机串
@@ -187,12 +187,12 @@ function page2() {
     $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
     var border_r = -52,
         border_l = 12,
-        border_u = 3,
+        border_u = 1.5,
         border_d = -1.5;
 
 
-    var BG_WIDTH = 1000,
-      BG_HEIGHT = 1750,
+    var BG_WIDTH = 670,
+      BG_HEIGHT = 1190,
       BG_NUMBER = 9,
       PER_ANGLE = 360 / BG_NUMBER;
 
@@ -398,6 +398,7 @@ function page2() {
     var curItemAngleX = 0, curItemAngleY = 0;
         
     function dragRotate(evtInfo) {
+      //left right up down:1234
       // 注意：rotateX(Y) 与 鼠标（触摸）的X（Y）轴是交叉对应的
       var tx = ( 180 / Math.PI * (Math.atan((curMouseX - lastMouseX) / translateZ)) + lastAngleX );
       var ty = Math.max(-60, Math.min((180 / Math.PI * Math.atan((curMouseY - lastMouseY) / (Math.sqrt(Math.pow(BG_HEIGHT / 2, 2) + Math.pow(translateZ, 2))*1.5)) + lastAngleY), 60));
@@ -450,10 +451,6 @@ function page2() {
         beyond_1 = true;
       } else if(tempx < border_r) {
         beyond_2 = true;
-      } else if(tempy > border_u) {
-        beyond_3 = true;
-      } else if(tempy < border_d) {
-        beyond_4 = true;
       }
        else {
         beyond_1 = false;
