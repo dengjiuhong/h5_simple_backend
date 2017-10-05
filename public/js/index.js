@@ -84,7 +84,18 @@ function main() {
   var v2 = $("#my_video_2");
   v.fadeIn("fast");
   $("#first_enter_box").click(function(){
-      $("#audio-btn").play();
+      $("#audio-btn").get(0).play();
+      $("#audio-btn").get(0).pause();
+      $("#audio-up").get(0).play();
+      $("#audio-up").get(0).pause();
+      $("#audio-down").get(0).play();
+      $("#audio-down").get(0).pause();
+      $("#audio-close").get(0).play();
+      $("#audio-close").get(0).pause();
+      $("#audio-in").get(0).play();
+      $("#audio-in").get(0).pause();
+      $("#audio-open").get(0).play();
+      $("#audio-open").get(0).pause();
       $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
       $("#close_0").get(0).play();//加载两个视频
       $("#close_0").get(0).pause();
