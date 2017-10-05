@@ -84,6 +84,7 @@ function main() {
   var v2 = $("#my_video_2");
   v.fadeIn("fast");
   $("#first_enter_box").click(function(){
+      $("#audio-btn").play();
       $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
       $("#close_0").get(0).play();//加载两个视频
       $("#close_0").get(0).pause();
@@ -381,7 +382,7 @@ function page2() {
         $("#share_in").animate({"opacity": "0"}, 500, function() {
           $("#share_in").css("display", "none");
         });
-    }, true);
+    });
     //点击关灯之后
     $("#close").click(function() {
       if(close_lock != 0) return;
