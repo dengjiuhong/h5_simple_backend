@@ -304,11 +304,7 @@ function page2() {
                 $("#close_0").get(0).play();
               }
         }
-    //点击分享之后
-    document.getElementById("share_in").addEventListener("click", function() {
-        //$("#close_0").removeAttr("loop");
-        $("#close_0").get(0).removeEventListener("timeupdate",temp_func);//关灯视频不再循环
-        $("#close_0").get(0).addEventListener("timeupdate",function(){
+    var temp_func_2 = function() {
           if($("#close_0").get(0).ended){
             $("#close_0").get(0).pause();
             $("#close").css("display", "none");
@@ -334,7 +330,12 @@ function page2() {
               }
             }) 
           }
-        }); 
+    }
+    //点击分享之后
+    document.getElementById("share_in").addEventListener("click", function() {
+        //$("#close_0").removeAttr("loop");
+        $("#close_0").get(0).removeEventListener("timeupdate",temp_func);//关灯视频不再循环
+        $("#close_0").get(0).addEventListener("timeupdate", temp_func_2); 
     }, true);
     //点击关灯之后
     $("#close").click(function() {
@@ -375,6 +376,8 @@ function page2() {
         $("#welcome").fadeIn();
         $("#close").css("display", "block");
         $("#light_word").css("display", "block");
+        $("#close_0").get(0).removeEventListener("timeupdate",temp_func_2);//关灯视频不再循环
+        $("#close_0").get(0).addEventListener("timeupdate", temp_func);
         $("#close_0").css("display", "none");
         $("#exit_0").css("display", "none");
         $("#share_in").css("display", "none");
