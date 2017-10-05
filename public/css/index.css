@@ -201,22 +201,23 @@ video {
     margin-left: -16px;
 }
 #in {
-    width: 111.9px;
-    height: 50.7px;
-    margin-top: 10px;
-    background-image: url('/image/enter_mu.png');
-    background-size: 100% 100%;
-    background-color: inherit;
-    position: relative;
+    width: 33,3vw;
+    height: 60px;
+    margin-right: 33.3vw;
+    margin-left: 33.3vw;
+    position: fixed;
+    bottom: 60px;
 }
 #welcome {
-    width: 147.6px;
+    width: 44vw;
     height: 18.3px;
-    margin-top: 5px;
+    margin-right: 28vw;
+    margin-left: 28vw;
+    bottom: 31px;
     background-image: url('/image/welcome.png');
     background-size: 100% 100%;
     background-color: inherit;
-    position: relative;
+    position: absolute;
 }
 .buttons{
     margin-top: 10px;
