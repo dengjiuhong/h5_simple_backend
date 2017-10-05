@@ -95,7 +95,7 @@ function main() {
       setTimeout(function() {
         $(".wrap").removeClass("p1-fake");
       }, 1000);
-      $(".upload_wrap").animate({"margin-top": "0"}, 3000);
+      $(".upload_wrap").animate({"margin-top": "0"}, 2000);
       $("#in, #welcome").fadeIn();
       //v2.get(0).play();
     }
@@ -304,7 +304,7 @@ function page2() {
     .css({
       "position": "absolute",
       "width": BG_WIDTH / 3,
-      "height": BG_HEIGHT / 3.97,
+      "height": BG_HEIGHT / 4,
       "left": BG_WIDTH / 3,
       "top": BG_HEIGHT / 2.75,
       "object-fit": "cover",
@@ -321,6 +321,7 @@ function page2() {
     var temp_func = function() {
           if($("#close_0").get(0).ended){
                 if(loop_twice == 2) {
+                  loop_twice++;
                   $("#share_in").css("display", "block");
                   $("#share_in").css("opacity", "0");
                   $("#share_in").animate({"opacity": "1"}, 1500);
@@ -374,7 +375,9 @@ function page2() {
       close_lock++;
       $("#close").css("background-image", "url('/image/close_light.png')");
       //全景消失
+      $("#close").animate({"opacity": "0"}, 1500);
       $("#close").css("display", "none");
+      $("#close").css("opacity", "1");
       $("#light_word").css("display", "none");
       $("#panorama_4").animate({"opacity": "0"}, 1500);
       $("#panorama_5").animate({"opacity": "0"}, 1500);
