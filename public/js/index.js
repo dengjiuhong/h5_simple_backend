@@ -370,8 +370,9 @@ function page2() {
         //$("#close_0").removeAttr("loop");
         $("#close_0").get(0).removeEventListener("timeupdate",temp_func);//关灯视频不再循环
         $("#close_0").get(0).addEventListener("timeupdate", temp_func_2);
-        $("#share_in").animate({"opacity": "0"}, 1500);
-        $("#share_in").css("display", "none");
+        $("#share_in").animate({"opacity": "0"}, 500, function() {
+          $("#share_in").css("display", "none");
+        });
     }, true);
     //点击关灯之后
     $("#close").click(function() {
