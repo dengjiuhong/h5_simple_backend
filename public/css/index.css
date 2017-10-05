@@ -364,7 +364,7 @@ video {
     height: 0.675rem;
     width: 2.015rem;
     left: 0.475rem;
-    bottom: 0.545rem
+    bottom: 0.545rem;
     background-image: url('/image/share_my.png');
     background-size: 100% 100%;
     background-color: inherit;
@@ -374,7 +374,7 @@ video {
     height: 0.675rem;
     width: 2.015rem;
     right: 0.475rem;
-    bottom: 0.545rem
+    bottom: 0.545rem;
     background-image: url('/image/change_my.png');
     background-size: 100% 100%;
     background-color: inherit;
