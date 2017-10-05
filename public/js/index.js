@@ -373,6 +373,8 @@ function page2() {
         $(".upload_wrap").animate({"margin-top": "0px"}, 3000);
         $("#in").fadeIn();
         $("#welcome").fadeIn();
+        $("#close").css("display", "block");
+        $("#light_word").css("display", "block");
         $("#close_0").css("display", "none");
         $("#exit_0").css("display", "none");
         $("#share_in").css("display", "none");
