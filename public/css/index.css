@@ -375,9 +375,9 @@ video {
 }
 .share_my{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    height: 0.47rem;
-    width: 1.345rem;
-    left: 0.475rem;
+    width: 30vw;
+    height: calc(94 / 269 * 30vw);
+    left: 12vw;
     bottom: 0.545rem;
     background-image: url('/image/share_my.png');
     background-size: 100% 100%;
@@ -386,9 +386,9 @@ video {
 }
 .change_my{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    height: 0.47rem;
-    width: 1.345rem;
-    right: 0.475rem;
+    height: calc(94 / 268 * 30vw);;
+    width: 30vw;
+    right: 12vw;
     bottom: 0.545rem;
     background-image: url('/image/change_my.png');
     background-size: 100% 100%;

@@ -114,7 +114,7 @@ function main() {
       // 移除防止闪频的东西
       setTimeout(function () {
         $(".wrap").removeClass("p1-fake");
-      }, 1000);
+      }, 300);
       $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
       $("#audio-down").get(0).play();
       $("#in, #welcome").fadeIn();
@@ -407,7 +407,7 @@ function page2() {
                   "object-fit": "cover",
                   "object-position": "center"
                 }).appendTo(".share_pic");
-              setTimeout(()=>{$(".wrap").addClass("p1-fake");}, 500);
+              setTimeout(()=>{$(".wrap").removeClass("p1-fake");}, 500);
             });
           }
         });
@@ -433,6 +433,10 @@ function page2() {
   });
   //点击关灯之后
   $("#close").click(function () {
+    $("#view").css({
+      "background-color": "black",
+      "background-image": "none",
+    })
     $("#audio-close").get(0).play();
     if (close_lock != 0) return;
     close_lock++;
@@ -452,7 +456,7 @@ function page2() {
       $("#light_word").css("opacity", "1");
       $("#close_0").css("opacity", "0"); //视频渐亮
       $("#close_0").css("display", "block");
-      $("#bigCube > img").fadeIn(750); // 照片回来
+      // $("#bigCube > img").fadeIn(750); // 照片不回来
       $("#close_0").animate({ "opacity": "1" }, 750, function () {
         audio.pause();
         $("#close_0").get(0).play();
