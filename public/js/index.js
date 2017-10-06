@@ -124,8 +124,8 @@ function main() {
   // var v = $("#my_video_1");
   var vx = xlz_videos["01-near"]; // 序列帧动画
   vx.option.onComplete = function () {
-    $(".p1").css("display", "block");
-    $(".p0").css("display", "none");
+    $(".p1").show();
+    $(".p0").fadeOut();
     // 移除防止闪频的东西
     setTimeout(function () {
       $(".wrap").removeClass("p1-fake");
