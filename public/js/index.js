@@ -341,7 +341,7 @@ function page2() {
     "width": "34.5vw",
     "height": "45.5vw",
     "left": "calc(50vw - 34.5vw / 2)",
-    "bottom": "39vh",
+    "bottom": window.screen.width * (1334/750) * 0.39 + "px",
     "object-fit": "cover",
     "object-position": "center"
   })
@@ -383,6 +383,7 @@ function page2() {
       $("#close_0").fadeOut(500, () => {
         $("#audio-open").get(0).play();
         $("#exit_0").get(0).play();
+        $(".wrap").addClass("p1-fake");
         // $("#view").css("background-image", "url('/image/close_.png')");
         $("#exit_0").get(0).addEventListener("timeupdate", function () {
           if ($("#exit_0").get(0).ended) {
@@ -406,6 +407,7 @@ function page2() {
                 "object-fit": "cover",
                 "object-position": "center"
               }).appendTo(".share_pic");
+            setTimeout(()=>{$(".wrap").addClass("p1-fake");}, 500);
           }
         });
       });
