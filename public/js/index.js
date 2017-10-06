@@ -129,8 +129,6 @@ function judge() {
   else upload_lock = true;
 }
 function main() {
-  // 播放背景音乐
-  document.getElementById("audio-bg").play();
   // 随机数
   panorama = Math.floor(Math.random() * 3);
   preload(panorama);
@@ -141,6 +139,7 @@ function main() {
   var v2 = $("#my_video_2");
   // v.fadeIn("fast");
   $("#first_enter_box").click(function () {
+    document.getElementById("audio-bg").play();
     $("#first_enter_box").fadeOut();
     $("#audio-btn").get(0).play();
     // v.get(0).play();
