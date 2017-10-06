@@ -78,7 +78,7 @@ video {
 }
 /* 防止闪屏 */
 .wrap.p0-fake {
-    background: url("/image/first_poster.png");
+    background: url("/image/first_poster.jpg");
     background-position: center bottom;
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
