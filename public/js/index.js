@@ -432,19 +432,10 @@ function page2() {
     $("#share_in").animate({ "opacity": "0" }, 500, function () {
       $("#share_in").css("display", "none");
     });
-<<<<<<< HEAD
-    //点击关灯之后
-    $("#close").click(function(e) {
-      console.log(e.target);
-      $("#audio-close").get(0).play();
-      if(close_lock != 0) return;
-      close_lock++;
-      $("#close").css("background-image", "url('/image/close_light.png')");
-      //全景消失
-=======
   });
   //点击关灯之后
-  $("#close").click(function () {
+  $("#close").click(function (e) {
+     console.log(e.target);
     $("#view").css({
       "background-color": "black",
       "background-image": "none",
