@@ -14,6 +14,8 @@ var left_lock = 0;
 var right_lock = 0;
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
+
+
 $(document).ready(function () {
   // debug //
   // $(".page.p1").show();
@@ -22,29 +24,60 @@ $(document).ready(function () {
   // return false;
   // debug //
 
+  // 序列帧视频的画布大小
+  $(".xlz_video").attr({
+    'width': window.innerWidth,
+    'height': window.innerHeight
+  });
+  // 全局 用来存放序列帧视频
+  window.xlz_videos = {};
+
+  // 开始预加载
   $(".page.loading").show();
+  var items = [
+    '/image/close.png',
+    '/image/brand.png',
+    '/image/brand_.png',
+    '/image/close_.png',
+    '/image/try.png',
+    '/image/panorama/0/4.png',
+    '/image/panorama/0/5.png',
+    '/image/panorama/0/6.png',
+    '/image/panorama/1/4.png',
+    '/image/panorama/1/5.png',
+    '/image/panorama/1/6.png',
+    '/image/panorama/2/4.png',
+    '/image/panorama/2/5.png',
+    '/image/panorama/2/6.png',
+    '/image/bg/close_0.png',
+    '/image/bg/close_1.png',
+    '/image/bg/close_2.png',
+    '/image/share_my.gif',
+    '/v/02-openin.mp4'
+  ];
+  var framesUrl = [];
+  // 01. 靠近门的视频的资源
+  items.push('/audio/xlz/01-near.mp3');
+  framesUrl = []; // 先清空上一个的
+  for(var i=0; i<51; i++) {
+    items.push('/xlz/01-near/01-near_' + i + '.jpg');
+    framesUrl.push('/xlz/01-near/01-near_' + i + '.jpg');
+  }
+  xlz_videos['01-near'] = new xlz({
+    canvasTargetId: "my_video_1_x",
+    framesUrl: framesUrl,
+    loop: false,
+    // audio: '/audio/xlz/01-near.mp3',
+    // 没设置结束回调函数，下面来
+    // onComplete: function() {
+    //   console.log("结束了");
+    // },
+  });
+
+  $(".wrap").addClass("p0-fake");
+
   var loader = new preload({
-    items: [
-      '/image/close.png',
-      '/image/brand.png',
-      '/image/brand_.png',
-      '/image/close_.png',
-      '/image/try.png',
-      '/image/panorama/0/4.png',
-      '/image/panorama/0/5.png',
-      '/image/panorama/0/6.png',
-      '/image/panorama/1/4.png',
-      '/image/panorama/1/5.png',
-      '/image/panorama/1/6.png',
-      '/image/panorama/2/4.png',
-      '/image/panorama/2/5.png',
-      '/image/panorama/2/6.png',
-      '/image/bg/close_0.png',
-      '/image/bg/close_1.png',
-      '/image/bg/close_2.png',
-      '/image/share_my.gif',
-      '/v/02-openin.mp4'
-    ],
+    items: items,
     // prefix: window.location,
     onStart: function (total) {
       console.log('start:' + total);
@@ -57,6 +90,13 @@ $(document).ready(function () {
     },
     callback: function (total) {
       $(".page.loading").fadeOut();
+      // 让视频们也加载一下，可能要按顺序来
+      // for(var vi in xlz_videos) {
+      //   xlz_videos[vi].initialize();
+      // }
+      xlz_videos['01-near'].initialize(function() {
+        $(".wrap").removeClass("p0-fake");
+      });
       main();
       // alert("加载完了！");
     }
@@ -81,9 +121,21 @@ function main() {
   panorama = Math.floor(Math.random() * 3);
   preload(panorama);
   $(".p0").fadeIn("fast");
-  var v = $("#my_video_1");
+  // var v = $("#my_video_1");
+  var vx = xlz_videos["01-near"]; // 序列帧动画
+  vx.option.onComplete = function () {
+    $(".p1").css("display", "block");
+    $(".p0").css("display", "none");
+    // 移除防止闪频的东西
+    setTimeout(function () {
+      $(".wrap").removeClass("p1-fake");
+    }, 300);
+    $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
+    $("#audio-down").get(0).play();
+    $("#in, #welcome").fadeIn();
+  }
   var v2 = $("#my_video_2");
-  v.fadeIn("fast");
+  // v.fadeIn("fast");
   $("#first_enter_box").click(function () {
     $("#audio-btn").get(0).play();
     $("#audio-up").get(0).play();
@@ -98,24 +150,26 @@ function main() {
     $("#audio-open").get(0).pause();
     audio = document.getElementById("audio-bg");
     audio.play();
-    v.get(0).play();
+    // v.get(0).play();
+    vx.play();
     $(".wrap").addClass("p1-fake");
     $("#first_enter_box").fadeOut();
   });
-  v.get(0).addEventListener("timeupdate", function () {
-    if (v.get(0).ended) {
-      $(".p1").css("display", "block");
-      $(".p0").css("display", "none");
-      // 移除防止闪频的东西
-      setTimeout(function () {
-        $(".wrap").removeClass("p1-fake");
-      }, 300);
-      $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
-      $("#audio-down").get(0).play();
-      $("#in, #welcome").fadeIn();
-      //v2.get(0).play();
-    }
-  });
+  // v.get(0).addEventListener("timeupdate", function () {
+  //   if (v.get(0).ended) {
+  //     $(".p1").css("display", "block");
+  //     $(".p0").css("display", "none");
+  //     // 移除防止闪频的东西
+  //     setTimeout(function () {
+  //       $(".wrap").removeClass("p1-fake");
+  //     }, 300);
+  //     $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
+  //     $("#audio-down").get(0).play();
+  //     $("#in, #welcome").fadeIn();
+  //     //v2.get(0).play();
+  //   }
+  // });
+  
   $("#in").click(function () {
     $("#audio-btn").get(0).play();
     judge();

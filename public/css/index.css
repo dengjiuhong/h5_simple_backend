@@ -59,6 +59,16 @@ video {
     -o-object-position: center bottom;
        object-position: center bottom;
 }
+
+.xlz_video {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    z-index: 2;
+}
 .wrap {
     width: 100%;
     height: 100%;
@@ -67,8 +77,14 @@ video {
     background-color: #000000;
 }
 /* 防止闪屏 */
+.wrap.p0-fake {
+    background: url("/image/first_poster.png");
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-color: rgba(0, 0, 0, 0);
+}
 .wrap.p1-fake {
-    background: url("../image/close.png");
+    background: url("/image/close.png");
     background-position: center bottom;
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
@@ -463,7 +479,7 @@ video {
   #my_video_1 {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
