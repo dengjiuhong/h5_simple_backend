@@ -129,11 +129,23 @@ function judge() {
   else upload_lock = true;
 }
 function main() {
+  // 播放背景音乐
+  document.getElementById("audio-bg").play();
+  
   panorama = Math.floor(Math.random() * 3);
   preload(panorama);
   $(".p0").fadeIn("fast");
   // var v = $("#my_video_1");
   var vx = xlz_videos["01-near"]; // 序列帧动画
+  var v2 = $("#my_video_2");
+  // v.fadeIn("fast");
+  $("#first_enter_box").click(function () {
+    $("#first_enter_box").fadeOut();
+    $("#audio-btn").get(0).play();
+    // v.get(0).play();
+    vx.play(); // 播放序列帧
+    $(".wrap").addClass("p1-fake");
+  });
   vx.option.onComplete = function () {
     $(".p1").show();
     $(".p0").fadeOut();
@@ -145,17 +157,6 @@ function main() {
     $("#audio-down").get(0).play();
     $("#in, #welcome").fadeIn();
   }
-  var v2 = $("#my_video_2");
-  // v.fadeIn("fast");
-  $("#first_enter_box").click(function () {
-    $("#audio-btn").get(0).play();
-    audio = document.getElementById("audio-bg");
-    audio.play();
-    // v.get(0).play();
-    vx.play();
-    $(".wrap").addClass("p1-fake");
-    $("#first_enter_box").fadeOut();
-  });
   // v.get(0).addEventListener("timeupdate", function () {
   //   if (v.get(0).ended) {
   //     $(".p1").css("display", "block");
