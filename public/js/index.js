@@ -384,7 +384,7 @@ function page2() {
         $("#audio-open").get(0).play();
         $("#exit_0").get(0).play();
         $(".wrap").addClass("p1-fake");
-        // $("#view").css("background-image", "url('/image/close_.png')");
+        setTimeout(()=>{$("#view").css("background-image", "url('/image/close_.png')");}, 200)
         $("#exit_0").get(0).addEventListener("timeupdate", function () {
           if ($("#exit_0").get(0).ended) {
             audio.currentTime = 0;//音频重新播放
