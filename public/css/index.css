@@ -15,7 +15,7 @@
     font-weight: normal;  
     font-style: normal;  
 }
-html, body {
+html, body, input {
     font-family: my_font;
     width: 100%;
     height: 100%;
@@ -315,7 +315,8 @@ video {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 1.3rem;
     height: 0.59rem;
-    bottom: 0.815rem;
+    top: calc(928 / 534 * 70vw + 5vw);
+    /* bottom: 0.815rem; */
     left: calc(50vw - 1.3rem / 2);
     background-image: url('/image/enter_mu.png');
     background-size: 100% 100%;
@@ -327,7 +328,8 @@ video {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 1.46rem;
     height: 0.215rem;
-    bottom: 0.26rem;
+    top: calc(928 / 534 * 70vw + 5vw + 0.59rem + 5vw);
+    /* bottom: 0.26rem; */
     left: calc(50vw - 1.46rem / 2);
     background-image: url('/image/welcome.png');
     background-size: 100% 100%;
@@ -375,8 +377,8 @@ video {
 }
 .share_my{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 30vw;
-    height: calc(94 / 269 * 30vw);
+    width: 35vw;
+    height: calc(94 / 269 * 35vw);
     left: 12vw;
     bottom: 0.545rem;
     background-image: url('/image/share_my.png');
@@ -386,8 +388,8 @@ video {
 }
 .change_my{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    height: calc(94 / 268 * 30vw);;
-    width: 30vw;
+    width: 35vw;
+    height: calc(94 / 268 * 35vw);
     right: 12vw;
     bottom: 0.545rem;
     background-image: url('/image/change_my.png');
@@ -467,7 +469,7 @@ video {
     z-index: 2;
     /*display: none;*/
 }
- #my_video_2 {
+#my_video_2 {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -484,9 +486,9 @@ video {
     left: 0;
     z-index: 9;
 }
-#close{
+/* #close{
     position: absolute;
-}
+} */
 #share_in{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     height: 0.505rem;
@@ -511,6 +513,7 @@ video {
 }
 #shareit {
   -webkit-user-select: none;
+  user-select: none;
   display: none;
   position: absolute;
   width: 100%;

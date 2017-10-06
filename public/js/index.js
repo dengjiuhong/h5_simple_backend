@@ -390,6 +390,7 @@ function page2() {
             $(".wrap").addClass("p1-fake");
             $("#view").css("background-image", "url('/image/close_.png')");
             $(".p3").css("display", "block");//p3出来，渲染
+            $(".p3 > .share_my, .p3 > .change_my").hide();
             $(".p2").fadeOut(500, ()=>{  
               $(".share_wrap").animate({ "margin-top": "0px" }, 2000, function () { });
               $("#audio-down").get(0).play();
@@ -407,6 +408,7 @@ function page2() {
                   "object-fit": "cover",
                   "object-position": "center"
                 }).appendTo(".share_pic");
+              $(".p3 > .share_my, .p3 > .change_my").fadeIn(600);
               setTimeout(()=>{$(".wrap").removeClass("p1-fake");}, 500);
             });
           }
