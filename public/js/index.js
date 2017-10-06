@@ -454,7 +454,6 @@ function page2() {
     $("#panorama_6").animate({ "opacity": "0" }, 1500);
     setTimeout(function () {
       $("#close").css("display", "none");
->>>>>>> e61afef8bc48e23d1bb9eef784cff2bd17b1cc4c
       $("#close").css("opacity", "1");
       $("#light_word").css("display", "none");
       $("#light_word").css("opacity", "1");
