@@ -24,6 +24,17 @@ $(document).ready(function () {
   // return false;
   // debug //
 
+  $("#audio-up").get(0).play();
+  $("#audio-up").get(0).pause();
+  $("#audio-down").get(0).play();
+  $("#audio-down").get(0).pause();
+  $("#audio-close").get(0).play();
+  $("#audio-close").get(0).pause();
+  $("#audio-in").get(0).play();
+  $("#audio-in").get(0).pause();
+  $("#audio-open").get(0).play();
+  $("#audio-open").get(0).pause();
+
   // 序列帧视频的画布大小
   $(".xlz_video").attr({
     'width': window.innerWidth,
@@ -129,7 +140,7 @@ function main() {
     // 移除防止闪频的东西
     setTimeout(function () {
       $(".wrap").removeClass("p1-fake");
-    }, 300);
+    }, 1000);
     $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
     $("#audio-down").get(0).play();
     $("#in, #welcome").fadeIn();
@@ -138,16 +149,6 @@ function main() {
   // v.fadeIn("fast");
   $("#first_enter_box").click(function () {
     $("#audio-btn").get(0).play();
-    $("#audio-up").get(0).play();
-    $("#audio-up").get(0).pause();
-    $("#audio-down").get(0).play();
-    $("#audio-down").get(0).pause();
-    $("#audio-close").get(0).play();
-    $("#audio-close").get(0).pause();
-    $("#audio-in").get(0).play();
-    $("#audio-in").get(0).pause();
-    $("#audio-open").get(0).play();
-    $("#audio-open").get(0).pause();
     audio = document.getElementById("audio-bg");
     audio.play();
     // v.get(0).play();
