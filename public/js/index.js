@@ -402,7 +402,8 @@ function page2() {
         });
     });
     //点击关灯之后
-    $("#close").click(function() {
+    $("#close").click(function(e) {
+      console.log(e.target);
       $("#audio-close").get(0).play();
       if(close_lock != 0) return;
       close_lock++;
