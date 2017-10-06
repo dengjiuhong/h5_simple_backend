@@ -383,31 +383,32 @@ function page2() {
       $("#close_0").fadeOut(500, () => {
         $("#audio-open").get(0).play();
         $("#exit_0").get(0).play();
-        $(".wrap").addClass("p1-fake");
         $("#exit_0").get(0).addEventListener("timeupdate", function () {
           if ($("#exit_0").get(0).ended) {
             audio.currentTime = 0;//音频重新播放
             audio.play();
+            $(".wrap").addClass("p1-fake");
             $("#view").css("background-image", "url('/image/close_.png')");
-            $(".p2").css("display", "none");
             $(".p3").css("display", "block");//p3出来，渲染
-            $(".share_wrap").animate({ "margin-top": "0px" }, 2000, function () { });
-            $("#audio-down").get(0).play();
-            $(".share_pic").empty();
-            if (user_name.length > 4) {
-              user_name = user_name.substr(0, 3);
-              user_name = user_name + "...";
-            }
-            $(".share_name").html(user_name);
-            $(".share_id").innerHTML = "00002";
-            $("<img></img>").attr("src", ImageFile[0])
-              .css({
-                "width": "100%",
-                "height": "100%",
-                "object-fit": "cover",
-                "object-position": "center"
-              }).appendTo(".share_pic");
-            setTimeout(()=>{$(".wrap").addClass("p1-fake");}, 500);
+            $(".p2").fadeOut(500, ()=>{  
+              $(".share_wrap").animate({ "margin-top": "0px" }, 2000, function () { });
+              $("#audio-down").get(0).play();
+              $(".share_pic").empty();
+              if (user_name.length > 4) {
+                user_name = user_name.substr(0, 3);
+                user_name = user_name + "...";
+              }
+              $(".share_name").html(user_name);
+              $(".share_id").innerHTML = "00002";
+              $("<img></img>").attr("src", ImageFile[0])
+                .css({
+                  "width": "100%",
+                  "height": "100%",
+                  "object-fit": "cover",
+                  "object-position": "center"
+                }).appendTo(".share_pic");
+              setTimeout(()=>{$(".wrap").addClass("p1-fake");}, 500);
+            });
           }
         });
       });
