@@ -139,7 +139,7 @@ function main() {
   var v2 = $("#my_video_2");
   // v.fadeIn("fast");
   $("#first_enter_box").click(function () {
-    document.getElementById("audio-bg").play();
+    // document.getElementById("audio-bg").play();
     $("#first_enter_box").fadeOut();
     $("#audio-btn").get(0).play();
     // v.get(0).play();
