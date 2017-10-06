@@ -384,11 +384,11 @@ function page2() {
         $("#audio-open").get(0).play();
         $("#exit_0").get(0).play();
         $(".wrap").addClass("p1-fake");
-        setTimeout(()=>{$("#view").css("background-image", "url('/image/close_.png')");}, 200)
         $("#exit_0").get(0).addEventListener("timeupdate", function () {
           if ($("#exit_0").get(0).ended) {
             audio.currentTime = 0;//音频重新播放
             audio.play();
+            $("#view").css("background-image", "url('/image/close_.png')");
             $(".p2").css("display", "none");
             $(".p3").css("display", "block");//p3出来，渲染
             $(".share_wrap").animate({ "margin-top": "0px" }, 2000, function () { });
