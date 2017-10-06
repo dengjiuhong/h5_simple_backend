@@ -131,9 +131,10 @@ function judge() {
 function main() {
   // 播放背景音乐
   document.getElementById("audio-bg").play();
-  
+  // 随机数
   panorama = Math.floor(Math.random() * 3);
   preload(panorama);
+
   $(".p0").fadeIn("fast");
   // var v = $("#my_video_1");
   var vx = xlz_videos["01-near"]; // 序列帧动画
