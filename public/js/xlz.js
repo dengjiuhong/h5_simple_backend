@@ -170,7 +170,7 @@
         // 重绘
         if(needRedraw && this.currentTimes < this.maxFramesTimes) {
             // 疯狂更新来监听窗口大小变化
-            this.calculate();
+            // this.calculate();
             // console.log("画了一帧！现在在第：" + this.currentTimes + "帧！");
             this.ctx.clearRect(0, 0, this.width, this.height);
             // console.log(this.canvasWidth, this.canvasHeight);
