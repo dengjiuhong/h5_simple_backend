@@ -96,11 +96,6 @@ function main() {
     $("#audio-in").get(0).pause();
     $("#audio-open").get(0).play();
     $("#audio-open").get(0).pause();
-    $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
-    $("#close_0").get(0).play();//加载两个视频
-    $("#close_0").get(0).pause();
-    $("#exit_0").get(0).play();
-    $("#exit_0").get(0).pause();
     audio = document.getElementById("audio-bg");
     audio.play();
     v.get(0).play();
