@@ -164,14 +164,14 @@ video {
 }
 .p1, .p3{
 	display: none;
-    background: url("../image/close.png");
+    background: url("/image/close.png");
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
     background-position: center bottom;
     font-size: 12px;
 }
 .p3{
-    background-image: url('../image/close_.png');
+    background-image: url('/image/close_.png');
 }
 .upload_wrap{
     margin: 0 auto;
