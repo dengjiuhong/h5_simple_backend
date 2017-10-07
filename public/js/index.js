@@ -9,7 +9,7 @@ var audio;
 var upload_lock;
 var close_lock = 0;
 var loop_twice = 0;//循环两次后出现离开博物馆
-var try_lock = 1;
+var try_lock = 1; //
 var left_lock = 0;
 var right_lock = 0;
 // 顶栏高度
