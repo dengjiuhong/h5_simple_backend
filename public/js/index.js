@@ -487,15 +487,16 @@ function page2() {
       "width": BG_WIDTH,
       "height": BG_HEIGHT,
       "z-index": "5",
+      "display": "none",
       "left": (viewW - BG_WIDTH) / 2,
       "top": (viewH - BG_HEIGHT) / 2,
       "transform": "rotateY(" + (180 - i * PER_ANGLE) + "deg) translateZ(" + (-translateZ + 2) + "px)", // translateZ + 10 是为了去掉模模块间的缝隙
       // "backface-visibility": "hidden"
     }).attr('id', "panorama_" + i).appendTo(".container");
   }
-  // $("#panorama_4").css("opacity", "1");
-  // $("#panorama_5").css("opacity", "1");
-  // $("#panorama_6").css("opacity", "1");
+   $("#panorama_4").css("display", "block");
+   $("#panorama_5").css("display", "block");
+   $("#panorama_6").css("display", "block");
   //放置图片
   $("<img></img>").attr("src", ImageFile[0])
     .css({
