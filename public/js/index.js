@@ -617,6 +617,17 @@ function page2() {
   });
   //点击关灯之后
   // console.log("绑定点击事件", $("#turn_off"));
+  document.getElementsByClassName("p2")[0].addEventListener("click", function(e){
+        var e = e || window.event;
+        var elem = e.target || e.srcElement;
+        while (elem) { //循环判断至跟节点，防止点击的是div子元素 
+          console.log(elem);
+          if (elem.id=='turn_off') { 
+            console.log("!!!");
+          } 
+          elem = elem.parentNode; 
+        }
+      });
   $("#turn_off").click(function (e) {
     console.log(e.target);
     $("#view").css({
