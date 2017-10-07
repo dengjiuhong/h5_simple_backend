@@ -238,6 +238,7 @@ function main() {
   $("#first_enter_box").click(function () {
     audio = document.getElementById("audio-bg");
     audio.play();
+    $("#audio-open").get(0).load();
     $("#first_enter_box").fadeOut();
     $("#audio-btn").get(0).play();
     // v.get(0).play();
