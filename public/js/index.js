@@ -58,7 +58,7 @@ $(document).ready(function () {
   $(".page.loading").show();
   var items = [
     '/image/close.png',
-    '/image/brand.png',
+    '/image/new_brand.png',
     '/image/brand_.png',
     '/image/close_.png',
     '/image/try.png',
@@ -249,6 +249,7 @@ function main() {
   });
   // 第一个视频放完了
   vx.option.onComplete = function () {
+    if (!lock) { page2(); lock++; }
     $(".p1").show();
     $(".p0").fadeOut();
     // 加载第二个视频，然后移除防止闪频的东西
@@ -322,7 +323,6 @@ function main() {
       $(".p2").show();
       $(".p2").animate({ "opacity": "1" }, 1000);
       vx2.reset(); // 重置视频
-      if (!lock) { page2(); lock++; }
     }
     if (clickTimes == 1 && upload_lock) {
       clickTimes++;
