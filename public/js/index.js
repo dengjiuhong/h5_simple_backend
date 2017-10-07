@@ -41,7 +41,6 @@ $(document).ready(function () {
   $("#audio-in").get(0).pause();
   // $("#audio-open").get(0).play();
   document.getElementById("audio-open").currentTime = 0;
-  $("#audio-open").get(0).play();
   $("#audio-open").get(0).pause();
 
   // 序列帧视频的画布大小
@@ -239,6 +238,9 @@ function main() {
     audio = document.getElementById("audio-bg");
     audio.play();
     $("#audio-open").get(0).load();
+    $("#audio-up").get(0).load();
+    $("#audio-down").get(0).load();
+    $("#audio-in").get(0).load();
     $("#first_enter_box").fadeOut();
     $("#audio-btn").get(0).play();
     // v.get(0).play();
@@ -276,6 +278,8 @@ function main() {
   // });
   
   $("#in").click(function () {
+    audio_3 = $("#audio-close-" + panorama).get(0);
+    audio_3.load();
     $("#audio-btn").get(0).play();
     judge();
     if (!upload_lock) return;
@@ -309,6 +313,7 @@ function main() {
     vx2.option.onComplete = function () {
       // v2.css("display", "none");
       //v2.fadeIn("fast");
+      $("#audio-in").get(0).play();
       $(".p0").hide();
       // $(".p2").fadeIn("slow");
       $(".p2").css("opacity", "0");
