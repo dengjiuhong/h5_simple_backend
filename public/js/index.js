@@ -41,6 +41,7 @@ $(document).ready(function () {
   $("#audio-in").get(0).pause();
   // $("#audio-open").get(0).play();
   document.getElementById("audio-open").currentTime = 0;
+  $("#audio-open").get(0).play();
   $("#audio-open").get(0).pause();
 
   // 序列帧视频的画布大小
@@ -285,8 +286,8 @@ function main() {
       $(".p0").show();
       // v2.css("display", "block");
       // v2.get(0).play();
-      vx2.play();
       $("#audio-open").get(0).play();
+      vx2.play();
     }, 2000);
     $(".upload_wrap").animate({ "margin-top": "-120vw" }, 2000, function () {
       $(".upload_wrap").hide();
