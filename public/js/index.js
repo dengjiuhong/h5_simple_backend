@@ -23,20 +23,27 @@ $(document).ready(function () {
   // $("#in, #welcome").fadeIn();
   // return false;
   // debug //
-
-  $("#audio-up").get(0).play();
+  // $("#audio-up").get(0).play();
+  document.getElementById("audio-up").currentTime = 0;
   $("#audio-up").get(0).pause();
-  $("#audio-down").get(0).play();
+  // $("#audio-down").get(0).play();
+  document.getElementById("audio-down").currentTime = 0;
   $("#audio-down").get(0).pause();
-  $("#audio-close").get(0).play();
+  // $("#audio-close").get(0).play();
+  document.getElementById("audio-close").currentTime = 0;
   $("#audio-close").get(0).pause();
-  $("#audio-in").get(0).play();
+  // $("#audio-in").get(0).play();
+  document.getElementById("audio-in").currentTime = 0;
   $("#audio-in").get(0).pause();
-  $("#audio-open").get(0).play();
+  // $("#audio-open").get(0).play();
+  document.getElementById("audio-open").currentTime = 0;
   $("#audio-open").get(0).pause();
 
   // 序列帧视频的画布大小
   $(".xlz_video").attr({
+    'width': window.innerWidth,
+    'height': window.innerHeight
+  }).css({
     'width': window.innerWidth,
     'height': window.innerHeight
   });
@@ -68,7 +75,7 @@ $(document).ready(function () {
   ];
   var framesUrl = [];
   // 01. 靠近门的视频的资源
-  items.push('/audio/xlz/01-near.mp3');
+  // items.push('/audio/xlz/01-near.mp3');
   framesUrl = []; // 先清空上一个的
   for(var i=0; i<51; i++) {
     items.push('/xlz/01-near/01-near_' + i + '.jpg');
@@ -85,6 +92,24 @@ $(document).ready(function () {
     // },
   });
 
+  // 02. 开门的视频
+  framesUrl = []; // 清空
+  for(var i=51; i<93; i++) { // 坑爹下标
+    items.push('/xlz/02-openin/02-openin_' + i + '.jpg');
+    framesUrl.push('/xlz/02-openin/02-openin_' + i + '.jpg');
+  }
+  xlz_videos['02-openin'] = new xlz({
+    canvasTargetId: "my_video_1_x", // 复用画布
+    framesUrl: framesUrl,
+    loop: false,
+    // audio: '/audio/xlz/01-near.mp3',
+    // 没设置结束回调函数，下面来
+    onComplete: function() {
+      console.log("结束了");
+    },
+  });
+
+  // 防止加载完闪屏
   $(".wrap").addClass("p0-fake");
 
   var loader = new preload({
@@ -136,23 +161,28 @@ function main() {
   $(".p0").fadeIn("fast");
   // var v = $("#my_video_1");
   var vx = xlz_videos["01-near"]; // 序列帧动画
-  var v2 = $("#my_video_2");
+  // var v2 = $("#my_video_2");
+  var vx2 = xlz_videos["02-openin"];
   // v.fadeIn("fast");
   $("#first_enter_box").click(function () {
-    // document.getElementById("audio-bg").play();
+    document.getElementById("audio-bg").play();
     $("#first_enter_box").fadeOut();
     $("#audio-btn").get(0).play();
     // v.get(0).play();
     vx.play(); // 播放序列帧
     $(".wrap").addClass("p1-fake");
   });
+  // 第一个视频放完了
   vx.option.onComplete = function () {
     $(".p1").show();
     $(".p0").fadeOut();
-    // 移除防止闪频的东西
-    setTimeout(function () {
-      $(".wrap").removeClass("p1-fake");
-    }, 1000);
+    // 加载第二个视频，然后移除防止闪频的东西
+    xlz_videos['02-openin'].initialize(function () {
+      setTimeout(function() {
+        $(".wrap").removeClass("p1-fake");
+      }, 1000);
+    });
+
     $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
     $("#audio-down").get(0).play();
     $("#in, #welcome").fadeIn();
@@ -176,34 +206,42 @@ function main() {
     $("#audio-btn").get(0).play();
     judge();
     if (!upload_lock) return;
-    v2.get(0).play();
-    v2.get(0).pause();
+    // v2.get(0).play();
+    // v2.get(0).pause();
     setTimeout(function () {
-      $(".p1").css("display", "none");
-      $(".p3").css("display", "none");
-      $(".p0").css("display", "block");
-      v2.css("display", "block");
-      v2.get(0).play();
+      $(".p1, .p2, .p3").hide();
+      $(".p0").show();
+      // v2.css("display", "block");
+      // v2.get(0).play();
+      vx2.play();
       $("#audio-open").get(0).play();
     }, 2000);
-    $("#in").fadeOut();
-    $("#welcome").fadeOut();
     $(".upload_wrap").animate({ "margin-top": "-120vw" }, 2000, function () {
-      $(".upload_wrap").css("display", "none");
+      $(".upload_wrap").hide();
     });
     $("#audio-up").get(0).play();
     $("#in, #welcome").fadeOut();
-    v2.get(0).addEventListener("timeupdate", function () {
-      if (v2.get(0).ended) {
-        v2.css("display", "none");
-        //v2.fadeIn("fast");
-        $(".p0").css("display", "none");
-        $(".p2").css("opacity", "0");
-        $(".p2").css("display", "block");
-        $(".p2").animate({ "opacity": "1" }, 1000);
-        if (!lock) { page2(); lock++; }
-      }
-    })
+    // v2.get(0).addEventListener("timeupdate", function () {
+    //   if (v2.get(0).ended) {
+    //     v2.css("display", "none");
+    //     //v2.fadeIn("fast");
+    //     $(".p0").css("display", "none");
+    //     $(".p2").css("opacity", "0");
+    //     $(".p2").css("display", "block");
+    //     $(".p2").animate({ "opacity": "1" }, 1000);
+    //     if (!lock) { page2(); lock++; }
+    //   }
+    // });
+    vx2.option.onComplete = function () {
+      // v2.css("display", "none");
+      //v2.fadeIn("fast");
+      $(".p0").hide();
+      $(".p2").fadeIn("slow");
+      // $(".p2").css("opacity", "0");
+      // $(".p2").css("display", "block");
+      // $(".p2").animate({ "opacity": "1" }, 1000);
+      if (!lock) { page2(); lock++; }
+    }
     if (clickTimes == 1 && upload_lock) {
       clickTimes++;
       requestTimes++;
@@ -318,6 +356,7 @@ function Qiniu_upload(f, token, key) {
   xhr.send(formData);
 };
 function page2() {
+  console.log("page2() begin");
   $('body').on('touchmove', function (event) {
     event.preventDefault();
   });
@@ -358,10 +397,10 @@ function page2() {
 
   for (var i = 1; i <= BG_NUMBER; i++) {
     $("<div></div>").css({
-      "background": "url(./image/panorama/" + panorama + "/" + i + ".png) no-repeat",
+      "background": (i==4 || i==5 || i==6)?("url(./image/panorama/" + panorama + "/" + i + ".png) no-repeat"):"none",
       "background-size": "100% auto",
       "position": "absolute",
-      "opacity": "0",
+      "opacity": (i==4 || i==5 || i==6)?"1":"0",
       "width": BG_WIDTH,
       "height": BG_HEIGHT,
       "left": (viewW - BG_WIDTH) / 2,
@@ -370,9 +409,9 @@ function page2() {
       // "backface-visibility": "hidden"
     }).attr('id', "panorama_" + i).appendTo(".container");
   }
-  $("#panorama_4").css("opacity", "1");
-  $("#panorama_5").css("opacity", "1");
-  $("#panorama_6").css("opacity", "1");
+  // $("#panorama_4").css("opacity", "1");
+  // $("#panorama_5").css("opacity", "1");
+  // $("#panorama_6").css("opacity", "1");
   //放置图片
   $("<img></img>").attr("src", ImageFile[0])
     .css({

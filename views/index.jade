@@ -20,7 +20,7 @@ html(lang='en')
           img.bar(src='/image/loading_bar.png')
         img.loading_text(src='/image/loading_text.png')
         img.loading_title(src='/image/loading_title.png')
-      audio#audio-bg(style="width:0;height:0", loop="loop", autoplay="true")
+      audio#audio-bg(style="width:0;height:0", loop="loop")
         source(src='./audio/audio.mp3', type="audio/mpeg")
       audio#audio-btn(style="width:0;height:0")
         source(src='./audio/btn.mp3', type="audio/mpeg")
@@ -39,8 +39,8 @@ html(lang='en')
         //- video#my_video_1(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x-webkit-airplay="allow", x5-video-orientation='portrait', style='', poster="/image/first_poster.jpg")
         //-   source(src='./v/01-near.mp4', type='video/mp4')
         canvas#my_video_1_x.xlz_video
-        video#my_video_2(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='portrait', style='display:none')
-          source(src='./v/02-openin.mp4', type='video/mp4')
+        //- video#my_video_2(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='portrait', style='display:none')
+        //-   source(src='./v/02-openin.mp4', type='video/mp4')
         //- canvas#my_video_2_c.xlz_video
         #first_enter_box
       .page.p1
@@ -67,7 +67,7 @@ html(lang='en')
             #share_in(style='display:none')
             video#close_0(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='portrait', style='display:none')
               source(src='./v/close_0.mp4', type='video/mp4')
-            canvas#close_0_c.xlz_video
+            //- canvas#close_0_c.xlz_video
             video#exit_0(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='portrait', style='display:none')
               source(src='./v/exit_0.mp4', type='video/mp4')
             #cube

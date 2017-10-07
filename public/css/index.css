@@ -429,7 +429,7 @@ video {
     -webkit-user-select: none;
     user-select: none;
     overflow: hidden;
-    opacity: 0;
+    opacity: 1;
 }
 .p3{
     display: none;
