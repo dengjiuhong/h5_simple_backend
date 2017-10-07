@@ -179,7 +179,7 @@
             var jumpFrames = 0;
             needRedraw = true;
         } else {
-            var jumpFrames = parseInt((timestamp - this.lastTimestamp) / (1000 / 25));
+            var jumpFrames = parseInt((timestamp - this.lastTimestamp) / (1000 / 30));
             if(jumpFrames > 0) {
                 this.currentTimes += jumpFrames;
                 needRedraw = true;
