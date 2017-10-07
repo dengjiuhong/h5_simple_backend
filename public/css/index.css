@@ -363,7 +363,7 @@ video {
     background-color: inherit;
     position: fixed;
 }
-#close{
+#turn_off{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 1.045rem;
     height: 0.425rem;

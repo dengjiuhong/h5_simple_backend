@@ -131,6 +131,10 @@
         // 开始播放
         this.status = 2;
         window.requestAnimationFrame(this.nextFrame.bind(this));
+        // 如果有音频也播放
+        if(this.bgm != undefined) {
+            this.bgm.play();
+        }
     }
     
     // 停止
@@ -148,6 +152,10 @@
             // 提前结束了
             if(isFunc(this.option.onComplete)) {
                 this.option.onComplete();
+            }
+            // 双重保障？
+            if(this.bgm != undefined) {
+                this.bgm.pause();
             }
             return false;
         }
@@ -214,9 +222,9 @@
             // 加载完毕，设置一下封面美滋滋
             this.setPoster();
             
-            if(this.bgm !=undefined) {
-                this.bgm.play();
-            }
+            // if(this.bgm !=undefined) {
+            //     this.bgm.play();
+            // }
         }
     }
 
