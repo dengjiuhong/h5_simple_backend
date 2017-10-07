@@ -19,6 +19,7 @@
             canvasTargetId: null, // 目标画布对象ID（必须）
             framesUrl : [], // 每一帧的url（必须）
             audioUrl: "", // 音频路径
+            audioObject: null, // 音频的对象（优先级高于路径）
             height: 1138, // 图片的高度（必须）
             width: 640, // 图片的宽度（必须）
             onStart : null, // 加载开始回调函数，传入参数total
@@ -40,9 +41,14 @@
         this.ctx = document.getElementById(this.option.canvasTargetId).getContext('2d'); // 画布上下文
         
         var that = this;
-        this.bgm = new Audio(); // 背景音乐！
-        this.bgm.onerror = function() {that.bgm = undefined;}
-        this.bgm.src = this.option.audioUrl;
+        if(this.option.audioObject != null) {
+            this.bgm = this.option.audioObject;
+        } else {
+            this.bgm = new Audio(); // 背景音乐！
+            this.bgm.onerror = function() {that.bgm = undefined;}
+            this.bgm.src = this.option.audioUrl;
+        }
+        
         // 启动缓存
         // this.initialize();
     };
@@ -143,6 +149,13 @@
         // bgm 也停一下
         if(this.bgm != undefined) {
             this.bgm.pause();
+        }
+    }
+
+    xlz.prototype.reset = function() {
+        this.currentTimes = 0;
+        if(this.bgm) {
+            this.bgm.currentTime = 0;
         }
     }
 

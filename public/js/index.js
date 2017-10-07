@@ -75,7 +75,7 @@ $(document).ready(function () {
     '/image/bg/close_1.png',
     '/image/bg/close_2.png',
     '/image/share_my.gif',
-    '/v/02-openin.mp4'
+    // '/v/02-openin.mp4'
   ];
   var framesUrl = [];
   // 01. 靠近门的视频的资源
@@ -108,15 +108,16 @@ $(document).ready(function () {
     loop: false,
     // audio: '/audio/xlz/01-near.mp3',
     // 没设置结束回调函数，下面来
-    onComplete: function() {
-      console.log("结束了");
-    },
+    // onComplete: function() {
+    //   console.log("结束了");
+    // },
   });
 
   // 03. 关灯视频
   framesUrl = [];
-  var audio_3 = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
-  items.push(audio_3);
+  var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
+  var audio_3 = $("#audio-close-" + panorama).get(0);
+  items.push(audio_3_url);
   if(panorama === 0) {
     for(var i=0; i<75; i++) {
       items.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
@@ -139,17 +140,18 @@ $(document).ready(function () {
     canvasTargetId: "close_0_c",
     framesUrl: framesUrl,
     loop: true, // 关灯视频是循环播放的
-    audioUrl: audio_3,
+    audioObject: audio_3,
     // 没设置结束回调函数，下面来
-    onComplete: function() {
-      console.log("03. 结束了");
-    },
+    // onComplete: function() {
+    //   console.log("03. 结束了");
+    // },
   });
 
   // 04. 退出房间视频
   framesUrl = [];
-  var audio_4 = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
-  items.push(audio_4);
+  var audio_4_url = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
+  var audio_4 = $("#audio-exit-" + panorama).get(0);
+  items.push(audio_4_url);
   if(panorama === 0) {
     for(var i=0; i<63; i++) {
       items.push('/xlz/exit_0/exit_0_' + i + '.jpg');
@@ -172,7 +174,7 @@ $(document).ready(function () {
     canvasTargetId: "exit_0_c",
     framesUrl: framesUrl,
     loop: false,
-    audioUrl: audio_4,
+    audioObject: audio_4,
     // 没设置结束回调函数，下面来
     onComplete: function() {
       console.log("03. 结束了");
@@ -310,7 +312,7 @@ function main() {
       $(".p2").css("opacity", "0");
       $(".p2").show();
       $(".p2").animate({ "opacity": "1" }, 1000);
-      vx2.currentTimes = 0; // 重置当前播放帧（似乎叫currentFrame比较好？）
+      vx2.reset(); // 重置视频
       if (!lock) { page2(); lock++; }
     }
     if (clickTimes == 1 && upload_lock) {
@@ -548,7 +550,7 @@ function page2() {
     }
     console.log("vx3 停止");
     vx3.pause();
-    vx3.currentTimes = 0; // 重置当前播放帧（似乎叫currentFrame比较好？）
+    vx3.reset();
     // if ($("#close_0").get(0).ended) {
     already_ended = true;
     $("#view").css("background-image", "url('/image/bg/close_"+ panorama +".png')");
@@ -561,7 +563,7 @@ function page2() {
       vx4.play();
       // $("#exit_0").get(0).addEventListener("timeupdate", function () {
       vx4.option.onComplete = function () {
-        vx4.currentTimes = 0; // 重置当前播放帧（似乎叫currentFrame比较好？）
+        vx4.reset();
         audio.currentTime = 0;//音频重新播放
         audio.play();
         $(".wrap").addClass("p1-fake");
