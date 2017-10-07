@@ -364,6 +364,7 @@ video {
     position: fixed;
 }
 #turn_off{
+    z-index: 11;
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 1.045rem;
     height: 0.425rem;
