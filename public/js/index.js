@@ -721,7 +721,7 @@ function page2() {
       $("#try").css("display", "block");
       $("#try").css("opacity", "1");
       // 暂时注释掉再次随机
-      // panorama = Math.floor(Math.random() * 3);
+       panorama = Math.floor(Math.random() * 3);
     });
   });
   $(".share_my").click(function () {
