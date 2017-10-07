@@ -486,6 +486,7 @@ function page2() {
       "opacity": (i==4 || i==5 || i==6)?"1":"0",
       "width": BG_WIDTH,
       "height": BG_HEIGHT,
+      "z-index": "5",
       "left": (viewW - BG_WIDTH) / 2,
       "top": (viewH - BG_HEIGHT) / 2,
       "transform": "rotateY(" + (180 - i * PER_ANGLE) + "deg) translateZ(" + (-translateZ + 2) + "px)", // translateZ + 10 是为了去掉模模块间的缝隙
