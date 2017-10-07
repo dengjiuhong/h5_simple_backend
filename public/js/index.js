@@ -279,7 +279,9 @@ function main() {
   
   $("#in").click(function () {
     audio_3 = $("#audio-close-" + panorama).get(0);
+    audio_4 = $("#audio-exit-" + panorama).get(0);
     audio_3.load();
+    audio_4.load();
     $("#audio-btn").get(0).play();
     judge();
     if (!upload_lock) return;
