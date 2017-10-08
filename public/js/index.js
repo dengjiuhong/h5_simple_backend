@@ -23,23 +23,23 @@ panorama = Math.floor(Math.random() * 3);
 // 音频
 ion.sound({
   sounds: [
-      {
-        // bgm
-        name: "audio",
-        loop: 250 // 好像会自己停止，不能无限循环
-      },
-      {name: "btn"},
-      {name: "up"},
-      {name: "down"},
-      {name: "close"},
-      {name: "in"},
-      {name: "open"},
-      {name: "panorama_0_close"},
-      {name: "panorama_1_close"},
-      {name: "panorama_2_close"},
-      {name: "panorama_0_exit"},
-      {name: "panorama_1_exit"},
-      {name: "panorama_2_exit"},
+    {
+      // bgm
+      name: "audio",
+      loop: 250 // 好像会自己停止，不能无限循环
+    },
+    { name: "btn" },
+    { name: "up" },
+    { name: "down" },
+    { name: "close" },
+    { name: "in" },
+    { name: "open" },
+    { name: "panorama_0_close" },
+    { name: "panorama_1_close" },
+    { name: "panorama_2_close" },
+    { name: "panorama_0_exit" },
+    { name: "panorama_1_exit" },
+    { name: "panorama_2_exit" },
   ],
   path: "/audio/",
   preload: true
@@ -92,7 +92,7 @@ $(document).ready(function () {
   // 01. 靠近门的视频的资源
   // items.push('/audio/xlz/01-near.mp3');
   framesUrl = []; // 先清空上一个的
-  for(var i=0; i<51; i++) {
+  for (var i = 0; i < 51; i++) {
     items.push('/xlz/01-near/01-near_' + i + '.jpg');
     framesUrl.push('/xlz/01-near/01-near_' + i + '.jpg');
   }
@@ -106,7 +106,7 @@ $(document).ready(function () {
 
   // 02. 开门的视频
   framesUrl = []; // 清空
-  for(var i=51; i<93; i++) { // 坑爹下标
+  for (var i = 51; i < 93; i++) { // 坑爹下标
     items.push('/xlz/02-openin/02-openin_' + i + '.jpg');
     framesUrl.push('/xlz/02-openin/02-openin_' + i + '.jpg');
   }
@@ -123,18 +123,18 @@ $(document).ready(function () {
   // var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
   // var audio_3 = $("#audio-close-" + panorama).get(0);
   // items.push(audio_3_url);
-  if(panorama === 0) {
-    for(var i=0; i<75; i++) {
+  if (panorama === 0) {
+    for (var i = 0; i < 75; i++) {
       items.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
       framesUrl.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
     }
-  } else if(panorama === 1) {
-    for(var i=0; i<75; i++) {
+  } else if (panorama === 1) {
+    for (var i = 0; i < 75; i++) {
       items.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
       framesUrl.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
     }
-  } else if(panorama === 2) {
-    for(var i=0; i<90; i++) {
+  } else if (panorama === 2) {
+    for (var i = 0; i < 90; i++) {
       items.push('/xlz/museum-03-classic-89/museum-classic_' + i + '.jpg');
       framesUrl.push('/xlz/museum-03-classic-89/museum-classic_' + i + '.jpg');
     }
@@ -146,7 +146,7 @@ $(document).ready(function () {
     framesUrl: framesUrl,
     loop: true, // 关灯视频是循环播放的
     // audioObject: audio_3,
-    audioIonName: "panorama_"+ panorama +"_close",
+    audioIonName: "panorama_" + panorama + "_close",
     // 没设置结束回调函数，下面来
     // onComplete: function() {
     //   console.log("03. 结束了");
@@ -158,18 +158,18 @@ $(document).ready(function () {
   // var audio_4_url = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
   // var audio_4 = $("#audio-exit-" + panorama).get(0);
   // items.push(audio_4_url);
-  if(panorama === 0) {
-    for(var i=0; i<63; i++) {
+  if (panorama === 0) {
+    for (var i = 0; i < 63; i++) {
       items.push('/xlz/exit_0/exit_0_' + i + '.jpg');
       framesUrl.push('/xlz/exit_0/exit_0_' + i + '.jpg');
     }
-  } else if(panorama === 1) {
-    for(var i=0; i<63; i++) {
+  } else if (panorama === 1) {
+    for (var i = 0; i < 63; i++) {
       items.push('/xlz/exit_1/exit_1_' + i + '.jpg');
       framesUrl.push('/xlz/exit_1/exit_1_' + i + '.jpg');
     }
-  } else if(panorama === 2) {
-    for(var i=0; i<63; i++) {
+  } else if (panorama === 2) {
+    for (var i = 0; i < 63; i++) {
       items.push('/xlz/exit_2/exit_2_' + i + '.jpg');
       framesUrl.push('/xlz/exit_2/exit_2_' + i + '.jpg');
     }
@@ -181,9 +181,9 @@ $(document).ready(function () {
     framesUrl: framesUrl,
     loop: false,
     // audioObject: audio_4,
-    audioIonName: "panorama_"+ panorama +"_next",
+    audioIonName: "panorama_" + panorama + "_next",
     // 没设置结束回调函数，下面来
-    onComplete: function() {
+    onComplete: function () {
       console.log("03. 结束了");
     },
   });
@@ -210,7 +210,7 @@ $(document).ready(function () {
       // for(var vi in xlz_videos) {
       //   xlz_videos[vi].initialize();
       // }
-      xlz_videos['01-near'].initialize(function() {
+      xlz_videos['01-near'].initialize(function () {
         $(".wrap").removeClass("p0-fake");
       });
       main();
@@ -258,7 +258,7 @@ function main() {
     $(".p0").fadeOut();
     // 加载第二个视频，然后移除防止闪频的东西
     xlz_videos['02-openin'].initialize(function () {
-      setTimeout(function() {
+      setTimeout(function () {
         $(".wrap").removeClass("p1-fake");
       }, 1000);
     });
@@ -268,7 +268,7 @@ function main() {
     ion.sound.play("down");
     $("#in, #welcome").fadeIn();
   }
-  
+
   $("#in").click(function () {
     // audio_3 = $("#audio-close-" + panorama).get(0);
     // audio_4 = $("#audio-exit-" + panorama).get(0);
@@ -287,6 +287,7 @@ function main() {
       // 渲染着page2来
       $(".p2").show();
       $(".p2").css("opacity", "0");
+      page2_init();
       // 加个防止闪屏的东西
       // $(".wrap").addClass("p2-fake-" + panorama);
 
@@ -427,7 +428,95 @@ function Qiniu_upload(f, token, key) {
   startDate = new Date().getTime();
   xhr.send(formData);
 };
+
+function calTranslateZ(opts) {
+  return Math.round(opts.width / (2 * Math.tan(Math.PI / opts.number)))
+}
+
+function page2_init() {
+  if ($("#bigCube").height() >= 650) {
+    var BG_WIDTH = 1000,
+      BG_HEIGHT = 1750;
+    $("#view").css("perspective", "1060px");
+  } else {
+    var BG_WIDTH = 670,
+      BG_HEIGHT = 1190;
+    $("#view").css("perspective", "950px");
+  }
+  var BG_NUMBER = 9,
+    PER_ANGLE = 360 / BG_NUMBER;
+
+  var translateZ = calTranslateZ({
+    width: BG_WIDTH,
+    number: BG_NUMBER
+  })
+  // console.log(translateZ);
+
+  var view = $("#bigCube");
+  var viewW = view.width();
+  var viewH = view.height();
+
+  var container = $(".container"),
+    bgItem;
+
+  for (var i = 1; i <= BG_NUMBER; i++) {
+    $("<div></div>").css({
+      "background": (i == 4 || i == 5 || i == 6) ? ("url(./image/panorama/" + panorama + "/" + i + ".png) no-repeat") : "none",
+      "background-size": "100% auto",
+      "position": "absolute",
+      "opacity": (i == 4 || i == 5 || i == 6) ? "1" : "0",
+      "width": BG_WIDTH,
+      "height": BG_HEIGHT,
+      "z-index": "5",
+      "display": "none",
+      "left": (viewW - BG_WIDTH) / 2,
+      "top": (viewH - BG_HEIGHT) / 2,
+      "transform": "rotateY(" + (180 - i * PER_ANGLE) + "deg) translateZ(" + (-translateZ + 2) + "px)", // translateZ + 10 是为了去掉模模块间的缝隙
+      // "backface-visibility": "hidden"
+    }).attr('id', "panorama_" + i).appendTo(".container");
+  }
+  $("#panorama_4").css("display", "block");
+  $("#panorama_5").css("display", "block");
+  $("#panorama_6").css("display", "block");
+  //放置图片
+  $("<img></img>").attr("src", ImageFile[0])
+    .css({
+      "position": "absolute",
+      "width": BG_WIDTH / 3,
+      "height": BG_HEIGHT / 4,
+      "left": BG_WIDTH / 3,
+      "top": BG_HEIGHT / 2.75,
+      "object-fit": "cover",
+      "object-position": "center"
+    })
+    .appendTo("#panorama_5");
+
+  bgItem = container.find('div');
+  // 会回归
+  $("#cube").css({
+    transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
+  });
+  $("#share_in").css("display", "none");
+}
+
 function page2() {
+  var border_r = -52,
+    border_l = 12,
+    border_u = 1.5,
+    border_d = -1.5;
+    
+  // 为了解决闪屏问题，重复的代码
+  if ($("#bigCube").height() >= 650) {
+    var BG_WIDTH = 1000,
+      BG_HEIGHT = 1750;
+  } else {
+    var BG_WIDTH = 670,
+      BG_HEIGHT = 1190;
+  }
+  var translateZ = calTranslateZ({
+    width: BG_WIDTH,
+    number: 9
+  })
   $("#close_0_c").hide(); // 把画布先藏好
   $("#exit_0_c").hide(); // 把画布先藏好
 
@@ -441,98 +530,14 @@ function page2() {
   vx3.initialize(); // 偷偷初始化
 
   // $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
-  
+
   var vx4 = xlz_videos['04-exit'];
   vx4.initialize(); // 偷偷初始化
 
-  var border_r = -52,
-    border_l = 12,
-    border_u = 1.5,
-    border_d = -1.5;
-
-  if ($("#bigCube").height() >= 650) {
-    var BG_WIDTH = 1000,
-      BG_HEIGHT = 1750;
-    $("#view").css("perspective", "1060px");
-  } else {
-    var BG_WIDTH = 670,
-      BG_HEIGHT = 1190;
-    $("#view").css("perspective", "950px");
-  }
-  var BG_NUMBER = 9,
-    PER_ANGLE = 360 / BG_NUMBER;
-
-  var translateZ = (function calTranslateZ(opts) {
-    return Math.round(opts.width / (2 * Math.tan(Math.PI / opts.number)))
-  })({
-    width: BG_WIDTH,
-    number: BG_NUMBER
-  })
-  console.log(translateZ);
-
-
-  var view = $("#bigCube");
-  var viewW = view.width();
-  var viewH = view.height();
-
-  var container = $(".container"),
-    bgItem;
-
-  for (var i = 1; i <= BG_NUMBER; i++) {
-    $("<div></div>").css({
-      "background": (i==4 || i==5 || i==6)?("url(./image/panorama/" + panorama + "/" + i + ".png) no-repeat"):"none",
-      "background-size": "100% auto",
-      "position": "absolute",
-      "opacity": (i==4 || i==5 || i==6)?"1":"0",
-      "width": BG_WIDTH,
-      "height": BG_HEIGHT,
-      "z-index": "5",
-      "display": "none",
-      "left": (viewW - BG_WIDTH) / 2,
-      "top": (viewH - BG_HEIGHT) / 2,
-      "transform": "rotateY(" + (180 - i * PER_ANGLE) + "deg) translateZ(" + (-translateZ + 2) + "px)", // translateZ + 10 是为了去掉模模块间的缝隙
-      // "backface-visibility": "hidden"
-    }).attr('id', "panorama_" + i).appendTo(".container");
-  }
-   $("#panorama_4").css("display", "block");
-   $("#panorama_5").css("display", "block");
-   $("#panorama_6").css("display", "block");
-  //放置图片
-  $("<img></img>").attr("src", ImageFile[0])
-    .css({
-      "position": "absolute",
-      "width": BG_WIDTH / 3,
-      "height": BG_HEIGHT / 4,
-      "left": BG_WIDTH / 3,
-      "top": BG_HEIGHT / 2.75,
-      "object-fit": "cover",
-      "object-position": "center"
-    })
-    .appendTo("#panorama_5");
-  //放置动画中的图片（不需要了）
-  // $("<img></img>").attr("src", ImageFile[0])
-  // .css({
-  //   "position": "fixed",
-  //   "width": "34.5vw",
-  //   "height": "45.5vw",
-  //   "left": "calc(50vw - 34.5vw / 2)",
-  //   "bottom": window.screen.width * (1334/750) * 0.39 + "px",
-  //   "object-fit": "cover",
-  //   "object-position": "center"
-  // })
-  // .appendTo("#bigCube").hide();
-
-
-  bgItem = container.find('div');
-  // 会回归
-  $("#cube").css({
-    transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
-  });
-  $("#share_in").css("display", "none");
   var already_ended = false;
   // 无限循环的
   var temp_func = function () {
-    if(already_ended) {
+    if (already_ended) {
       return false;
     }
     // if ($("#close_0").get(0).ended) {
@@ -549,7 +554,7 @@ function page2() {
     // }
   }
   var temp_func_2 = function () {
-    if(already_ended) {
+    if (already_ended) {
       return false;
     }
     console.log("vx3 停止");
@@ -557,7 +562,7 @@ function page2() {
     vx3.reset();
     // if ($("#close_0").get(0).ended) {
     already_ended = true;
-    $("#view").css("background-image", "url('/image/bg/close_"+ panorama +".png')");
+    $("#view").css("background-image", "url('/image/bg/close_" + panorama + ".png')");
     //关灯视频消失，退出视频出来
     // $("#exit_0").css("display", "block");
     $("#exit_0_c").show();
@@ -576,7 +581,7 @@ function page2() {
         $("#view").css("background-image", "url('/image/close_.png')");
         $(".p3").css("display", "block");//p3出来，渲染
         $(".p3 > .share_my, .p3 > .change_my").hide();
-        $(".p2").fadeOut(500, ()=>{  
+        $(".p2").fadeOut(500, () => {
           $(".share_wrap").animate({ "margin-top": "0px" }, 2000, function () { });
           // $("#audio-down").get(0).play();
           ion.sound.play("down");
@@ -595,7 +600,7 @@ function page2() {
               "object-position": "center"
             }).appendTo(".share_pic");
           $(".p3 > .share_my, .p3 > .change_my").fadeIn(600);
-          setTimeout(()=>{$(".wrap").removeClass("p1-fake");}, 500);
+          setTimeout(() => { $(".wrap").removeClass("p1-fake"); }, 500);
           // 清理一下
           $(".p2").css('opacity', '0');
           $("#cube .container").html("");
@@ -604,10 +609,10 @@ function page2() {
     });
 
     // 中间照片消失
-    $("#bigCube > img").fadeOut(500, ()=>{
+    $("#bigCube > img").fadeOut(500, () => {
       $("#bigCube > img").remove();
     });
-      
+
     // }
   }
   //点击分享之后
@@ -625,17 +630,17 @@ function page2() {
   });
   //点击关灯之后
   // console.log("绑定点击事件", $("#turn_off"));
-  document.getElementsByClassName("p2")[0].addEventListener("click", function(e){
-        var e = e || window.event;
-        var elem = e.target || e.srcElement;
-        while (elem) { //循环判断至跟节点，防止点击的是div子元素 
-          console.log(elem);
-          if (elem.id=='turn_off') { 
-            console.log("!!!");
-          } 
-          elem = elem.parentNode; 
-        }
-      });
+  document.getElementsByClassName("p2")[0].addEventListener("click", function (e) {
+    var e = e || window.event;
+    var elem = e.target || e.srcElement;
+    while (elem) { //循环判断至跟节点，防止点击的是div子元素 
+      console.log(elem);
+      if (elem.id == 'turn_off') {
+        console.log("!!!");
+      }
+      elem = elem.parentNode;
+    }
+  });
   $("#turn_off").click(function (e) {
     console.log(e.target);
     $("#view").css({
@@ -686,7 +691,7 @@ function page2() {
     // $("#audio-up").get(0).play();
     ion.sound.play("up");
     $(".p3 > .share_my, .p3 > .change_my").fadeOut();
-    
+
     $(".share_wrap").animate({ "margin-top": "-150vw" }, 2000, function () {
       $(".p3").css("display", "none");//p3消失，p1出来
       $(".p1").css("display", "block");
