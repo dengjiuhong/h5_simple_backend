@@ -18,8 +18,9 @@
         this.option = {
             canvasTargetId: null, // 目标画布对象ID（必须）
             framesUrl : [], // 每一帧的url（必须）
-            audioUrl: "", // 音频路径
-            audioObject: null, // 音频的对象（优先级高于路径）
+            audioObject: null, // 音频的对象（优先级高于ION）
+            audioIonName: null, // ION音频的名字（优先级高于路径）
+            audioUrl: "", // 音频路径（优先级最低）
             height: 1138, // 图片的高度（必须）
             width: 640, // 图片的宽度（必须）
             onStart : null, // 加载开始回调函数，传入参数total
@@ -43,6 +44,8 @@
         var that = this;
         if(this.option.audioObject != null) {
             this.bgm = this.option.audioObject;
+        } else if(this.option.audioIonName != null) {
+            this.bgm_ion_name = this.option.audioIonName;
         } else {
             this.bgm = new Audio(); // 背景音乐！
             this.bgm.onerror = function() {that.bgm = undefined;}
@@ -141,14 +144,20 @@
         if(this.bgm != undefined) {
             this.bgm.play();
         }
+        if(this.bgm_ion_name) {
+            ion.sound.play(this.bgm_ion_name);
+        }
     }
     
-    // 停止
+    // 暂停
     xlz.prototype.pause = function() {
         this.status = 3;
         // bgm 也停一下
         if(this.bgm != undefined) {
             this.bgm.pause();
+        }
+        if(this.bgm_ion_name) {
+            ion.sound.pause(this.bgm_ion_name);
         }
     }
 
@@ -156,6 +165,9 @@
         this.currentTimes = 0;
         if(this.bgm) {
             this.bgm.currentTime = 0;
+        }
+        if(this.bgm_ion_name) {
+            ion.sound.stop(this.bgm_ion_name);
         }
     }
 
@@ -169,6 +181,9 @@
             // 双重保障？
             if(this.bgm != undefined) {
                 this.bgm.pause();
+            }
+            if(this.bgm_ion_name) {
+                ion.sound.pause(this.bgm_ion_name);
             }
             return false;
         }
@@ -218,11 +233,18 @@
                     this.bgm.currentTime = 0;
                     this.bgm.play();
                 }
+                if(this.bgm_ion_name) {
+                    ion.sound.stop(this.bgm_ion_name);
+                    ion.sound.play(this.bgm_ion_name);
+                }
             } else {
                 // 结束了
                 this.status = 3;
                 if(this.bgm !=undefined) {
                     this.bgm.pause();
+                }
+                if(this.bgm_ion_name) {
+                    ion.sound.stop(this.bgm_ion_name);
                 }
             }
         }
@@ -234,10 +256,6 @@
         if(this.currentIndex===this.total){
             // 加载完毕，设置一下封面美滋滋
             this.setPoster();
-            
-            // if(this.bgm !=undefined) {
-            //     this.bgm.play();
-            // }
         }
     }
 

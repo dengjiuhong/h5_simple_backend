@@ -20,6 +20,32 @@ panorama = Math.floor(Math.random() * 3);
 // preload(panorama);
 
 
+// 音频
+ion.sound({
+  sounds: [
+      {
+        // bgm
+        name: "audio",
+        loop: true
+      },
+      {name: "btn"},
+      {name: "up"},
+      {name: "down"},
+      {name: "close"},
+      {name: "in"},
+      {name: "open"},
+      {name: "panorama_0_close"},
+      {name: "panorama_1_close"},
+      {name: "panorama_2_close"},
+      {name: "panorama_0_exit"},
+      {name: "panorama_1_exit"},
+      {name: "panorama_2_exit"},
+  ],
+  path: "/audio/",
+  preload: true
+});
+
+
 $(document).ready(function () {
   // debug //
   // $(".page.p1").show();
@@ -27,21 +53,6 @@ $(document).ready(function () {
   // $("#in, #welcome").fadeIn();
   // return false;
   // debug //
-  // $("#audio-up").get(0).play();
-  document.getElementById("audio-up").currentTime = 0;
-  $("#audio-up").get(0).pause();
-  // $("#audio-down").get(0).play();
-  document.getElementById("audio-down").currentTime = 0;
-  $("#audio-down").get(0).pause();
-  // $("#audio-close").get(0).play();
-  document.getElementById("audio-close").currentTime = 0;
-  $("#audio-close").get(0).pause();
-  // $("#audio-in").get(0).play();
-  document.getElementById("audio-in").currentTime = 0;
-  $("#audio-in").get(0).pause();
-  // $("#audio-open").get(0).play();
-  document.getElementById("audio-open").currentTime = 0;
-  $("#audio-open").get(0).pause();
 
   // 序列帧视频的画布大小
   $(".xlz_video").attr({
@@ -91,9 +102,6 @@ $(document).ready(function () {
     loop: false,
     // audio: '/audio/xlz/01-near.mp3',
     // 没设置结束回调函数，下面来
-    // onComplete: function() {
-    //   console.log("结束了");
-    // },
   });
 
   // 02. 开门的视频
@@ -108,16 +116,13 @@ $(document).ready(function () {
     loop: false,
     // audio: '/audio/xlz/01-near.mp3',
     // 没设置结束回调函数，下面来
-    // onComplete: function() {
-    //   console.log("结束了");
-    // },
   });
 
   // 03. 关灯视频
   framesUrl = [];
-  var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
-  var audio_3 = $("#audio-close-" + panorama).get(0);
-  items.push(audio_3_url);
+  // var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
+  // var audio_3 = $("#audio-close-" + panorama).get(0);
+  // items.push(audio_3_url);
   if(panorama === 0) {
     for(var i=0; i<75; i++) {
       items.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
@@ -140,7 +145,8 @@ $(document).ready(function () {
     canvasTargetId: "close_0_c",
     framesUrl: framesUrl,
     loop: true, // 关灯视频是循环播放的
-    audioObject: audio_3,
+    // audioObject: audio_3,
+    audioIonName: "panorama_"+ panorama +"_close",
     // 没设置结束回调函数，下面来
     // onComplete: function() {
     //   console.log("03. 结束了");
@@ -149,9 +155,9 @@ $(document).ready(function () {
 
   // 04. 退出房间视频
   framesUrl = [];
-  var audio_4_url = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
-  var audio_4 = $("#audio-exit-" + panorama).get(0);
-  items.push(audio_4_url);
+  // var audio_4_url = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
+  // var audio_4 = $("#audio-exit-" + panorama).get(0);
+  // items.push(audio_4_url);
   if(panorama === 0) {
     for(var i=0; i<63; i++) {
       items.push('/xlz/exit_0/exit_0_' + i + '.jpg');
@@ -174,7 +180,8 @@ $(document).ready(function () {
     canvasTargetId: "exit_0_c",
     framesUrl: framesUrl,
     loop: false,
-    audioObject: audio_4,
+    // audioObject: audio_4,
+    audioIonName: "panorama_"+ panorama +"_next",
     // 没设置结束回调函数，下面来
     onComplete: function() {
       console.log("03. 结束了");
@@ -235,14 +242,12 @@ function main() {
   var vx2 = xlz_videos["02-openin"];
   // v.fadeIn("fast");
   $("#first_enter_box").click(function () {
-    audio = document.getElementById("audio-bg");
-    audio.play();
-    $("#audio-open").get(0).load();
-    $("#audio-up").get(0).load();
-    $("#audio-down").get(0).load();
-    $("#audio-in").get(0).load();
+    // audio = document.getElementById("audio-bg");
+    // audio.play();
+    ion.sound.play("audio");
     $("#first_enter_box").fadeOut();
-    $("#audio-btn").get(0).play();
+    // $("#audio-btn").get(0).play();
+    ion.sound.play("btn");
     // v.get(0).play();
     vx.play(); // 播放序列帧
     $(".wrap").addClass("p1-fake");
@@ -259,30 +264,20 @@ function main() {
     });
 
     $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
-    $("#audio-down").get(0).play();
+    // $("#audio-down").get(0).play();
+    ion.sound.play("down");
     $("#in, #welcome").fadeIn();
   }
-  // v.get(0).addEventListener("timeupdate", function () {
-  //   if (v.get(0).ended) {
-  //     $(".p1").css("display", "block");
-  //     $(".p0").css("display", "none");
-  //     // 移除防止闪频的东西
-  //     setTimeout(function () {
-  //       $(".wrap").removeClass("p1-fake");
-  //     }, 300);
-  //     $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
-  //     $("#audio-down").get(0).play();
-  //     $("#in, #welcome").fadeIn();
-  //     //v2.get(0).play();
-  //   }
-  // });
   
   $("#in").click(function () {
-    audio_3 = $("#audio-close-" + panorama).get(0);
-    audio_4 = $("#audio-exit-" + panorama).get(0);
-    audio_3.load();
-    audio_4.load();
-    $("#audio-btn").get(0).play();
+    // audio_3 = $("#audio-close-" + panorama).get(0);
+    // audio_4 = $("#audio-exit-" + panorama).get(0);
+    // audio_3.load();
+    // audio_4.load();
+    // $("#audio-btn").get(0).play();
+    ion.sound.play("btn");
+    // 再放一下背景音乐，防止自动停止
+    ion.sound.play("audio");
     judge();
     if (!upload_lock) return;
     // v2.get(0).play();
@@ -293,29 +288,21 @@ function main() {
       $(".p0").show();
       // v2.css("display", "block");
       // v2.get(0).play();
-      $("#audio-open").get(0).play();
+      // $("#audio-open").get(0).play();
+      ion.sound.play("open");
       vx2.play();
     }, 2000);
     $(".upload_wrap").animate({ "margin-top": "-120vw" }, 2000, function () {
       $(".upload_wrap").hide();
     });
-    $("#audio-up").get(0).play();
+    // $("#audio-up").get(0).play();
+    ion.sound.play("up");
     $("#in, #welcome").fadeOut();
-    // v2.get(0).addEventListener("timeupdate", function () {
-    //   if (v2.get(0).ended) {
-    //     v2.css("display", "none");
-    //     //v2.fadeIn("fast");
-    //     $(".p0").css("display", "none");
-    //     $(".p2").css("opacity", "0");
-    //     $(".p2").css("display", "block");
-    //     $(".p2").animate({ "opacity": "1" }, 1000);
-    //     if (!lock) { page2(); lock++; }
-    //   }
-    // });
     vx2.option.onComplete = function () {
       // v2.css("display", "none");
       //v2.fadeIn("fast");
-      $("#audio-in").get(0).play();
+      // $("#audio-in").get(0).play();
+      ion.sound.play("in");
       $(".p0").hide();
       // $(".p2").fadeIn("slow");
       $(".p2").css("opacity", "0");
@@ -538,6 +525,7 @@ function page2() {
   });
   $("#share_in").css("display", "none");
   var already_ended = false;
+  // 无限循环的
   var temp_func = function () {
     if(already_ended) {
       return false;
@@ -569,21 +557,24 @@ function page2() {
     // $("#exit_0").css("display", "block");
     $("#exit_0_c").show();
     $("#close_0_c").fadeOut(1000, () => {
-      $("#audio-open").get(0).play();
+      // $("#audio-open").get(0).play();
+      ion.sound.play("open");
       // $("#exit_0").get(0).play();
       vx4.play();
       // $("#exit_0").get(0).addEventListener("timeupdate", function () {
       vx4.option.onComplete = function () {
         vx4.reset();
-        audio.currentTime = 0;//音频重新播放
-        audio.play();
+        // audio.currentTime = 0;//音频重新播放
+        // audio.play();
+        ion.sound.play("audio");
         $(".wrap").addClass("p1-fake");
         $("#view").css("background-image", "url('/image/close_.png')");
         $(".p3").css("display", "block");//p3出来，渲染
         $(".p3 > .share_my, .p3 > .change_my").hide();
         $(".p2").fadeOut(500, ()=>{  
           $(".share_wrap").animate({ "margin-top": "0px" }, 2000, function () { });
-          $("#audio-down").get(0).play();
+          // $("#audio-down").get(0).play();
+          ion.sound.play("down");
           $(".share_pic").empty();
           if (user_name.length > 4) {
             user_name = user_name.substr(0, 3);
@@ -616,7 +607,8 @@ function page2() {
   }
   //点击分享之后
   document.getElementById("share_in").addEventListener("click", function () {
-    $("#audio-btn").get(0).play();
+    // $("#audio-btn").get(0).play();
+    ion.sound.play("btn");
     // $("#view").css("background-image", "url('/image/bg/close_" + panorama + ".png')");
     //$("#close_0").removeAttr("loop");
     // $("#close_0").get(0).removeEventListener("timeupdate", temp_func);//关灯视频不再循环
@@ -646,7 +638,8 @@ function page2() {
       "background-image": "none",
     });
     // 关灯音效
-    $("#audio-close").get(0).play();
+    // $("#audio-close").get(0).play();
+    ion.sound.play("close");
     if (close_lock != 0) return;
     close_lock++;
     $("#turn_off").css("background-image", "url('/image/close_light.png')");
@@ -668,7 +661,8 @@ function page2() {
       // $("#bigCube > img").fadeIn(750); // 照片不回来
       vx3.option.onComplete = temp_func;
       $("#close_0_c").fadeIn("slow", function () {
-        audio.pause();
+        // audio.pause();
+        ion.sound.stop("audio");
         // $("#close_0").get(0).play();
         vx3.play();
         // $("#close_0").get(0).addEventListener("timeupdate", temp_func);
@@ -678,19 +672,22 @@ function page2() {
   });
   //点击换张照片之后
   $(".change_my").click(function () {
-    $("#audio-btn").get(0).play();
+    // $("#audio-btn").get(0).play();
+    ion.sound.play("btn");
     //解锁p2的渲染与p1的按钮
     clickTimes = 1;
     lock = 0;
     //分享UI向上动
-    $("#audio-up").get(0).play();
+    // $("#audio-up").get(0).play();
+    ion.sound.play("up");
     $(".p3 > .share_my, .p3 > .change_my").fadeOut();
     
     $(".share_wrap").animate({ "margin-top": "-150vw" }, 2000, function () {
       $(".p3").css("display", "none");//p3消失，p1出来
       $(".p1").css("display", "block");
       $(".upload_wrap").css("display", "block");//首页ui动
-      $("#audio-down").get(0).play();
+      // $("#audio-down").get(0).play();
+      ion.sound.play("down");
       $(".upload_wrap").animate({ "margin-top": "0px" }, 2000);
       $("#in").fadeIn();
       $("#welcome").fadeIn();

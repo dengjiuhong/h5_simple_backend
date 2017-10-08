@@ -11,6 +11,7 @@ html(lang='en')
     script(src='./js/jquery-3.1.0.min.js')
     script(src='./js/uploadImage.js')
     script(src='./js/exif.js')
+    script(src='./js/ion.sound.min.js')
     script(src='./js/index.js')
     .wrap
       .page.loading
@@ -20,42 +21,9 @@ html(lang='en')
           img.bar(src='/image/loading_bar.png')
         img.loading_text(src='/image/loading_text.png')
         img.loading_title(src='/image/loading_title.png')
-      audio#audio-bg(style="width:0;height:0", loop="loop")
-        source(src='./audio/audio.mp3', type="audio/mpeg")
-      audio#audio-btn(style="width:0;height:0")
-        source(src='./audio/btn.mp3', type="audio/mpeg")
-      audio#audio-up(style="width:0;height:0")
-        source(src='./audio/up.mp3', type="audio/mpeg")
-      audio#audio-down(style="width:0;height:0")
-        source(src='./audio/down.mp3', type="audio/mpeg")
-      audio#audio-close(style="width:0;height:0")
-        source(src='./audio/close.mp3', type="audio/mpeg")
-      audio#audio-in(style="width:0;height:0")
-        source(src='./audio/in.mp3', type="audio/mpeg")
-      audio#audio-open(style="width:0;height:0")
-        source(src='./audio/open.mp3', type="audio/mpeg")
-
-      audio#audio-close-0(style="width:0;height:0")
-        source(src='/audio/xlz/panorama_0_close.mp3', type="audio/mpeg")
-      audio#audio-close-1(style="width:0;height:0")
-        source(src='/audio/xlz/panorama_1_close.mp3', type="audio/mpeg")
-      audio#audio-close-2(style="width:0;height:0")
-        source(src='/audio/xlz/panorama_2_close.mp3', type="audio/mpeg")
-
-      audio#audio-exit-0(style="width:0;height:0")
-        source(src='/audio/xlz/panorama_0_exit.mp3', type="audio/mpeg")
-      audio#audio-exit-1(style="width:0;height:0")
-        source(src='/audio/xlz/panorama_1_exit.mp3', type="audio/mpeg")
-      audio#audio-exit-2(style="width:0;height:0")
-        source(src='/audio/xlz/panorama_2_exit.mp3', type="audio/mpeg")
       .page.p0
         img(src='./image/close.png', style='display:none')
-        //- video#my_video_1(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x-webkit-airplay="allow", x5-video-orientation='portrait', style='', poster="/image/first_poster.jpg")
-        //-   source(src='./v/01-near.mp4', type='video/mp4')
         canvas#my_video_1_x.xlz_video
-        //- video#my_video_2(preload='preload', webkit-playsinline='', playsinline='', x5-video-player-type='h5', x5-video-player-fullscreen='false', x5-video-orientation='portrait', style='display:none')
-        //-   source(src='./v/02-openin.mp4', type='video/mp4')
-        //- canvas#my_video_2_c.xlz_video
         #first_enter_box
       .page.p1
         .upload_wrap
