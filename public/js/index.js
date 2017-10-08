@@ -181,7 +181,7 @@ $(document).ready(function () {
     framesUrl: framesUrl,
     loop: false,
     // audioObject: audio_4,
-    audioIonName: "panorama_" + panorama + "_next",
+    audioIonName: "panorama_" + panorama + "_exit",
     // 没设置结束回调函数，下面来
     onComplete: function () {
       console.log("03. 结束了");
