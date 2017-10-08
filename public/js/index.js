@@ -242,6 +242,7 @@ function main() {
   var vx2 = xlz_videos["02-openin"];
   // v.fadeIn("fast");
   $("#first_enter_box").click(function () {
+    $("#first_poster").hide();
     // audio = document.getElementById("audio-bg");
     // audio.play();
     ion.sound.play("audio");
