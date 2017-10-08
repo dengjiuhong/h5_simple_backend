@@ -206,9 +206,9 @@ video {
     background-image: url('/image/close_.png');
 }
 .upload_wrap{
-    bottom: 1.5rem;
     margin: 0 auto;
     margin-top: -120vw;
+    margin-bottom: 1.5rem;
     width: 70vw;
     height: calc(812 / 480 * 70vw); /* 118.416667 */
     position: relative;
