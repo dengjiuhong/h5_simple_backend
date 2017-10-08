@@ -134,7 +134,7 @@ $(document).ready(function () {
       framesUrl.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
     }
   } else if (panorama === 2) {
-    for (var i = 0; i < 90; i++) {
+    for (var i = 0; i < 75; i++) {
       items.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
       framesUrl.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
     }
