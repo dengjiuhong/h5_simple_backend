@@ -135,8 +135,8 @@ $(document).ready(function () {
     }
   } else if (panorama === 2) {
     for (var i = 0; i < 90; i++) {
-      items.push('/xlz/museum-03-classic-89/museum-classic_' + i + '.jpg');
-      framesUrl.push('/xlz/museum-03-classic-89/museum-classic_' + i + '.jpg');
+      items.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+      framesUrl.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
     }
   } else {
     alert("博物馆不存在！");
@@ -734,6 +734,7 @@ function page2() {
     });
   });
   $(".share_my").click(function () {
+    ion.sound.play("btn");
     $("#shareit").show();
     $("#share_gif").css("display", "block");
   });

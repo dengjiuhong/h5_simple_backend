@@ -51,6 +51,9 @@
             this.bgm.onerror = function() {that.bgm = undefined;}
             this.bgm.src = this.option.audioUrl;
         }
+
+        // 设置频率
+        this.frequency = 25;
         
         // 启动缓存
         // this.initialize();
@@ -191,13 +194,15 @@
         var needRedraw = false; // 需要重绘
         if(this.lastTimestamp === undefined) {
             this.lastTimestamp = timestamp;
+            this.carryTime = 0; // 上次的余数
             var jumpFrames = 0;
             needRedraw = true;
         } else {
-            var jumpFrames = parseInt((timestamp - this.lastTimestamp) / (1000 / 30));
+            var jumpFrames = parseInt((timestamp - this.lastTimestamp + this.carryTime) / (1000 / this.frequency));
             if(jumpFrames > 0) {
                 this.currentTimes += jumpFrames;
                 needRedraw = true;
+                this.carryTime = (timestamp - this.lastTimestamp + this.carryTime) % (1000 / this.frequency);
                 this.lastTimestamp = timestamp;
             }
         }

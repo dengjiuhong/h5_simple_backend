@@ -360,12 +360,12 @@ video {
 }
 #welcome {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 1.46rem;
+    width: 0.815rem;
     height: 0.215rem;
     top: calc(928 / 534 * 70vw + 0.59rem + 5vw);
     /* bottom: 0.26rem; */
-    left: calc(50vw - 1.46rem / 2);
-    background-image: url('/image/welcome.png');
+    left: calc(50vw - 0.815rem / 2);
+    background-image: url('/image/login.png');
     background-size: 100% 100%;
     position: fixed;
     display: none;
