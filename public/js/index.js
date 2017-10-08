@@ -26,7 +26,7 @@ ion.sound({
       {
         // bgm
         name: "audio",
-        loop: true
+        loop: 250 // 好像会自己停止，不能无限循环
       },
       {name: "btn"},
       {name: "up"},
@@ -284,10 +284,13 @@ function main() {
     // v2.get(0).pause();
     setTimeout(function () {
       $(".p1, .p3").hide();
+      // 渲染着page2来
+      $(".p2").show();
       $(".p2").css("opacity", "0");
+      // 加个防止闪屏的东西
+      // $(".wrap").addClass("p2-fake-" + panorama);
+
       $(".p0").show();
-      // v2.css("display", "block");
-      // v2.get(0).play();
       // $("#audio-open").get(0).play();
       ion.sound.play("open");
       vx2.play();
@@ -305,9 +308,9 @@ function main() {
       ion.sound.play("in");
       $(".p0").hide();
       // $(".p2").fadeIn("slow");
-      $(".p2").css("opacity", "0");
-      $(".p2").show();
-      $(".p2").animate({ "opacity": "1" }, 1000);
+      // $(".p2").css("opacity", "0");
+      // $(".p2").show();
+      $(".p2").animate({ "opacity": "1" }, 3000);
       vx2.reset(); // 重置视频
       if (!lock) { page2(); lock++; }
     }
@@ -431,7 +434,7 @@ function page2() {
   $('body').on('touchmove', function (event) {
     event.preventDefault();
   });
-  
+
   // 关灯视频
   // $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
   var vx3 = xlz_videos['03-close'];
@@ -441,6 +444,7 @@ function page2() {
   
   var vx4 = xlz_videos['04-exit'];
   vx4.initialize(); // 偷偷初始化
+
   var border_r = -52,
     border_l = 12,
     border_u = 1.5,
@@ -520,6 +524,7 @@ function page2() {
 
 
   bgItem = container.find('div');
+  // 会回归
   $("#cube").css({
     transform: "rotateX(0deg) rotateY(20deg) rotateZ(0)"
   });
