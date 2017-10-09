@@ -231,8 +231,8 @@ video {
 .share_wrap{
     margin: 0 auto;
     margin-top: -500px;
-    width: 72vw;
-    height: calc(928 / 534 * 72vw);
+    width: 70vw;
+    height: calc(928 / 534 * 70vw);
     position: relative;
     overflow: hidden;
     background: url("../image/brand_.png");
@@ -442,7 +442,7 @@ video {
     width: 35vw;
     height: calc(94 / 269 * 35vw);
     left: 12vw;
-    top: calc(928 / 534 * 72vw + 1.5rem - 0.545rem - (94 / 268 * 35vw));
+    top: calc(928 / 534 * 70vw + 1.5rem - 0.545rem - (94 / 268 * 35vw));
     background-image: url('/image/share_my.png');
     background-size: 100% 100%;
     background-color: inherit;
@@ -453,7 +453,7 @@ video {
     width: 35vw;
     height: calc(94 / 268 * 35vw);
     right: 12vw;
-    top: calc(928 / 534 * 72vw + 1.5rem - 0.545rem - (94 / 268 * 35vw));
+    top: calc(928 / 534 * 70vw + 1.5rem - 0.545rem - (94 / 268 * 35vw));
     background-image: url('/image/change_my.png');
     background-size: 100% 100%;
     background-color: inherit;
