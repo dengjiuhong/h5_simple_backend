@@ -453,7 +453,7 @@ video {
     width: 35vw;
     height: calc(94 / 268 * 35vw);
     right: 12vw;
-    top: calc(928 / 534 * 70vw + 1.5rem - 0.545rem - (94 / 268 * 35vw));
+    top: calc(928 / 534 * 70vw + 1.5rem - 0.545rem - (183 / 268 * 35vw));
     background-image: url('/image/change_my.png');
     background-size: 100% 100%;
     background-color: inherit;
