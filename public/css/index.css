@@ -405,7 +405,7 @@ video {
     bottom: 0.91rem;
     background-image: url('/image/turn_light.png');
     background-size: 100% 100%;
-    background-color: inherit;
+    background-color: transparent;
     position: fixed;
 }
 .turn_off{
@@ -417,7 +417,7 @@ video {
     bottom: 0.91rem;
     background-image: url('/image/turn_light.png');
     background-size: 100% 100%;
-    background-color: inherit;
+    background-color: transparent;
     position: fixed;
 }
 #light_word{
@@ -481,7 +481,7 @@ video {
     display: none;
 }
   #view{
-    background-color: transparent;
+    background-color: #000000;
     background-position: center bottom;
     background-size: 100% auto;
     width: 100%;
