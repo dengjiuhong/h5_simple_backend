@@ -408,6 +408,18 @@ video {
     background-color: inherit;
     position: fixed;
 }
+.turn_off{
+    z-index: 11;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width: 1.045rem;
+    height: 0.425rem;
+    left: calc(50vw - 1.045rem / 2);
+    bottom: 0.91rem;
+    background-image: url('/image/turn_light.png');
+    background-size: 100% 100%;
+    background-color: inherit;
+    position: fixed;
+}
 #light_word{
     width: 1.46rem;
     height: 0.215rem;
