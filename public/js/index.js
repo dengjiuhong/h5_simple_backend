@@ -567,7 +567,7 @@ function page2() {
     //关灯视频消失，退出视频出来
     // $("#exit_0").css("display", "block");
     $("#exit_0_c").show();
-    $("#close_0_c").fadeOut(1000, () => {
+    //$("#close_0_c").fadeOut(1000, () => {
       // $("#audio-open").get(0).play();
       ion.sound.play("open");
       // $("#exit_0").get(0).play();
@@ -607,7 +607,7 @@ function page2() {
           $("#cube .container").html("");
         });
       };
-    });
+    //});
 
     // 中间照片消失
     $("#bigCube > img").fadeOut(500, () => {
