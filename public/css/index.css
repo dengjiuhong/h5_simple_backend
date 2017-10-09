@@ -560,7 +560,7 @@ video {
     bottom: 0.65rem;
     background-image: url('/image/leave.png');
     background-size: 100% 100%;
-    background-color: inherit;
+    background-color: transparent;
     position: fixed;
     z-index: 10;
 }

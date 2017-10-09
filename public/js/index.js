@@ -645,7 +645,7 @@ function page2() {
   $("#turn_off").click(function (e) {
     console.log(e.target);
     $("#view").css({
-      "background-color": "black",
+      "background-color": "transparent",
       "background-image": "none",
     });
     // 关灯音效
