@@ -641,7 +641,7 @@ function page2() {
       }
       elem = elem.parentNode;
     }
-  });
+  }, true);
   $("#turn_off").click(function (e) {
     console.log(e.target);
     $("#view").css({
