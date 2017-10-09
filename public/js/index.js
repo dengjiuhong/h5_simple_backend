@@ -563,7 +563,7 @@ function page2() {
     vx3.reset();
     // if ($("#close_0").get(0).ended) {
     already_ended = true;
-    $("#view").css("background-image", "url('/image/bg/close_" + panorama + ".png')");
+    //$("#view").css("background-image", "url('/image/bg/close_" + panorama + ".png')");
     //关灯视频消失，退出视频出来
     // $("#exit_0").css("display", "block");
     $("#exit_0_c").show();
