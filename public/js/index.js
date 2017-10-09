@@ -561,6 +561,7 @@ function page2() {
     console.log("vx3 停止");
     vx3.pause();
     vx3.reset();
+    ion.sound.pause("panorama_" + panorama + "_close");
     // if ($("#close_0").get(0).ended) {
     already_ended = true;
     $("#close_0_c").fadeOut();
