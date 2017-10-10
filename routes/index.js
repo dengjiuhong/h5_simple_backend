@@ -136,5 +136,8 @@ module.exports = function (db) {
 		var deadline = parseInt(Date.now() / 1000) + 3600; // 1小时过期
 		var privateDownloadUrl = bucketManager.privateDownloadUrl(privateBucketDomain, name, deadline);
 		console.log(privateDownloadUrl);
+		res.send({
+			  "token" : "uploadToken"
+		  });
 	})
 	};
