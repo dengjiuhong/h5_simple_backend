@@ -131,7 +131,7 @@ module.exports = function (db) {
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 		var config = new qiniu.conf.Config();
 		var bucketManager = new qiniu.rs.BucketManager(mac, config);
-		var privateBucketDomain = 'ovw6bdt75.bkt.clouddn.com';
+		var privateBucketDomain = 'ovw6bdt75.bkt.clouddn.com/simplepicstor';
 		var deadline = parseInt(Date.now() / 1000) + 3600; // 1小时过期
 		var privateDownloadUrl = bucketManager.privateDownloadUrl(privateBucketDomain, name, deadline);
 		console.log(privateDownloadUrl);
