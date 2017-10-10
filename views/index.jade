@@ -19,17 +19,22 @@ html(lang='en')
         .progress
           img.background(src='/image/loading_bg.png')
           img.bar(src='/image/loading_bar.png')
-        img.loading_text(src='/image/loading_text.png')
         img.loading_title(src='/image/loading_title.png')
         .huadong
           .notice_active
             ul
               li.notice_active_ch
-                span 测试1
+                span LOADING
               li.notice_active_ch
-                span 测试2
+                span -多试几次，你会开启新的精彩-
               li.notice_active_ch
-                span 测试3
+                span -惊喜总是需要等待-
+              li.notice_active_ch
+                span -这一次，OPPO为你准备了点不一样的-
+              li.notice_active_ch
+                span -别急，还需要一丢丢的时间-
+              li.notice_active_ch
+                span -Hey！你对新品期待吗？-
       .page.p0
         img(src='./image/close.png', style='display:none')
         canvas#my_video_1_x.xlz_video
@@ -80,9 +85,9 @@ html(lang='en')
     script(type='text/javascript').
       function timer(opj){
       $(opj).find('ul').animate({
-      marginTop : "-3.5rem"
+      marginTop : "-0.1rem"
       },500,function(){
-      $(this).css({marginTop : "0.7rem"}).find("li:first").appendTo(this);
+      $(this).css({marginTop : "0rem"}).find("li:first").appendTo(this);
       })
       }
       $(function(){

@@ -227,7 +227,7 @@ function judge() {
     $("#welcome").css("background-image", "url('/image/error/err_name.png')");
     upload_lock = false;
   }
-  else if ($('#phone').val() == "") {
+  else if ($('#phone').val() == "" || $('#phone').val().length < 11) {
     $("#welcome").css("background-image", "url('/image/error/err_phone.png')");
     upload_lock = false;
   }
