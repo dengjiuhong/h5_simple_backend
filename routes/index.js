@@ -123,7 +123,6 @@ module.exports = function (db) {
 
 	
 	  
-	  return router;
 
 	router.get('/my_museum', function(req, res, next) {
 		var accessKey = 'Hm1G1QAOH_6H-5qlnJAaXkKY9_qbvVseCJEvfjsz';
@@ -140,4 +139,5 @@ module.exports = function (db) {
 			  "token" : "uploadToken"
 		  });
 	})
+	return router;
 	};
