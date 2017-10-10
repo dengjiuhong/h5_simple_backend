@@ -618,7 +618,7 @@ function page2() {
 
     // }
   }
-  //点击分享之后
+  //点击离开博物馆之后
   document.getElementById("share_in").addEventListener("click", function () {
     // $("#audio-btn").get(0).play();
     ion.sound.play("btn");
