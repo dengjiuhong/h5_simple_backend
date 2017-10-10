@@ -125,5 +125,16 @@ module.exports = function (db) {
 	  
 	  return router;
 
-
+	router.get('/my_museum', function(req, res, next) {
+		var accessKey = 'Hm1G1QAOH_6H-5qlnJAaXkKY9_qbvVseCJEvfjsz';
+		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
+		var name = req.body.name;
+		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+		var config = new qiniu.conf.Config();
+		var bucketManager = new qiniu.rs.BucketManager(mac, config);
+		var privateBucketDomain = 'ovw6bdt75.bkt.clouddn.com';
+		var deadline = parseInt(Date.now() / 1000) + 3600; // 1小时过期
+		var privateDownloadUrl = bucketManager.privateDownloadUrl(privateBucketDomain, name, deadline);
+		console.log(privateDownloadUrl);
+	})
 	};
