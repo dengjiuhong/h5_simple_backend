@@ -136,7 +136,7 @@ module.exports = function (db) {
 		var privateDownloadUrl = bucketManager.privateDownloadUrl(privateBucketDomain, name, deadline);
 		console.log(privateDownloadUrl);
 		res.send({
-			  "token" : "uploadToken"
+			  "token" : privateDownloadUrl
 		  });
 	})
 	return router;
