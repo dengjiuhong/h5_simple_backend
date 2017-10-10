@@ -77,3 +77,14 @@ html(lang='en')
         .change_my
     script(src='./js/preload.js')
     script(src='./js/xlz.js')
+    script(type='text/javascript').
+      function timer(opj){
+        $(opj).find('ul').animate({
+        marginTop : "-3.5rem"
+      },500,function(){
+        $(this).css({marginTop : "0.7rem"}).find("li:first").appendTo(this);
+      })
+    }
+    $(function(){
+    var time=setInterval('timer(".notice_active")',3500);
+  });
