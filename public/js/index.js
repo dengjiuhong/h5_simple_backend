@@ -357,7 +357,7 @@ function wx_process(data) {
     wx.onMenuShareAppMessage({
       title: '看看'+user_name+'的博物馆！', // 分享标题
       desc: '这是描述', // 分享描述
-      link: 'http://oppo10.nplusgroup.net/my_museum', // 分享链接
+      link: 'http://oppo10.nplusgroup.net/my_museum?name=' + user_name + '&museum=' + panorama, // 分享链接
       imgUrl: "", // 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空

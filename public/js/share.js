@@ -51,6 +51,7 @@ $(document).ready(function () {
     '/image/panorama/' + panorama + '/4.png',
     '/image/panorama/' + panorama + '/5.png',
     '/image/panorama/' + panorama + '/6.png',
+    'http://'+url
   ];
   var framesUrl = [];
   // 02. 开门的视频
@@ -187,7 +188,7 @@ function page2_init() {
   $("#panorama_5").css("display", "block");
   $("#panorama_6").css("display", "block");
   //放置图片
-  $("<img></img>").attr("src", ImageFile[0])
+  $("<img></img>").attr("src", "http://"+url)
     .css({
       "position": "absolute",
       "width": BG_WIDTH / 3,
