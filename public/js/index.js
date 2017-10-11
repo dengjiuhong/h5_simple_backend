@@ -344,8 +344,8 @@ function wx_process(data) {
   });
   wx.ready(function () {
     wx.onMenuShareTimeline({
-      title: '看看ww的博物馆！', // 分享标题
-      link: 'http://oppo10.nplusgroup.net/my_museum', // 分享链接
+      title: '看看' + user_name +'的博物馆！', // 分享标题
+      link: 'http://oppo10.nplusgroup.net/my_museum?name=' + user_name + '&museum=' + panorama, // 分享链接
       imgUrl: "", // 分享图标
       success: function () {
         // 用户确认分享后执行的回调函数
