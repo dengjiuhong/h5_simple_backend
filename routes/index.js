@@ -72,8 +72,8 @@ module.exports = function (db) {
 
 	router.get('/wx', function(req, res, next) {
 		var result = {};
-		var app_id = "wx9741a9cc9dd1f2dc";
-		var app_secret = "b815b49903dd9ef43e5267c70ca44342";
+		var app_id = "wxdeb5dc277a2c46bf";
+		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
 		var url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + app_id + "&secret=" + app_secret;
 		var currentTime = new Date().getTime();
 		var config = require('./config');
