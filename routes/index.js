@@ -12,8 +12,8 @@ module.exports = function (db) {
 	  });
 	  
 	router.post('/pic_storage', function(req, res, next) {
-		var accessKey = 'Hm1G1QAOH_6H-5qlnJAaXkKY9_qbvVseCJEvfjsz';
-		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
+		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';
+		var secretKey = 'apGpki_F2-Ps7ZtuLjQWBEdy4PmFrTnC1R-vh-aA';
 		var username = "root";
 		var password = "Oppo-ZBC-db1";
 

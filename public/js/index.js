@@ -407,9 +407,6 @@ function requestPic() {
 }
 
 function Qiniu_upload(f, token, key) {
-  console.log(key);
-  console.log(token);
-  console.log(f);
   var xhr = new XMLHttpRequest();
   xhr.open('POST', Qiniu_UploadUrl, true);
   var formData, startDate;
