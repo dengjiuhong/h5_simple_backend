@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(rel='stylesheet', href='./css/index.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    title 博物馆
+  body
+    script(src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js')
+    script(src='./js/jquery-3.1.0.min.js')
+    script(src='./js/uploadImage.js')
+    script(src='./js/exif.js')
+    script(src='./js/ion.sound.min.js')
+    script(src='./js/preload.js')
+    script(src='./js/xlz.js')
+    script(src='./js/share.js')
+    .wrap
+      input#pic_url(type='text', value=pic_url, style='display:none')
+      input#museum(type='text', value=museum, style='display:none')
+      .page.loading
+        img.loading_head(src='/image/loading_head.png')
+        .progress
+          img.background(src='/image/loading_bg.png')
+          img.bar(src='/image/loading_bar.png')
+        img.loading_title(src='/image/loading_title.png')
+        .huadong
+          .notice_active
+            ul
+              li.notice_active_ch
+                span -多试几次，你会开启新的精彩-
+              li.notice_active_ch
+                span -惊喜总是需要等待-
+              li.notice_active_ch
+                span -这一次，OPPO为你准备了点不一样的-
+              li.notice_active_ch
+                span -别急，还需要一丢丢的时间-
+              li.notice_active_ch
+                span -Hey！你对新品期待吗？-
+      .page.p0
+        canvas#my_video_1_x.xlz_video
+      .page.p1
+        .share_wrap_
+          .share_name test
+          .share_id 0001
+          .share_pic_
+            img.pic_
+          .share_btn_
+        .build_my
+      .page.p2
+        #view
+          .build_my
+          #bigCube
+            #cube
+              .stage
+                .container

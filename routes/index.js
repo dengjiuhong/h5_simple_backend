@@ -133,8 +133,9 @@ module.exports = function (db) {
 		var config = new qiniu.conf.Config();
 		var bucketManager = new qiniu.rs.BucketManager(mac, config);
 		var publicBucketDomain = 'oxm6vcxz3.bkt.clouddn.com';
-		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, name + "jpg");
+		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, name + ".jpg");
 		console.log(publicDownloadUrl);
+		console.log(museum);
 		res.render('share', { pic_url: publicDownloadUrl,  museum: museum});
 	})
 	return router;
