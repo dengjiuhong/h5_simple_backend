@@ -418,7 +418,7 @@ function Qiniu_upload(f, token, key) {
   xhr.onreadystatechange = function (response) {
     if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText != "") {
       var blkRet = JSON.parse(xhr.responseText);
-      console && console.log("blkRet" + stringify(blkRet));
+      console && console.log("blkRet" + blkRet);
     } else if (xhr.status != 200 && xhr.responseText) {
 
     }
