@@ -125,7 +125,6 @@ function getNowFormatDate() {
 				});
 				console.log("创建用户成功！");
 			}
-		}).then(function(){
 			var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 			var options = {
 				scope: "pic-second" + ":" + req.body.name + timestamp + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
