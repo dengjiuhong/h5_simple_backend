@@ -11,6 +11,28 @@ module.exports = function (db) {
 		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/&response_type=code&scope=snsapi_base&state=1#wechat_redirect");
 	})
 	router.get('/', function(req, res, next) {
+		function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+    return currentdate;
+}
+		var openid;
+		var nickname;
+		var time;
+
+		var access_token;
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
 		var code = req.query.code;
@@ -19,9 +41,28 @@ module.exports = function (db) {
             	return res.json();
         	}).then(function(json){
         		if(json.access_token){
+        			access_token = json.access_token;
+        			openid = json.openid;
+        			time = getNowFormatDate();
+        			var url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token="+access_token+"&openid="+openid+"&lang=zh_CN";
+        			fetch(url_).then(function(res){
+        				var data_json = res.json();
+        				if(data_json.subscribe == 1) {
+        					var adminDb = db.admin();
+							var collection = db.collection("subscribe_user");
+							var user_data = {
+								open_id : openid,
+								nickname: nickname,
+								time: time;
+							}
+							console.log(JSON.stringify(user_data));
+							collection.insertOne(user_data, function(err){console.log("在插入subscribe用户出错！")})
+        				}
+        			})
         			console.log("my_data:" + JSON.stringify(json));
         		}
         	});
+
 		res.render('index', { title: 'Express' });
 	  });
 	  
