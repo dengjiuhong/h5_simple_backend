@@ -133,6 +133,7 @@ function getNowFormatDate() {
 		var result = {};
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
+		//u
 		var url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + app_id + "&secret=" + app_secret;
 		var currentTime = new Date().getTime();
 		var config = require('./config');
