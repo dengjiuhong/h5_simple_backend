@@ -41,6 +41,7 @@ function getNowFormatDate() {
             	return res.json();
         	}).then(function(json){
         		if(json.access_token){
+        			console.log(JSON.stringify(json));
         			access_token = json.access_token;
         			openid = json.openid;
         			time = getNowFormatDate();
