@@ -83,12 +83,14 @@ function getNowFormatDate() {
 		var id;
 		var adminDb = db.admin();
 		var collection = db.collection("museum");
-		id = collection.count() + 1;
-		var doc = {
-			name: req.body.name,
-			phone: req.body.phone,
-			id: id
-		};
+		collection.count(function(err, count) {
+			id = count + 1;
+		}).then(function() {
+			var doc = {
+				name: req.body.name,
+				phone: req.body.phone,
+				id: id
+			};
 		collection.findOne({name: req.body.name}, function(err, user) {
             if(err) {
 				console.log("寻找用户出错：" + err);
@@ -124,19 +126,21 @@ function getNowFormatDate() {
 				});
 				console.log("创建用户成功！");
 			}
+		}).then(function(){
+			var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+			var options = {
+				scope: "pic-second" + ":" + req.body.name + timestamp + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
+		  	};
+		  	var putPolicy = new qiniu.rs.PutPolicy(options);
+		  	var uploadToken=putPolicy.uploadToken(mac);
+		  	console.log("token:" + uploadToken);
+		  	res.send({
+			  	token : uploadToken,
+			  	time : timestamp,
+			  	id: id
+		  	});
 		});
-		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
-		var options = {
-			scope: "pic-second" + ":" + req.body.name + timestamp + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
-		  };
-		  var putPolicy = new qiniu.rs.PutPolicy(options);
-		  var uploadToken=putPolicy.uploadToken(mac);
-		  console.log("token:" + uploadToken);
-		  res.send({
-			  token : uploadToken,
-			  time : timestamp,
-			  id: id
-		  });
+		});
 	  });
 
 	router.get('/wx', function(req, res, next) {
