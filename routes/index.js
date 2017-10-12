@@ -79,7 +79,7 @@ function getNowFormatDate() {
 		var secretKey = 'apGpki_F2-Ps7ZtuLjQWBEdy4PmFrTnC1R-vh-aA';
 		var username = "root";
 		var password = "Oppo-ZBC-db1";
-		var timestamp = new Date().getTime()；
+		var timestamp = new Date().getTime();
 		var id;
 		var adminDb = db.admin();
 		var collection = db.collection("museum");
