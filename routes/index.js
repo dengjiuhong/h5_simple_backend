@@ -42,7 +42,9 @@ function getNowFormatDate() {
         	}).then(function(json){
         		if(json.access_token){
         			console.log(JSON.stringify(json));
-        			access_token = json.access_token;
+        			var config = require('./config');
+        			//access_token = json.access_token;
+        			access_token = config.access_token;
         			openid = json.openid;
         			time = getNowFormatDate();
         			var url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token="+access_token+"&openid="+openid+"&lang=zh_CN";
