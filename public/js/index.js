@@ -2,6 +2,8 @@ var clickTimes = 1;
 var requestTimes = 0;
 var user_name = "test";
 var user_phone = "test";
+var user_time;
+var user_id;
 var Qiniu_UploadUrl = "http://up.qiniu.com";
 var panorama = -1;//0~3
 var lock = 0;
@@ -343,7 +345,7 @@ function wx_process(data) {
   wx.ready(function () {
     wx.onMenuShareTimeline({
       title: '看看' + user_name +'的博物馆！', // 分享标题
-      link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama, // 分享链接
+      link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id, // 分享链接
       imgUrl: "", // 分享图标
       success: function () {
         // 用户确认分享后执行的回调函数
@@ -355,7 +357,7 @@ function wx_process(data) {
     wx.onMenuShareAppMessage({
       title: '看看'+user_name+'的博物馆！', // 分享标题
       desc: '这是描述', // 分享描述
-      link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama, // 分享链接
+      link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id, // 分享链接
       imgUrl: "", // 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
@@ -385,7 +387,9 @@ function requestPic() {
         phone: $("#phone").val()
       },
       success: function (data) {
-        Qiniu_upload(picfile, data.token, $("#name").val() + ".jpg");
+        user_time = data.time;
+        user_id = data.id;
+        Qiniu_upload(picfile, data.token, $("#name").val() + data.time + ".jpg");
       },
       error: function (xhr, errorType, error) {
         console.log("出错！" + error);

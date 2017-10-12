@@ -61,7 +61,11 @@ function getNowFormatDate() {
 								time: time
 							}
 							console.log(JSON.stringify(user_data));
-							collection.insertOne(user_data, function(err){console.log("在插入subscribe用户出错！"+err)})
+							collection.findOne({openid: openid}, function(err, user){
+								if(!user) {
+									collection.insertOne(user_data);
+								}
+							});
         				}
         			})
         			}
@@ -75,12 +79,15 @@ function getNowFormatDate() {
 		var secretKey = 'apGpki_F2-Ps7ZtuLjQWBEdy4PmFrTnC1R-vh-aA';
 		var username = "root";
 		var password = "Oppo-ZBC-db1";
-
+		var timestamp = new Date().getTime()；
+		var id;
 		var adminDb = db.admin();
 		var collection = db.collection("museum");
+		id = db.collection.count() + 1;
 		var doc = {
 			name: req.body.name,
-			phone: req.body.phone
+			phone: req.body.phone,
+			id: id
 		};
 		collection.findOne({name: req.body.name}, function(err, user) {
             if(err) {
@@ -105,6 +112,7 @@ function getNowFormatDate() {
 				});
 			} else {
 				collection.insertOne(doc, function(err) {
+					console.log("用户数据"+JSON.stringify(doc));
 					if(err) {
 						console.log("创建用户出错：" + err);
 						res.send({
@@ -119,13 +127,15 @@ function getNowFormatDate() {
 		});
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 		var options = {
-			scope: "pic-second" + ":" + req.body.name + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
+			scope: "pic-second" + ":" + req.body.name + timestamp + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
 		  };
 		  var putPolicy = new qiniu.rs.PutPolicy(options);
 		  var uploadToken=putPolicy.uploadToken(mac);
 		  console.log("token:" + uploadToken);
 		  res.send({
-			  token : uploadToken
+			  token : uploadToken,
+			  time : timestamp,
+			  id: id
 		  });
 	  });
 
@@ -189,16 +199,18 @@ function getNowFormatDate() {
 		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
 		var name = decodeURI(req.query.name);
 		var museum = req.query.museum;
+		var time = req.query.time;
+		var id = req.query.id;
 		console.log(name);
 		console.log(req.query.name);
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 		var config = new qiniu.conf.Config();
 		var bucketManager = new qiniu.rs.BucketManager(mac, config);
 		var publicBucketDomain = 'oxm6vcxz3.bkt.clouddn.com';
-		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, req.query.name + ".jpg");
+		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, req.query.name + time + ".jpg");
 		console.log(publicDownloadUrl);
 		console.log(museum);
-		res.render('share', { pic_url: publicDownloadUrl,  museum: museum, user_name: name});
+		res.render('share', { pic_url: publicDownloadUrl,  museum: museum, user_name: name, user_id: id});
 	})
 	return router;
 	};
