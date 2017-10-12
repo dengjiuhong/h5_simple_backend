@@ -85,7 +85,6 @@ function getNowFormatDate() {
 		var collection = db.collection("museum");
 		collection.count(function(err, count) {
 			id = count + 1;
-		}).then(function() {
 			var doc = {
 				name: req.body.name,
 				phone: req.body.phone,
