@@ -129,6 +129,9 @@ module.exports = function (db) {
 		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
 		var name = decodeURI(req.query.name);
 		var museum = req.query.museum;
+		console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
+		console.log(name);
+		console.log(req.query.name);
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 		var config = new qiniu.conf.Config();
 		var bucketManager = new qiniu.rs.BucketManager(mac, config);
