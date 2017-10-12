@@ -139,7 +139,7 @@ module.exports = function (db) {
 		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, req.query.name + ".jpg");
 		console.log(publicDownloadUrl);
 		console.log(museum);
-		res.render('share', { pic_url: publicDownloadUrl,  museum: museum, name: name});
+		res.render('share', { pic_url: publicDownloadUrl,  museum: museum, user_name: name});
 	})
 	return router;
 	};
