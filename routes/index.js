@@ -15,7 +15,7 @@ module.exports = function (db) {
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
 		var code = req.query.code;
-		var url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="+ app_id +"&secret="+appid+"&code="+code+"&grant_type=authorization_code";
+		var url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="+ app_id +"&secret="+app_secret+"&code="+code+"&grant_type=authorization_code";
 		fetch(url).then(function(res){
             	return res.json();
         	}).then(function(json){
