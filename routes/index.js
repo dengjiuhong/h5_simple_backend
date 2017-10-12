@@ -7,7 +7,20 @@ var sha1 = require('sha1');
 module.exports = function (db) {
 	var router = express.Router();
 	/* GET home page. */
+	router.get('/login', function(req, res, next){
+		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/&response_type=code&scope=snsapi_base&state=1#wechat_redirect");
+	})
 	router.get('/', function(req, res, next) {
+		console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+		var app_id = "wxdeb5dc277a2c46bf";
+		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
+		var code = req.query.code;
+		var url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="+ app_id +"&secret="+appid+"&code="+code+"&grant_type=authorization_code";
+		fetch(url).then(function(res){
+            	return res.json();
+        	}).then(function(json){
+        		console.log("my_data:" + JSON.stringify(json));
+        	});
 		res.render('index', { title: 'Express' });
 	  });
 	  
@@ -129,7 +142,6 @@ module.exports = function (db) {
 		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
 		var name = decodeURI(req.query.name);
 		var museum = req.query.museum;
-		console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
 		console.log(name);
 		console.log(req.query.name);
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
