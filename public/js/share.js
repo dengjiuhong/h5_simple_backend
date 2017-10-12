@@ -101,7 +101,7 @@ function main() {
   //跳转
   $(".build_my").click(function() {
     console.log("build_my");
-    window.location.replace("http://localhost:3000");
+    window.location.replace("http://oppo10.nplusgroup.net");
   })
 
 
