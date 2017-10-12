@@ -127,13 +127,13 @@ module.exports = function (db) {
 	router.get('/my_museum', function(req, res, next) {
 		var accessKey = 'Hm1G1QAOH_6H-5qlnJAaXkKY9_qbvVseCJEvfjsz';
 		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
-		var name = req.query.name;
+		var name = decodeURI(req.query.name);
 		var museum = req.query.museum;
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 		var config = new qiniu.conf.Config();
 		var bucketManager = new qiniu.rs.BucketManager(mac, config);
 		var publicBucketDomain = 'oxm6vcxz3.bkt.clouddn.com';
-		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, name + ".jpg");
+		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, req.query.name + ".jpg");
 		console.log(publicDownloadUrl);
 		console.log(museum);
 		res.render('share', { pic_url: publicDownloadUrl,  museum: museum});
