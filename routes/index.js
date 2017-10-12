@@ -66,7 +66,7 @@ function getNowFormatDate() {
         		})
 
 		res.render('index', { title: 'Express' });
-	  };
+	  });
 	  
 	router.post('/pic_storage', function(req, res, next) {
 		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';
