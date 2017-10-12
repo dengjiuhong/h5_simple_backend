@@ -8,7 +8,7 @@ module.exports = function (db) {
 	var router = express.Router();
 	/* GET home page. */
 	router.get('/login', function(req, res, next){
-		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/&response_type=code&scope=snsapi_base&state=1#wechat_redirect");
+		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect");
 	})
 	router.get('/', function(req, res, next) {
 function getNowFormatDate() {
