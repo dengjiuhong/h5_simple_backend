@@ -61,7 +61,7 @@ function getNowFormatDate() {
 								time: time
 							}
 							console.log(JSON.stringify(user_data));
-							collection.insertOne(user_data, function(err){console.log("在插入subscribe用户出错！")})
+							collection.insertOne(user_data, function(err){console.log("在插入subscribe用户出错！"+err)})
         				}
         			})
         			}
