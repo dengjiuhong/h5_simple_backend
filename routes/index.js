@@ -53,7 +53,7 @@ module.exports = function (db) {
 							var user_data = {
 								open_id : openid,
 								nickname: nickname,
-								time: time;
+								time: time
 							}
 							console.log(JSON.stringify(user_data));
 							collection.insertOne(user_data, function(err){console.log("在插入subscribe用户出错！")})
