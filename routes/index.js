@@ -62,7 +62,6 @@ function getNowFormatDate() {
         				}
         			})
         			}
-        			console.log("my_data:" + JSON.stringify(json));
         		})
 
 		res.render('index', { title: 'Express' });
