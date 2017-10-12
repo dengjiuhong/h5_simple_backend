@@ -11,7 +11,6 @@ module.exports = function (db) {
 		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/&response_type=code&scope=snsapi_base&state=1#wechat_redirect");
 	})
 	router.get('/', function(req, res, next) {
-		console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
 		var code = req.query.code;
@@ -19,7 +18,9 @@ module.exports = function (db) {
 		fetch(url).then(function(res){
             	return res.json();
         	}).then(function(json){
-        		console.log("my_data:" + JSON.stringify(json));
+        		if(json.access_token){
+        			console.log("my_data:" + JSON.stringify(json));
+        		}
         	});
 		res.render('index', { title: 'Express' });
 	  });
