@@ -47,6 +47,7 @@ module.exports = function (db) {
         			var url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token="+access_token+"&openid="+openid+"&lang=zh_CN";
         			fetch(url_).then(function(res){
         				var data_json = res.json();
+        				console.log("data_json:"+JSON.stringify(data_json));
         				if(data_json.subscribe == 1) {
         					var adminDb = db.admin();
 							var collection = db.collection("subscribe_user");
