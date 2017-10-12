@@ -18,6 +18,7 @@ html(lang='en')
     .wrap
       input#pic_url(type='text', value=pic_url, style='display:none')
       input#museum(type='text', value=museum, style='display:none')
+      input#user_name(type='text', value=user_name), style='display:none')
       .page.loading
         img.loading_head(src='/image/loading_head.png')
         .progress
@@ -41,7 +42,7 @@ html(lang='en')
         canvas#my_video_1_x.xlz_video
       .page.p1
         .share_wrap_
-          .share_name user_name
+          .share_name
           .share_id 0001
           .share_pic_
             img.pic_

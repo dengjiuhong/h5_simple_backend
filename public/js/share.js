@@ -1,3 +1,4 @@
+var name;
 var url;
 var panorama;
 var lock = 0;
@@ -26,8 +27,10 @@ ion.sound({
 
 
 $(document).ready(function () {
+  name = $("#user_name").val();
   url = $("#pic_url").val();
   panorama = $("#museum").val();
+  document.getElementsByClassName("share_name")[0].innerHTML = name;
   console.log("url" + url + "panorama:" +panorama);
   // debug //
   // $(".page.p1").show();
