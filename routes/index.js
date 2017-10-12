@@ -57,7 +57,7 @@ function getNowFormatDate() {
 							var collection = db.collection("subscribe_user");
 							var user_data = {
 								open_id : openid,
-								nickname: nickname,
+								nickname: json.nickname,
 								time: time
 							}
 							console.log(JSON.stringify(user_data));
