@@ -11,7 +11,7 @@ module.exports = function (db) {
 		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/&response_type=code&scope=snsapi_base&state=1#wechat_redirect");
 	})
 	router.get('/', function(req, res, next) {
-		function getNowFormatDate() {
+function getNowFormatDate() {
     var date = new Date();
     var seperator1 = "-";
     var seperator2 = ":";
@@ -63,11 +63,10 @@ module.exports = function (db) {
         			})
         			}
         			console.log("my_data:" + JSON.stringify(json));
-        		}
-        	});
+        		})
 
 		res.render('index', { title: 'Express' });
-	  });
+	  };
 	  
 	router.post('/pic_storage', function(req, res, next) {
 		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';
