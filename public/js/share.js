@@ -36,7 +36,8 @@ function share_id_adjust(user_id) {
 }
 $(document).ready(function () {
   id = $("#user_id").val();
-  $(".share_id").innerHTML = share_id_adjust(id);
+  var s = share_id_adjust(id);
+  $(".share_id").html(s);
 
   name = $("#user_name").val();
   url = $("#pic_url").val();
