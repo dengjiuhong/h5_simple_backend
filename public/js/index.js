@@ -426,16 +426,6 @@ function calTranslateZ(opts) {
 }
 
 function page2_init() {
-    var wx_data = {};
-  $.ajax({
-    url: 'http://101.132.91.4:80/wx',
-    type: 'GET',
-    success: function (data) {
-      console.log(JSON.stringify(data));
-      wx_data = data;
-      wx_process(wx_data);
-    }
-  });
   if ($("#bigCube").height() >= 650) {
     var BG_WIDTH = 1000,
       BG_HEIGHT = 1750;
@@ -621,6 +611,16 @@ function page2() {
   }
   //点击离开博物馆之后
   document.getElementById("share_in").addEventListener("click", function () {
+        var wx_data = {};
+  $.ajax({
+    url: 'http://101.132.91.4:80/wx',
+    type: 'GET',
+    success: function (data) {
+      console.log(JSON.stringify(data));
+      wx_data = data;
+      wx_process(wx_data);
+    }
+  });
     // $("#audio-btn").get(0).play();
     ion.sound.play("btn");
     // $("#view").css("background-image", "url('/image/bg/close_" + panorama + ".png')");
