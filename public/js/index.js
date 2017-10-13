@@ -125,19 +125,26 @@ $(document).ready(function () {
   // var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
   // var audio_3 = $("#audio-close-" + panorama).get(0);
   // items.push(audio_3_url);
+
+  // preload all resource
+  for (var i = 0; i < 75; i++) {
+    items.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+    items.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+    items.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+  }
   if (panorama === 0) {
     for (var i = 0; i < 75; i++) {
-      items.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+      // items.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
       framesUrl.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
     }
   } else if (panorama === 1) {
     for (var i = 0; i < 75; i++) {
-      items.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+      // items.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
       framesUrl.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
     }
   } else if (panorama === 2) {
     for (var i = 0; i < 75; i++) {
-      items.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+      // items.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
       framesUrl.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
     }
   } else {
@@ -160,19 +167,25 @@ $(document).ready(function () {
   // var audio_4_url = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
   // var audio_4 = $("#audio-exit-" + panorama).get(0);
   // items.push(audio_4_url);
+  // preload all resource
+  for (var i = 0; i < 75; i++) {
+    items.push('/xlz/exit_0/exit_0_' + i + '.jpg');
+    items.push('/xlz/exit_1/exit_1_' + i + '.jpg');
+    items.push('/xlz/exit_2/exit_2_' + i + '.jpg');
+  }
   if (panorama === 0) {
     for (var i = 0; i < 63; i++) {
-      items.push('/xlz/exit_0/exit_0_' + i + '.jpg');
+      // items.push('/xlz/exit_0/exit_0_' + i + '.jpg');
       framesUrl.push('/xlz/exit_0/exit_0_' + i + '.jpg');
     }
   } else if (panorama === 1) {
     for (var i = 0; i < 63; i++) {
-      items.push('/xlz/exit_1/exit_1_' + i + '.jpg');
+      // items.push('/xlz/exit_1/exit_1_' + i + '.jpg');
       framesUrl.push('/xlz/exit_1/exit_1_' + i + '.jpg');
     }
   } else if (panorama === 2) {
     for (var i = 0; i < 63; i++) {
-      items.push('/xlz/exit_2/exit_2_' + i + '.jpg');
+      // items.push('/xlz/exit_2/exit_2_' + i + '.jpg');
       framesUrl.push('/xlz/exit_2/exit_2_' + i + '.jpg');
     }
   } else {
@@ -733,8 +746,77 @@ function page2() {
       $("#light_word").css("display", "none");
       $("#try").css("display", "block");
       $("#try").css("opacity", "1");
-      // 暂时注释掉再次随机
-      // panorama = Math.floor(Math.random() * 3);
+      // 开放二次随机
+      xlz_videos['03-close'].pause();
+      xlz_videos['04-exit'].pause();
+      xlz_videos['03-close'].reset();
+      xlz_videos['04-exit'].reset();
+      panorama = Math.floor(Math.random() * 3);
+      // pop old items
+      framesUrl = [];
+      // var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
+      // var audio_3 = $("#audio-close-" + panorama).get(0);
+      // items.push(audio_3_url);
+      if (panorama === 0) {
+        for (var i = 0; i < 75; i++) {
+          framesUrl.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+        }
+      } else if (panorama === 1) {
+        for (var i = 0; i < 75; i++) {
+          framesUrl.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+        }
+      } else if (panorama === 2) {
+        for (var i = 0; i < 75; i++) {
+          framesUrl.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+        }
+      } else {
+        alert("博物馆不存在！");
+      }
+      xlz_videos['03-close'] = new xlz({
+        canvasTargetId: "close_0_c",
+        framesUrl: framesUrl,
+        loop: true, // 关灯视频是循环播放的
+        // audioObject: audio_3,
+        audioIonName: "panorama_" + panorama + "_close",
+        onComplete : function() {
+          xlz_videos['03-close'].initialize();
+        }
+        // 没设置结束回调函数，下面来
+        // onComplete: function() {
+        //   console.log("03. 结束了");
+        // },
+      });
+
+      framesUrl = [];
+      // var audio_4_url = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
+      // var audio_4 = $("#audio-exit-" + panorama).get(0);
+      // items.push(audio_4_url);
+      if (panorama === 0) {
+        for (var i = 0; i < 63; i++) {
+          framesUrl.push('/xlz/exit_0/exit_0_' + i + '.jpg');
+        }
+      } else if (panorama === 1) {
+        for (var i = 0; i < 63; i++) {
+          framesUrl.push('/xlz/exit_1/exit_1_' + i + '.jpg');
+        }
+      } else if (panorama === 2) {
+        for (var i = 0; i < 63; i++) {
+          framesUrl.push('/xlz/exit_2/exit_2_' + i + '.jpg');
+        }
+      } else {
+        alert("博物馆不存在！");
+      }
+      xlz_videos['04-exit'] = new xlz({
+        canvasTargetId: "exit_0_c",
+        framesUrl: framesUrl,
+        loop: false,
+        // audioObject: audio_4,
+        audioIonName: "panorama_" + panorama + "_exit",
+        // 没设置结束回调函数，下面来
+        onComplete: function () {
+          xlz_videos['04-exit'].initialize();
+        },
+      });
     });
   });
   $(".share_my").click(function () {
