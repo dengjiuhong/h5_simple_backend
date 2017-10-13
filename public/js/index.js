@@ -506,10 +506,11 @@ function page2_init() {
 function share_id_adjust() {
   var zeros = "";
   var s = user_id + "";
+  if(s.length > 5) return s;
   for(var i = 1; i <= (5 - s.length); i++){
     zeros += "0";
   }
-  return s+zeros;
+  return zeros + s;
 }
 function page2() {
   var border_r = -52,
