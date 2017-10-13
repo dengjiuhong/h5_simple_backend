@@ -1,3 +1,4 @@
+var id;
 var name;
 var url;
 var panorama;
@@ -25,8 +26,18 @@ ion.sound({
 });
 
 
-
+function share_id_adjust(user_id) {
+  var zeros = "";
+  var s = user_id + "";
+  for(var i = 1; i <= (5 - s.length); i++){
+    zeros += "0";
+  }
+  return "NO:" + s + zeros;
+}
 $(document).ready(function () {
+  id = $("#user_id").val();
+  $(".share_id").innerHTML = share_id_adjust(id);
+
   name = $("#user_name").val();
   url = $("#pic_url").val();
   panorama = $("#museum").val();

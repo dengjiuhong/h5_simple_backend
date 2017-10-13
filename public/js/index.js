@@ -503,7 +503,14 @@ function page2_init() {
   });
   $("#share_in").css("display", "none");
 }
-
+function share_id_adjust() {
+  var zeros = "";
+  var s = user_id + "";
+  for(var i = 1; i <= (5 - s.length); i++){
+    zeros += "0";
+  }
+  return s+zeros;
+}
 function page2() {
   var border_r = -52,
     border_l = 12,
@@ -599,7 +606,7 @@ function page2() {
             user_name = user_name + "...";
           }
           $(".share_name").html(user_name);
-          $(".share_id").innerHTML = "00002";
+          $(".share_id").innerHTML = share_id_adjust();
           $("<img></img>").attr("src", ImageFile[0])
             .css({
               "width": "100%",
