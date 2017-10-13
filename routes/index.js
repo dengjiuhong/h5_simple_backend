@@ -182,7 +182,7 @@ function getNowFormatDate() {
             random_str += str.substr(Math.round((Math.random() * 10)), 1);  
         }
         var signature = "";
-        var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/';
+        var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://wx.oppo.com/oppootherfirm10/';
         console.log("string1 = " + string1);
         signature = sha1(string1);
         console.log("signature = " + signature);
