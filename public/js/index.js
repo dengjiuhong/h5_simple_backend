@@ -343,7 +343,6 @@ function wx_process(data) {
     jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
   });
   wx.ready(function () {
-    console.log('http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id);
     wx.onMenuShareTimeline({
       title: '看看' + user_name +'的博物馆！', // 分享标题
       link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id, // 分享链接
@@ -619,6 +618,7 @@ function page2() {
     success: function (data) {
       console.log(JSON.stringify(data));
       wx_data = data;
+      console.log('http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id);
       wx_process(wx_data);
     }
   });
