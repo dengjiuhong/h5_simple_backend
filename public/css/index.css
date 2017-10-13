@@ -349,6 +349,16 @@ video {
     margin-left: 15vw;
     font-size: 9px;
 }
+#share_id{
+    position: absolute;
+    color: white;
+    font-family: my_font;
+    width: 11.3vw;
+    height: 3.46vw;
+    margin-top: 32.9vw;
+    margin-left: 12.5vw;
+    font-size: 9px;
+}
 .share_name{
     color: #ddd3ba;
     font-size: 16px;

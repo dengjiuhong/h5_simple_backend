@@ -606,7 +606,7 @@ function page2() {
             user_name = user_name + "...";
           }
           $(".share_name").html(user_name);
-          $(".share_id").innerHTML = share_id_adjust();
+          $(".share_id").html(share_id_adjust());;
           $("<img></img>").attr("src", ImageFile[0])
             .css({
               "width": "100%",
