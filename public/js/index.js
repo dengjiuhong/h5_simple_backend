@@ -753,7 +753,11 @@ function page2() {
       xlz_videos['04-exit'].pause();
       // xlz_videos['03-close'].reset();
       // xlz_videos['04-exit'].reset();
-      panorama = Math.floor(Math.random() * 3);
+      var old_panorama = panorama;
+      while(panorama === old_panorama) {
+        panorama = Math.floor(Math.random() * 3);
+      }
+      console.log(old_panorama + ' ' + panorama);
       // pop old items
       framesUrl = [];
       // var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
