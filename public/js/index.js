@@ -168,7 +168,7 @@ $(document).ready(function () {
   // var audio_4 = $("#audio-exit-" + panorama).get(0);
   // items.push(audio_4_url);
   // preload all resource
-  for (var i = 0; i < 75; i++) {
+  for (var i = 0; i < 63; i++) {
     items.push('/xlz/exit_0/exit_0_' + i + '.jpg');
     items.push('/xlz/exit_1/exit_1_' + i + '.jpg');
     items.push('/xlz/exit_2/exit_2_' + i + '.jpg');
@@ -541,13 +541,15 @@ function page2() {
 
   // 关灯视频
   // $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
-  var vx3 = xlz_videos['03-close'];
-  vx3.initialize(); // 偷偷初始化
+  // var vx3 = xlz_videos['03-close'];
+  xlz_videos['03-close'].initialize(); // 偷偷初始化
+  console.log("vx3初始化");
 
   // $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
 
-  var vx4 = xlz_videos['04-exit'];
-  vx4.initialize(); // 偷偷初始化
+  // var vx4 = xlz_videos['04-exit'];
+  xlz_videos['04-exit'].initialize(); // 偷偷初始化
+  console.log("vx4初始化");
 
   var already_ended = false;
   // 无限循环的
@@ -572,9 +574,8 @@ function page2() {
     if (already_ended) {
       return false;
     }
-    console.log("vx3 停止");
-    vx3.pause();
-    vx3.reset();
+    xlz_videos['03-close'].pause();
+    xlz_videos['03-close'].reset();
     ion.sound.stop("panorama_" + panorama + "_close");
     // if ($("#close_0").get(0).ended) {
     already_ended = true;
@@ -587,10 +588,10 @@ function page2() {
       // $("#audio-open").get(0).play();
       ion.sound.play("open");
       // $("#exit_0").get(0).play();
-      vx4.play();
+      xlz_videos['04-exit'].play();
       // $("#exit_0").get(0).addEventListener("timeupdate", function () {
-      vx4.option.onComplete = function () {
-        vx4.reset();
+      xlz_videos['04-exit'].option.onComplete = function () {
+        xlz_videos['04-exit'].reset();
         // audio.currentTime = 0;//音频重新播放
         // audio.play();
         ion.sound.play("audio");
@@ -686,12 +687,13 @@ function page2() {
       // $("#close_0").css("opacity", "0"); //视频渐亮
       // $("#close_0").css("display", "block");
       // $("#bigCube > img").fadeIn(750); // 照片不回来
-      vx3.option.onComplete = temp_func;
+      xlz_videos['03-close'].option.onComplete = temp_func;
       $("#close_0_c").fadeIn("slow", function () {
         // audio.pause();
         ion.sound.stop("audio");
         // $("#close_0").get(0).play();
-        vx3.play();
+        xlz_videos['03-close'].play();
+        console.log(xlz_videos['03-close']);
         // $("#close_0").get(0).addEventListener("timeupdate", temp_func);
         already_ended = false;
       });
@@ -726,7 +728,7 @@ function page2() {
       });
       // $("#close_0").get(0).removeEventListener("timeupdate", temp_func_2);//关灯视频不再循环
       // $("#close_0").get(0).addEventListener("timeupdate", temp_func);
-      vx3.option.onComplete = temp_func;
+      xlz_videos['03-close'].option.onComplete = temp_func;
       $("#close_0_c").hide;
       // $("#exit_0").css("display", "none");
       $("#exit_0_c").hide();
@@ -749,8 +751,8 @@ function page2() {
       // 开放二次随机
       xlz_videos['03-close'].pause();
       xlz_videos['04-exit'].pause();
-      xlz_videos['03-close'].reset();
-      xlz_videos['04-exit'].reset();
+      // xlz_videos['03-close'].reset();
+      // xlz_videos['04-exit'].reset();
       panorama = Math.floor(Math.random() * 3);
       // pop old items
       framesUrl = [];
@@ -777,10 +779,7 @@ function page2() {
         framesUrl: framesUrl,
         loop: true, // 关灯视频是循环播放的
         // audioObject: audio_3,
-        audioIonName: "panorama_" + panorama + "_close",
-        onComplete : function() {
-          xlz_videos['03-close'].initialize();
-        }
+        audioIonName: "panorama_" + panorama + "_close"
         // 没设置结束回调函数，下面来
         // onComplete: function() {
         //   console.log("03. 结束了");
@@ -811,11 +810,7 @@ function page2() {
         framesUrl: framesUrl,
         loop: false,
         // audioObject: audio_4,
-        audioIonName: "panorama_" + panorama + "_exit",
-        // 没设置结束回调函数，下面来
-        onComplete: function () {
-          xlz_videos['04-exit'].initialize();
-        },
+        audioIonName: "panorama_" + panorama + "_exit"
       });
     });
   });
