@@ -252,6 +252,10 @@ function main() {
   document.body.ontouchmove=function(e){
     e.preventDefault();
 }
+$("#content").ontouchmove=function(e){
+    e.stopPropagation();
+    //停止冒泡
+};
   $("#rule_btn").click(function() {
     console.log("规则");
     $("#rule-container").show();
