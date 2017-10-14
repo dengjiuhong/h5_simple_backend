@@ -235,15 +235,15 @@ $(document).ready(function () {
 });
 function judge() {
   if (picfile == null) {
-    $("#welcome").css("background-image", "url('/image/error/err_pic.png')");
+    $("#welcome").css("background-image":"url('/image/error/err_pic.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)");
     upload_lock = false;
   }
   else if ($("#name").val() == "") {
-    $("#welcome").css("background-image", "url('/image/error/err_name.png')");
+    $("#welcome").css("background-image":"url('/image/error/err_name.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)");
     upload_lock = false;
   }
   else if ($('#phone').val() == "" || $('#phone').val().length < 11) {
-    $("#welcome").css("background-image", "url('/image/error/err_phone.png')");
+    $("#welcome").css("background-image":"url('/image/error/err_phone.png')", "width": "1.46rem", "left": "calc(50vw - 1.46rem / 2)");
     upload_lock = false;
   }
   else upload_lock = true;
@@ -732,6 +732,7 @@ function page2() {
       $(".upload_wrap").animate({ "margin-top": "0px" }, 2000);
       $("#in").fadeIn();
       $("#welcome").fadeIn();
+      $("#welcome").css("background-image":"url('/image/login.png')", "width": "0.815rem", "left": "calc(50vw - 0.815rem / 2)");
       $("#turn_off").css("display", "block");
       $("#light_word").css("display", "block");
       $("#try").css({

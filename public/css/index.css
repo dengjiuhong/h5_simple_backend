@@ -390,7 +390,7 @@ video {
     width: 1.72rem;
     height: 0.4rem;
     margin-top: 94.63vw;
-    margin-left: 9.5vw;
+    margin-left: calc(70vw - 1.72rem / 2);
     z-index: 10;
 }
 .pic_{
