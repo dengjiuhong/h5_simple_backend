@@ -249,6 +249,9 @@ function judge() {
   else upload_lock = true;
 }
 function main() {
+  document.body.ontouchmove=function(e){
+    e.preventDefault();
+}
   $("#rule_btn").click(function() {
     console.log("规则");
     $("#rule-container").show();
