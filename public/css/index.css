@@ -387,10 +387,10 @@ video {
     background-size: 100% 100%;
     background-image: url("/image/share/english_words.png");
     background-repeat: no-repeat;
-    width: 51vw;
-    height: 0.4rem;
-    margin-top: 94.63vw;
-    margin-left: 9.5vw;
+    width: 46vw;
+    height: 6rem;
+    margin-top: 98.63vw;
+    margin-left: 12vw;
     z-index: 10;
 }
 .share_btn_{
@@ -402,7 +402,7 @@ video {
     height: 16vw;
     z-index: 10;
     left: 25vw;
-    bottom: 33vw;
+    top: calc(928 / 534 * 70vw);
 }
 .pic_{
     width: 100%;
@@ -502,7 +502,7 @@ video {
     width: 38vw;
     height: 5vw;
     right: 32vw;
-    bottom: 25vw;
+    top: calc(928 / 534 * 70vw);
     background-image: url('/image/share/build_my.png');
     background-size: 100% 100%;
     background-color: transparent;
