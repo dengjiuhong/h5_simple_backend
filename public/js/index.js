@@ -304,12 +304,13 @@ function main() {
         $(".wrap").removeClass("p1-fake");
       }, 1000);
     });
-    $("#name").focus(function() {
-      document.activeElement.scrollIntoViewIfNeeded();
-    })
-    $("#phone").focus(function() {
-      document.activeElement.scrollIntoViewIfNeeded();
-    })
+    $('input').on('focus',function(event){      
+       //自动反弹 输入法高度自适应
+        var target = this;
+        setTimeout(function(){
+            target.scrollIntoViewIfNeeded();
+        },100);
+    });
     $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
     // $("#audio-down").get(0).play();
     ion.sound.play("down");
