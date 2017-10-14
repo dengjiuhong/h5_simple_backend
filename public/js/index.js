@@ -249,7 +249,19 @@ function judge() {
   else upload_lock = true;
 }
 function main() {
-
+  $("#rule_btn").click(function() {
+    console.log("规则");
+    $("#rule-container").show();
+    $("#welcome").hide();
+    $("#first_enter_box").hide();
+    $("#rule_btn").hide();
+  });
+  $("#rule_back").click(function(){
+    $("#rule-container").hide();
+    $("#welcome").show();
+    $("#first_enter_box").show();
+    $("#rule_btn").show();
+  })
   $(".p0").fadeIn("fast");
   // var v = $("#my_video_1");
   var vx = xlz_videos["01-near"]; // 序列帧动画
@@ -257,6 +269,7 @@ function main() {
   var vx2 = xlz_videos["02-openin"];
   // v.fadeIn("fast");
   $("#first_enter_box").click(function () {
+    $("#rule_btn").hide();
     $("#first_poster").hide();
     // audio = document.getElementById("audio-bg");
     // audio.play();
