@@ -309,7 +309,7 @@ function main() {
         var target = this;
         setTimeout(function(){
             target.scrollIntoViewIfNeeded();
-        },100);
+        },1000);
     });
     $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
     // $("#audio-down").get(0).play();
