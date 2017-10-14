@@ -705,6 +705,9 @@ video {
   margin-right: auto;
 }
 #rule-container {
+        user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
   display: none;
   position: absolute;
   width: calc(100vw / 7 * 6);
