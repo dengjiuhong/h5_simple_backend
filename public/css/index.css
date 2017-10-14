@@ -398,11 +398,11 @@ video {
     background-size: 100% 100%;
     background-image: url("/image/share/share_btn.png");
     background-repeat: no-repeat;
-    width: 51vw;
-    height: 0.4rem;
-    margin-top: 94.63vw;
-    margin-left: 9.5vw;
+    width: 47vw;
+    height: 16vw;
     z-index: 10;
+    left: 25vw;
+    bottom: 33vw;
 }
 .pic_{
     width: 100%;
@@ -499,10 +499,10 @@ video {
 }
 .build_my{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 1.7rem;
-    height: 0.6rem;
-    right: calc(50vw - 0.85rem);
-    top:calc(928 / 534 * 70vw + 1.5rem - 0.545rem - (183 / 268 * 35vw));
+    width: 38vw;
+    height: 5vw;
+    right: 32vw;
+    bottom: 25vw;
     background-image: url('/image/share/build_my.png');
     background-size: 100% 100%;
     background-color: transparent;
