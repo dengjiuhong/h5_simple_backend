@@ -90,6 +90,7 @@ function getNowFormatDate() {
 				phone: req.body.phone,
 				id: id
 			};
+			console.log("插入数据库信息：" + JSON.stringify(doc));
 		collection.findOne({name: req.body.name}, function(err, user) {
             if(err) {
 				console.log("寻找用户出错：" + err);
@@ -142,7 +143,7 @@ function getNowFormatDate() {
 	  });
 
 	router.get('/wx', function(req, res, next) {
-		var code = req.body.code;
+		var code = req.query.code;
 		console.log(code);
 		var result = {};
 		var app_id = "wxdeb5dc277a2c46bf";
