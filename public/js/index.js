@@ -252,7 +252,7 @@ function main() {
   document.body.ontouchmove=function(e){
     e.preventDefault();
 }
-$("#content").ontouchmove=function(e){
+$("#rule-container").ontouchmove=function(e){
     e.stopPropagation();
     //停止冒泡
 };
