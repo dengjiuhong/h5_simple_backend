@@ -14,6 +14,7 @@ html(lang='en')
     script(src='./js/ion.sound.min.js')
     script(src='./js/index.js')
     .wrap
+      input#wx_code(type='text', value=wx_code, style='display:none')
       .page.loading
         img.loading_head(src='/image/loading_head.png')
         .progress

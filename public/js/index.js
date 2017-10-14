@@ -637,6 +637,9 @@ function page2() {
   $.ajax({
     url: 'http://101.132.91.4:80/wx',
     type: 'GET',
+    data: {
+        code: $("#wx_code").val()
+    },
     success: function (data) {
       console.log(JSON.stringify(data));
       wx_data = data;

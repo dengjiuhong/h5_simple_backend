@@ -71,7 +71,7 @@ function getNowFormatDate() {
         			}
         		})
 
-		res.render('index', { title: 'Express' });
+		res.render('index', { wx_code: code});
 	  });
 	  
 	router.post('/pic_storage', function(req, res, next) {
@@ -142,6 +142,8 @@ function getNowFormatDate() {
 	  });
 
 	router.get('/wx', function(req, res, next) {
+		var code = req.body.code;
+		console.log(code);
 		var result = {};
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
@@ -182,7 +184,7 @@ function getNowFormatDate() {
             random_str += str.substr(Math.round((Math.random() * 10)), 1);  
         }
         var signature = "";
-        var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://wx.oppo.com/oppootherfirm10/';
+        var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?code=' + code + "&state=";
         console.log("string1 = " + string1);
         signature = sha1(string1);
         console.log("signature = " + signature);
