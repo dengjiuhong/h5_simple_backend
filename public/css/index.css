@@ -401,7 +401,7 @@ video {
     width: 47vw;
     height: 16vw;
     z-index: 10;
-    left: 25vw;
+    left: 26.5vw;
     top: calc(928 / 534 * 70vw + 4vw);
 }
 .pic_{
@@ -501,7 +501,7 @@ video {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     width: 38vw;
     height: 5vw;
-    right: 32vw;
+    right: 31vw;
     top: calc(928 / 534 * 70vw + 20vw);
     background-image: url('/image/share/build_my.png');
     background-size: 100% 100%;
