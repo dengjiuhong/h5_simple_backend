@@ -388,7 +388,7 @@ video {
     background-image: url("/image/share/english_words.png");
     background-repeat: no-repeat;
     width: 46vw;
-    height: 6rem;
+    height: 6vw;
     margin-top: 98.63vw;
     margin-left: 12vw;
     z-index: 10;
@@ -402,7 +402,7 @@ video {
     height: 16vw;
     z-index: 10;
     left: 25vw;
-    top: calc(928 / 534 * 70vw);
+    top: calc(928 / 534 * 70vw + 4vw);
 }
 .pic_{
     width: 100%;
@@ -502,7 +502,7 @@ video {
     width: 38vw;
     height: 5vw;
     right: 32vw;
-    top: calc(928 / 534 * 70vw);
+    top: calc(928 / 534 * 70vw + 20vw);
     background-image: url('/image/share/build_my.png');
     background-size: 100% 100%;
     background-color: transparent;
