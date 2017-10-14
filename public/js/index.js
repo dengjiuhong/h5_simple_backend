@@ -391,7 +391,7 @@ function wx_init(data) {
     wx.onMenuShareTimeline({
       title: 'R11s新品发布会招募中', // 分享标题
       link: 'http://oppo10.nplusgroup.net/',
-      imgUrl: "image/500px.jpg", // 分享图标
+      imgUrl: "http://oppo10.nplusgroup.net/image/500px.jpg", // 分享图标
       success: function () {
         // 用户确认分享后执行的回调函数
       },
@@ -403,7 +403,7 @@ function wx_init(data) {
       title: 'R11s新品发布会招募中', // 分享标题
       desc: '你确定不来吗？', // 分享描述
       link: 'http://oppo10.nplusgroup.net/',
-      imgUrl: "image/500px.jpg", // 分享图标
+      imgUrl: "http://oppo10.nplusgroup.net/image/500px.jpg", // 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
       success: function () {
@@ -420,7 +420,7 @@ function wx_process() {
     wx.onMenuShareTimeline({
       title: '看看' + user_name +'的博物馆！', // 分享标题
       link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id, // 分享链接
-      imgUrl: "oxm6vcxz3.bkt.clouddn.com/" + encodeURI(user_name) + user_time + ".jpg", // 分享图标
+      imgUrl: "http://oxm6vcxz3.bkt.clouddn.com/" + encodeURI(user_name) + user_time + ".jpg", // 分享图标
       success: function () {
         // 用户确认分享后执行的回调函数
       },
@@ -432,7 +432,7 @@ function wx_process() {
       title: '看看'+user_name+'的博物馆！', // 分享标题
       desc: '这是描述', // 分享描述
       link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id, // 分享链接
-      imgUrl: "oxm6vcxz3.bkt.clouddn.com/" + encodeURI(user_name) + user_time + ".jpg",// 分享图标
+      imgUrl: "http://oxm6vcxz3.bkt.clouddn.com/" + encodeURI(user_name) + user_time + ".jpg",// 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
       success: function () {
