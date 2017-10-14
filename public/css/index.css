@@ -696,3 +696,65 @@ video {
     background-size: 100% 100%;
     background-color: transparent;
 }
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+#rule-container {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  right: 10%;
+  z-index: -1;
+  /*
+   * Or using relative position for details
+   * */
+}
+
+#paper-container {
+  background-image: url("/image/paper.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#content {
+  width: 60%;
+  padding-top: 10em;
+  padding-bottom: 6em;
+}
+
+splitter {
+  width: 100%;
+  height: 0.1em;
+  background-color: black;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#part1, #part2, #part3 {
+  font-size: 0.7em;
+}
+
+#button-container {
+  width: 100%;
+}
+
+#close-button {
+  width: 4em;
+  height: 4em;
+}
+
+#rule-container {
+  visibility: hidden;
+}
+
+#rule-container:target {
+  visibility: visible;
+  z-index: 10;
+}
+
+#base {
+  z-index: 1;
+}
