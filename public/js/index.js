@@ -249,13 +249,7 @@ function judge() {
   else upload_lock = true;
 }
 function main() {
-  document.body.ontouchmove=function(e){
-    e.preventDefault();
-}
-document.querySelectorAll('rule-container')[0].ontouchmove=function(e){
-    e.stopPropagation();
-    //停止冒泡
-};
+
   $("#rule_btn").click(function() {
     console.log("规则");
     $("#rule-container").show();
