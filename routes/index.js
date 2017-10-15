@@ -204,6 +204,7 @@ function getNowFormatDate() {
 		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
 		var name = decodeURI(req.query.name);
 		var museum = req.query.museum;
+		var code = req.query.code;
 		var time = req.query.time;
 		var id = req.query.id;
 		console.log(name);
@@ -215,7 +216,7 @@ function getNowFormatDate() {
 		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, req.query.name + time + ".jpg");
 		console.log(publicDownloadUrl);
 		console.log(museum);
-		res.render('share', { pic_url: publicDownloadUrl,  museum: museum, user_name: name, user_id: id});
+		res.render('share', { pic_url: publicDownloadUrl,  museum: museum, user_name: name, user_id: id, user_code: code, user_time: time});
 	})
 	return router;
 	};
