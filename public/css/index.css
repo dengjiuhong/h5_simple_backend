@@ -402,7 +402,7 @@ video {
     height: 16vw;
     z-index: 10;
     left: 26.5vw;
-    top: calc(928 / 534 * 70vw + 4vw);
+    top: calc(928 / 534 * 70vw + 7vw);
 }
 .pic_{
     width: 100%;
@@ -502,7 +502,7 @@ video {
     width: 38vw;
     height: 5vw;
     right: 31vw;
-    top: calc(928 / 534 * 70vw + 20vw);
+    top: calc(928 / 534 * 70vw + 26vw);
     background-image: url('/image/share/build_my.png');
     background-size: 100% 100%;
     background-color: transparent;

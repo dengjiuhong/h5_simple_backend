@@ -137,6 +137,7 @@ function main() {
       ion.sound.play("open");
       vx2.play();
     }, 2000);
+    $(".share_btn_").fadeOut();
     $(".share_wrap_").animate({ "margin-top": "-120vw" }, 2000, function () {
       $(".share_wrap_").hide();
     });
