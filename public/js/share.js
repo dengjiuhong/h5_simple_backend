@@ -50,7 +50,7 @@ $(document).ready(function () {
   name = share_name_adjust($("#user_name").val());
   url = $("#pic_url").val();
   panorama = $("#museum").val();
-  document.getElementsByClassName("share_name")[0].innerHTML = name;
+  document.getElementsByClassName("share_name_")[0].innerHTML = name;
   console.log("url" + url + "panorama:" +panorama);
   // debug //
   // $(".page.p1").show();
