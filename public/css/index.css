@@ -689,7 +689,7 @@ video {
 }
 #rule_btn{
     bottom: 0.35rem;
-    right: 0.05rem;
+    right: calc(50vw - 1.51rem / 2 - 0.62rem / 2);
     z-index: 4;
     width: 0.62rem;
     height: 0.175rem;
