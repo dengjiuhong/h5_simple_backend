@@ -263,6 +263,7 @@ function main() {
     }
   });
   $("#rule_btn").click(function() {
+    ion.sound.play("btn");
     console.log("规则");
     $("#rule-container").show();
     $("#welcome").hide();
@@ -270,6 +271,7 @@ function main() {
     $("#rule_btn").hide();
   });
   $("#rule_back").click(function(){
+    ion.sound.play("btn");
     $("#rule-container").hide();
     $("#welcome").show();
     $("#first_enter_box").show();

@@ -35,12 +35,19 @@ function share_id_adjust(user_id) {
   }
   return "NO:" + zeros + s;
 }
+function share_name_adjust(s){
+  if(s.length > 4) {
+    s = s.substr(0, 3);
+    s = s + "...";
+  }
+  return s;
+}
 $(document).ready(function () {
   id = $("#user_id").val();
   var s = share_id_adjust(id);
   $("#share_id").html(s);//
 
-  name = $("#user_name").val();
+  name = share_name_adjust($("#user_name").val());
   url = $("#pic_url").val();
   panorama = $("#museum").val();
   document.getElementsByClassName("share_name")[0].innerHTML = name;

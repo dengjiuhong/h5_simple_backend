@@ -365,7 +365,7 @@ video {
     width: 19vw;
     height: 15vw;
     margin-top: 65vw;
-    margin-left: 10vw;
+    margin-left: 7vw;
 }
 .share_pic{
     background-color: #000000;
@@ -688,8 +688,9 @@ video {
     z-index: 8;
 }
 #rule_btn{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
     bottom: 0.35rem;
-    right: calc(50vw - 1.51rem / 2 - 0.62rem / 2);
+    right: 0.1rem;
     z-index: 4;
     width: 0.62rem;
     height: 0.175rem;
@@ -699,6 +700,7 @@ video {
     background-color: transparent;
 }
 #rule_back{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
     right: 43vw;
     z-index: 4;
     height: 16vw;
