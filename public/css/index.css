@@ -699,7 +699,7 @@ video {
 #rule_btn{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     bottom: 0.35rem;
-    right: 0.1rem;
+    right: 0.2rem;
     z-index: 4;
     width: 0.62rem;
     height: 0.175rem;
