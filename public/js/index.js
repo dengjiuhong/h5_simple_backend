@@ -262,6 +262,7 @@ function main() {
       wx_init(wx_data);
     }
   });
+  $("#huadong-bg").hide();
   $("#rule_btn").click(function() {
     ion.sound.play("btn");
     console.log("规则");
@@ -269,6 +270,7 @@ function main() {
     $("#welcome").hide();
     $("#first_enter_box").hide();
     $("#rule_btn").hide();
+    $("#scroll-hand, #huadong-bg").show();
   });
   $("#rule_back").click(function(){
     ion.sound.play("btn");
@@ -276,7 +278,11 @@ function main() {
     $("#welcome").show();
     $("#first_enter_box").show();
     $("#rule_btn").show();
-  })
+    $("#huadong-bg").hide();
+  });
+  $("#content").scroll(function(e) {
+    $("#scroll-hand").hide();
+  });
   $(".p0").fadeIn("fast");
   // var v = $("#my_video_1");
   var vx = xlz_videos["01-near"]; // 序列帧动画

@@ -669,7 +669,7 @@ video {
     font-family: my_font;
 }
 
-.huadong-bg {
+#huadong-bg {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -677,6 +677,7 @@ video {
     left: 0;
 
     background-color: rgba(0,0,0,0.2);
+    z-index: 8;
 }
         
 .huadong .notice_active {
