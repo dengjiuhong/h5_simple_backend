@@ -84,8 +84,6 @@ function wx_init(data) {
 $(document).ready(function () {
   time = $("#user_time").val();
   code = $("#user_code").val();
-  alert("share_time:" + time);
-  alert("code:" + code);
   id = $("#user_id").val();
   name = $("#user_name").val();
   url = $("#pic_url").val();
