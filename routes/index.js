@@ -209,6 +209,7 @@ function getNowFormatDate() {
 		var museum = req.query.museum;
 		var code = req.query.code;
 		var time = req.query.time;
+		console.log("/my_museum:" + code + "time" + time);
 		var id = req.query.id;
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 		var config = new qiniu.conf.Config();
