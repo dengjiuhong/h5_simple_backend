@@ -95,7 +95,12 @@ $(document).ready(function () {
     url: 'http://101.132.91.4:80/wx',
     type: 'GET',
     data: {
-        code: code
+        code: code,
+        share: true,
+        name: name,
+        time: time,
+        id: id,
+        panorama: panorama
     },
     success: function (data) {
       console.log(JSON.stringify(data));

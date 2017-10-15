@@ -185,7 +185,10 @@ function getNowFormatDate() {
             random_str += str.substr(Math.round((Math.random() * 10)), 1);  
         }
         var signature = "";
-        var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?code=' + code + "&state=";
+        if(req.query.share) {
+        	var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code;
+        }
+        else var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?code=' + code + "&state=";
         console.log("string1 = " + string1);
         signature = sha1(string1);
         console.log("signature = " + signature);
