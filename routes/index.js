@@ -186,7 +186,7 @@ function getNowFormatDate() {
         }
         var signature = "";
         if(req.query.share) {
-        	var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code;
+        	var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code +"&from=singlemessage&isappinstalled=0";
         }
         else var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?code=' + code + "&state=";
         console.log("string1 = " + string1);
