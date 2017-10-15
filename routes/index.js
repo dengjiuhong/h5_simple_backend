@@ -186,7 +186,7 @@ function getNowFormatDate() {
         }
         var signature = "";
         if(req.query.share) {
-        	var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code;
+        	var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code +"&from=" + req.query.user_from + "&isappinstalled=0";
         }
         else var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?code=' + code + "&state=";
         console.log("string1 = " + string1);
@@ -209,6 +209,7 @@ function getNowFormatDate() {
 		var museum = req.query.museum;
 		var code = req.query.code;
 		var time = req.query.time;
+		var user_from = req.query.from;
 		console.log("/my_museum:" + code + "time" + time);
 		var id = req.query.id;
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
@@ -218,7 +219,7 @@ function getNowFormatDate() {
 		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, req.query.name + time + ".jpg");
 		console.log(publicDownloadUrl);
 		console.log(museum);
-		res.render('share', { pic_url: publicDownloadUrl,  museum: museum, user_name: name, user_id: id, user_code: code, user_time: time});
+		res.render('share', { pic_url: publicDownloadUrl,  museum: museum, user_name: name, user_id: id, user_code: code, user_time: time, user_from: user_from});
 	})
 	return router;
 	};

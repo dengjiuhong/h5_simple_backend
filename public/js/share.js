@@ -1,5 +1,6 @@
 var code;
 var time;
+var user_from;
 var id;
 var name;
 var url;
@@ -82,6 +83,7 @@ function wx_init(data) {
   });
 }
 $(document).ready(function () {
+  user_from = $("#user_from").val();
   time = $("#user_time").val();
   code = $("#user_code").val();
   id = $("#user_id").val();
@@ -100,7 +102,8 @@ $(document).ready(function () {
         name: name,
         time: time,
         id: id,
-        panorama: panorama
+        panorama: panorama,
+        user_from: user_from
     },
     success: function (data) {
       console.log(JSON.stringify(data));
