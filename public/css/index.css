@@ -365,18 +365,16 @@ video {
     width: 19vw;
     height: 15vw;
     margin-top: 65vw;
-    /* margin-left: 7vw; */
-    margin-left: 8%;
+    margin-left: 7vw;
 }
 .share_name_{
-    /* position: absolute; */
+    position: absolute;
     color: #ddd3ba;
     font-size: 16px;
     width: 19vw;
     height: 15vw;
     margin-top: 65vw;
-    /* margin-left: 8.5vw; */
-    left: 14%;
+    margin-left: 8.5vw;
 }
 .share_pic{
     background-color: #000000;
