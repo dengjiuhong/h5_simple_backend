@@ -204,7 +204,7 @@ function page2_init() {
       "display": "none",
       "left": (viewW - BG_WIDTH) / 2,
       "top": (viewH - BG_HEIGHT) / 2,
-      "transform": "rotateY(" + (180 - i * PER_ANGLE) + "deg) translateZ(" + (-translateZ + 2) + "px)", // translateZ + 10 是为了去掉模模块间的缝隙
+      "transform": "rotateY(" + (180 - i * PER_ANGLE) + "deg) translateZ(" + (-translateZ ) + "px)", // translateZ + 10 是为了去掉模模块间的缝隙
       // "backface-visibility": "hidden"
     }).attr('id', "panorama_" + i).appendTo(".container");
   }
