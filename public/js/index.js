@@ -420,7 +420,7 @@ function wx_process() {
     wx.onMenuShareTimeline({
       title: '快来看' + user_name +'的照片博物馆', // 分享标题
       link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id, // 分享链接
-      imgUrl: "http://oxm6vcxz3.bkt.clouddn.com/" + encodeURI(user_name) + user_time + ".jpg", // 分享图标
+      imgUrl: "http://oppo10.nplusgroup.net/image/500px.jpg", // 分享图标
       success: function () {
         // 用户确认分享后执行的回调函数
       },
@@ -432,7 +432,7 @@ function wx_process() {
       title: '快来看'+user_name+'的照片博物馆', // 分享标题
       desc: '里面有神奇的...', // 分享描述
       link: 'http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(user_name) + '&museum=' + panorama + '&time=' + user_time + '&id=' + user_id, // 分享链接
-      imgUrl: "http://oxm6vcxz3.bkt.clouddn.com/" + encodeURI(user_name) + user_time + ".jpg",// 分享图标
+      imgUrl: "http://oppo10.nplusgroup.net/image/500px.jpg",// 分享图标
       type: 'link', // 分享类型,music、video或link，不填默认为link
       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
       success: function () {
