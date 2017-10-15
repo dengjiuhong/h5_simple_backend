@@ -210,8 +210,6 @@ function getNowFormatDate() {
 		var code = req.query.code;
 		var time = req.query.time;
 		var id = req.query.id;
-		console.log(name);
-		console.log(req.query.name);
 		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 		var config = new qiniu.conf.Config();
 		var bucketManager = new qiniu.rs.BucketManager(mac, config);
