@@ -497,10 +497,10 @@ video {
 }
 .share_my{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 35vw;
-    height: calc(94 / 269 * 35vw);
-    left: 12vw;
-    top: calc(928 / 534 * 70vw + 1.5rem - 0.545rem - (183 / 268 * 35vw));
+    width: 40vw;
+    height: calc(94 / 269 * 40vw);
+    left: 8vw;
+    top: calc(928 / 534 * 70vw + 1.7rem - 0.545rem - (183 / 268 * 40vw));
     background-image: url('/image/share_my.png');
     background-size: 100% 100%;
     background-color: inherit;
@@ -520,10 +520,10 @@ video {
 }
 .change_my{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    width: 35vw;
-    height: calc(94 / 268 * 35vw);
-    right: 12vw;
-    top: calc(928 / 534 * 70vw + 1.5rem - 0.545rem - (183 / 268 * 35vw));
+    width: 40vw;
+    height: calc(94 / 268 * 40vw);
+    right: 8vw;
+    top: calc(928 / 534 * 70vw + 1.7rem - 0.545rem - (183 / 268 * 40vw));
     background-image: url('/image/change_my.png');
     background-size: 100% 100%;
     background-color: inherit;
