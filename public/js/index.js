@@ -505,11 +505,11 @@ function page2_init() {
   if ($("#bigCube").height() >= 650) {
     var BG_WIDTH = 1000,
       BG_HEIGHT = 1750;
-    $("#view").css("perspective", "950px");
+    $("#view").css("perspective", "920px");
   } else {
     var BG_WIDTH = 670,
       BG_HEIGHT = 1190;
-    $("#view").css("perspective", "950px");
+    $("#view").css("perspective", "920px");
   }
   var BG_NUMBER = 9,
     PER_ANGLE = 360 / BG_NUMBER;
