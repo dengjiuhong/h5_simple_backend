@@ -782,13 +782,17 @@ video {
 }
 
 @keyframes scrollHandMove {
-    from {
+    0% {
         opacity: 1;
         bottom: 50vw;
     }
-    to {
+    80% {
         opacity: 0;
         bottom: 80vw;
+    }
+    100% {
+        opacity: 0;
+        bottom: 50vw;
     }
 }
 
