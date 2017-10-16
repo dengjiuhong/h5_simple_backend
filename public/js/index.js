@@ -498,7 +498,7 @@ function wx_process() {
   });
 }
 
-function Qiniu_upload(f, token, key) {
+var Qiniu_upload = function(f, token, key) {
   var xhr = new XMLHttpRequest();
   xhr.open('POST', Qiniu_UploadUrl, true);
   var formData, startDate;
