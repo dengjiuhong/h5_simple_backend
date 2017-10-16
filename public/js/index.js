@@ -243,11 +243,11 @@ function isPhoneTel(n){
     }
 }
 function judge() {
-  if (picfile == null) {
+  if (document.getElementById("pic").src == "http://oppo10.nplusgroup.net/image/choose_pic.png") {
     $("#welcome").css({"background-image":"url('/image/error/err_pic.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
     upload_lock = false;
   }
-  else if ($("#name").val() == "" || isNaN(parseInt($("#name").val()))) {
+  else if ($("#name").val() == "" || !isNaN(parseInt($("#name").val()))) {
     $("#welcome").css({"background-image":"url('/image/error/err_name.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
     upload_lock = false;
   }
@@ -597,6 +597,71 @@ function share_id_adjust() {
   }
   return zeros + s;
 }
+function twice() {
+        var old_panorama = panorama;
+      while(panorama === old_panorama) {
+        panorama = Math.floor(Math.random() * 3);
+      }
+      console.log(old_panorama + ' ' + panorama);
+      // pop old items
+      framesUrl = [];
+      // var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
+      // var audio_3 = $("#audio-close-" + panorama).get(0);
+      // items.push(audio_3_url);
+      if (panorama === 0) {
+        for (var i = 0; i < 75; i++) {
+          framesUrl.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+        }
+      } else if (panorama === 1) {
+        for (var i = 0; i < 75; i++) {
+          framesUrl.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+        }
+      } else if (panorama === 2) {
+        for (var i = 0; i < 75; i++) {
+          framesUrl.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+        }
+      } else {
+        alert("博物馆不存在！");
+      }
+      xlz_videos['03-close'] = new xlz({
+        canvasTargetId: "close_0_c",
+        framesUrl: framesUrl,
+        loop: true, // 关灯视频是循环播放的
+        // audioObject: audio_3,
+        audioIonName: "panorama_" + panorama + "_close"
+        // 没设置结束回调函数，下面来
+        // onComplete: function() {
+        //   console.log("03. 结束了");
+        // },
+      });
+
+      framesUrl = [];
+      // var audio_4_url = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
+      // var audio_4 = $("#audio-exit-" + panorama).get(0);
+      // items.push(audio_4_url);
+      if (panorama === 0) {
+        for (var i = 0; i < 63; i++) {
+          framesUrl.push('/xlz/exit_0/exit_0_' + i + '.jpg');
+        }
+      } else if (panorama === 1) {
+        for (var i = 0; i < 63; i++) {
+          framesUrl.push('/xlz/exit_1/exit_1_' + i + '.jpg');
+        }
+      } else if (panorama === 2) {
+        for (var i = 0; i < 63; i++) {
+          framesUrl.push('/xlz/exit_2/exit_2_' + i + '.jpg');
+        }
+      } else {
+        alert("博物馆不存在！");
+      }
+      xlz_videos['04-exit'] = new xlz({
+        canvasTargetId: "exit_0_c",
+        framesUrl: framesUrl,
+        loop: false,
+        // audioObject: audio_4,
+        audioIonName: "panorama_" + panorama + "_exit"
+      });
+}
 function page2() {
   var border_r = -52,
     border_l = 12,
@@ -705,6 +770,7 @@ function page2() {
           // 清理一下
           $(".p2").css('opacity', '0');
           $("#cube .container").html("");
+          twice();
         });
       };
     //});
@@ -804,20 +870,22 @@ function page2() {
       $("#in").fadeIn();
       $("#welcome").fadeIn();
       $("#welcome").css({"background-image":"url('/image/login.png')", "width": "0.815rem", "left": "calc(50vw - 0.815rem / 2)"});
+
       $("#turn_off").css("display", "block");
       $("#light_word").css("display", "block");
       $("#try").css({
         "display": "block",
         "opacity": "1"
       });
+      $("#share_in").css("display", "none");
+      $(".share_pic").empty();
+
       // $("#close_0").get(0).removeEventListener("timeupdate", temp_func_2);//关灯视频不再循环
       // $("#close_0").get(0).addEventListener("timeupdate", temp_func);
       xlz_videos['03-close'].option.onComplete = temp_func;
-      $("#close_0_c").hide;
+      $("#close_0_c").hide();
       // $("#exit_0").css("display", "none");
       $("#exit_0_c").hide();
-      $("#share_in").css("display", "none");
-      $(".share_pic").empty();
       // $("#panorama_5").empty();
       // $(".container").empty();
       $("#turn_off").css("background-image", "url('/image/turn_light.png')");
@@ -837,69 +905,6 @@ function page2() {
       xlz_videos['04-exit'].pause();
       // xlz_videos['03-close'].reset();
       // xlz_videos['04-exit'].reset();
-      var old_panorama = panorama;
-      while(panorama === old_panorama) {
-        panorama = Math.floor(Math.random() * 3);
-      }
-      console.log(old_panorama + ' ' + panorama);
-      // pop old items
-      framesUrl = [];
-      // var audio_3_url = "/audio/xlz/panorama_"+ panorama +"_close.mp3";
-      // var audio_3 = $("#audio-close-" + panorama).get(0);
-      // items.push(audio_3_url);
-      if (panorama === 0) {
-        for (var i = 0; i < 75; i++) {
-          framesUrl.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
-        }
-      } else if (panorama === 1) {
-        for (var i = 0; i < 75; i++) {
-          framesUrl.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
-        }
-      } else if (panorama === 2) {
-        for (var i = 0; i < 75; i++) {
-          framesUrl.push('/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
-        }
-      } else {
-        alert("博物馆不存在！");
-      }
-      xlz_videos['03-close'] = new xlz({
-        canvasTargetId: "close_0_c",
-        framesUrl: framesUrl,
-        loop: true, // 关灯视频是循环播放的
-        // audioObject: audio_3,
-        audioIonName: "panorama_" + panorama + "_close"
-        // 没设置结束回调函数，下面来
-        // onComplete: function() {
-        //   console.log("03. 结束了");
-        // },
-      });
-
-      framesUrl = [];
-      // var audio_4_url = "/audio/xlz/panorama_"+ panorama +"_exit.mp3";
-      // var audio_4 = $("#audio-exit-" + panorama).get(0);
-      // items.push(audio_4_url);
-      if (panorama === 0) {
-        for (var i = 0; i < 63; i++) {
-          framesUrl.push('/xlz/exit_0/exit_0_' + i + '.jpg');
-        }
-      } else if (panorama === 1) {
-        for (var i = 0; i < 63; i++) {
-          framesUrl.push('/xlz/exit_1/exit_1_' + i + '.jpg');
-        }
-      } else if (panorama === 2) {
-        for (var i = 0; i < 63; i++) {
-          framesUrl.push('/xlz/exit_2/exit_2_' + i + '.jpg');
-        }
-      } else {
-        alert("博物馆不存在！");
-      }
-      xlz_videos['04-exit'] = new xlz({
-        canvasTargetId: "exit_0_c",
-        framesUrl: framesUrl,
-        loop: false,
-        // audioObject: audio_4,
-        audioIonName: "panorama_" + panorama + "_exit"
-      });
     });
   });
   $(".share_my").click(function () {
