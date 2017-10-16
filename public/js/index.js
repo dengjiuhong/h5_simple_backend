@@ -254,7 +254,9 @@ function main() {
     url: 'http://101.132.91.4:80/wx',
     type: 'GET',
     data: {
-        code: $("#wx_code").val()
+        code: $("#wx_code").val(),
+        from: $('#wx_from').val(),
+        isappinstalled: $("#wx_isappinstalled").val()
     },
     success: function (data) {
       console.log(JSON.stringify(data));

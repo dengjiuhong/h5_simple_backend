@@ -35,6 +35,8 @@ function getNowFormatDate() {
 		var access_token;
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
+		var isappinstalled = req.query.isappinstalled;
+		var from = req.query.from;
 		var code = req.query.code;
 		var url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="+ app_id +"&secret="+app_secret+"&code="+code+"&grant_type=authorization_code";
 		fetch(url).then(function(res){
@@ -71,7 +73,7 @@ function getNowFormatDate() {
         			}
         		})
 
-		res.render('index', { wx_code: code});
+		res.render('index', { wx_code: code, wx_isappinstalled: isappinstalled, wx_from: from});
 	  });
 	  
 	router.post('/pic_storage', function(req, res, next) {
@@ -188,7 +190,15 @@ function getNowFormatDate() {
         if(req.query.share) {
         	var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code +"&from=" + req.query.user_from + "&isappinstalled=0";
         }
-        else var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?code=' + code + "&state=";
+        else {
+        	if(req.query.code != ""){
+        		var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?code=' + code + "&state=";
+        	}
+        	else {
+        		var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?from=' + req.query.from;
+        		if(req.query.isappinstalled != "") string1 += ("&isappinstalled=" + req.query.isappinstalled);
+        	}
+        }
         console.log("string1 = " + string1);
         signature = sha1(string1);
         console.log("signature = " + signature);
