@@ -859,12 +859,13 @@ function page2() {
     // $("#audio-up").get(0).play();
     ion.sound.play("up");
     $(".p3 > .share_my, .p3 > .change_my").fadeOut();
-    ion.sound.play("down");
+
     $(".share_wrap").animate({ "margin-top": "-150vw" }, 2000, function () {
       $(".p3").css("display", "none");//p3消失，p1出来
       $(".p1").css("display", "block");
       $(".upload_wrap").css("display", "block");//首页ui动
       // $("#audio-down").get(0).play();
+      ion.sound.play("down");
       $(".upload_wrap").animate({ "margin-top": "0px" }, 2000);
       $("#in").fadeIn();
       $("#welcome").fadeIn();
