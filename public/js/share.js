@@ -1,5 +1,6 @@
 var code;
 var time;
+var user_isappinstalled;
 var user_from;
 var id;
 var name;
@@ -83,6 +84,7 @@ function wx_init(data) {
   });
 }
 $(document).ready(function () {
+  isappinstalled = $("#user_isappinstalled").val();
   user_from = $("#user_from").val();
   time = $("#user_time").val();
   code = $("#user_code").val();
@@ -103,7 +105,8 @@ $(document).ready(function () {
         time: time,
         id: id,
         panorama: panorama,
-        user_from: user_from
+        user_from: user_from,
+        isappinstalled: isappinstalled
     },
     success: function (data) {
       console.log(JSON.stringify(data));
