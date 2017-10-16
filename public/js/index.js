@@ -251,7 +251,7 @@ function judge() {
     $("#welcome").css({"background-image":"url('/image/error/err_name.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
     upload_lock = false;
   }
-  else if (isPhoneTel($('#phone').val())) {
+  else if (!isPhoneTel($('#phone').val())) {
     $("#welcome").css({"background-image":"url('/image/error/err_phone.png')", "width": "1.46rem", "left": "calc(50vw - 1.46rem / 2)"});
     upload_lock = false;
   }
