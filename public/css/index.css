@@ -665,7 +665,6 @@ video {
     height:0.1rem;
     bottom: 2.785rem;
     position:fixed;
-    font: 12px;
     font-family: my_font;
 }
 
@@ -694,7 +693,6 @@ video {
 .huadong .notice_active li.notice_active_ch span {
     color: #ddd3ba;
     font-size:0.0975rem;
-    line-height: 0.1rem;
     display: block;
     overflow: hidden;
     overflow: hidden;
