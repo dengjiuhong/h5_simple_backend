@@ -342,6 +342,12 @@ function main() {
     // audio_3.load();
     // audio_4.load();
     // $("#audio-btn").get(0).play();
+    if (clickTimes == 1 && upload_lock) {
+      clickTimes++;
+      requestTimes++;
+      console.log("clickTimes" + clickTimes);
+      requestPic();
+    }
     ion.sound.play("btn");
     // 再放一下背景音乐，防止自动停止
     ion.sound.play("audio");
@@ -381,12 +387,7 @@ function main() {
       $(".p2").animate({ "opacity": "1" }, 3000);
       vx2.reset(); // 重置视频
       if (!lock) { page2(); lock++; }
-    }
-    if (clickTimes == 1 && upload_lock) {
-      clickTimes++;
-      requestTimes++;
-      console.log("clickTimes" + clickTimes);
-      requestPic();
+      wx_process();
     }
   });
 }
@@ -713,7 +714,6 @@ function page2() {
   }
   //点击离开博物馆之后
   document.getElementById("share_in").addEventListener("click", function () {
-    wx_process();
     // $("#audio-btn").get(0).play();
     ion.sound.play("btn");
     // $("#view").css("background-image", "url('/image/bg/close_" + panorama + ".png')");
