@@ -233,6 +233,15 @@ $(document).ready(function () {
     }
   });
 });
+function isPhoneTel(n){
+    var reg = /^1[3|4|5|8]\d{9}$/;
+    if(!!(reg.test(n))){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 function judge() {
   if (picfile == null) {
     $("#welcome").css({"background-image":"url('/image/error/err_pic.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
@@ -242,7 +251,7 @@ function judge() {
     $("#welcome").css({"background-image":"url('/image/error/err_name.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
     upload_lock = false;
   }
-  else if ($('#phone').val() == "" || $('#phone').val().length < 11) {
+  else if (isPhoneTel($('#phone').val())) {
     $("#welcome").css({"background-image":"url('/image/error/err_phone.png')", "width": "1.46rem", "left": "calc(50vw - 1.46rem / 2)"});
     upload_lock = false;
   }
