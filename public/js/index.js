@@ -261,6 +261,33 @@ function judge() {
   }
   else upload_lock = true;
 }
+function requestPic() {
+  console.log("file = " + picfile);
+  if (picfile == null) {
+    console.log("文件为空");
+  }
+  else {
+    $.ajax({
+      url: 'http://101.132.91.4:80/pic_storage',
+      type: 'POST',
+      timeout: 15000,
+      data: {
+        name: $("#name").val(),
+        phone: $("#phone").val()
+      },
+      success: function (data) {
+        user_time = data.time;
+        user_id = data.id;
+        Qiniu_upload(picfile, data.token, $("#name").val() + data.time + ".jpg");
+      },
+      error: function (xhr, errorType, error) {
+        console.log("出错！" + error);
+        clickTimes = 1;
+      },
+    });
+  }
+
+}
 function main() {
   var wx_data = {};
   $.ajax({
@@ -346,6 +373,8 @@ function main() {
     // audio_3.load();
     // audio_4.load();
     // $("#audio-btn").get(0).play();
+    user_phone = $("#phone").val();
+  user_name = $("#name").val();
     if (clickTimes == 1 && upload_lock) {
       clickTimes++;
       requestTimes++;
@@ -467,35 +496,6 @@ function wx_process() {
       }
     });
   });
-}
-function requestPic() {
-  user_phone = $("#phone").val();
-  user_name = $("#name").val();
-  console.log("file = " + picfile);
-  if (picfile == null) {
-    console.log("文件为空");
-  }
-  else {
-    $.ajax({
-      url: 'http://101.132.91.4:80/pic_storage',
-      type: 'POST',
-      timeout: 15000,
-      data: {
-        name: $("#name").val(),
-        phone: $("#phone").val()
-      },
-      success: function (data) {
-        user_time = data.time;
-        user_id = data.id;
-        Qiniu_upload(picfile, data.token, $("#name").val() + data.time + ".jpg");
-      },
-      error: function (xhr, errorType, error) {
-        console.log("出错！" + error);
-        clickTimes = 1;
-      },
-    });
-  }
-
 }
 
 function Qiniu_upload(f, token, key) {
