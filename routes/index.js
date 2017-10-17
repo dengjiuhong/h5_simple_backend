@@ -7,10 +7,10 @@ var sha1 = require('sha1');
 module.exports = function (db) {
 	var router = express.Router();
 	/* GET home page. */
-	router.get('/weixin', function(req, res, next){
-		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/&response_type=code&scope=snsapi_base#wechat_redirect");
+	router.get('/', function(req, res, next){
+		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/weixin&response_type=code&scope=snsapi_base#wechat_redirect");
 	})
-	router.get('/', function(req, res, next) {
+	router.get('/weixin', function(req, res, next) {
 function getNowFormatDate() {
     var date = new Date();
     var seperator1 = "-";
@@ -196,10 +196,10 @@ function getNowFormatDate() {
         }
         else {
         	if(req.query.code != ""){
-        		var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?code=' + code + "&state=";
+        		var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/weixin?code=' + code + "&state=";
         	}
         	else {
-        		var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/?from=' + req.query.from;
+        		var string1 = 'jsapi_ticket='+config.jsticket+'&noncestr=' + random_str +'&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/weixin?from=' + req.query.from;
         		if(req.query.isappinstalled != "") string1 += ("&isappinstalled=" + req.query.isappinstalled);
         	}
         }

@@ -191,7 +191,7 @@ function main() {
   //跳转
   $(".build_my").click(function() {
     console.log("build_my");
-    window.location.replace("http://oppo10.nplusgroup.net/weixin");
+    window.location.replace("http://oppo10.nplusgroup.net/");
   })
 
 
