@@ -343,7 +343,7 @@ video {
 }
 .share_id{
     font-family: my_font;
-    width: 11.3vw;
+    /* width: 11.3vw; */
     height: 3.46vw;
     margin-top: 33.9vw;
     margin-left: 12.3vw;
