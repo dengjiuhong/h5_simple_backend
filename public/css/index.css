@@ -346,7 +346,8 @@ video {
     width: 11.3vw;
     height: 3.46vw;
     margin-top: 33.9vw;
-    margin-left: 15vw;
+    margin-left: 12.3vw;
+    text-align: left;
     font-size: 9px;
 }
 #share_id{
