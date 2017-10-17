@@ -690,13 +690,11 @@ video {
 }
 .huadong .notice_active li{
     list-style-type:none;
-    overflow: hidden;
 }
 .huadong .notice_active li.notice_active_ch span {
     color: #ddd3ba;
     font-size:0.0975rem;
     display: block;
-    overflow: hidden;
     overflow: hidden;
 }
 #dark{
