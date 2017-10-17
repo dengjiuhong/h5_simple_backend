@@ -2,27 +2,27 @@ doctype html
 html(lang='en')
   head
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-    link(rel='stylesheet', href='./css/index.css')
+    link(rel='stylesheet', href='http://src.oppo10.nplusgroup.net/css/index.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=no')
     meta(name='apple-mobile-web-app-capable', content='yes')
     title 博物馆
   body
     script(src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js')
-    script(src='./js/jquery-3.1.0.min.js')
-    script(src='./js/exif.js')
-    script(src='./js/uploadImage.js')
-    script(src='./js/ion.sound.min.js')
-    script(src='./js/index.js')
+    script(src='http://src.oppo10.nplusgroup.net/js/jquery-3.1.0.min.js')
+    script(src='http://src.oppo10.nplusgroup.net/js/exif.js')
+    script(src='http://src.oppo10.nplusgroup.net/js/uploadImage.js')
+    script(src='http://src.oppo10.nplusgroup.net/js/ion.sound.min.js')
+    script(src='http://src.oppo10.nplusgroup.net/js/index.js')
     .wrap
       input#wx_code(type='text', value=wx_code, style='display:none')
       input#wx_from(type='text', value=wx_from, style='display:none')
       input#wx_isappinstalled(type='text', value=wx_isappinstalled, style='display:none')
       .page.loading
-        img.loading_head(src='/image/loading_head.png')
+        img.loading_head(src='http://src.oppo10.nplusgroup.net/image/loading_head.png')
         .progress
-          img.background(src='/image/loading_bg.png')
-          img.bar(src='/image/loading_bar.png')
-        img.loading_title(src='/image/loading_title.png')
+          img.background(src='http://src.oppo10.nplusgroup.net/image/loading_bg.png')
+          img.bar(src='http://src.oppo10.nplusgroup.net/image/loading_bar.png')
+        img.loading_title(src='http://src.oppo10.nplusgroup.net/image/loading_title.png')
         .huadong
           .notice_active
             ul
@@ -37,7 +37,7 @@ html(lang='en')
               li.notice_active_ch
                 span -Hey！你对新品期待吗？-
       .page.p0
-        img(src='./image/close.png', style='display:none')
+        img(src='http://src.oppo10.nplusgroup.net/image/close.png', style='display:none')
         canvas#my_video_1_x.xlz_video
         #first_poster
         #first_enter_box
@@ -102,7 +102,7 @@ html(lang='en')
         .upload_wrap
           .upload
             input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
-            img#pic(src="/image/choose_pic.png")
+            img#pic(src="http://src.oppo10.nplusgroup.net/image/choose_pic.png")
           .name_block
             .name 姓名
             .input_name
