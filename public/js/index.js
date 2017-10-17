@@ -373,6 +373,7 @@ function main() {
     // audio_3.load();
     // audio_4.load();
     // $("#audio-btn").get(0).play();
+    judge();
     user_phone = $("#phone").val();
   user_name = $("#name").val();
     if (clickTimes == 1 && upload_lock) {
@@ -384,7 +385,6 @@ function main() {
     ion.sound.play("btn");
     // 再放一下背景音乐，防止自动停止
     ion.sound.play("audio");
-    judge();
     if (!upload_lock) return;
     // v2.get(0).play();
     // v2.get(0).pause();
