@@ -595,7 +595,7 @@ function share_id_adjust() {
   for(var i = 1; i <= (5 - s.length); i++){
     zeros += "0";
   }
-  return zeros + s;
+  return "NO: " + zeros + s;
 }
 function twice() {
         var old_panorama = panorama;

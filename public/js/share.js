@@ -37,7 +37,7 @@ function share_id_adjust(user_id) {
   for(var i = 1; i <= (5 - s.length); i++){
     zeros += "0";
   }
-  return "NO:" + zeros + s;
+  return "NO: " + zeros + s;
 }
 function share_name_adjust(s){
   if(s.length > 4) {
