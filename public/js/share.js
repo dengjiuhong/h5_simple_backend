@@ -25,7 +25,7 @@ ion.sound({
     { name: "in" },
     { name: "open" },
   ],
-  path: "/audio/",
+  path: "http://src.oppo10.nplusgroup.net/audio/",
   preload: true
 });
 
@@ -138,9 +138,9 @@ $(document).ready(function () {
   window.xlz_videos = {};
   $(".page.loading").show();
   var items = [
-    '/image/panorama/' + panorama + '/4.png',
-    '/image/panorama/' + panorama + '/5.png',
-    '/image/panorama/' + panorama + '/6.png',
+    'http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/4.png',
+    'http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/5.png',
+    'http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/6.png',
     'http://'+url
   ];
   var framesUrl = [];
@@ -261,7 +261,7 @@ function page2_init() {
 
   for (var i = 1; i <= BG_NUMBER; i++) {
     $("<div></div>").css({
-      "background": (i == 4 || i == 5 || i == 6) ? ("url(./image/panorama/" + panorama + "/" + i + ".png) no-repeat") : "none",
+      "background": (i == 4 || i == 5 || i == 6) ? ("url(http://src.oppo10.nplusgroup.net/image/panorama/" + panorama + "/" + i + ".png) no-repeat") : "none",
       "background-size": "100% auto",
       "position": "absolute",
       "opacity": (i == 4 || i == 5 || i == 6) ? "1" : "0",
