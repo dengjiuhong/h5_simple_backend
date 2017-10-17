@@ -76,6 +76,7 @@ $(document).ready(function () {
     'http://src.oppo10.nplusgroup.net/image/brand_.png',
     'http://src.oppo10.nplusgroup.net/image/close_.png',
     'http://src.oppo10.nplusgroup.net/image/try.png',
+    'http://src.oppo10.nplusgroup.net/image/enter_mu.png',
     'http://src.oppo10.nplusgroup.net/image/panorama/0/4.png',
     'http://src.oppo10.nplusgroup.net/image/panorama/0/5.png',
     'http://src.oppo10.nplusgroup.net/image/panorama/0/6.png',

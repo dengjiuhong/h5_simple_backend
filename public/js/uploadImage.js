@@ -3,7 +3,7 @@ var ImageFile = [];
 function selectFileImage(fileObj) {
 	//loading.gif
 	// $(".upload_show li").eq(nowNum).find('img').attr('src','img/up.gif');
-
+	if(fileObj == null) return;
 	var file = fileObj.files[0];
 	var file_len = fileObj.files.length;
 
