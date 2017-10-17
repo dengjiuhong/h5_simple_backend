@@ -4,14 +4,14 @@
 }
 @font-face {  
     font-family: 'my_font';  
-    src:url('../my.otf');
-    src:url('../my.otf')format('embedded-opentype'),/* IE6-IE8 */
+    src:url('http://src.oppo10.nplusgroup.net/my.otf');
+    src:url('http://src.oppo10.nplusgroup.net/my.otf')format('embedded-opentype'),/* IE6-IE8 */
 
-    url('../my.otf')format('woff'),/* Modern Browsers */
+    url('http://src.oppo10.nplusgroup.net/my.otf')format('woff'),/* Modern Browsers */
 
-    url('../my.otf')format('truetype'),/* Safari, Android, iOS */
+    url('http://src.oppo10.nplusgroup.net/my.otf')format('truetype'),/* Safari, Android, iOS */
 
-    url('../my.otf')format('svg');/* Legacy iOS */ 
+    url('http://src.oppo10.nplusgroup.net/my.otf')format('svg');/* Legacy iOS */ 
     font-weight: normal;  
     font-style: normal;  
 }
@@ -78,31 +78,31 @@ video {
 }
 /* 防止闪屏 */
 .wrap.p0-fakeh {
-    background: url("/image/first_poster.jpg");
+    background: url("http://src.oppo10.nplusgroup.net/image/first_poster.jpg");
     background-position: center bottom;
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
 }
 .wrap.p1-fake {
-    background: url("/image/close.png");
+    background: url("http://src.oppo10.nplusgroup.net/image/close.png");
     background-position: center bottom;
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
 }
 .wrap.p2-fake-0 {
-    background: url("/image/panorama/0/5.png");
+    background: url("http://src.oppo10.nplusgroup.net/image/panorama/0/5.png");
     background-position: center bottom;
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
 }
 .wrap.p2-fake-1 {
-    background: url("/image/panorama/1/5.png");
+    background: url("http://src.oppo10.nplusgroup.net/image/panorama/1/5.png");
     background-position: center bottom;
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
 }
 .wrap.p2-fake-2 {
-    background: url("/image/panorama/2/5.png");
+    background: url("http://src.oppo10.nplusgroup.net/image/panorama/2/5.png");
     background-position: center bottom;
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
@@ -174,7 +174,7 @@ video {
     height: 0.56rem;
     position: fixed;
     bottom: 0.18rem;
-    background-image: url('/image/first_enter.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/first_enter.png');
     background-size: 100% 100%;
     background-color: inherit;
     left: calc(50vw - 1.51rem / 2);
@@ -189,21 +189,21 @@ video {
     top: 0;
     bottom: 0;
     background-color: #000000;
-    background: url("/image/first_poster.jpg");
+    background: url("http://src.oppo10.nplusgroup.net/image/first_poster.jpg");
     background-position: center bottom;
     background-size: 100% auto;
     z-index: 3;
 }
 .p1, .p3{
 	display: none;
-    background: url("/image/close.png");
+    background: url("http://src.oppo10.nplusgroup.net/image/close.png");
     background-size: 100% auto;
     background-color: rgba(0, 0, 0, 0);
     background-position: center bottom;
     font-size: 12px;
 }
 .p3{
-    background-image: url('/image/close_.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/close_.png');
 }
 .upload_wrap{
     margin: 0 auto;
@@ -213,7 +213,7 @@ video {
     height: calc(812 / 480 * 70vw); /* 118.416667 */
     position: relative;
     overflow: hidden;
-    background: url("../image/new_brand.png");
+    background: url("http://src.oppo10.nplusgroup.net/image/new_brand.png");
     background-size: 100% auto;
 }
 .upload_wrap > .upload {
@@ -235,7 +235,7 @@ video {
     height: calc(928 / 534 * 70vw);
     position: relative;
     overflow: hidden;
-    background: url("../image/brand_.png");
+    background: url("http://src.oppo10.nplusgroup.net/image/brand_.png");
     background-size: 100% auto;
 }
 .share_wrap_{
@@ -245,7 +245,7 @@ video {
     height: calc(928 / 534 * 70vw);
     position: relative;
     overflow: hidden;
-    background: url("../image/share/brand_.png");
+    background: url("http://src.oppo10.nplusgroup.net/image/share/brand_.png");
     background-size: 100% auto;
 }
 /* 选择图片框 */
@@ -397,7 +397,7 @@ video {
 .english_words{
     position: absolute;
     background-size: 100% 100%;
-    background-image: url("/image/share/english_words.png");
+    background-image: url("http://src.oppo10.nplusgroup.net/image/share/english_words.png");
     background-repeat: no-repeat;
     width: 46vw;
     height: 6vw;
@@ -409,7 +409,7 @@ video {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     position: absolute;
     background-size: 100% 100%;
-    background-image: url("/image/share/share_btn.png");
+    background-image: url("http://src.oppo10.nplusgroup.net/image/share/share_btn.png");
     background-repeat: no-repeat;
     width: 47vw;
     height: 16vw;
@@ -429,7 +429,7 @@ video {
     top: calc(928 / 534 * 70vw);
     /* bottom: 0.815rem; */
     left: calc(50vw - 1.3rem / 2);
-    background-image: url('/image/enter_mu.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/enter_mu.png');
     background-size: 100% 100%;
     overflow: hidden;
     position: fixed;
@@ -442,7 +442,7 @@ video {
     top: calc(928 / 534 * 70vw + 0.59rem + 5vw);
     /* bottom: 0.26rem; */
     left: calc(50vw - 0.815rem / 2);
-    background-image: url('/image/login.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/login.png');
     background-size: 100% 100%;
     position: fixed;
     display: none;
@@ -453,7 +453,7 @@ video {
     height: 0.215rem;
     left: calc(50vw - 1.3rem / 2);
     bottom: 0.185rem;
-    background-image: url('/image/try.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/try.png');
     background-size: 100% 100%;
     background-color: inherit;
     position: fixed;
@@ -465,7 +465,7 @@ video {
     height: 0.425rem;
     left: calc(50vw - 1.045rem / 2);
     bottom: 0.91rem;
-    background-image: url('/image/turn_light.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/turn_light.png');
     background-size: 100% 100%;
     background-color: transparent;
     position: fixed;
@@ -477,7 +477,7 @@ video {
     height: 0.425rem;
     left: calc(50vw - 1.045rem / 2);
     bottom: 0.91rem;
-    background-image: url('/image/turn_light.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/turn_light.png');
     background-size: 100% 100%;
     background-color: transparent;
     position: fixed;
@@ -487,7 +487,7 @@ video {
     height: 0.215rem;
     left: calc(50vw - 1.46rem / 2);
     bottom: 0.26rem;
-    background-image: url('/image/close_light_words.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/close_light_words.png');
     background-size: 100% 100%;
     background-color: inherit;
     position: fixed;
@@ -505,7 +505,7 @@ video {
     height: calc(94 / 269 * 40vw);
     left: 8vw;
     top: calc(928 / 534 * 70vw + 1.7rem - 0.545rem - (183 / 268 * 40vw));
-    background-image: url('/image/share_my.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/share_my.png');
     background-size: 100% 100%;
     background-color: inherit;
     position: fixed;
@@ -516,7 +516,7 @@ video {
     height: 5vw;
     right: 31vw;
     top: calc(928 / 534 * 70vw + 26vw);
-    background-image: url('/image/share/build_my.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/share/build_my.png');
     background-size: 100% 100%;
     background-color: transparent;
     position: fixed;
@@ -528,7 +528,7 @@ video {
     height: calc(94 / 268 * 40vw);
     right: 8vw;
     top: calc(928 / 534 * 70vw + 1.7rem - 0.545rem - (183 / 268 * 40vw));
-    background-image: url('/image/change_my.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/change_my.png');
     background-size: 100% 100%;
     background-color: inherit;
     position: fixed;
@@ -632,7 +632,7 @@ video {
     width: 1.43rem;
     left: calc(50vw - 1.43rem / 2);
     bottom: 0.65rem;
-    background-image: url('/image/leave.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/leave.png');
     background-size: 100% 100%;
     background-color: transparent;
     position: fixed;
@@ -699,7 +699,7 @@ video {
 }
 #dark{
     /*display: none;*/
-    background-image: url("/image/popup/dark.png");
+    background-image: url("http://src.oppo10.nplusgroup.net/image/popup/dark.png");
     background-size: 100% 100%;
     background-color: transparent;
     width: 100%;
@@ -717,7 +717,7 @@ video {
     height: 0.175rem;
     right: calc(100vw / 4 - 1.51rem / 4 - 0.62rem / 2);
     position: fixed;
-    background-image: url("/image/popup/entrance.png");
+    background-image: url("http://src.oppo10.nplusgroup.net/image/popup/entrance.png");
     background-size: 100% 100%;
     background-color: transparent;
 }
@@ -729,7 +729,7 @@ video {
     width: 16vw;
     bottom: 11vw;
     position: fixed;
-    background-image: url("/image/popup/back.png");
+    background-image: url("http://src.oppo10.nplusgroup.net/image/popup/back.png");
     background-size: 100% 100%;
     background-color: transparent;
 }
@@ -761,7 +761,7 @@ video {
   height: 100%;
   /* bottom: 1rem; */
   background-color: transparent;
-  background-image: url("/image/popup/bg.png");
+  background-image: url("http://src.oppo10.nplusgroup.net/image/popup/bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -770,7 +770,7 @@ video {
     width: 10vw;
     height: calc(48/73 * 10vw);
 
-    background-image: url('/image/hand.png');
+    background-image: url('http://src.oppo10.nplusgroup.net/image/hand.png');
     background-size: 100% 100%;
 
     position: absolute;
