@@ -77,21 +77,19 @@ $(document).ready(function () {
     'http://src.oppo10.nplusgroup.net/image/close_.png',
     'http://src.oppo10.nplusgroup.net/image/try.png',
     'http://src.oppo10.nplusgroup.net/image/enter_mu.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/0/4.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/0/5.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/0/6.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/1/4.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/1/5.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/1/6.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/2/4.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/2/5.png',
-    'http://src.oppo10.nplusgroup.net/image/panorama/2/6.png',
-    'http://src.oppo10.nplusgroup.net/image/bg/close_0.png',
-    'http://src.oppo10.nplusgroup.net/image/bg/close_1.png',
-    'http://src.oppo10.nplusgroup.net/image/bg/close_2.png',
     'http://src.oppo10.nplusgroup.net/image/share_my.gif',
     // '/v/02-openin.mp4'
   ];
+  
+  // 关门图
+  items.push('http://src.oppo10.nplusgroup.net/image/bg/close_' + panorama + '.png');
+
+  // 全景图
+  items.push('http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/4.png');
+  items.push('http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/5.png');
+  items.push('http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/6.png');
+  
+
   var framesUrl = [];
   // 01. 靠近门的视频的资源
   // items.push('/audio/xlz/01-near.mp3');
@@ -247,7 +245,7 @@ function isPhoneTel(n){
 }
 function isNameDigit(s) {
   for(var i = 0; i < s.length; i++) {
-    if(isNaN(parseInt(s[i]) { //说明有一个不是数字
+    if(isNaN(parseInt(s[i]))) { //说明有一个不是数字
       return false;
     }
   }
