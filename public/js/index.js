@@ -244,12 +244,20 @@ function isPhoneTel(n){
         return false;
     }
 }
+function isNameDigit(s) {
+  for(var i = 0; i < s.length; i++) {
+    if(isNaN(parseInt(s[i]) { //说明有一个不是数字
+      return false;
+    }
+  }
+  return true;
+}
 function judge() {
   if (document.getElementById("pic").src == "http://oppo10.nplusgroup.net/image/choose_pic.png") {
     $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/error/err_pic.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
     upload_lock = false;
   }
-  else if ($("#name").val() == "" || !isNaN(parseInt($("#name").val()))) {
+  else if ($("#name").val() == "" || isNameDigit($("#name").val())) {
     $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/error/err_name.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
     upload_lock = false;
   }
