@@ -2,7 +2,8 @@ doctype html
 html(lang='en')
   head
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-    link(rel='stylesheet', href='http://src.oppo10.nplusgroup.net/css/index.css')
+    link(rel='stylesheet', href='/css/index.css')
+    //- link(rel='stylesheet', href='http://src.oppo10.nplusgroup.net/css/index.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=no')
     meta(name='apple-mobile-web-app-capable', content='yes')
     title 博物馆
@@ -12,7 +13,8 @@ html(lang='en')
     script(src='http://src.oppo10.nplusgroup.net/js/exif.js')
     script(src='http://src.oppo10.nplusgroup.net/js/uploadImage.js')
     script(src='http://src.oppo10.nplusgroup.net/js/ion.sound.min.js')
-    script(src='http://src.oppo10.nplusgroup.net/js/index.js')
+    //- script(src='http://src.oppo10.nplusgroup.net/js/index.js')
+    script(src='/js/index.js')
     .wrap
       input#wx_code(type='text', value=wx_code, style='display:none')
       input#wx_from(type='text', value=wx_from, style='display:none')
@@ -131,7 +133,7 @@ html(lang='en')
                 .container
       .page.p3
         #shareit
-          img#share_gif(src="./image/share_my.gif")
+          img#share_gif(src="http://src.oppo10.nplusgroup.net/image/share_my.gif")
         .share_wrap
             .share_name test
             .share_id 0001
