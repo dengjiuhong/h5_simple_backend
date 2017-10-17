@@ -129,23 +129,24 @@ $(document).ready(function () {
   // items.push(audio_3_url);
 
   // preload all resource
-  for (var i = 0; i < 75; i++) {
-    items.push('http://src.oppo10.nplusgroup.net/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
-    items.push('http://src.oppo10.nplusgroup.net/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
-    items.push('http://src.oppo10.nplusgroup.net/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
-  }
+  // for (var i = 0; i < 75; i++) {
+  //   items.push('http://src.oppo10.nplusgroup.net/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+  //   items.push('http://src.oppo10.nplusgroup.net/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+  //   items.push('http://src.oppo10.nplusgroup.net/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+  // }
   if (panorama === 0) {
     for (var i = 0; i < 75; i++) {
-      // items.push('/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+      items.push('http://src.oppo10.nplusgroup.net/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
       framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
     }
   } else if (panorama === 1) {
     for (var i = 0; i < 75; i++) {
-      // items.push('/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+      items.push('http://src.oppo10.nplusgroup.net/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
       framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
     }
   } else if (panorama === 2) {
     for (var i = 0; i < 75; i++) {
+      items.push('http://src.oppo10.nplusgroup.net/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
       framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
     }
   } else {
@@ -169,24 +170,24 @@ $(document).ready(function () {
   // var audio_4 = $("#audio-exit-" + panorama).get(0);
   // items.push(audio_4_url);
   // preload all resource
-  for (var i = 0; i < 63; i++) {
-    items.push('http://src.oppo10.nplusgroup.net/xlz/exit_0/exit_0_' + i + '.jpg');
-    items.push('http://src.oppo10.nplusgroup.net/xlz/exit_1/exit_1_' + i + '.jpg');
-    items.push('http://src.oppo10.nplusgroup.net/xlz/exit_2/exit_2_' + i + '.jpg');
-  }
+  // for (var i = 0; i < 63; i++) {
+  //   items.push('http://src.oppo10.nplusgroup.net/xlz/exit_0/exit_0_' + i + '.jpg');
+  //   items.push('http://src.oppo10.nplusgroup.net/xlz/exit_1/exit_1_' + i + '.jpg');
+  //   items.push('http://src.oppo10.nplusgroup.net/xlz/exit_2/exit_2_' + i + '.jpg');
+  // }
   if (panorama === 0) {
     for (var i = 0; i < 63; i++) {
-      // items.push('/xlz/exit_0/exit_0_' + i + '.jpg');
+      items.push('http://src.oppo10.nplusgroup.net/xlz/exit_0/exit_0_' + i + '.jpg');
       framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_0/exit_0_' + i + '.jpg');
     }
   } else if (panorama === 1) {
     for (var i = 0; i < 63; i++) {
-      // items.push('/xlz/exit_1/exit_1_' + i + '.jpg');
+      items.push('http://src.oppo10.nplusgroup.net/xlz/exit_1/exit_1_' + i + '.jpg');
       framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_1/exit_1_' + i + '.jpg');
     }
   } else if (panorama === 2) {
     for (var i = 0; i < 63; i++) {
-      // items.push('/xlz/exit_2/exit_2_' + i + '.jpg');
+      items.push('http://src.oppo10.nplusgroup.net/xlz/exit_2/exit_2_' + i + '.jpg');
       framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_2/exit_2_' + i + '.jpg');
     }
   } else {
@@ -860,62 +861,53 @@ function page2() {
   });
   //点击换张照片之后
   $(".change_my").click(function () {
-    // $("#audio-btn").get(0).play();
-    ion.sound.play("btn");
-    //解锁p2的渲染与p1的按钮
-    clickTimes = 1;
-    lock = 0;
-    //分享UI向上动
-    // $("#audio-up").get(0).play();
-    ion.sound.play("up");
-    $(".p3 > .share_my, .p3 > .change_my").fadeOut();
+    window.location.reload();
+    // ion.sound.play("btn");
+    // //解锁p2的渲染与p1的按钮
+    // clickTimes = 1;
+    // lock = 0;
+    // //分享UI向上动
+    // ion.sound.play("up");
+    // $(".p3 > .share_my, .p3 > .change_my").fadeOut();
 
-    $(".share_wrap").animate({ "margin-top": "-150vw" }, 2000, function () {
-      $(".p3").css("display", "none");//p3消失，p1出来
-      $(".p1").css("display", "block");
-      $(".upload_wrap").css("display", "block");//首页ui动
-      // $("#audio-down").get(0).play();
-      ion.sound.play("down");
-      $(".upload_wrap").animate({ "margin-top": "0px" }, 2000);
-      $("#in").fadeIn();
-      $("#welcome").fadeIn();
-      $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/login.png')", "width": "0.815rem", "left": "calc(50vw - 0.815rem / 2)"});
+    // $(".share_wrap").animate({ "margin-top": "-150vw" }, 2000, function () {
+    //   $(".p3").css("display", "none");//p3消失，p1出来
+    //   $(".p1").css("display", "block");
+    //   $(".upload_wrap").css("display", "block");//首页ui动
+    //   ion.sound.play("down");
+    //   $(".upload_wrap").animate({ "margin-top": "0px" }, 2000);
+    //   $("#in").fadeIn();
+    //   $("#welcome").fadeIn();
+    //   $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/login.png')", "width": "0.815rem", "left": "calc(50vw - 0.815rem / 2)"});
 
-      $("#turn_off").css("display", "block");
-      $("#light_word").css("display", "block");
-      $("#try").css({
-        "display": "block",
-        "opacity": "1"
-      });
-      $("#share_in").css("display", "none");
-      $(".share_pic").empty();
+    //   $("#turn_off").css("display", "block");
+    //   $("#light_word").css("display", "block");
+    //   $("#try").css({
+    //     "display": "block",
+    //     "opacity": "1"
+    //   });
+    //   $("#share_in").css("display", "none");
+    //   $(".share_pic").empty();
 
-      // $("#close_0").get(0).removeEventListener("timeupdate", temp_func_2);//关灯视频不再循环
-      // $("#close_0").get(0).addEventListener("timeupdate", temp_func);
-      xlz_videos['03-close'].option.onComplete = temp_func;
-      $("#close_0_c").hide();
-      // $("#exit_0").css("display", "none");
-      $("#exit_0_c").hide();
-      // $("#panorama_5").empty();
-      // $(".container").empty();
-      $("#turn_off").css("background-image", "url('http://src.oppo10.nplusgroup.net/image/turn_light.png')");
-      $(".p2").css("opacity", "0");
-      // $(".p2").hide();
-      close_lock = 0;
-      loop_twice = 0;
-      right_lock = 0;
-      left_lock = 0;
-      try_lock = 1;
-      $("#turn_off").css("display", "none");
-      $("#light_word").css("display", "none");
-      $("#try").css("display", "block");
-      $("#try").css("opacity", "1");
-      // 开放二次随机
-      xlz_videos['03-close'].pause();
-      xlz_videos['04-exit'].pause();
-      // xlz_videos['03-close'].reset();
-      // xlz_videos['04-exit'].reset();
-    });
+    //   xlz_videos['03-close'].option.onComplete = temp_func;
+    //   $("#close_0_c").hide();
+    //   $("#exit_0_c").hide();
+    //   $("#turn_off").css("background-image", "url('http://src.oppo10.nplusgroup.net/image/turn_light.png')");
+    //   $(".p2").css("opacity", "0");
+    //   // $(".p2").hide();
+    //   close_lock = 0;
+    //   loop_twice = 0;
+    //   right_lock = 0;
+    //   left_lock = 0;
+    //   try_lock = 1;
+    //   $("#turn_off").css("display", "none");
+    //   $("#light_word").css("display", "none");
+    //   $("#try").css("display", "block");
+    //   $("#try").css("opacity", "1");
+    //   // 开放二次随机
+    //   xlz_videos['03-close'].pause();
+    //   xlz_videos['04-exit'].pause();
+    // });
   });
   $(".share_my").click(function () {
     ion.sound.play("btn");
