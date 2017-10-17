@@ -11,8 +11,8 @@ var app = express();
 var uuid = require('node-uuid');
 var sprintf = require("sprintf-js").sprintf;
 var mongoClient = require('mongodb').MongoClient;
-// var url = "mongodb://root:Oppo-ZBC-db1@dds-uf6a1325246e89e41.mongodb.rds.aliyuncs.com:3717,dds-uf6a1325246e89e42.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4528113";
-var url = "mongodb://localhost";
+ var url = "mongodb://root:Oppo-ZBC-db1@dds-uf6a1325246e89e41.mongodb.rds.aliyuncs.com:3717,dds-uf6a1325246e89e42.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4528113";
+//var url = "mongodb://localhost";
 console.log("ready to connect!");
 mongoClient.connect(url, function(err, db) {
     if(err) {
