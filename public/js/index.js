@@ -210,6 +210,7 @@ $(document).ready(function () {
 
   var loader = new preload({
     items: items,
+    timeout: 120,
     // prefix: window.location,
     onStart: function (total) {
       console.log('start:' + total);
