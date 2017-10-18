@@ -84,6 +84,7 @@ function wx_init(data) {
   });
 }
 $(document).ready(function () {
+
   isappinstalled = $("#user_isappinstalled").val();
   user_from = $("#user_from").val();
   time = $("#user_time").val();
@@ -93,6 +94,8 @@ $(document).ready(function () {
   url = $("#pic_url").val();
   panorama = $("#museum").val();
 
+  var top_ = $(".share_wrap_").css("top");
+  $(".share_wrap_").css({"top": "", "bottom": "calc(100vw - " + top_ + "-" + $(".share_wrap_").css("height") + ")"});
 
     var wx_data = {};
   $.ajax({

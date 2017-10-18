@@ -239,11 +239,11 @@ video {
     background-size: 100% auto;
 }
 .share_wrap_{
-    margin: 0 auto;
-    margin-top: -500px;
+    left: 15vw;
+    top: 0;
     width: 70vw;
     height: calc(928 / 534 * 70vw);
-    position: relative;
+    position: absolute;
     overflow: hidden;
     background: url("http://oppofans-1252859479.file.myqcloud.com/public/image/share/brand_.png");
     background-size: 100% auto;
