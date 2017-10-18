@@ -64,7 +64,7 @@ $(document).ready(function () {
   if((window.screen.width * 600 / 375) > window.screen.height) {min_height = (window.screen.width * 600 / 375);}
   else min_height = window.screen.height;
   if(min_height != window.screen.height) {
-    $("#view").css("perspective-origin", "top");
+    $("#view").css("perspective-origin", "bottom");
     var temp = min_height - window.screen.height;
 
     var top1 = "0px"
