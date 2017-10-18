@@ -93,6 +93,10 @@ $(document).ready(function () {
   name = $("#user_name").val();
   url = $("#pic_url").val();
   panorama = $("#museum").val();
+  var min_height;
+  
+  if((window.screen.width * 375 / 600) > window.screen.height) min_height = (window.screen.width * 375 / 600);
+  else min_height = window.screen.height;
 
   var top_ = $(".share_wrap_").css("top");
   $(".share_wrap_").css({"top": "", "bottom": "calc(100vw - " + top_ + "-" + $(".share_wrap_").css("height") + ")"});
