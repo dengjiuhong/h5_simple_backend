@@ -7,6 +7,7 @@ var name;
 var url;
 var panorama;
 var lock = 0;
+var wrap_top;
 var loop_twice = 0;//循环两次后出现离开博物馆
 var try_lock = 1; //
 var left_lock = 0;
@@ -93,13 +94,35 @@ $(document).ready(function () {
   name = $("#user_name").val();
   url = $("#pic_url").val();
   panorama = $("#museum").val();
+
+  
   var min_height;
 
-  if((window.screen.width * 375 / 600) > window.screen.height) min_height = (window.screen.width * 375 / 600);
+  wrap_top = "0px";
+  if((window.screen.width * 600 / 375) > window.screen.height) {min_height = (window.screen.width * 600 / 375);}
   else min_height = window.screen.height;
+  if(min_height != window.screen.height) {
+    var temp = min_height - window.screen.height;
 
-  var top_ = $(".share_wrap_").css("top");
-  $(".share_wrap_").css({"top": "", "bottom": "calc(" + min_height +"px - " + top_ + "-" + $(".share_wrap_").css("height") + ")"});
+    var top1 = "0px"
+    top1 =  parseInt(top1.substr(0, top1.length - 2));
+    top1 -= temp;
+    top1 += "px";
+    wrap_top = top1;
+
+    var top2 = $(".build_my").css("top");
+    top2 =  parseInt(top2.substr(0, top2.length - 2));
+    top2 -= temp;
+    top2 += "px";
+    $(".build_my").css("top", top2);
+
+    var top3 = $(".share_btn_").css("top");
+    top3 =  parseInt(top3.substr(0, top3.length - 2));
+    top3 -= temp;
+    top3 += "px";
+    $(".share_btn_").css("top", top3);
+
+  }
 
     var wx_data = {};
   $.ajax({
@@ -192,7 +215,7 @@ $(document).ready(function () {
 function main() {
   var vx2 = xlz_videos["02-openin"];
   xlz_videos['02-openin'].initialize(function () {})
-  $(".share_wrap_").animate({ "margin-top": "0" }, 2000);
+  $(".share_wrap_").animate({ "top": wrap_top }, 2000);
   $(".p1").fadeIn("fast");
   $(".pic_")[0].src = "http://" + url;
   //跳转

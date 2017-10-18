@@ -206,12 +206,11 @@ video {
     background-image: url('http://oppofans-1252859479.file.myqcloud.com/public/image/close_.png');
 }
 .upload_wrap{
-    margin: 0 auto;
-    margin-top: -120vw;
-    margin-bottom: 1.5rem;
+    top: -120vw;
     width: 70vw;
+    left: 15vw;
     height: calc(812 / 480 * 70vw); /* 118.416667 */
-    position: relative;
+    position: absolute;
     overflow: hidden;
     background: url("http://oppofans-1252859479.file.myqcloud.com/public/image/new_brand.png");
     background-size: 100% auto;
@@ -229,18 +228,18 @@ video {
     border-radius: 2vw;
 }
 .share_wrap{
-    margin: 0 auto;
-    margin-top: -500px;
+    top: -120vw;
+    left: 15vw;
     width: 70vw;
     height: calc(928 / 534 * 70vw);
-    position: relative;
+    position: absolute;
     overflow: hidden;
     background: url("http://oppofans-1252859479.file.myqcloud.com/public/image/brand_.png");
     background-size: 100% auto;
 }
 .share_wrap_{
     left: 15vw;
-    top: 0;
+    top: -100vw;
     width: 70vw;
     height: calc(928 / 534 * 70vw);
     position: absolute;
@@ -351,13 +350,14 @@ video {
     font-size: 9px;
 }
 #share_id{
+    text-align: left;
     position: absolute;
     color: white;
     font-family: my_font;
-    width: 11.3vw;
+    width: 100%;
     height: 3.46vw;
     margin-top: 32.9vw;
-    margin-left: 12.5vw;
+    margin-left: 13vw;
     font-size: 9px;
 }
 .share_name{

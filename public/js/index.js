@@ -14,6 +14,7 @@ var loop_twice = 0;//循环两次后出现离开博物馆
 var try_lock = 1; //
 var left_lock = 0;
 var right_lock = 0;
+var wrap_top;
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
 
@@ -56,6 +57,54 @@ $(document).ready(function () {
   // $("#in, #welcome").fadeIn();
   // return false;
   // debug //
+
+  var min_height;
+
+  wrap_top = "0px";
+  if((window.screen.width * 600 / 375) > window.screen.height) {min_height = (window.screen.width * 600 / 375);}
+  else min_height = window.screen.height;
+  if(min_height != window.screen.height) {
+    var temp = min_height - window.screen.height;
+
+    var top1 = "0px"
+    top1 =  parseInt(top1.substr(0, top1.length - 2));
+    top1 -= temp;
+    top1 += "px";
+    wrap_top = top1;
+
+    var top2 = $("#in").css("top");
+    top2 =  parseInt(top2.substr(0, top2.length - 2));
+    top2 -= temp;
+    top2 += "px";
+    $("#in").css("top", top2);
+
+    var top3 = $("#welcome").css("top");
+    top3 =  parseInt(top3.substr(0, top3.length - 2));
+    top3 -= temp;
+    top3 += "px";
+    $("#welcome").css("top", top3);
+
+    var top4 = $(".share_my").css("top");
+    top4 =  parseInt(top4.substr(0, top4.length - 2));
+    top4 -= temp;
+    top4 += "px";
+    $(".share_my").css("top", top4);
+
+    var top5 = $(".change_my").css("top");
+    top5 =  parseInt(top5.substr(0, top5.length - 2));
+    top5 -= temp;
+    top5 += "px";
+    $(".change_my").css("top", top5);
+
+    /*var top6 = $("#rule_back").css("bottom");
+    top6 =  parseInt(top6.substr(0, top6.length - 2));
+    top6 = window.screen.height - top6;
+    top6 -= temp;
+    top6 += "px";
+    $("#rule_back").css("top", top6);*/
+
+    
+  }
 
   // 序列帧视频的画布大小
   $(".xlz_video").attr({
@@ -370,7 +419,7 @@ function main() {
             target.scrollIntoViewIfNeeded();
         },1000);
     });
-    $(".upload_wrap").animate({ "margin-top": "0" }, 2000);
+    $(".upload_wrap").animate({ "top": wrap_top }, 2000);
     // $("#audio-down").get(0).play();
     ion.sound.play("down");
     $("#in, #welcome").fadeIn();
@@ -411,7 +460,7 @@ function main() {
       ion.sound.play("open");
       vx2.play();
     }, 2000);
-    $(".upload_wrap").animate({ "margin-top": "-120vw" }, 2000, function () {
+    $(".upload_wrap").animate({ "top": "-120vw" }, 2000, function () {
       $(".upload_wrap").hide();
     });
     // $("#audio-up").get(0).play();
@@ -757,7 +806,7 @@ function page2() {
         $(".p3").css("display", "block");//p3出来，渲染
         $(".p3 > .share_my, .p3 > .change_my").hide();
         $(".p2").fadeOut(500, () => {
-          $(".share_wrap").animate({ "margin-top": "0px" }, 2000, function () { });
+          $(".share_wrap").animate({ "top": wrap_top }, 2000, function () { });
           // $("#audio-down").get(0).play();
           ion.sound.play("down");
           $(".share_pic").empty();
