@@ -43,7 +43,7 @@ ion.sound({
     { name: "panorama_1_exit" },
     { name: "panorama_2_exit" },
   ],
-  path: "http://src.oppo10.nplusgroup.net/audio/",
+  path: "http://oppofans-1252859479.file.myqcloud.com/public/audio/",
   // path: "/audio/",
   preload: true
 });
@@ -71,23 +71,23 @@ $(document).ready(function () {
   // 开始预加载
   $(".page.loading").show();
   var items = [
-    'http://src.oppo10.nplusgroup.net/image/close.png',
-    'http://src.oppo10.nplusgroup.net/image/new_brand.png',
-    'http://src.oppo10.nplusgroup.net/image/brand_.png',
-    'http://src.oppo10.nplusgroup.net/image/close_.png',
-    'http://src.oppo10.nplusgroup.net/image/try.png',
-    'http://src.oppo10.nplusgroup.net/image/enter_mu.png',
-    'http://src.oppo10.nplusgroup.net/image/share_my.gif',
+    'http://oppofans-1252859479.file.myqcloud.com/public/image/close.png',
+    'http://oppofans-1252859479.file.myqcloud.com/public/image/new_brand.png',
+    'http://oppofans-1252859479.file.myqcloud.com/public/image/brand_.png',
+    'http://oppofans-1252859479.file.myqcloud.com/public/image/close_.png',
+    'http://oppofans-1252859479.file.myqcloud.com/public/image/try.png',
+    'http://oppofans-1252859479.file.myqcloud.com/public/image/enter_mu.png',
+    'http://oppofans-1252859479.file.myqcloud.com/public/image/share_my.gif',
     // '/v/02-openin.mp4'
   ];
   
   // 关门图
-  items.push('http://src.oppo10.nplusgroup.net/image/bg/close_' + panorama + '.png');
+  items.push('http://oppofans-1252859479.file.myqcloud.com/public/image/bg/close_' + panorama + '.png');
 
   // 全景图
-  items.push('http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/4.png');
-  items.push('http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/5.png');
-  items.push('http://src.oppo10.nplusgroup.net/image/panorama/' + panorama + '/6.png');
+  items.push('http://oppofans-1252859479.file.myqcloud.com/public/image/panorama/' + panorama + '/4.png');
+  items.push('http://oppofans-1252859479.file.myqcloud.com/public/image/panorama/' + panorama + '/5.png');
+  items.push('http://oppofans-1252859479.file.myqcloud.com/public/image/panorama/' + panorama + '/6.png');
   
 
   var framesUrl = [];
@@ -95,8 +95,8 @@ $(document).ready(function () {
   // items.push('/audio/xlz/01-near.mp3');
   framesUrl = []; // 先清空上一个的
   for (var i = 0; i < 51; i++) {
-    items.push('http://src.oppo10.nplusgroup.net/xlz/01-near/01-near_' + i + '.jpg');
-    framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/01-near/01-near_' + i + '.jpg');
+    items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/01-near/01-near_' + i + '.jpg');
+    framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/01-near/01-near_' + i + '.jpg');
   }
   xlz_videos['01-near'] = new xlz({
     canvasTargetId: "my_video_1_x",
@@ -109,8 +109,8 @@ $(document).ready(function () {
   // 02. 开门的视频
   framesUrl = []; // 清空
   for (var i = 51; i < 93; i++) { // 坑爹下标
-    items.push('http://src.oppo10.nplusgroup.net/xlz/02-openin/02-openin_' + i + '.jpg');
-    framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/02-openin/02-openin_' + i + '.jpg');
+    items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/02-openin/02-openin_' + i + '.jpg');
+    framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/02-openin/02-openin_' + i + '.jpg');
   }
   xlz_videos['02-openin'] = new xlz({
     canvasTargetId: "my_video_1_x", // 复用画布
@@ -128,24 +128,24 @@ $(document).ready(function () {
 
   // preload all resource
   // for (var i = 0; i < 75; i++) {
-  //   items.push('http://src.oppo10.nplusgroup.net/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
-  //   items.push('http://src.oppo10.nplusgroup.net/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
-  //   items.push('http://src.oppo10.nplusgroup.net/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+  //   items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+  //   items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+  //   items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
   // }
   if (panorama === 0) {
     for (var i = 0; i < 75; i++) {
-      items.push('http://src.oppo10.nplusgroup.net/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
-      framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+      items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+      framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
     }
   } else if (panorama === 1) {
     for (var i = 0; i < 75; i++) {
-      items.push('http://src.oppo10.nplusgroup.net/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
-      framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+      items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+      framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
     }
   } else if (panorama === 2) {
     for (var i = 0; i < 75; i++) {
-      items.push('http://src.oppo10.nplusgroup.net/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
-      framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+      items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+      framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
     }
   } else {
     alert("博物馆不存在！");
@@ -169,24 +169,24 @@ $(document).ready(function () {
   // items.push(audio_4_url);
   // preload all resource
   // for (var i = 0; i < 63; i++) {
-  //   items.push('http://src.oppo10.nplusgroup.net/xlz/exit_0/exit_0_' + i + '.jpg');
-  //   items.push('http://src.oppo10.nplusgroup.net/xlz/exit_1/exit_1_' + i + '.jpg');
-  //   items.push('http://src.oppo10.nplusgroup.net/xlz/exit_2/exit_2_' + i + '.jpg');
+  //   items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_0/exit_0_' + i + '.jpg');
+  //   items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_1/exit_1_' + i + '.jpg');
+  //   items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_2/exit_2_' + i + '.jpg');
   // }
   if (panorama === 0) {
     for (var i = 0; i < 63; i++) {
-      items.push('http://src.oppo10.nplusgroup.net/xlz/exit_0/exit_0_' + i + '.jpg');
-      framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_0/exit_0_' + i + '.jpg');
+      items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_0/exit_0_' + i + '.jpg');
+      framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_0/exit_0_' + i + '.jpg');
     }
   } else if (panorama === 1) {
     for (var i = 0; i < 63; i++) {
-      items.push('http://src.oppo10.nplusgroup.net/xlz/exit_1/exit_1_' + i + '.jpg');
-      framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_1/exit_1_' + i + '.jpg');
+      items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_1/exit_1_' + i + '.jpg');
+      framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_1/exit_1_' + i + '.jpg');
     }
   } else if (panorama === 2) {
     for (var i = 0; i < 63; i++) {
-      items.push('http://src.oppo10.nplusgroup.net/xlz/exit_2/exit_2_' + i + '.jpg');
-      framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_2/exit_2_' + i + '.jpg');
+      items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_2/exit_2_' + i + '.jpg');
+      framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_2/exit_2_' + i + '.jpg');
     }
   } else {
     alert("博物馆不存在！");
@@ -252,20 +252,20 @@ function isNameDigit(s) {
   return true;
 }
 function judge() {
-  if (document.getElementById("pic").src == "http://oppo10.nplusgroup.net/image/choose_pic.png") {
-    $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/error/err_pic.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
+  if (document.getElementById("pic").src == "http://oppofans-1252859479.file.myqcloud.com/public/image/choose_pic.png") {
+    $("#welcome").css({"background-image":"url('http://oppofans-1252859479.file.myqcloud.com/public/image/error/err_pic.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
     upload_lock = false;
   }
   else if ($("#name").val() == "" || isNameDigit($("#name").val())) {
-    $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/error/err_name.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
+    $("#welcome").css({"background-image":"url('http://oppofans-1252859479.file.myqcloud.com/public/image/error/err_name.png')", "width": "1.3rem", "left": "calc(50vw - 1.3rem / 2)"});
     upload_lock = false;
   }
   else if ($('#phone').val() == "") {
-    $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/error/err_phone.png')", "width": "1.46rem", "left": "calc(50vw - 1.46rem / 2)"});
+    $("#welcome").css({"background-image":"url('http://oppofans-1252859479.file.myqcloud.com/public/image/error/err_phone.png')", "width": "1.46rem", "left": "calc(50vw - 1.46rem / 2)"});
     upload_lock = false;
   }
   else if (!isPhoneTel($('#phone').val())) {
-    $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/error/err_phone_.png')", "width": "1.46rem", "left": "calc(50vw - 1.46rem / 2)"});
+    $("#welcome").css({"background-image":"url('http://oppofans-1252859479.file.myqcloud.com/public/image/error/err_phone_.png')", "width": "1.46rem", "left": "calc(50vw - 1.46rem / 2)"});
     upload_lock = false;
   }
   else upload_lock = true;
@@ -560,7 +560,7 @@ function page2_init() {
 
   for (var i = 1; i <= BG_NUMBER; i++) {
     $("<div></div>").css({
-      "background": (i == 4 || i == 5 || i == 6) ? ("url(http://src.oppo10.nplusgroup.net/image/panorama/" + panorama + "/" + i + ".png) no-repeat") : "none",
+      "background": (i == 4 || i == 5 || i == 6) ? ("url(http://oppofans-1252859479.file.myqcloud.com/public/image/panorama/" + panorama + "/" + i + ".png) no-repeat") : "none",
       "background-size": "100% auto",
       "position": "absolute",
       "opacity": (i == 4 || i == 5 || i == 6) ? "1" : "0",
@@ -619,15 +619,15 @@ function twice() {
       // items.push(audio_3_url);
       if (panorama === 0) {
         for (var i = 0; i < 75; i++) {
-          framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
+          framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-01-tech-74/museum-tech_' + i + '.jpg');
         }
       } else if (panorama === 1) {
         for (var i = 0; i < 75; i++) {
-          framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
+          framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-02-fashion-74/museum-fashion_' + i + '.jpg');
         }
       } else if (panorama === 2) {
         for (var i = 0; i < 75; i++) {
-          framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
+          framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/museum-03-classic-74/museum-classic_' + i + '.jpg');
         }
       } else {
         alert("博物馆不存在！");
@@ -650,15 +650,15 @@ function twice() {
       // items.push(audio_4_url);
       if (panorama === 0) {
         for (var i = 0; i < 63; i++) {
-          framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_0/exit_0_' + i + '.jpg');
+          framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_0/exit_0_' + i + '.jpg');
         }
       } else if (panorama === 1) {
         for (var i = 0; i < 63; i++) {
-          framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_1/exit_1_' + i + '.jpg');
+          framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_1/exit_1_' + i + '.jpg');
         }
       } else if (panorama === 2) {
         for (var i = 0; i < 63; i++) {
-          framesUrl.push('http://src.oppo10.nplusgroup.net/xlz/exit_2/exit_2_' + i + '.jpg');
+          framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/exit_2/exit_2_' + i + '.jpg');
         }
       } else {
         alert("博物馆不存在！");
@@ -753,7 +753,7 @@ function page2() {
         // audio.play();
         ion.sound.play("audio");
         $(".wrap").addClass("p1-fake");
-        $("#view").css("background-image", "url('http://src.oppo10.nplusgroup.net/image/close_.png')");
+        $("#view").css("background-image", "url('http://oppofans-1252859479.file.myqcloud.com/public/image/close_.png')");
         $(".p3").css("display", "block");//p3出来，渲染
         $(".p3 > .share_my, .p3 > .change_my").hide();
         $(".p2").fadeOut(500, () => {
@@ -828,7 +828,7 @@ function page2() {
     ion.sound.play("close");
     if (close_lock != 0) return;
     close_lock++;
-    $("#turn_off").css("background-image", "url('http://src.oppo10.nplusgroup.net/image/close_light.png')");
+    $("#turn_off").css("background-image", "url('http://oppofans-1252859479.file.myqcloud.com/public/image/close_light.png')");
     //全景消失
     $("#turn_off").css("opacity", "1");
     $("#turn_off").animate({ "opacity": "0" }, 1500);
@@ -876,7 +876,7 @@ function page2() {
     //   $(".upload_wrap").animate({ "margin-top": "0px" }, 2000);
     //   $("#in").fadeIn();
     //   $("#welcome").fadeIn();
-    //   $("#welcome").css({"background-image":"url('http://src.oppo10.nplusgroup.net/image/login.png')", "width": "0.815rem", "left": "calc(50vw - 0.815rem / 2)"});
+    //   $("#welcome").css({"background-image":"url('http://oppofans-1252859479.file.myqcloud.com/public/image/login.png')", "width": "0.815rem", "left": "calc(50vw - 0.815rem / 2)"});
 
     //   $("#turn_off").css("display", "block");
     //   $("#light_word").css("display", "block");
@@ -890,7 +890,7 @@ function page2() {
     //   xlz_videos['03-close'].option.onComplete = temp_func;
     //   $("#close_0_c").hide();
     //   $("#exit_0_c").hide();
-    //   $("#turn_off").css("background-image", "url('http://src.oppo10.nplusgroup.net/image/turn_light.png')");
+    //   $("#turn_off").css("background-image", "url('http://oppofans-1252859479.file.myqcloud.com/public/image/turn_light.png')");
     //   $(".p2").css("opacity", "0");
     //   // $(".p2").hide();
     //   close_lock = 0;
