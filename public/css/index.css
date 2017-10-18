@@ -663,6 +663,7 @@ video {
 }
 
 .huadong {
+    overflow: hidden;
     width: 100%;
     height:0.15rem;
     bottom: 2.785rem;
