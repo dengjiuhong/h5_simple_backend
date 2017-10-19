@@ -88,8 +88,7 @@
         this.calculate();
         this.ctx.clearRect(0, 0, this.width, this.height);
         this.ctx.drawImage(this.frames[0],
-            //  this.showX, this.showY, this.sourceWidth, this.sourceHeight,
-             this.showX, 0, this.sourceWidth, this.sourceHeight, // 置顶显示
+             this.showX, this.showY, this.sourceWidth, this.sourceHeight,
              0, 0, this.canvasWidth, this.canvasHeight
         );
         // console.log("画好封面了");
@@ -98,7 +97,7 @@
         }
     }
 
-    // 计算一下宽高和显示位置，默认居中靠顶部显示（background-position: center top）
+    // 计算一下宽高和显示位置，默认居中靠底部显示（background-position: center bottom）
     // 非默认的没写
     xlz.prototype.calculate = function() {
         this.canvasWidth = $("#" + this.option.canvasTargetId).width();
@@ -217,8 +216,7 @@
             this.ctx.clearRect(0, 0, this.width, this.height);
             // console.log(this.canvasWidth, this.canvasHeight);
             this.ctx.drawImage(this.frames[this.currentTimes],
-                //  this.showX, this.showY, this.sourceWidth, this.sourceHeight,
-                this.showX, 0, this.sourceWidth, this.sourceHeight, // 置顶显示
+                 this.showX, this.showY, this.sourceWidth, this.sourceHeight,
                  0, 0, this.canvasWidth, this.canvasHeight
                 );
         }
