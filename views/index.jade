@@ -21,24 +21,26 @@ html(lang='en')
       input#wx_from(type='text', value=wx_from, style='display:none')
       input#wx_isappinstalled(type='text', value=wx_isappinstalled, style='display:none')
       .page.loading
-        img.loading_head(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_head.png')
-        .progress
-          img.background(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_bg.png')
-          img.bar(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_bar.png')
-        img.loading_title(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_title.png')
-        .huadong
-          .notice_active
-            ul
-              li.notice_active_ch
-                span -多试几次，你会开启新的精彩-
-              li.notice_active_ch
-                span -惊喜总是需要等待-
-              li.notice_active_ch
-                span -这一次，OPPO为你准备了点不一样的-
-              li.notice_active_ch
-                span -别急，还需要一丢丢的时间-
-              li.notice_active_ch
-                span -Hey！你对新品期待吗？-
+        //- img.loading_head(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_head.png')
+        //- img.loading_title(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_title.png')
+        .loading_box
+          .loading_opening
+          .progress
+            img.background(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_bg.png')
+            img.bar(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_bar.png')
+        //- .huadong
+        //-   .notice_active
+        //-     ul
+        //-       li.notice_active_ch
+        //-         span -多试几次，你会开启新的精彩-
+        //-       li.notice_active_ch
+        //-         span -惊喜总是需要等待-
+        //-       li.notice_active_ch
+        //-         span -这一次，OPPO为你准备了点不一样的-
+        //-       li.notice_active_ch
+        //-         span -别急，还需要一丢丢的时间-
+        //-       li.notice_active_ch
+        //-         span -Hey！你对新品期待吗？-
       .page.p0
         img(src='http://oppofans-1252859479.file.myqcloud.com/public/image/close.png', style='display:none')
         canvas#my_video_1_x.xlz_video
