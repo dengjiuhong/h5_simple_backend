@@ -118,26 +118,50 @@ video {
 /* 加载页面 */
 .loading {
     background-color: #1e1e1e;
+    background-image: url("http://oppofans-1252859479.file.myqcloud.com/public/image/first_poster.jpg");
+    background-position: center bottom;
+    background-size: 100% auto;
     color: white;
 }
-.loading > .loading_head {
+
+.loading > .loading_box {
+    width: 38vw;
+    height: calc(112/302 * 38vw);
+    position: fixed;
+    bottom: 0.2rem;
+    left: calc(50vw - 38vw / 2);
+    background-image: url('/image/loading_box.png');
+    background-size: 100% 100%;
+}
+
+.loading_box > .loading_opening {
+    width: 26vw;
+    height: calc(22 / 207 * 26vw);
+    position: absolute;
+    top: 4vw;
+    left: calc(38vw / 2 - 26vw / 2);
+    background-image: url("/image/loading_opening.png");
+    background-size: 100% 100%;
+}
+
+/* .loading > .loading_head {
     width: 20vw;
     height: 20vw;
 
     position: fixed;
     bottom: 3.325rem;
     left: calc(50vw - 20vw / 2);
-}
-.loading > .progress {
+} */
+.loading .progress {
     width: 28.4vw;
     height: 1.467vw;
-    position: fixed;
-    bottom: 3.06rem;
-    left: calc(50vw - 28.4vw / 2);
+    position: absolute;
+    bottom: 4vw;
+    left: calc(38vw / 2 - 28.4vw / 2);
 }
 
-.loading > .progress > .background,
-.loading > .progress > .bar {
+.loading .progress > .background,
+.loading .progress > .bar {
     width: 28.4vw;
     height: 1.467vw;
     position: absolute;
@@ -147,25 +171,25 @@ video {
     overflow: hidden;
 }
 
-.loading > .progress > .bar {
+.loading .progress > .bar {
     width: 5%;
 }
 
-.loading > .loading_text {
+/* .loading > .loading_text {
     width: 19.73vw;
     height: 2.4vw;
     position: fixed;
     bottom: 2.85rem;
     left: calc(50vw - 19.73vw / 2);
-}
+} */
 
-.loading > .loading_title {
+/* .loading > .loading_title {
     width: 35vw;
     height: calc(17/265 * 35vw);
     position: fixed;
     bottom: 0.31rem;
     left: calc(50vw - 35vw / 2);
-}
+} */
 
 /* 第一页 */
 #first_enter_box {
