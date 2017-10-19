@@ -49,7 +49,6 @@ ion.sound({
   preload: true
 });
 
-
 $(document).ready(function () {
   // debug //
   // $(".page.p1").show();
