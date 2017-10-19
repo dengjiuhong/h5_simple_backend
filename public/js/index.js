@@ -444,12 +444,6 @@ function main() {
     // audio_3.load();
     // audio_4.load();
     // $("#audio-btn").get(0).play();
-    (function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?50f9f38e50a3908a104ad7bf5776c925";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-  })();
     judge();
     user_phone = $("#phone").val();
   user_name = $("#name").val();
@@ -486,6 +480,12 @@ function main() {
     ion.sound.play("up");
     $("#in, #welcome").fadeOut();
     vx2.option.onComplete = function () {
+  (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?50f9f38e50a3908a104ad7bf5776c925";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
       // v2.css("display", "none");
       //v2.fadeIn("fast");
       // $("#audio-in").get(0).play();
