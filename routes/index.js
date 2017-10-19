@@ -98,6 +98,7 @@ function getNowFormatDate() {
 			var doc = {
 				name: req.body.name,
 				phone: req.body.phone,
+				time: timestamp,
 				id: id
 			};
 			console.log("插入数据库信息：" + JSON.stringify(doc));
