@@ -37,11 +37,11 @@ module.exports = function (db) {
 		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/weixin&response_type=code&scope=snsapi_base#wechat_redirect");
 	})
 	router.get('/weixin', function (req, res, next) {
-		var openid;
-		var nickname;
-		var time;
+		// var openid;
+		// var nickname;
+		// var time;
 
-		var access_token;
+		// var access_token;
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
 		var isappinstalled = req.query.isappinstalled;
@@ -55,9 +55,9 @@ module.exports = function (db) {
 				//console.log(JSON.stringify(json));
 				var config = require('./config');
 				//access_token = json.access_token;
-				access_token = config.access_token;
-				openid = json.openid;
-				time = getNowFormatDate();
+				var access_token = config.access_token;
+				var openid = json.openid;
+				var time = getNowFormatDate();
 				var url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" + access_token + "&openid=" + openid + "&lang=zh_CN";
 				fetch(url_).then(function (res) {
 					return res.json();
@@ -78,7 +78,7 @@ module.exports = function (db) {
 							}
 						});
 					}
-				})
+				});
 			}
 		})
 
