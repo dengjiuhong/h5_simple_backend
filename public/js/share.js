@@ -183,8 +183,8 @@ $(document).ready(function () {
   var framesUrl = [];
   // 02. 开门的视频
   for (var i = 51; i < 93; i++) { // 坑爹下标
-    items.push('/xlz/02-openin/02-openin_' + i + '.jpg');
-    framesUrl.push('/xlz/02-openin/02-openin_' + i + '.jpg');
+    items.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/02-openin/02-openin_' + i + '.jpg');
+    framesUrl.push('http://oppofans-1252859479.file.myqcloud.com/public/xlz/02-openin/02-openin_' + i + '.jpg');
   }
   xlz_videos['02-openin'] = new xlz({
     canvasTargetId: "my_video_1_x", // 复用画布
