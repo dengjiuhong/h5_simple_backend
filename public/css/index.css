@@ -201,6 +201,7 @@ video {
     background-color: rgba(0, 0, 0, 0);
     background-position: center bottom;
     font-size: 12px;
+    position: fixed;
 }
 .p3{
     background-image: url('http://oppofans-1252859479.file.myqcloud.com/public/image/close_.png');
