@@ -85,7 +85,14 @@ function wx_init(data) {
   });
 }
 $(document).ready(function () {
-
+  var _hmt = _hmt || [];
+  (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d601d3fe405c5175728cfeec0076133a";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+  
   isappinstalled = $("#user_isappinstalled").val();
   user_from = $("#user_from").val();
   time = $("#user_time").val();

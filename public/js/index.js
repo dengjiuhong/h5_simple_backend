@@ -57,7 +57,12 @@ $(document).ready(function () {
   // $("#in, #welcome").fadeIn();
   // return false;
   // debug //
-
+  (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e4246cc71ba53e0789561b3f773c3051";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
   var min_height;
 
   wrap_top = "0px";
@@ -424,6 +429,12 @@ function main() {
     // $("#audio-down").get(0).play();
     ion.sound.play("down");
     $("#in, #welcome").fadeIn();
+  (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?703d9ba5b729f0f7f6378a7e66827100";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
   }
 
   $("#in").click(function () {
@@ -432,6 +443,12 @@ function main() {
     // audio_3.load();
     // audio_4.load();
     // $("#audio-btn").get(0).play();
+    (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?50f9f38e50a3908a104ad7bf5776c925";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
     judge();
     user_phone = $("#phone").val();
   user_name = $("#name").val();
