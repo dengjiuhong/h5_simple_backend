@@ -87,6 +87,15 @@ module.exports = function (db) {
 	router.get('/weibo', function (req, res, next) {
 		res.render('index', {});
 	});
+	router.get('/oppo', function (req, res, next) {
+		res.render('index', {});
+	});
+	router.get('/office', function (req, res, next) {
+		res.render('index', {});
+	});
+	router.get('/brower', function (req, res, next) {
+		res.render('index', {});
+	});
 	router.post('/pic_storage', function (req, res, next) {
 		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';
 		var secretKey = 'apGpki_F2-Ps7ZtuLjQWBEdy4PmFrTnC1R-vh-aA';
