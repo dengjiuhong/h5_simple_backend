@@ -339,10 +339,6 @@ $(document).ready(function () {
     },
     callback: function (total) {
       $(".page.loading").fadeOut();
-      // 让视频们也加载一下，可能要按顺序来
-      // for(var vi in xlz_videos) {
-      //   xlz_videos[vi].initialize();
-      // }
       xlz_videos['01-near'].initialize(function () {
         $(".wrap").removeClass("p0-fake");
       });
