@@ -882,7 +882,7 @@ function page2() {
         $("#view").css("background-image", "url('http://oppofans-1252859479.file.myqcloud.com/public/image/close_.png')");
         $(".p3").css("display", "block");//p3出来，渲染
         $(".p3 > .share_my, .p3 > .change_my").hide();
-        $(".p2").fadeOut(500, () => {
+        $(".p2").fadeOut(500, function() {
           $(".share_wrap").animate({ "top": wrap_top }, 2000, function () { });
           // $("#audio-down").get(0).play();
           ion.sound.play("down");
