@@ -904,7 +904,7 @@ function page2() {
               "object-position": "center"
             }).appendTo(".share_pic");
           $(".p3 > .share_my, .p3 > .change_my").fadeIn(600);
-          setTimeout(() => { $(".wrap").removeClass("p1-fake"); }, 500);
+          setTimeout(function() { $(".wrap").removeClass("p1-fake"); }, 500);
           // 清理一下
           $(".p2").css('opacity', '0');
           $("#cube .container").html("");
@@ -914,7 +914,7 @@ function page2() {
     //});
 
     // 中间照片消失
-    $("#bigCube > img").fadeOut(500, () => {
+    $("#bigCube > img").fadeOut(500, function() {
       $("#bigCube > img").remove();
     });
 
