@@ -87,19 +87,19 @@ module.exports = function (db) {
 	});
 	router.get('/weibo', function (req, res, next) {
 		//res.render('index_', {platform_name: "weibo"});
-		res.render('index_')
+		res.render('index')
 	});
 	router.get('/oppo', function (req, res, next) {
 		//res.render('index_', {platform_name: "oppo"});
-		res.render('index_')
+		res.render('index')
 	});
 	router.get('/office', function (req, res, next) {
 		//res.render('index_', {platform_name: "office"});
-		res.render('index_')
+		res.render('index')
 	});
 	router.get('/brower', function (req, res, next) {
 		//res.render('index_', {platform_name: "brower"});
-		res.render('index_')
+		res.render('index')
 	});
 	router.post('/pic_storage', function (req, res, next) {
 		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';
