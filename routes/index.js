@@ -121,7 +121,7 @@ module.exports = function (db) {
 		collection_museum.insertOne(doc, function (err) {
 			//console.log("用户数据"+JSON.stringify(doc));
 			if (err) {
-				console.log("创建用户出错：" + err);
+				//console.log("创建用户出错：" + err);
 				res.send({
 					ok: false,
 					mes: "服务器出错"
@@ -171,7 +171,7 @@ module.exports = function (db) {
 					config.jsticket = json.ticket;
 					//console.log("jsticket = " + config.jsticket)
 					fs.writeFile('routes/config.json', JSON.stringify(config), function (err) {
-						if (err) console.log(err);
+						//if (err) console.log(err);
 						//console.log("新的token存储完毕!");
 					});
 				});
