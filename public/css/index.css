@@ -121,7 +121,7 @@ video {
     top: 0;
     z-index: 200;
     background-repeat: no-repeat;
-    background-image: url('/image/pc/code.jpg');
+    background-image: url('http://oppofans-1252859479.file.myqcloud.com/public/image/pc/code.jpg');
     background-size: 100% 100%;
 }
 #oppo_flag{
@@ -131,7 +131,7 @@ video {
     right: 10vw;
     position: absolute;
     background-repeat: no-repeat;
-    background-image: url('/image/pc/oppo.png');
+    background-image: url('http://oppofans-1252859479.file.myqcloud.com/public/image/pc/oppo.png');
     background-size: 100% 100%;
     z-index: 201;
 }
