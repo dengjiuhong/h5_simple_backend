@@ -158,7 +158,7 @@ $(document).ready(function () {
 
   // 开始预加载
   $(".page.loading").show();
-  var items = [
+  /*var items = [
     'http://oppofans-1252859479.file.myqcloud.com/public/image/close.png',
     'http://oppofans-1252859479.file.myqcloud.com/public/image/new_brand.png',
     'http://oppofans-1252859479.file.myqcloud.com/public/image/brand_.png',
@@ -290,7 +290,7 @@ $(document).ready(function () {
       console.log("03. 结束了");
     },
   });
-
+*/
 
   // 防止加载完闪屏
 
