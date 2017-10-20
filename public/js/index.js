@@ -112,7 +112,6 @@ function platform_tongji (i1, i2, i3, i4, i5) {
   }
 }
 $(document).ready(function () {
-  alert("1");
   if(IsPC()) {
     $("#pc_qrcode").css("display", "block");
     return;
@@ -189,7 +188,6 @@ $(document).ready(function () {
   });
   // 全局 用来存放序列帧视频
   window.xlz_videos = {};
-alert("2");
   // 开始预加载
   $(".page.loading").show();
   var items = [
@@ -325,7 +323,6 @@ alert("2");
     },
   });
 
-alert("3");
   // 防止加载完闪屏
   setTimeout(function() {
       var loader = new preload({
@@ -333,7 +330,6 @@ alert("3");
     timeout: 120,
     // prefix: window.location,
     onStart: function (total) {
-      alert("4");
       console.log('start:' + total);
     },
     process: function (percent) {
