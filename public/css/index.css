@@ -77,7 +77,7 @@ video {
     background-color: #000000;
 }
 /* 防止闪屏 */
-.wrap.p0-fakeh {
+.wrap.p0-fake {
     background: url("http://oppofans-1252859479.file.myqcloud.com/public/image/first_poster.jpg");
     background-position: center bottom;
     background-size: 100% auto;
