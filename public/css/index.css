@@ -147,12 +147,12 @@ video {
     /* width: 38vw;
     height: calc(112/302 * 38vw); */
     
-    width: 1.51rem;
-    height: 0.56rem;
+    width: 20vw;
+    height: 10vw;
 
     position: fixed;
     bottom: 0.2rem;
-    left: calc(50vw - 1.51rem / 2);
+    left: 40vw;
     background-image: url('http://oppofans-1252859479.file.myqcloud.com/public/image/loading_box.png');
     background-size: 100% 100%;
 }
