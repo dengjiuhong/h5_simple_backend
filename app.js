@@ -4,15 +4,21 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var ejs = require('ejs');
+const compression = require('compression');
 
 // 连接MongoDB
 var app = express();
+app.engine('html', ejs.__express);
+app.use(compression());
+app.use(express.static('./views', {
+    maxAge: 864000  // one day
+}));
 var uuid = require('node-uuid');
 var sprintf = require("sprintf-js").sprintf;
 var mongoClient = require('mongodb').MongoClient;
 var url = "mongodb://root:Oppo-ZBC-db1@dds-uf6a1325246e89e41.mongodb.rds.aliyuncs.com:3717,dds-uf6a1325246e89e42.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4528113";
-// var url = "mongodb://localhost";
+ //var url = "mongodb://localhost";
 console.log("ready to connect!");
 mongoClient.connect(url, function(err, db) {
     if(err) {
@@ -26,7 +32,7 @@ mongoClient.connect(url, function(err, db) {
     
     // view engine setup
     app.set('views', path.join(__dirname, 'views'));
-    app.set('view engine', 'jade');
+    app.set('view engine', 'html');
     
     app.use(function(req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");

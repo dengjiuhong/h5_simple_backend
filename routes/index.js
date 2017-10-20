@@ -82,19 +82,24 @@ module.exports = function (db) {
 			}
 		})
 
-		res.render('index', { wx_code: code, wx_isappinstalled: isappinstalled, wx_from: from, platform_name: "weixin"});
+		//res.render('index_', { wx_code: code, wx_isappinstalled: isappinstalled, wx_from: from, platform_name: "weixin"});
+		res.render('index')
 	});
 	router.get('/weibo', function (req, res, next) {
-		res.render('index', {platform_name: "weibo"});
+		//res.render('index_', {platform_name: "weibo"});
+		res.render('index_')
 	});
 	router.get('/oppo', function (req, res, next) {
-		res.render('index', {platform_name: "oppo"});
+		//res.render('index_', {platform_name: "oppo"});
+		res.render('index_')
 	});
 	router.get('/office', function (req, res, next) {
-		res.render('index', {platform_name: "office"});
+		//res.render('index_', {platform_name: "office"});
+		res.render('index_')
 	});
 	router.get('/brower', function (req, res, next) {
-		res.render('index', {platform_name: "brower"});
+		//res.render('index_', {platform_name: "brower"});
+		res.render('index_')
 	});
 	router.post('/pic_storage', function (req, res, next) {
 		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';

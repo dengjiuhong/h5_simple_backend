@@ -19,6 +19,11 @@ var platform;
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
 
+
+//wx的参数
+var wx_code;
+var wx_from;
+var wx_isappinstalled;
 // 随机数
 panorama = Math.floor(Math.random() * 3);
 // preload(panorama);
@@ -49,7 +54,25 @@ ion.sound({
   // path: "/audio/",
   preload: true
 });
-
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+function GetQueryString(name) { 
+var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i"); 
+var r = window.location.search.substr(1).match(reg); 
+if (r!=null) return (r[2]); return null; 
+}
 function platform_tongji (i1, i2, i3, i4, i5) {
   if(platform == "weixin") {
     (function() {
@@ -89,8 +112,15 @@ function platform_tongji (i1, i2, i3, i4, i5) {
   }
 }
 $(document).ready(function () {
+  if(IsPC()) {
+    $("#pc_qrcode").css("display", "block");
+    return;
+  }
+
     $(".wrap").addClass("p0-fake");
-  platform = $("#platform_name").val();
+  platform = window.location.pathname;
+
+  platform = platform.substr(1, platform.length);
   platform_tongji('e4246cc71ba53e0789561b3f773c3051', 
                   'a9b475921c43e0e1620e961f9e90718a',
                   'e7fd5bc2bd7f00577683f4bb731fd360',
@@ -177,7 +207,7 @@ $(document).ready(function () {
   items.push('http://oppofans-1252859479.file.myqcloud.com/public/image/panorama/' + panorama + '/5.png');
   items.push('http://oppofans-1252859479.file.myqcloud.com/public/image/panorama/' + panorama + '/6.png');
   
-/*
+
   var framesUrl = [];
   // 01. 靠近门的视频的资源
   // items.push('/audio/xlz/01-near.mp3');
@@ -290,7 +320,7 @@ $(document).ready(function () {
       console.log("03. 结束了");
     },
   });
-*/
+
 
   // 防止加载完闪屏
 
@@ -313,9 +343,9 @@ $(document).ready(function () {
       // for(var vi in xlz_videos) {
       //   xlz_videos[vi].initialize();
       // }
-      /*xlz_videos['01-near'].initialize(function () {
+      xlz_videos['01-near'].initialize(function () {
         $(".wrap").removeClass("p0-fake");
-      });*/
+      });
       main();
       // alert("加载完了！");
     }
@@ -390,9 +420,9 @@ function main() {
     url: 'http://101.132.91.4:80/wx',
     type: 'GET',
     data: {
-        code: $("#wx_code").val(),
-        from: $('#wx_from').val(),
-        isappinstalled: $("#wx_isappinstalled").val()
+        code: GetQueryString("code"),
+        from: GetQueryString("from"),
+        isappinstalled: GetQueryString("isappinstalled")
     },
     success: function (data) {
       console.log(JSON.stringify(data));
