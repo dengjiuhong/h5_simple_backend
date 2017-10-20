@@ -119,6 +119,7 @@ $(document).ready(function () {
 
     $(".wrap").addClass("p0-fake");
   platform = window.location.pathname;
+  platform = platform.substr(1, platform.length);
   if(platform == "weibo") {
     $("#btn_upload").attr("capture",'camera');
   }
