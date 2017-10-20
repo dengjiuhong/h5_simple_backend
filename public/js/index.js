@@ -304,7 +304,7 @@ $(document).ready(function () {
     process: function (percent) {
       // console.log(percent);
       if (percent > 5) {
-        $('.loading > .progress > .bar').css('width', percent + '%');
+        $('.loading .progress > .bar').css('width', percent + '%');
       }
     },
     callback: function (total) {
