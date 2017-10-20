@@ -2,7 +2,7 @@ doctype html
 html(lang='en')
   head
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-    link(rel='stylesheet', href='/css/index.css')
+    link(rel='stylesheet', href='http://oppofans-1252859479.file.myqcloud.com/public/css/index.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=no')
     meta(name='apple-mobile-web-app-capable', content='yes')
     script(src='https://hm.baidu.com/hm.js?668b36b1b3a8a135ed9fdcfb0254e2a1')
@@ -26,24 +26,11 @@ html(lang='en')
       input#user_from(type='text', value=user_from, style='display:none')
       input#user_isappinstalled(type='text', value=user_isappinstalled, style='display:none')
       .page.loading
-        img.loading_head(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_head.png')
-        .progress
-          img.background(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_bg.png')
-          img.bar(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_bar.png')
-        img.loading_title(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_title.png')
-        .huadong
-          .notice_active
-            ul
-              li.notice_active_ch
-                span -多试几次，你会开启新的精彩-
-              li.notice_active_ch
-                span -惊喜总是需要等待-
-              li.notice_active_ch
-                span -这一次，OPPO为你准备了点不一样的-
-              li.notice_active_ch
-                span -别急，还需要一丢丢的时间-
-              li.notice_active_ch
-                span -Hey！你对新品期待吗？-
+        .loading_box
+          .loading_opening
+          .progress
+            img.background(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_bg.png')
+            img.bar(src='http://oppofans-1252859479.file.myqcloud.com/public/image/loading_bar.png')
       .page.p0
         canvas#my_video_1_x.xlz_video
       .page.p1
