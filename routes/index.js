@@ -35,7 +35,7 @@ module.exports = function (db) {
 	/* GET home page. */
 	router.get('/', function (req, res, next) {
 		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/weixin&response_type=code&scope=snsapi_base#wechat_redirect");
-	})
+	});
 	router.get('/weixin', function (req, res, next) {
 		// var openid;
 		// var nickname;
