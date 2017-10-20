@@ -158,7 +158,7 @@ $(document).ready(function () {
 
   // 开始预加载
   $(".page.loading").show();
-  /*var items = [
+  var items = [
     'http://oppofans-1252859479.file.myqcloud.com/public/image/close.png',
     'http://oppofans-1252859479.file.myqcloud.com/public/image/new_brand.png',
     'http://oppofans-1252859479.file.myqcloud.com/public/image/brand_.png',
@@ -177,7 +177,7 @@ $(document).ready(function () {
   items.push('http://oppofans-1252859479.file.myqcloud.com/public/image/panorama/' + panorama + '/5.png');
   items.push('http://oppofans-1252859479.file.myqcloud.com/public/image/panorama/' + panorama + '/6.png');
   
-
+/*
   var framesUrl = [];
   // 01. 靠近门的视频的资源
   // items.push('/audio/xlz/01-near.mp3');
