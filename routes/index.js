@@ -215,7 +215,7 @@ module.exports = function (db) {
 
 
 	router.get('/my_museum', function (req, res, next) {
-		var accessKey = 'Hm1G1QAOH_6H-5qlnJAaXkKY9_qbvVseCJEvfjsz';
+		/*var accessKey = 'Hm1G1QAOH_6H-5qlnJAaXkKY9_qbvVseCJEvfjsz';
 		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
 		var name = decodeURI(req.query.name);
 		var museum = req.query.museum;
@@ -231,8 +231,8 @@ module.exports = function (db) {
 		var publicBucketDomain = 'oxm6vcxz3.bkt.clouddn.com';
 		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, req.query.name + time + ".jpg");
 		//console.log(publicDownloadUrl);
-		//console.log(museum);
-		res.render('share', { pic_url: publicDownloadUrl, museum: museum, user_name: name, user_id: id, user_code: code, user_time: time, user_from: user_from, user_isappinstalled: user_isappinstalled });
+		//console.log(museum);*/
+		res.render('share');
 	});
 	return router;
 };

@@ -84,6 +84,11 @@ function wx_init(data) {
     });
   });
 }
+function GetQueryString(name) { 
+var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i"); 
+var r = window.location.search.substr(1).match(reg); 
+if (r!=null) return (r[2]); return null; 
+}
 $(document).ready(function () {
   var _hmt = _hmt || [];
   (function() {
@@ -93,14 +98,14 @@ $(document).ready(function () {
   s.parentNode.insertBefore(hm, s);
   })();
   
-  isappinstalled = $("#user_isappinstalled").val();
-  user_from = $("#user_from").val();
-  time = $("#user_time").val();
-  code = $("#user_code").val();
-  id = $("#user_id").val();
-  name = $("#user_name").val();
-  url = $("#pic_url").val();
-  panorama = $("#museum").val();
+  isappinstalled = GetQueryString("isappinstalled");
+  user_from = GetQueryString("from");
+  time = GetQueryString("time");
+  code = GetQueryString("code");
+  id = GetQueryString("id");
+  name = GetQueryString("name");
+  url = "oxm6vcxz3.bkt.clouddn.com/" + encodeURI(name) + time + ".jpg";
+  panorama = GetQueryString("museum");
 
   
   var min_height;
