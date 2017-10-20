@@ -40,27 +40,6 @@ html, body, input {
         font-size: 110px !important;
     }
 }
-#pc_qrcode {
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 200;
-    background-repeat: no-repeat;
-    background-image: url('/image/pc/code.jpg');
-    background-size: 100% 100%;
-}
-#oppo_flag{
-    top: 0;
-    width: 10vw;
-    height: 6vw;
-    right: 10vw;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-image: url('/image/pc/oppo.png');
-    background-size: 100% 100%;
-    z-index: 201;
-}
 video {
     width: 100%;
     height: 100%;
@@ -98,7 +77,7 @@ video {
     background-color: #000000;
 }
 /* 防止闪屏 */
-.wrap.p0-fake {
+.wrap.p0-fakeh {
     background: url("http://oppofans-1252859479.file.myqcloud.com/public/image/first_poster.jpg");
     background-position: center bottom;
     background-size: 100% auto;
@@ -145,22 +124,25 @@ video {
     color: white;
 }
 .loading > .loading_box {
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    /* width: 38vw;
+    height: calc(112/302 * 38vw); */
+    
     width: 1.51rem;
     height: 0.56rem;
+
     position: fixed;
-    bottom: 0.18rem;
+    bottom: 0.2rem;
     left: calc(50vw - 1.51rem / 2);
     background-image: url('http://oppofans-1252859479.file.myqcloud.com/public/image/loading_box.png');
     background-size: 100% 100%;
 }
 
 .loading_box > .loading_opening {
-    width: 33vw;
-    height: calc(22 / 207 * 33vw);
+    width: 1.1rem;
+    height: calc(22 / 207 * 1.1rem);
     position: absolute;
-    top: 5vw;
-    left: calc(1.51rem / 2 - 33vw / 2);
+    top: 0.16rem;
+    left: calc(1.51rem / 2 - 1.1rem / 2);
     background-image: url("http://oppofans-1252859479.file.myqcloud.com/public/image/loading_opening.png");
     background-size: 100% 100%;
 }
@@ -174,17 +156,17 @@ video {
     left: calc(50vw - 20vw / 2);
 } */
 .loading .progress {
-    width: 36.4vw;
-    height: 2vw;
+    width: 1.15rem;
+    height: 1.467vw;
     position: absolute;
-    bottom: 5vw;
-    left: calc(1.51rem / 2 - 36.4vw / 2);
+    bottom: 0.16rem;
+    left: calc(1.51rem / 2 - 1.15rem / 2);
 }
 
 .loading .progress > .background,
 .loading .progress > .bar {
-    width: 36.4vw;
-    height: 2vw;
+    width: 1.15rem;
+    height: 1.467vw;
     position: absolute;
     top: 0;
     left: 0;
