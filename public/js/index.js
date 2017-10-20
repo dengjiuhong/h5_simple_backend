@@ -89,6 +89,7 @@ function platform_tongji (i1, i2, i3, i4, i5) {
   }
 }
 $(document).ready(function () {
+    $(".wrap").addClass("p0-fake");
   platform = $("#platform_name").val();
   platform_tongji('e4246cc71ba53e0789561b3f773c3051', 
                   'a9b475921c43e0e1620e961f9e90718a',
@@ -292,7 +293,6 @@ $(document).ready(function () {
 
 
   // 防止加载完闪屏
-  $(".wrap").addClass("p0-fake");
 
   var loader = new preload({
     items: items,
