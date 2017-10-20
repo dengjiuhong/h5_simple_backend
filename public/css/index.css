@@ -144,23 +144,23 @@ video {
     background-size: 100% auto;
     color: white;
 }
-
 .loading > .loading_box {
-    width: 38vw;
-    height: calc(112/302 * 38vw);
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width: 1.51rem;
+    height: 0.56rem;
     position: fixed;
-    bottom: 0.2rem;
-    left: calc(50vw - 38vw / 2);
+    bottom: 0.18rem;
+    left: calc(50vw - 1.51rem / 2);
     background-image: url('http://oppofans-1252859479.file.myqcloud.com/public/image/loading_box.png');
     background-size: 100% 100%;
 }
 
 .loading_box > .loading_opening {
-    width: 26vw;
-    height: calc(22 / 207 * 26vw);
+    width: 33vw;
+    height: calc(22 / 207 * 33vw);
     position: absolute;
-    top: 4vw;
-    left: calc(38vw / 2 - 26vw / 2);
+    top: 5vw;
+    left: calc(1.51rem / 2 - 33vw / 2);
     background-image: url("http://oppofans-1252859479.file.myqcloud.com/public/image/loading_opening.png");
     background-size: 100% 100%;
 }
@@ -174,17 +174,17 @@ video {
     left: calc(50vw - 20vw / 2);
 } */
 .loading .progress {
-    width: 28.4vw;
-    height: 1.467vw;
+    width: 36.4vw;
+    height: 2vw;
     position: absolute;
-    bottom: 4vw;
-    left: calc(38vw / 2 - 28.4vw / 2);
+    bottom: 5vw;
+    left: calc(1.51rem / 2 - 36.4vw / 2);
 }
 
 .loading .progress > .background,
 .loading .progress > .bar {
-    width: 28.4vw;
-    height: 1.467vw;
+    width: 36.4vw;
+    height: 2vw;
     position: absolute;
     top: 0;
     left: 0;
