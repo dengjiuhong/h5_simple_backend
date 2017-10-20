@@ -70,6 +70,9 @@ video {
     z-index: 2;
 }
 .wrap {
+    background-image: url("http://oppofans-1252859479.file.myqcloud.com/public/image/first_poster.jpg");
+    background-position: center bottom;
+    background-size: 100% auto;
     width: 100%;
     height: 100%;
     overflow: hidden;
