@@ -15,6 +15,7 @@ var try_lock = 1; //
 var left_lock = 0;
 var right_lock = 0;
 var wrap_top;
+var platform;
 // 顶栏高度
 var topHeight = window.screen.height - window.innerHeight;
 
@@ -49,20 +50,51 @@ ion.sound({
   preload: true
 });
 
+function platform_tongji (i1, i2, i3, i4, i5) {
+  if(platform == "weixin") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i1;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  } else if(platform == "weibo") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i2;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  } else if(platform == "oppo") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i3;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  } else if(platform == "office") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i4;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  } else if(platform == "brower") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i5;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  }
+}
 $(document).ready(function () {
-  // debug //
-  // $(".page.p1").show();
-  // $(".upload_wrap").animate({"margin-top": "0"}, 1000);
-  // $("#in, #welcome").fadeIn();
-  // return false;
-  // debug //
-/*var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?e4246cc71ba53e0789561b3f773c3051";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();*/
+  platform = $("#platform_name").val();
+  platform_tongji('e4246cc71ba53e0789561b3f773c3051', 
+                  'a9b475921c43e0e1620e961f9e90718a',
+                  'e7fd5bc2bd7f00577683f4bb731fd360',
+                  '3beb18eb5b4a426a808d17c51302846b',
+                  'c269d465728cd92c394f429598c47668');
   var min_height;
 
   wrap_top = "0px";
@@ -272,11 +304,15 @@ $(document).ready(function () {
     process: function (percent) {
       // console.log(percent);
       if (percent > 5) {
-        $('.loading .progress > .bar').css('width', percent + '%');
+        $('.loading > .progress > .bar').css('width', percent + '%');
       }
     },
     callback: function (total) {
       $(".page.loading").fadeOut();
+      // 让视频们也加载一下，可能要按顺序来
+      // for(var vi in xlz_videos) {
+      //   xlz_videos[vi].initialize();
+      // }
       xlz_videos['01-near'].initialize(function () {
         $(".wrap").removeClass("p0-fake");
       });
@@ -286,7 +322,7 @@ $(document).ready(function () {
   });
 });
 function isPhoneTel(n){
-    var reg = /^1[3|4|5|8]\d{9}$/;
+    var reg = /^1[3|4|5|7|8]\d{9}$/;
     if(!!(reg.test(n))){
         return true;
     }
@@ -364,6 +400,11 @@ function main() {
       wx_init(wx_data);
     }
   });
+    platform_tongji('703d9ba5b729f0f7f6378a7e66827100', 
+                  'd0f2c584d1444c52395b1192eb2df407',
+                  '1d65a9511f47c94740773bcde4d513d2',
+                  '1c6a96c3cfa242d552de04e06090cd60',
+                  '5263fdb444136a0ebe3ff6ff97bc65be');
   $("#huadong-bg").hide();
   $("#rule_btn").click(function() {
     ion.sound.play("btn");
@@ -425,12 +466,6 @@ function main() {
     // $("#audio-down").get(0).play();
     ion.sound.play("down");
     $("#in, #welcome").fadeIn();
-  (function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?703d9ba5b729f0f7f6378a7e66827100";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-  })();
   }
 
   $("#in").click(function () {
@@ -475,12 +510,11 @@ function main() {
     ion.sound.play("up");
     $("#in, #welcome").fadeOut();
     vx2.option.onComplete = function () {
-  (function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?50f9f38e50a3908a104ad7bf5776c925";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-  })();
+    platform_tongji('50f9f38e50a3908a104ad7bf5776c925', 
+                  '2a4bc09f3d4d634fe9092b44399ac528',
+                  '849c7649290a3ecff33ef2ac5e2e14ac',
+                  '924f99b7068c7cc7d68ff98215526739',
+                  'f0a6fb9b477bde2a787f7a854d332a10');
       // v2.css("display", "none");
       //v2.fadeIn("fast");
       // $("#audio-in").get(0).play();

@@ -16,6 +16,7 @@ html(lang='en')
     //- script(src='http://oppofans-1252859479.file.myqcloud.com/public/js/index.js')
     script(src='/js/index.js')
     .wrap
+      input#platform_name(type='text', value=platform_name, style='display:none')
       input#wx_code(type='text', value=wx_code, style='display:none')
       input#wx_from(type='text', value=wx_from, style='display:none')
       input#wx_isappinstalled(type='text', value=wx_isappinstalled, style='display:none')
@@ -105,7 +106,7 @@ html(lang='en')
       .page.p1
         .upload_wrap
           .upload
-            input#btn_upload(type='file', accept='image/*', onchange='selectFileImage(this);')
+            input#btn_upload(type='file', capture="camera", accept='image/*', onchange='selectFileImage(this);')
             img#pic(src="http://oppofans-1252859479.file.myqcloud.com/public/image/choose_pic.png")
           .name_block
             .name 姓名
