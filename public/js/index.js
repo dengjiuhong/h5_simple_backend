@@ -326,8 +326,8 @@ $(document).ready(function () {
 
 
   // 防止加载完闪屏
-
-  var loader = new preload({
+  setTimeout(function() {
+      var loader = new preload({
     items: items,
     timeout: 120,
     // prefix: window.location,
@@ -349,6 +349,7 @@ $(document).ready(function () {
       // alert("加载完了！");
     }
   });
+  }, 1000);
 });
 function isPhoneTel(n){
     var reg = /^1[3|4|5|7|8]\d{9}$/;
