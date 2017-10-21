@@ -58,7 +58,7 @@ function wx_init(data) {
   }); 
   wx.ready(function () {
     wx.onMenuShareTimeline({
-      title: '快来看' + name +'的照片博物馆', // 分享标题
+      title: '快来看' + decodeURI(name) +'的照片博物馆', // 分享标题
       link: 'http://oppo10.nplusgroup.net/my_museum?name=' + name + '&museum=' + panorama + '&time=' + time + '&id=' + id + '&code=' + code, // 分享链接
       imgUrl: "http://oppo10.nplusgroup.net/image/500px.jpg", // 分享图标
       success: function () {
@@ -69,7 +69,7 @@ function wx_init(data) {
       }
     });
     wx.onMenuShareAppMessage({
-      title: '快来看'+ name+'的照片博物馆', // 分享标题
+      title: '快来看'+ decodeURI(name) +'的照片博物馆', // 分享标题
       desc: '里面有神奇的...', // 分享描述
       link: 'http://oppo10.nplusgroup.net/my_museum?name=' + name + '&museum=' + panorama + '&time=' + time + '&id=' + id + '&code=' + code, // 分享链接
       imgUrl: "http://oppo10.nplusgroup.net/image/500px.jpg",// 分享图标
