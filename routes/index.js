@@ -38,7 +38,7 @@ module.exports = function (db) {
 	router.get('/', function (req, res, next) {
 		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/weixin&response_type=code&scope=snsapi_base#wechat_redirect");
 	});
-	router.get('/weixin', function (req, res, next) {
+	router.get('/weixin', routeCache.cacheSeconds(60), function (req, res, next) {
 		res.render('index');
 	});
 	router.get('/weibo', routeCache.cacheSeconds(60), function (req, res, next) {
@@ -209,24 +209,7 @@ module.exports = function (db) {
 
 
 
-	router.get('/my_museum', function (req, res, next) {
-		/*var accessKey = 'Hm1G1QAOH_6H-5qlnJAaXkKY9_qbvVseCJEvfjsz';
-		var secretKey = '8ivHPx_1nf7ITSwkidRnp_fgL93QcEWOjUNoml70';
-		var name = decodeURI(req.query.name);
-		var museum = req.query.museum;
-		var code = req.query.code;
-		var time = req.query.time;
-		var user_from = req.query.from;
-		var user_isappinstalled = req.query.isappinstalled;
-		//console.log("/my_museum:" + code + "time" + time);
-		var id = req.query.id;
-		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
-		var config = new qiniu.conf.Config();
-		var bucketManager = new qiniu.rs.BucketManager(mac, config);
-		var publicBucketDomain = 'oxm6vcxz3.bkt.clouddn.com';
-		var publicDownloadUrl = bucketManager.publicDownloadUrl(publicBucketDomain, req.query.name + time + ".jpg");
-		//console.log(publicDownloadUrl);
-		//console.log(museum);*/
+	router.get('/my_museum', routeCache.cacheSeconds(60), function (req, res, next) {
 		res.render('share');
 	});
 	return router;
