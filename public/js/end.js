@@ -97,7 +97,7 @@ function main() {
    $("#end_page").show();
   });
   $("#end_page_btn").click(function() {
-    CloseWebPage();
+    WeixinJSBridge.call('closeWindow');
   })
 }
 function CloseWebPage(){
