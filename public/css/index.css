@@ -709,6 +709,35 @@ video {
   left: 0;
   z-index: 105;
 }
+#pic_error{
+  -webkit-user-select: none;
+  user-select: none;
+  /*display: none;*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  text-align: center;
+  top: 0;
+  left: 0;
+  z-index: 105;
+}
+#pic_error_wrap{
+    width: 50vw;
+    height: 30vw;
+    left: 25vw;
+    top: 35vw;
+    position: absolute;
+    background-image: url("/image/error/err_pic_type.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 106;
+}
+#pic_error_btn{
+    z-index: 107;
+    width: 50vw;
+    height: 15vw;
+}
 
 .huadong {
     overflow: hidden;

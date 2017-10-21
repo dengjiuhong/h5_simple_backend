@@ -104,7 +104,7 @@ $(document).ready(function () {
   code = GetQueryString("code");
   id = GetQueryString("id");
   name = GetQueryString("name");
-  url = "oxm6vcxz3.bkt.clouddn.com/" + encodeURI(name) + time + ".jpg";
+  url = "oxm6vcxz3.bkt.clouddn.com/" + decodeURI(name) + time + ".jpg";
   panorama = GetQueryString("museum");
 
   
@@ -159,7 +159,7 @@ $(document).ready(function () {
   var s = share_id_adjust(id);
   $("#share_id").html(s);//
 
-  var s = share_name_adjust($("#user_name").val());
+  var s = share_name_adjust(name);
   document.getElementsByClassName("share_name_")[0].innerHTML = s;
   // debug //
   // $(".page.p1").show();
