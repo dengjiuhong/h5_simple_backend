@@ -91,15 +91,15 @@ module.exports = function (db) {
 		//res.render('index_', {platform_name: "weibo"});
 		res.render('index')
 	});
-	router.get('/oppo', function (req, res, next) {
+	router.get('/oppo', routeCache.cacheSeconds(60), function (req, res, next) {
 		//res.render('index_', {platform_name: "oppo"});
 		res.render('index')
 	});
-	router.get('/office', function (req, res, next) {
+	router.get('/office', routeCache.cacheSeconds(60), function (req, res, next) {
 		//res.render('index_', {platform_name: "office"});
 		res.render('index')
 	});
-	router.get('/brower', function (req, res, next) {
+	router.get('/brower', routeCache.cacheSeconds(60), function (req, res, next) {
 		//res.render('index_', {platform_name: "brower"});
 		res.render('index')
 	});
