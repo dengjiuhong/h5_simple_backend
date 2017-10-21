@@ -4,6 +4,8 @@ var fetch = require('node-fetch');
 var fs = require('fs');
 var sha1 = require('sha1');
 
+var routeCache = require('route-cache');
+
 function getNowFormatDate() {
 	var date = new Date();
 	var seperator1 = "-";
@@ -85,7 +87,7 @@ module.exports = function (db) {
 		//res.render('index_', { wx_code: code, wx_isappinstalled: isappinstalled, wx_from: from, platform_name: "weixin"});
 		res.render('index')
 	});
-	router.get('/weibo', function (req, res, next) {
+	router.get('/weibo', routeCache.cacheSeconds(60), function (req, res, next) {
 		//res.render('index_', {platform_name: "weibo"});
 		res.render('index')
 	});
