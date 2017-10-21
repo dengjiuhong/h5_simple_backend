@@ -77,7 +77,7 @@ $(document).ready(function () {
   }, 1000);
 });
 function main() {
-  var wx_data = {};
+  /*var wx_data = {};
   $.ajax({
     url: 'http://101.132.91.4:80/wx',
     type: 'GET',
@@ -91,8 +91,29 @@ function main() {
       wx_data = data;
       wx_init(wx_data);
     }
-  });
+  });*/
   $("#first_enter_box").click(function () {
-   alert("end1");
+   $("#end_page").show();
   });
+  $("#end_page_btn").click(function() {
+    CloseWebPage();
+  })
+}
+function CloseWebPage(){
+ if (navigator.userAgent.indexOf("MSIE") > 0) {
+  if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+   window.opener = null;
+   window.close();
+  } else {
+   window.open('', '_top');
+   window.top.close();
+  }
+ }
+ else if (navigator.userAgent.indexOf("Firefox") > 0) {
+  window.location.href = 'about:blank ';
+ } else {
+  window.opener = null;
+  window.open('', '_self', '');
+  window.close();
+ }
 }
