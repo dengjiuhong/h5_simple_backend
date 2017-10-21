@@ -159,7 +159,7 @@ $(document).ready(function () {
   var s = share_id_adjust(id);
   $("#share_id").html(s);//
 
-  var s = share_name_adjust(name);
+  var s = share_name_adjust(decodeURI(name));
   document.getElementsByClassName("share_name_")[0].innerHTML = s;
   // debug //
   // $(".page.p1").show();
