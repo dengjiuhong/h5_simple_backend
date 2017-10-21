@@ -123,7 +123,6 @@ $(document).ready(function () {
   if(platform == "weibo") {
     $("#btn_upload").attr("capture",'camera');
   }
-  platform = platform.substr(1, platform.length);
   platform_tongji('e4246cc71ba53e0789561b3f773c3051', 
                   'a9b475921c43e0e1620e961f9e90718a',
                   'e7fd5bc2bd7f00577683f4bb731fd360',
