@@ -34,8 +34,8 @@ ion.sound({
 function share_id_adjust(user_id) {
   var zeros = "";
   var s = user_id + "";
-  if(s.length > 5) return s;
-  for(var i = 1; i <= (5 - s.length); i++){
+  if(s.length > 6) return "NO: " + s;
+  for(var i = 1; i <= (6 - s.length); i++){
     zeros += "0";
   }
   return "NO: " + zeros + s;
