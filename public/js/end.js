@@ -97,13 +97,26 @@ function main() {
    $("#end_page").show();
   });
   $("#end_page_btn").click(function() {
-    WeixinJSBridge.call('closeWindow');
+    if(isWeiXin()) {
+      WeixinJSBridge.call('closeWindow');
+    }
+    else {
+      CloseWebPage();
+    }
   })
 }
+function isWeiXin(){ 
+var ua = window.navigator.userAgent.toLowerCase(); 
+if(ua.match(/MicroMessenger/i) == 'micromessenger'){ 
+return true; 
+}else{ 
+return false; 
+} 
+} 
 function CloseWebPage(){
 var userAgent = navigator.userAgent;
 if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Chrome") !=-1) { 
-window.location.href="about:blank";
+window.location.href="about:blank";window.close();
 }else if(userAgent.indexOf('Android') > -1 || userAgent.indexOf('Linux') > -1){ 
 window.opener=null;window.open("about:blank",'_self','').close();
 }else { 
