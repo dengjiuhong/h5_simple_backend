@@ -502,12 +502,21 @@ function main() {
     // audio_4.load();
     // $("#audio-btn").get(0).play();
     judge();
+
     user_phone = $("#phone").val();
   user_name = $("#name").val();
     if (clickTimes == 1 && upload_lock) {
       clickTimes++;
       requestTimes++;
       console.log("clickTimes" + clickTimes);
+        xlz_videos['03-close'].initialize(); // 偷偷初始化
+  console.log("vx3初始化");
+
+  // $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
+
+  // var vx4 = xlz_videos['04-exit'];
+  xlz_videos['04-exit'].initialize(); // 偷偷初始化
+  console.log("vx4初始化");
       requestPic();
     }
     ion.sound.play("btn");
@@ -823,14 +832,6 @@ function page2() {
   // 关灯视频
   // $("#close_0").get(0).src = './v/close_' + panorama + '.mp4';
   // var vx3 = xlz_videos['03-close'];
-  xlz_videos['03-close'].initialize(); // 偷偷初始化
-  console.log("vx3初始化");
-
-  // $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
-
-  // var vx4 = xlz_videos['04-exit'];
-  xlz_videos['04-exit'].initialize(); // 偷偷初始化
-  console.log("vx4初始化");
 
   var already_ended = false;
   // 无限循环的
