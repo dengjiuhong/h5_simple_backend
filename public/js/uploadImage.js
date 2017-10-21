@@ -21,9 +21,10 @@ function selectFileImage(fileObj) {
 function FileImageControl(file){
 	if (file) {
 		console.log("正在上传,请稍后...");
-		var rFilter = /^(image\/jpeg|image\/png|image\/gif|image\/wepb)$/i; // 检查图片格式
+		var rFilter = /^(image\/jpeg|image\/png)$/i; // 检查图片格式
 		if (!rFilter.test(file.type)) {
 			//showMyTips("请选择jpeg、png格式的图片", false);
+			alert("图片格式不支持\n请更换jpg,png格式的图片");
 			return;
 		}
 		// var URL = URL || webkitURL;

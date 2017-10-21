@@ -37,69 +37,23 @@ module.exports = function (db) {
 		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/weixin&response_type=code&scope=snsapi_base#wechat_redirect");
 	});
 	router.get('/weixin', function (req, res, next) {
-		// var openid;
-		// var nickname;
-		// var time;
-
-		// var access_token;
-		var app_id = "wxdeb5dc277a2c46bf";
-		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
-		var isappinstalled = req.query.isappinstalled;
-		var from = req.query.from;
-		var code = req.query.code;
-		var url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + app_id + "&secret=" + app_secret + "&code=" + code + "&grant_type=authorization_code";
-		fetch(url).then(function (res) {
-			return res.json();
-		}).then(function (json) {
-			if (json.access_token) {
-				//console.log(JSON.stringify(json));
-				var config = require('./config');
-				//access_token = json.access_token;
-				var access_token = config.access_token;
-				var openid = json.openid;
-				var time = getNowFormatDate();
-				var url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" + access_token + "&openid=" + openid + "&lang=zh_CN";
-				fetch(url_).then(function (res) {
-					return res.json();
-				}).then(function (json) {
-					//console.log("data_json:"+JSON.stringify(json));
-					if (json.subscribe == 1) {
-						// var adminDb = db.admin();
-						// var collection = db.collection("subscribe_user");
-						var user_data = {
-							open_id: openid,
-							nickname: json.nickname,
-							time: time
-						}
-						//console.log(JSON.stringify(user_data));
-						collection_subscribe_user.findOne({ openid: openid }, function (err, user) {
-							if (!user) {
-								collection_subscribe_user.insertOne(user_data);
-							}
-						});
-					}
-				});
-			}
-		})
-
-		//res.render('index_', { wx_code: code, wx_isappinstalled: isappinstalled, wx_from: from, platform_name: "weixin"});
-		res.render('index')
+		res.render('index');
 	});
 	router.get('/weibo', function (req, res, next) {
 		//res.render('index_', {platform_name: "weibo"});
-		res.render('index')
+		res.render('index');
 	});
 	router.get('/oppo', function (req, res, next) {
 		//res.render('index_', {platform_name: "oppo"});
-		res.render('index')
+		res.render('index');
 	});
 	router.get('/office', function (req, res, next) {
 		//res.render('index_', {platform_name: "office"});
-		res.render('index')
+		res.render('index');
 	});
 	router.get('/brower', function (req, res, next) {
 		//res.render('index_', {platform_name: "brower"});
-		res.render('index')
+		res.render('index');
 	});
 	router.post('/pic_storage', function (req, res, next) {
 		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';
@@ -208,6 +162,45 @@ module.exports = function (db) {
 		result.signature = signature;
 		result.timestamp = timestamp;
 		result.random_str = random_str;
+
+
+		//存一下关注公众号的用户信息
+		var subscribe_url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + app_id + "&secret=" + app_secret + "&code=" + code + "&grant_type=authorization_code";
+		fetch(subscribe_url).then(function (res) {
+			return res.json();
+		}).then(function (json) {
+			if (json.access_token) {
+				//console.log(JSON.stringify(json));
+				var config = require('./config');
+				//access_token = json.access_token;
+				var subscribe_access_token = config.access_token;
+				var openid = json.openid;
+				var time = getNowFormatDate();
+				var subscribe_url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" + subscribe_access_token + "&openid=" + openid + "&lang=zh_CN";
+				fetch(subscribe_url_).then(function (res) {
+					return res.json();
+				}).then(function (json) {
+					//console.log("data_json:"+JSON.stringify(json));
+					if (json.subscribe == 1) {
+						// var adminDb = db.admin();
+						// var collection = db.collection("subscribe_user");
+						var user_data = {
+							open_id: openid,
+							nickname: json.nickname,
+							time: time
+						}
+						//console.log(JSON.stringify(user_data));
+						collection_subscribe_user.findOne({ openid: openid }, function (err, user) {
+							if (!user) {
+								collection_subscribe_user.insertOne(user_data);
+							}
+						});
+					}
+				});
+			}
+		})
+
+
 		res.send(result);
 	});
 
