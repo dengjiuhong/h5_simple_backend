@@ -24,7 +24,8 @@ function FileImageControl(file){
 		var rFilter = /^(image\/jpeg|image\/png)$/i; // 检查图片格式
 		if (!rFilter.test(file.type)) {
 			//showMyTips("请选择jpeg、png格式的图片", false);
-			alert("图片格式不支持\n请更换jpg,png格式的图片");
+			$("#pic_error").show();
+			$("#pic_error_btn").click(function(){$("#pic_error").fadeOut()});
 			return;
 		}
 		// var URL = URL || webkitURL;
