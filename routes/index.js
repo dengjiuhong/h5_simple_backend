@@ -38,7 +38,7 @@ module.exports = function (db) {
 	router.get('/', function (req, res, next) {
 		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/weixin&response_type=code&scope=snsapi_base#wechat_redirect");
 	});
-	router.get('/end', function(req, res. next) {
+	router.get('/end', function(req, res, next) {
 		res.render('end');
 	})
 	router.get('/weixin', routeCache.cacheSeconds(60), function (req, res, next) {
