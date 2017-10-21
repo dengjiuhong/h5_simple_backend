@@ -101,20 +101,14 @@ function main() {
   })
 }
 function CloseWebPage(){
- if (navigator.userAgent.indexOf("MSIE") > 0) {
-  if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
-   window.opener = null;
-   window.close();
-  } else {
-   window.open('', '_top');
-   window.top.close();
-  }
- }
- else if (navigator.userAgent.indexOf("Firefox") > 0) {
-  window.location.href = 'about:blank ';
- } else {
-  window.opener = null;
-  window.open('', '_self', '');
-  window.close();
- }
+var userAgent = navigator.userAgent; 
+if (userAgent.indexOf(“Firefox”) != -1 || userAgent.indexOf(“Chrome”) !=-1) { 
+window.location.href=”about:blank”; 
+}else if(userAgent.indexOf(‘Android’) > -1 || userAgent.indexOf(‘Linux’) > -1){ 
+window.opener=null;window.open(‘about:blank’,’_self’,”).close(); 
+}else { 
+window.opener = null; 
+window.open(“about:blank”, “_self”); 
+window.close(); 
+} 
 }
