@@ -143,7 +143,7 @@ $(document).ready(function () {
     data: {
         code: code,
         share: true,
-        name: name,
+        name: decodeURI(name),
         time: time,
         id: id,
         panorama: panorama,
