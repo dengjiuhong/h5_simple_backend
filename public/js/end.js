@@ -92,6 +92,7 @@ function main() {
       wx_init(wx_data);
     }
   });*/
+  $(".p0").fadeIn("fast");
   $("#first_enter_box").click(function () {
    $("#end_page").show();
   });
