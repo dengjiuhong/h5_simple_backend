@@ -29,10 +29,6 @@ module.exports = function (db) {
 	// var collection = db.collection("museum");
 	var collection_museum = db.collection("museum");
 	var collection_subscribe_user = db.collection("subscribe_user");
-	var length = 0;
-	collection_museum.count(function (err, count) {
-		length = count;
-	});
 	var router = express.Router();
 	/* GET home page. */
 	router.get('/', function (req, res, next) {
@@ -66,41 +62,40 @@ module.exports = function (db) {
 		var username = "root";
 		var password = "Oppo-ZBC-db1";
 		var timestamp = new Date().getTime();
-		var id = ++length;
-		// var adminDb = db.admin();
-		// var collection = db.collection("museum");
-		// length++;
-		var doc = {
-			name: req.body.name,
-			phone: req.body.phone,
-			time: timestamp,
-			id: id
-		};
-		//console.log("插入数据库信息：" + JSON.stringify(doc));
-		collection_museum.insertOne(doc, function (err) {
-			//console.log("用户数据"+JSON.stringify(doc));
-			if (err) {
-				//console.log("创建用户出错：" + err);
-				res.send({
-					ok: false,
-					mes: "服务器出错"
-				});
-				return;
-			}
+		collection_museum.count(function (err, count) {
+			var id = count;
+			id++;
+			var doc = {
+				name: req.body.name,
+				phone: req.body.phone,
+				time: timestamp,
+				id: id
+			};
+			collection_museum.insertOne(doc, function (err) {
+				//console.log("用户数据"+JSON.stringify(doc));
+				if (err) {
+					//console.log("创建用户出错：" + err);
+					res.send({
+						ok: false,
+						mes: "服务器出错"
+					});
+					return;
+				}
+			});
+			var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+			var options = {
+				scope: "pic-second" + ":" + req.body.name + timestamp + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
+			};
+			var putPolicy = new qiniu.rs.PutPolicy(options);
+			var uploadToken = putPolicy.uploadToken(mac);
+			//console.log("token:" + uploadToken);
+			res.send({
+				token: uploadToken,
+				time: timestamp,
+				id: id
+			});
 		});
 		//console.log("创建用户成功！");
-		var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
-		var options = {
-			scope: "pic-second" + ":" + req.body.name + timestamp + ".jpg", //scope: bucket + ":" + keyToOverwrite var keyToOverwrite = 'qiniu.mp4';
-		};
-		var putPolicy = new qiniu.rs.PutPolicy(options);
-		var uploadToken = putPolicy.uploadToken(mac);
-		//console.log("token:" + uploadToken);
-		res.send({
-			token: uploadToken,
-			time: timestamp,
-			id: id
-		});
 	});
 
 	router.get('/wx', function (req, res, next) {
