@@ -154,7 +154,8 @@ module.exports = function (db) {
 				if (json.access_token) {
 					console.log(JSON.stringify(json));
 					//access_token = json.access_token;
-					var subscribe_access_token = json.access_token;
+					var subscribe_access_token = wx.access_token;
+					console.log(subscribe_access_token);
 					var openid = json.openid;
 					var time = getNowFormatDate();
 					var subscribe_url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" + subscribe_access_token + "&openid=" + openid + "&lang=zh_CN";
