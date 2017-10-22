@@ -104,7 +104,8 @@ module.exports = function (db) {
 		collection_wx.findOne({name: "wx"}, function(err, wx) {
 			var doc = {
 				token: wx.access_token,
-				time: wx.expires_time
+				time: wx.expires_time,
+				datetime: new Date("1508666535926") + ""
 			}
 			res.send(doc);
 		})
