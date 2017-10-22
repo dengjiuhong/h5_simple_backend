@@ -118,6 +118,7 @@ $(document).ready(function () {
   }
 
     $(".wrap").addClass("p0-fake");
+    $(".wrap").css("background-image", "");
     $(".wrap").css("background-color", "#000000");
   platform = window.location.pathname;
   platform = platform.substr(1, platform.length);
