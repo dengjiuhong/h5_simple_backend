@@ -41,6 +41,8 @@ mongoClient.connect(url,
                             console.log("new token");
                         })
                     })
+                } else {
+                    console.log("Old token: ", wx);
                 }
             });
         //定时 
