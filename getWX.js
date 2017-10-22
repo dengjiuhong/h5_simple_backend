@@ -3,7 +3,7 @@ var schedule = require('node-schedule');
 var fetch = require('node-fetch');
 
 var rule = new schedule.RecurrenceRule();
-rule.minute = 45;
+rule.minute = [0, 30];
 
 var app_id = "wxdeb5dc277a2c46bf";
 var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
@@ -38,6 +38,7 @@ mongoClient.connect(url,
                                 jsticket: js
                             }
                             collection_wx.insertOne(doc);
+                            console.log("new token");
                         })
                     })
                 }
@@ -63,6 +64,7 @@ mongoClient.connect(url,
                             jsticket: js
                         }
                         collection_wx.updateOne({ name: "wx" }, doc);
+                        console.log(new Date() + " update token");
                     })
                 })
             });
