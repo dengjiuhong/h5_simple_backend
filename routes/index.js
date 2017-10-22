@@ -29,6 +29,9 @@ module.exports = function (db) {
 	// var collection = db.collection("museum");
 	var collection_museum = db.collection("new_museum");
 	var collection_subscribe_user = db.collection("subscribe_user");
+	var collection_wx = db.collection("weixin");
+
+
 	var router = express.Router();
 	/* GET home page. */
 	router.get('/', function (req, res, next) {
@@ -97,113 +100,89 @@ module.exports = function (db) {
 		});
 		//console.log("创建用户成功！");
 	});
-
+	router.get("/check_wx", function(req, res, next) {
+		collection_wx.findOne({name: "wx"}, function(err, wx) {
+			var doc = {
+				token: wx.access_token,
+				time: wx.expires_time
+			}
+			res.send(doc);
+		})
+	});
 	router.get('/wx', function (req, res, next) {
 		var code = req.query.code;
 		//console.log(code);
 		var result = {};
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
-		//u
-		var url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + app_id + "&secret=" + app_secret;
-		var currentTime = new Date().getTime();
-		var config = require('./config');
-		//console.log("config:" + config);
-		//console.log("wx debug-------------------------");
-		if (config.access_token === "" || config.expires_time < currentTime) { //过期了,取新的access_token与jsticket并保存
-			//console.log("过期");
-			fetch(url).then(function (res) {
-				return res.json();
-			}).then(function (json) {
-				//console.log("data:" + JSON.stringify(json));
-				config.access_token = json.access_token;
-				config.expires_time = new Date().getTime() + (parseInt(json.expires_in) - 200) * 1000;
-				var ticketurl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + config.access_token + '&type=jsapi';
-				fetch(ticketurl).then(function (res) {
-					return res.json();
-				}).then(function (json) {
-					config.jsticket = json.ticket;
-					//console.log("jsticket = " + config.jsticket)
-					fs.writeFile('routes/config.json', JSON.stringify(config), function (err) {
-						//if (err) console.log(err);
-						//console.log("新的token存储完毕!");
-					});
-				});
-			})
-		}
-		var config = require('./config');
+
 		//时间戳
-		var timestamp = new Date().getSeconds();
-		//随机字符串
-		var str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-		var random_str = "";
-		for (var i = 0; i < 16; i++) {
-			random_str += str.substr(Math.round((Math.random() * 10)), 1);
-		}
-		var signature = "";
-		if (req.query.share) {
-			if (req.query.isappinstalled == "")
-				var string1 = 'jsapi_ticket=' + config.jsticket + '&noncestr=' + random_str + '&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code + "&from=" + req.query.user_from;
-			else var string1 = 'jsapi_ticket=' + config.jsticket + '&noncestr=' + random_str + '&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code + "&from=" + req.query.user_from + "&isappinstalled=" + req.query.isappinstalled;
-		}
-		else {
-			if (req.query.code != "") {
-				var string1 = 'jsapi_ticket=' + config.jsticket + '&noncestr=' + random_str + '&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/weixin?code=' + code + "&state=";
+		collection_wx.findOne({name: "wx"}, function(err, wx) {
+			var timestamp = new Date().getSeconds();
+			var str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			var random_str = "";
+			for (var i = 0; i < 16; i++) {
+				random_str += str.substr(Math.round((Math.random() * 10)), 1);
+			}
+			var signature = "";
+			if (req.query.share) {
+				if (req.query.isappinstalled == "")
+					var string1 = 'jsapi_ticket=' + wx.jsticket + '&noncestr=' + random_str + '&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code + "&from=" + req.query.user_from;
+				else var string1 = 'jsapi_ticket=' + wx.jsticket + '&noncestr=' + random_str + '&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/my_museum?name=' + encodeURI(req.query.name) + '&museum=' + req.query.panorama + '&time=' + req.query.time + '&id=' + req.query.id + '&code=' + req.query.code + "&from=" + req.query.user_from + "&isappinstalled=" + req.query.isappinstalled;
 			}
 			else {
-				var string1 = 'jsapi_ticket=' + config.jsticket + '&noncestr=' + random_str + '&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/weixin?from=' + req.query.from;
-				if (req.query.isappinstalled != "") string1 += ("&isappinstalled=" + req.query.isappinstalled);
+				if (req.query.code != "") {
+					var string1 = 'jsapi_ticket=' + wx.jsticket + '&noncestr=' + random_str + '&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/weixin?code=' + code + "&state=";
+				}
+				else {
+					var string1 = 'jsapi_ticket=' + wx.jsticket + '&noncestr=' + random_str + '&timestamp=' + timestamp + '&url=http://oppo10.nplusgroup.net/weixin?from=' + req.query.from;
+					if (req.query.isappinstalled != "") string1 += ("&isappinstalled=" + req.query.isappinstalled);
+				}
 			}
-		}
-		//console.log("string1 = " + string1);
-		signature = sha1(string1);
-		//console.log("signature = " + signature);
-		result.appid = app_id;
-		result.signature = signature;
-		result.timestamp = timestamp;
-		result.random_str = random_str;
+			signature = sha1(string1);
+			result.appid = app_id;
+			result.signature = signature;
+			result.timestamp = timestamp;
+			result.random_str = random_str;
 
-
-		//存一下关注公众号的用户信息
-		var subscribe_url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + app_id + "&secret=" + app_secret + "&code=" + code + "&grant_type=authorization_code";
-		fetch(subscribe_url).then(function (res) {
-			return res.json();
-		}).then(function (json) {
-			if (json.access_token) {
-				//console.log(JSON.stringify(json));
-				var config = require('./config');
-				//access_token = json.access_token;
-				var subscribe_access_token = config.access_token;
-				var openid = json.openid;
-				var time = getNowFormatDate();
-				var subscribe_url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" + subscribe_access_token + "&openid=" + openid + "&lang=zh_CN";
-				fetch(subscribe_url_).then(function (res) {
-					return res.json();
-				}).then(function (json) {
-					//console.log("data_json:"+JSON.stringify(json));
-					if (json.subscribe == 1) {
-						// var adminDb = db.admin();
-						// var collection = db.collection("subscribe_user");
-						var user_data = {
-							open_id: openid,
-							nickname: json.nickname,
-							time: time
+			//存一下关注公众号的用户信息
+			var subscribe_url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + app_id + "&secret=" + app_secret + "&code=" + code + "&grant_type=authorization_code";
+			fetch(subscribe_url).then(function (res) {
+				return res.json();
+			}).then(function (json) {
+				if (json.access_token) {
+					//console.log(JSON.stringify(json));
+					//access_token = json.access_token;
+					var subscribe_access_token = wx.access_token;
+					var openid = json.openid;
+					var time = getNowFormatDate();
+					var subscribe_url_ = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" + subscribe_access_token + "&openid=" + openid + "&lang=zh_CN";
+					fetch(subscribe_url_).then(function (res) {
+						return res.json();
+					}).then(function (json) {
+						//console.log("data_json:"+JSON.stringify(json));
+						if (json.subscribe == 1) {
+							// var adminDb = db.admin();
+							// var collection = db.collection("subscribe_user");
+							var user_data = {
+								open_id: openid,
+								nickname: json.nickname,
+								time: time
+							}
+							//console.log(JSON.stringify(user_data));
+							collection_subscribe_user.findOne({ open_id: openid }, function(err, user) {
+								//console.log("finding");
+								if(user) {
+									//console.log("find");
+									collection_subscribe_user.update(user, user_data);
+								} else collection_subscribe_user.insertOne(user_data);
+							});
 						}
-						//console.log(JSON.stringify(user_data));
-						collection_subscribe_user.findOne({ open_id: openid }, function(err, user) {
-							//console.log("finding");
-							if(user) {
-								//console.log("find");
-								collection_subscribe_user.update(user, user_data);
-							} else collection_subscribe_user.insertOne(user_data);
-						});
-					}
-				});
-			}
+					});
+				}
+			})
+			res.send(result);
 		})
-
-
-		res.send(result);
 	});
 
 
