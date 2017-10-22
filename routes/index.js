@@ -152,7 +152,7 @@ module.exports = function (db) {
 				return res.json();
 			}).then(function (json) {
 				if (json.access_token) {
-					//console.log(JSON.stringify(json));
+					console.log(JSON.stringify(json));
 					//access_token = json.access_token;
 					var subscribe_access_token = wx.access_token;
 					var openid = json.openid;
@@ -161,7 +161,7 @@ module.exports = function (db) {
 					fetch(subscribe_url_).then(function (res) {
 						return res.json();
 					}).then(function (json) {
-						//console.log("data_json:"+JSON.stringify(json));
+						console.log("data_json:"+JSON.stringify(json));
 						if (json.subscribe == 1) {
 							// var adminDb = db.admin();
 							// var collection = db.collection("subscribe_user");
