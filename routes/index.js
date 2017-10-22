@@ -154,7 +154,7 @@ module.exports = function (db) {
 				if (json.access_token) {
 					console.log(JSON.stringify(json));
 					//access_token = json.access_token;
-					var subscribe_access_token = wx.access_token;
+					var subscribe_access_token = json.access_token;
 					console.log(subscribe_access_token);
 					var openid = json.openid;
 					var time = getNowFormatDate();
