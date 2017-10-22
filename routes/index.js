@@ -112,10 +112,11 @@ module.exports = function (db) {
 	});
 	router.get('/wx', function (req, res, next) {
 		var code = req.query.code;
-		if(code === undefined) {
+		if(!code) {
+			res.send({});
 			return false;
 		}
-		//console.log(code);
+		// console.log(code);
 		var result = {};
 		var app_id = "wxdeb5dc277a2c46bf";
 		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
