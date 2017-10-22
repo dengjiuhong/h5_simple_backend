@@ -197,6 +197,7 @@ $(document).ready(function () {
     'http://oppofans-1252859479.file.myqcloud.com/public/image/try.png',
     'http://oppofans-1252859479.file.myqcloud.com/public/image/enter_mu.png',
     'http://oppofans-1252859479.file.myqcloud.com/public/image/share_my.gif',
+    "http://oppofans-1252859479.file.myqcloud.com/public/image/error/err_pic_type.png"
     // '/v/02-openin.mp4'
   ];
   
