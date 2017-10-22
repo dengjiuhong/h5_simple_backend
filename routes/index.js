@@ -190,7 +190,7 @@ module.exports = function (db) {
 							time: time
 						}
 						//console.log(JSON.stringify(user_data));
-						collection_subscribe_user.updateOne({ open_id: openid }, user_data, true);
+						collection_subscribe_user.update({ open_id: openid }, {$set:user_data}, true);
 					}
 				});
 			}
