@@ -105,7 +105,7 @@ module.exports = function (db) {
 			var doc = {
 				token: wx.access_token,
 				time: wx.expires_time,
-				datetime: new Date("1508666535926") + ""
+				datetime: new Date(wx.expires_time) + ""
 			}
 			res.send(doc);
 		})
