@@ -35,7 +35,7 @@ module.exports = function (db) {
 	var router = express.Router();
 	/* GET home page. */
 	router.get('/', function (req, res, next) {
-		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/weixin&response_type=code&scope=snsapi_userinfo#wechat_redirect");
+		res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdeb5dc277a2c46bf&redirect_uri=http://wx.oppo.com/oppootherfirm10/weixin&response_type=code&scope=snsapi_base#wechat_redirect");
 	});
 	router.get('/end', function(req, res, next) {
 		res.render('end');
@@ -154,7 +154,7 @@ module.exports = function (db) {
 				if (json.access_token) {
 					console.log(JSON.stringify(json));
 					//access_token = json.access_token;
-					var subscribe_access_token = json.access_token;
+					var subscribe_access_token = wx.access_token;
 					console.log(subscribe_access_token);
 					var openid = json.openid;
 					var time = getNowFormatDate();
