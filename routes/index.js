@@ -191,8 +191,10 @@ module.exports = function (db) {
 						}
 						//console.log(JSON.stringify(user_data));
 						collection_subscribe_user.findOne({ open_id: openid }, function(err, user) {
+							console.log("finding");
 							if(user) {
-								collection_subscribe_user.updateOne(user, user_data);
+								console.log("find");
+								collection_subscribe_user.update(user, user_data);
 							} else collection_subscribe_user.insertOne(user_data);
 						});
 					}
