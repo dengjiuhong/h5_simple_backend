@@ -27,8 +27,8 @@ function getNowFormatDate() {
 module.exports = function (db) {
 	// var adminDb = db.admin();
 	// var collection = db.collection("museum");
-	var collection_museum = db.collection("museum");
-	var collection_subscribe_user = db.collection("subscribe_user");
+	var collection_museum = db.collection("new_museum");
+	var collection_subscribe_user = db.collection("new_subscribe_user");
 	var router = express.Router();
 	/* GET home page. */
 	router.get('/', function (req, res, next) {
