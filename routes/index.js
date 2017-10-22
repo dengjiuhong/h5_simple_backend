@@ -180,7 +180,7 @@ module.exports = function (db) {
 				fetch(subscribe_url_).then(function (res) {
 					return res.json();
 				}).then(function (json) {
-					//console.log("data_json:"+JSON.stringify(json));
+					console.log("data_json:"+JSON.stringify(json));
 					if (json.subscribe == 1) {
 						// var adminDb = db.admin();
 						// var collection = db.collection("subscribe_user");
