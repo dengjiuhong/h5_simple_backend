@@ -728,7 +728,7 @@ video {
     left: 25vw;
     top: 35vw;
     position: absolute;
-    background-image: url("/image/end/end_wrap.png");
+    background-image: url("http://oppofans-1252859479.file.myqcloud.com/public/image/end/end_wrap.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: 106;
@@ -759,7 +759,7 @@ video {
     left: 25vw;
     top: 35vw;
     position: absolute;
-    background-image: url("/image/error/err_pic_type.png");
+    background-image: url("http://oppofans-1252859479.file.myqcloud.com/public/image/error/err_pic_type.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: 106;
