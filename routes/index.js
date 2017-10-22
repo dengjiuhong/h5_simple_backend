@@ -180,7 +180,7 @@ module.exports = function (db) {
 				fetch(subscribe_url_).then(function (res) {
 					return res.json();
 				}).then(function (json) {
-					console.log("data_json:"+JSON.stringify(json));
+					//console.log("data_json:"+JSON.stringify(json));
 					if (json.subscribe == 1) {
 						// var adminDb = db.admin();
 						// var collection = db.collection("subscribe_user");
@@ -191,9 +191,9 @@ module.exports = function (db) {
 						}
 						//console.log(JSON.stringify(user_data));
 						collection_subscribe_user.findOne({ open_id: openid }, function(err, user) {
-							console.log("finding");
+							//console.log("finding");
 							if(user) {
-								console.log("find");
+								//console.log("find");
 								collection_subscribe_user.update(user, user_data);
 							} else collection_subscribe_user.insertOne(user_data);
 						});
