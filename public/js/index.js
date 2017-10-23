@@ -427,6 +427,14 @@ function requestPic() {
 
 }
 function main() {
+          xlz_videos['03-close'].initialize(); // 偷偷初始化
+  console.log("vx3初始化");
+
+  // $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
+
+  // var vx4 = xlz_videos['04-exit'];
+  xlz_videos['04-exit'].initialize(); // 偷偷初始化
+  console.log("vx4初始化");
     platform_tongji('703d9ba5b729f0f7f6378a7e66827100', 
                   'd0f2c584d1444c52395b1192eb2df407',
                   '1d65a9511f47c94740773bcde4d513d2',
@@ -509,14 +517,6 @@ function main() {
       clickTimes++;
       requestTimes++;
       console.log("clickTimes" + clickTimes);
-        xlz_videos['03-close'].initialize(); // 偷偷初始化
-  console.log("vx3初始化");
-
-  // $("#exit_0").get(0).src = './v/exit_' + panorama + '.mp4';
-
-  // var vx4 = xlz_videos['04-exit'];
-  xlz_videos['04-exit'].initialize(); // 偷偷初始化
-  console.log("vx4初始化");
       requestPic();
     }
     ion.sound.play("btn");
@@ -869,8 +869,8 @@ function page2() {
       // $("#exit_0").get(0).play();
       xlz_videos['04-exit'].play();
       // $("#exit_0").get(0).addEventListener("timeupdate", function () {
-      //xlz_videos['04-exit'].option.onComplete = function () {
-        setTimeout(function(){
+      xlz_videos['04-exit'].option.onComplete = function () {
+        //setTimeout(function(){
         xlz_videos['04-exit'].reset();
         // audio.currentTime = 0;//音频重新播放
         // audio.play();
@@ -903,7 +903,7 @@ function page2() {
           $(".p2").css('opacity', '0');
           $("#cube .container").html("");
         });
-      }, 2500);
+      };
     //});
 
     // 中间照片消失
