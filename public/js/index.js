@@ -902,9 +902,8 @@ function page2() {
           // 清理一下
           $(".p2").css('opacity', '0');
           $("#cube .container").html("");
-          twice();
         });
-      }, 2000);
+      }, 2500);
     //});
 
     // 中间照片消失
