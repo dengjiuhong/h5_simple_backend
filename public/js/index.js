@@ -129,7 +129,21 @@ $(document).ready(function () {
                   '3beb18eb5b4a426a808d17c51302846b',
                   'c269d465728cd92c394f429598c47668');
   var min_height;
-
+    var wx_data = {};
+  $.ajax({
+    url: 'http://101.132.91.4:80/wx',
+    type: 'GET',
+    data: {
+        code: GetQueryString("code"),
+        from: GetQueryString("from"),
+        isappinstalled: GetQueryString("isappinstalled")
+    },
+    success: function (data) {
+      console.log(JSON.stringify(data));
+      wx_data = data;
+      wx_init(wx_data);
+    }
+  });
   wrap_top = "0px";
   if((window.screen.width * 600 / 375) > window.screen.height) {min_height = (window.screen.width * 600 / 375);}
   else min_height = window.screen.height;
@@ -413,21 +427,6 @@ function requestPic() {
 
 }
 function main() {
-  var wx_data = {};
-  $.ajax({
-    url: 'http://101.132.91.4:80/wx',
-    type: 'GET',
-    data: {
-        code: GetQueryString("code"),
-        from: GetQueryString("from"),
-        isappinstalled: GetQueryString("isappinstalled")
-    },
-    success: function (data) {
-      console.log(JSON.stringify(data));
-      wx_data = data;
-      wx_init(wx_data);
-    }
-  });
     platform_tongji('703d9ba5b729f0f7f6378a7e66827100', 
                   'd0f2c584d1444c52395b1192eb2df407',
                   '1d65a9511f47c94740773bcde4d513d2',
@@ -843,9 +842,6 @@ function page2() {
     // if ($("#close_0").get(0).ended) {
     if (loop_twice == 1) {
       loop_twice++;
-      $("#share_in").css("display", "block");
-      $("#share_in").css("opacity", "0");
-      $("#share_in").animate({ "opacity": "1" }, 1500);
       // $("#close_0").get(0).play();
     } else {
       loop_twice++;
@@ -873,7 +869,8 @@ function page2() {
       // $("#exit_0").get(0).play();
       xlz_videos['04-exit'].play();
       // $("#exit_0").get(0).addEventListener("timeupdate", function () {
-      xlz_videos['04-exit'].option.onComplete = function () {
+      //xlz_videos['04-exit'].option.onComplete = function () {
+        setTimeout(function(){
         xlz_videos['04-exit'].reset();
         // audio.currentTime = 0;//音频重新播放
         // audio.play();
@@ -907,7 +904,7 @@ function page2() {
           $("#cube .container").html("");
           twice();
         });
-      };
+      }, 2000);
     //});
 
     // 中间照片消失
@@ -977,6 +974,12 @@ function page2() {
         ion.sound.stop("audio");
         // $("#close_0").get(0).play();
         xlz_videos['03-close'].play();
+        //五秒显示离开博物馆
+        setTimeout(function() {
+          $("#share_in").css("display", "block");
+          $("#share_in").css("opacity", "0");
+          $("#share_in").animate({ "opacity": "1" }, 1500);
+        }, 5000);
         console.log(xlz_videos['03-close']);
         // $("#close_0").get(0).addEventListener("timeupdate", temp_func);
         already_ended = false;
