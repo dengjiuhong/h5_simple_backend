@@ -36,6 +36,11 @@ function IsPC() {
     }
     return flag;
 }
+function GetQueryString(name) { 
+var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i"); 
+var r = window.location.search.substr(1).match(reg); 
+if (r!=null) return (r[2]); return null; 
+}
 function platform_tongji (i1, i2, i3, i4, i5) {
   if(platform == "weixin") {
     (function() {
