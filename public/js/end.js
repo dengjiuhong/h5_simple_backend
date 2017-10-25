@@ -1,3 +1,4 @@
+var platform;
 ion.sound({
   sounds: [
     {
