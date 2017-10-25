@@ -41,23 +41,23 @@ module.exports = function (db) {
 		res.render('end');
 	})
 	router.get('/weixin', routeCache.cacheSeconds(60), function (req, res, next) {
-		res.render('index');
+		res.render('end');
 	});
 	router.get('/weibo', routeCache.cacheSeconds(60), function (req, res, next) {
 		//res.render('index_', {platform_name: "weibo"});
-		res.render('index');
+		res.render('end');
 	});
 	router.get('/oppo', routeCache.cacheSeconds(60), function (req, res, next) {
 		//res.render('index_', {platform_name: "oppo"});
-		res.render('index');
+		res.render('end');
 	});
 	router.get('/office', routeCache.cacheSeconds(60), function (req, res, next) {
 		//res.render('index_', {platform_name: "office"});
-		res.render('index');
+		res.render('end');
 	});
 	router.get('/brower', routeCache.cacheSeconds(60), function (req, res, next) {
 		//res.render('index_', {platform_name: "brower"});
-		res.render('index');
+		res.render('end');
 	});
 	router.post('/pic_storage', function (req, res, next) {
 		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';

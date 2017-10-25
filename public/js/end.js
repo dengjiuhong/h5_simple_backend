@@ -36,23 +36,74 @@ function IsPC() {
     }
     return flag;
 }
-
+function platform_tongji (i1, i2, i3, i4, i5) {
+  if(platform == "weixin") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i1;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  } else if(platform == "weibo") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i2;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  } else if(platform == "oppo") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i3;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  } else if(platform == "office") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i4;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  } else if(platform == "brower") {
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?" + i5;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  }
+}
 $(document).ready(function () {
   if(IsPC()) {
     $("#pc_qrcode").css("display", "block");
     return;
   }
+    var wx_data = {};
+  $.ajax({
+    url: 'http://101.132.91.4:80/wx',
+    type: 'GET',
+    data: {
+        code: GetQueryString("code"),
+        from: GetQueryString("from"),
+        isappinstalled: GetQueryString("isappinstalled")
+    },
+    success: function (data) {
+      console.log(JSON.stringify(data));
+      wx_data = data;
+      wx_init(wx_data);
+    }
+  });
+  platform_tongji('67cf89986a8e57fb5379acf7703a9307', 
+                  '815407bda8688533777910567dbd043b',
+                  'bdb94e6419f0b4afbf08b72afd2b53ed',
+                  'b3f12f40f2e21e8affcd7fa06f3a4f4e',
+                  'e3cc7607feeff034aade4f25958e872d');
   $(".wrap").addClass("p0-fake");
    $(".page.loading").show();
   var items = [
-    'http://oppofans-1252859479.file.myqcloud.com/public/image/close.png',
-    'http://oppofans-1252859479.file.myqcloud.com/public/image/new_brand.png',
-    'http://oppofans-1252859479.file.myqcloud.com/public/image/brand_.png',
-    'http://oppofans-1252859479.file.myqcloud.com/public/image/close_.png',
-    'http://oppofans-1252859479.file.myqcloud.com/public/image/try.png',
-    'http://oppofans-1252859479.file.myqcloud.com/public/image/enter_mu.png',
-    'http://oppofans-1252859479.file.myqcloud.com/public/image/share_my.gif',
-    // '/v/02-openin.mp4'
+    'http://oppofans-1252859479.file.myqcloud.com/public/image/end/end_wrap.png',
+    "http://oppofans-1252859479.file.myqcloud.com/public/image/first_enter.png"
   ];
   setTimeout(function() {
     var loader = new preload({
@@ -77,21 +128,6 @@ $(document).ready(function () {
   }, 1000);
 });
 function main() {
-  /*var wx_data = {};
-  $.ajax({
-    url: 'http://101.132.91.4:80/wx',
-    type: 'GET',
-    data: {
-        code: GetQueryString("code"),
-        from: GetQueryString("from"),
-        isappinstalled: GetQueryString("isappinstalled")
-    },
-    success: function (data) {
-      console.log(JSON.stringify(data));
-      wx_data = data;
-      wx_init(wx_data);
-    }
-  });*/
   $(".p0").fadeIn("fast");
   $("#first_enter_box").click(function () {
    $("#end_page").show();
