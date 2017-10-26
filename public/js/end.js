@@ -106,6 +106,26 @@ $(document).ready(function () {
                   'b3f12f40f2e21e8affcd7fa06f3a4f4e',
                   'e3cc7607feeff034aade4f25958e872d');
   $(".wrap").addClass("p0-fake");
+    $("#rule_btn").click(function() {
+    ion.sound.play("btn");
+    console.log("规则");
+    $("#rule-container").show();
+    $("#welcome").hide();
+    $("#first_enter_box").hide();
+    $("#rule_btn").hide();
+    $("#scroll-hand, #huadong-bg").show();
+  });
+  $("#rule_back").click(function(){
+    ion.sound.play("btn");
+    $("#rule-container").hide();
+    $("#welcome").show();
+    $("#first_enter_box").show();
+    $("#rule_btn").show();
+    $("#huadong-bg").hide();
+  });
+  $("#content").scroll(function(e) {
+    $("#scroll-hand").hide();
+  });
    $(".page.loading").show();
   var items = [
     'http://oppofans-1252859479.file.myqcloud.com/public/image/end/end_wrap.png',
@@ -136,16 +156,16 @@ $(document).ready(function () {
 function main() {
   $(".p0").fadeIn("fast");
   $("#first_enter_box").click(function () {
-   $("#end_page").show();
+    window.location.replace("http://www.oppo.cn/thread-150254982-1");
   });
-  $("#end_page_btn").click(function() {
+  /*$("#end_page_btn").click(function() {
     if(isWeiXin()) {
       WeixinJSBridge.call('closeWindow');
     }
     else {
       CloseWebPage();
     }
-  })
+  })*/
 }
 function wx_init(data) {
   wx.config({

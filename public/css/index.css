@@ -221,7 +221,7 @@ video {
     height: 0.56rem;
     position: fixed;
     bottom: 0.18rem;
-    background-image: url('http://oppofans-1252859479.file.myqcloud.com/public/image/first_enter.png');
+    background-image: url('/image/end/check_list.png');
     background-size: 100% 100%;
     background-color: inherit;
     left: calc(50vw - 1.51rem / 2);
