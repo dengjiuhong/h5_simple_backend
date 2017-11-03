@@ -66,8 +66,6 @@ module.exports = function (db) {
 		res.render('end');
 	});
 	router.post('/pic_storage', function (req, res, next) {
-		var accessKey = 'T6Cuwyp-fMp9WFMN6uc8HvG6TB9mOujEmBjF9NxU';
-		var secretKey = 'apGpki_F2-Ps7ZtuLjQWBEdy4PmFrTnC1R-vh-aA';
 		var timestamp = new Date().getTime();
 		collection_museum.count(function (err, count) {
 			var id = count;
@@ -122,8 +120,6 @@ module.exports = function (db) {
 		}
 		// console.log(code);
 		var result = {};
-		var app_id = "wxdeb5dc277a2c46bf";
-		var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
 
 		//时间戳
 		collection_wx.findOne({name: "wx"}, function(err, wx) {
