@@ -2,17 +2,16 @@ var mongoClient = require('mongodb').MongoClient;
 var schedule = require('node-schedule');
 var fetch = require('node-fetch');
 
-var app_id = "wxdeb5dc277a2c46bf";
-var app_secret = "0d26703921a9fa7e001f0128cebe14bc";
+var app_id = "";
+var app_secret = "";
 // var wxurl = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + app_id + "&secret=" + app_secret;
 
 var collection_wx = null;
-var db_url = "mongodb://root:Oppo-ZBC-db1@dds-uf6a1325246e89e41.mongodb.rds.aliyuncs.com:3717,dds-uf6a1325246e89e42.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4528113";
-// var db_url = "mongodb://localhost";
+var db_url = "mongodb://localhost";
 
 function update_token() {
     console.log('Invoke update token');
-    var token_url = 'http://wx.oppo.com/accesstoken/accesstoken.do?appkey=salewechat&token=NhJ9cohwirGL5gB5ja1kHoAuMkoJaYJe&method=accesstoken';
+    var token_url = '';
 
     fetch(token_url).then(function (res) {
         return res.json();
